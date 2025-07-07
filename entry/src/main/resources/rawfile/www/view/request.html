@@ -1,0 +1,16 @@
+<div data-role="page">
+    <div data-role="header">
+        <a href="#" data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow">返回</a>
+        <h1>跨域请求</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <p>访问网络，需要配置网络访问权限ohos.permission.INTERNET，否则发送post、get请求会失败</p>
+        <p>harmony cordova 不存在跨域请求，可以通过任何域名发起http请求，为了安全可以使用白名单，配置可以访问的域名，白名单配置方法如下:</p>
+        <p>（1）自动识别http和https，http是80端口，https是443端口,支持自定义端口，但无需在config.xml里面配置</p>
+        <p>（2）不支持目录配置，就是直接配置域名就可以了，域名支持二级域名通配符</p>
+        <p>（3）举例1：在config.xml里面添加< allow-intent href="*.magongshou.com" />支持maongshou.com的所有二级域名</p>
+        <p>（4）举例2：在config.xml里面添加< allow-intent href="*" /> 支持所有域名></p>
+
+        <p>不同的框架请求写法不同，例如ajax，$http、axios等，本质上都是js的XMLHttpRequest发起的网络请求，这里不再举例</p>
+    </div>
+</div>

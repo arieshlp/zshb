@@ -1,0 +1,55 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "storePassword": "000000188DFD4D208A6253D060903A566CDDD1049333DB7A8C4D96D6FD49462FBA5003BE2597DD4F",
+          "certpath": "D:/helipingWork/202304昆明大数据/harmony/certificate/zshb_cert.cer",
+          "keyAlias": "kmzshb",
+          "keyPassword": "00000018897F0609E12A41B08BCB8A729BB019BCD31CA93D82CFBCC0DC201C77FED4799C26736BD3",
+          "profile": "D:/helipingWork/202304昆明大数据/harmony/certificate/zshbappRelease.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "D:/helipingWork/202304昆明大数据/harmony/certificate/.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.2(14)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

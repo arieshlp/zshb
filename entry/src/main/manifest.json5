@@ -1,0 +1,27 @@
+{
+  "app": {
+    "bundleName": "com.zshb.hm",
+    "bundleType": "app",
+    "versionCode": 1000000,
+    "versionName": "1.0.0",
+    "label": "掌上环保",
+    "deployDomain": "sthjj.km.gov.cn",
+    "icons": {
+      "normal": "https://sthjj.km.gov.cn/kqzl/zshb/zshb/logo.png",
+      "large": "https://sthjj.km.gov.cn/kqzl/zshb/zshb/logo.png"
+    },
+    "minAPIVersion": "5.0.2(14)",
+    "targetAPIVersion": "5.0.2(14)",
+    "modules": [
+      {
+        "name": "module1",
+        "type": "entry",
+        "deviceTypes": [
+          "phone"
+        ],
+        "packageUrl": "https://sthjj.km.gov.cn/kqzl/zshb/zshb/1.0.0/entry-default-signed.hap",
+        "packageHash": "75df66110a32c12973c07374028e1da46e62248bc4aa1fae290f02712a9feadc"
+      }
+    ]
+  }
+}

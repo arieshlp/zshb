@@ -1,0 +1,19 @@
+<div data-role="page">
+    <div data-role="header">
+        <a href="#" data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow">返回</a>
+        <h1>网络文件传输</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <p>文件插件完全遵守<a onclick="javascript:openUrl('https://github.com/apache/cordova-plugin-file-transfer')">https://github.com/apache/cordova-plugin-file-transfer</a>的使用规则</p>
+        <p>请查看一下调用示例</p>
+        <div data-role="collapsible">
+            <h1 onclick="upload()">点击上传图片</h1>
+            <img id="imageFile" width="100%"></img>
+        </div>
+        <div data-role="collapsible">
+            <h1 onclick="download()">点击下载图片</h1>
+            <img id="imageFile2" width="100%"></img>
+        </div>
+        <div id="progress"></div>
+    </div>
+</div>

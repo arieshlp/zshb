@@ -1,0 +1,12 @@
+{
+  "routerMap": [
+    {
+      "name": "TestPage",
+      "pageSourceFile": "src/main/ets/pages/testPage.ets",
+      "buildFunction": "TestPageBuilder",
+      "data": {
+        "description" : "this is TestPage"
+      }
+    }
+  ]
+}

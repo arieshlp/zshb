@@ -1,0 +1,33 @@
+<div data-role="page">
+    <div data-role="header">
+        <a href="#" data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow">返回</a>
+        <h1>视频插件</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <p>请查看一下调用示例</p>
+        <div data-role="collapsible">
+            <h1 onclick="cameraVod()">录制视频</h1>
+            <div id="imgInfo1" width="100%"></div>
+            <div class='prism-player' id="vodId">
+                <div class="play-button" style="background: black; no-repeat center top; background-size:auto 100%;">
+                    <img src="../img/play.png"  ng-click="playVod('vodId')" />
+                </div>
+            </div>
+        </div>
+
+        <div data-role="collapsible">
+            <h1 onclick="selectVod()">选择视频</h1>
+            <div class='prism-player' id="vodId2">
+                <div class="play-button" style="background: black; no-repeat center top; background-size:auto 100%;">
+                    <img src="../img/play.png"  ng-click="playVod('vodId2')" />
+                </div>
+            </div>
+        </div>
+        <div data-role="collapsible">
+            <h1 onclick="openAudio()">录制音频</h1>
+            <div class="item-message-audio">
+                <audio class="item-message-audio-control" id="idAudio"  controls="controls">您的手机不支持audio</audio>
+            </div>
+        </div>
+    </div>
+</div>

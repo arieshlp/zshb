@@ -1,0 +1,26 @@
+<div data-role="page">
+    <div data-role="header">
+        <a href="#" data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow">返回</a>
+        <h1>热更新插件</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <p>热更新插件的调用基本遵守<a onclick="javascript:openUrl('https://github.com/nordnet/cordova-hot-code-push')">https://github.com/nordnet/cordova-hot-code-push</a>的使用规则，主要有以下更改</p>
+        <p></p>
+        <p>（1）修改插件两处bug，在rawfile/plugins/cordova-hot-code-push-plugin/www/chcp.js文件</p>
+        <p>
+            <pre>
+                第60行: var resultObj = JSON.parse(msg);
+                改为:var resultObj = msg;
+            </pre>
+            <pre>
+                第83行:callback(resultObj.error, resultObj.data);
+                改为:callback(resultObj.action, resultObj.error, resultObj.data);
+            </pre>
+        </p>
+        <p>(1)js调用接口initPlugin初始化插件,插件自动调用，无需手动调用</p>
+        <p>(2)js调用接口chcp.fetchUpdate检查是否有更新,调用此函数可以传入新的升级url地址，如果有更新回调action返回chcp_updateIsReadyToInstall,没有更新返回chcp_nothingToUpdate</p>
+        <p>(3)js调用接口chcp.installUpdate立即启用更新，然后app会自动重启</p>
+        <p>(4）如果不调用步骤3，下次app重启也会自动启用更新></p>
+        <p><a href="javascript:chcpUpdate()">点击检测热更新</a></p>
+    </div>
+</div>

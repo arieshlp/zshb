@@ -1,0 +1,16 @@
+<div data-role="page">
+    <div data-role="header">
+        <a href="#" data-rel="back" class="ui-btn ui-icon-arrow-l ui-btn-icon-left ui-shadow">返回</a>
+        <h1>获取设备信息</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <p>使用cordova-plugin-device插件获取设备信息:</p>
+        <p>1，虚拟机uuid是空，系统返回是固定的</p>
+        <p>2，虚拟机platform不包含HarmonyOs，真机包含</p>
+        <p>3，其他字段参考plugins/cordova-plugin-device/www/device.js文件</p>
+        <div data-role="collapsible">
+            <h1 onclick="GetDeviceInfo()">点击查看设备信息</h1>
+            <p id="deviceInfo"></p>
+        </div>
+    </div>
+</div>

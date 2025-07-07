@@ -1,0 +1,28 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "掌上环保"
+    },
+    {
+      "name": "netWorkInfo",
+      "value": "使用网络权限"
+    },
+    {
+      "name": "microphoneInfo",
+      "value": "使用麦克风权限"
+    },
+    {
+      "name": "locationInfo",
+      "value": "获取位置"
+    }
+  ]
+}
