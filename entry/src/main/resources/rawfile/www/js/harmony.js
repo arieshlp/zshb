@@ -625,11 +625,11 @@ function getLocation() {
         enableHighAccuracy: true,  // 是否使用 GPS
         maximumAge: 30000,         // 缓存时间
         timeout: 27000,            // 超时时间
-        coorType: 'wgs84'         // 默认是 gcj02，可填 bd09ll wgs84、gcj02以获取百度经纬度用于访问百度 API
+        coorType: 'bd09ll'         // 默认是 gcj02，可填 bd09ll wgs84、gcj02以获取百度经纬度用于访问百度 API
     }
     navigator.geolocation.getCurrentPosition(function(info){
         document.getElementById("locationInfo").innerHTML = JSON.stringify(info);
     }, function(error){
-        alert(error);
+
     }, options);
 }

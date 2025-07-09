@@ -1,26 +1,2382 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[156],{
 
-/***/ "./node_modules/geotiff/dist-module/worker/decoder.js":
-/*!************************************************************!*\
-  !*** ./node_modules/geotiff/dist-module/worker/decoder.js ***!
-  \************************************************************/
-/*! exports provided: create */
+/***/ "./node_modules/geotiff/dist-module/compression/lerc.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/geotiff/dist-module/compression/lerc.js ***!
+  \**************************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(Buffer) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"create\", function() { return create; });\n/* harmony import */ var web_worker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! web-worker */ \"./node_modules/web-worker/cjs/browser.js\");\n/* harmony import */ var web_worker__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(web_worker__WEBPACK_IMPORTED_MODULE_0__);\n\n        \n        function create() {\n          const source = \"function e(e,t,r,n,i,a,o){try{var s=e[a](o),f=s.value}catch(e){return void r(e)}s.done?t(f):Promise.resolve(f).then(n,i)}function t(t){return function(){var r=this,n=arguments;return new Promise((function(i,a){var o=t.apply(r,n);function s(t){e(o,i,a,s,f,\\\"next\\\",t)}function f(t){e(o,i,a,s,f,\\\"throw\\\",t)}s(void 0)}))}}function r(e){return r=\\\"function\\\"==typeof Symbol&&\\\"symbol\\\"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&\\\"function\\\"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?\\\"symbol\\\":typeof e},r(e)}var n={exports:{}};!function(e){var t=function(e){var t,n=Object.prototype,i=n.hasOwnProperty,a=\\\"function\\\"==typeof Symbol?Symbol:{},o=a.iterator||\\\"@@iterator\\\",s=a.asyncIterator||\\\"@@asyncIterator\\\",f=a.toStringTag||\\\"@@toStringTag\\\";function l(e,t,r){return Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}),e[t]}try{l({},\\\"\\\")}catch(e){l=function(e,t,r){return e[t]=r}}function u(e,t,r,n){var i=t&&t.prototype instanceof y?t:y,a=Object.create(i.prototype),o=new T(n||[]);return a._invoke=function(e,t,r){var n=h;return function(i,a){if(n===p)throw new Error(\\\"Generator is already running\\\");if(n===m){if(\\\"throw\\\"===i)throw a;return E()}for(r.method=i,r.arg=a;;){var o=r.delegate;if(o){var s=I(o,r);if(s){if(s===v)continue;return s}}if(\\\"next\\\"===r.method)r.sent=r._sent=r.arg;else if(\\\"throw\\\"===r.method){if(n===h)throw n=m,r.arg;r.dispatchException(r.arg)}else\\\"return\\\"===r.method&&r.abrupt(\\\"return\\\",r.arg);n=p;var f=c(e,t,r);if(\\\"normal\\\"===f.type){if(n=r.done?m:d,f.arg===v)continue;return{value:f.arg,done:r.done}}\\\"throw\\\"===f.type&&(n=m,r.method=\\\"throw\\\",r.arg=f.arg)}}}(e,r,o),a}function c(e,t,r){try{return{type:\\\"normal\\\",arg:e.call(t,r)}}catch(e){return{type:\\\"throw\\\",arg:e}}}e.wrap=u;var h=\\\"suspendedStart\\\",d=\\\"suspendedYield\\\",p=\\\"executing\\\",m=\\\"completed\\\",v={};function y(){}function w(){}function g(){}var b={};l(b,o,(function(){return this}));var k=Object.getPrototypeOf,x=k&&k(k(D([])));x&&x!==n&&i.call(x,o)&&(b=x);var _=g.prototype=y.prototype=Object.create(b);function A(e){[\\\"next\\\",\\\"throw\\\",\\\"return\\\"].forEach((function(t){l(e,t,(function(e){return this._invoke(t,e)}))}))}function P(e,t){function n(a,o,s,f){var l=c(e[a],e,o);if(\\\"throw\\\"!==l.type){var u=l.arg,h=u.value;return h&&\\\"object\\\"===r(h)&&i.call(h,\\\"__await\\\")?t.resolve(h.__await).then((function(e){n(\\\"next\\\",e,s,f)}),(function(e){n(\\\"throw\\\",e,s,f)})):t.resolve(h).then((function(e){u.value=e,s(u)}),(function(e){return n(\\\"throw\\\",e,s,f)}))}f(l.arg)}var a;this._invoke=function(e,r){function i(){return new t((function(t,i){n(e,r,t,i)}))}return a=a?a.then(i,i):i()}}function I(e,r){var n=e.iterator[r.method];if(n===t){if(r.delegate=null,\\\"throw\\\"===r.method){if(e.iterator.return&&(r.method=\\\"return\\\",r.arg=t,I(e,r),\\\"throw\\\"===r.method))return v;r.method=\\\"throw\\\",r.arg=new TypeError(\\\"The iterator does not provide a 'throw' method\\\")}return v}var i=c(n,e.iterator,r.arg);if(\\\"throw\\\"===i.type)return r.method=\\\"throw\\\",r.arg=i.arg,r.delegate=null,v;var a=i.arg;return a?a.done?(r[e.resultName]=a.value,r.next=e.nextLoc,\\\"return\\\"!==r.method&&(r.method=\\\"next\\\",r.arg=t),r.delegate=null,v):a:(r.method=\\\"throw\\\",r.arg=new TypeError(\\\"iterator result is not an object\\\"),r.delegate=null,v)}function U(e){var t={tryLoc:e[0]};1 in e&&(t.catchLoc=e[1]),2 in e&&(t.finallyLoc=e[2],t.afterLoc=e[3]),this.tryEntries.push(t)}function S(e){var t=e.completion||{};t.type=\\\"normal\\\",delete t.arg,e.completion=t}function T(e){this.tryEntries=[{tryLoc:\\\"root\\\"}],e.forEach(U,this),this.reset(!0)}function D(e){if(e){var r=e[o];if(r)return r.call(e);if(\\\"function\\\"==typeof e.next)return e;if(!isNaN(e.length)){var n=-1,a=function r(){for(;++n<e.length;)if(i.call(e,n))return r.value=e[n],r.done=!1,r;return r.value=t,r.done=!0,r};return a.next=a}}return{next:E}}function E(){return{value:t,done:!0}}return w.prototype=g,l(_,\\\"constructor\\\",g),l(g,\\\"constructor\\\",w),w.displayName=l(g,f,\\\"GeneratorFunction\\\"),e.isGeneratorFunction=function(e){var t=\\\"function\\\"==typeof e&&e.constructor;return!!t&&(t===w||\\\"GeneratorFunction\\\"===(t.displayName||t.name))},e.mark=function(e){return Object.setPrototypeOf?Object.setPrototypeOf(e,g):(e.__proto__=g,l(e,f,\\\"GeneratorFunction\\\")),e.prototype=Object.create(_),e},e.awrap=function(e){return{__await:e}},A(P.prototype),l(P.prototype,s,(function(){return this})),e.AsyncIterator=P,e.async=function(t,r,n,i,a){void 0===a&&(a=Promise);var o=new P(u(t,r,n,i),a);return e.isGeneratorFunction(r)?o:o.next().then((function(e){return e.done?e.value:o.next()}))},A(_),l(_,f,\\\"Generator\\\"),l(_,o,(function(){return this})),l(_,\\\"toString\\\",(function(){return\\\"[object Generator]\\\"})),e.keys=function(e){var t=[];for(var r in e)t.push(r);return t.reverse(),function r(){for(;t.length;){var n=t.pop();if(n in e)return r.value=n,r.done=!1,r}return r.done=!0,r}},e.values=D,T.prototype={constructor:T,reset:function(e){if(this.prev=0,this.next=0,this.sent=this._sent=t,this.done=!1,this.delegate=null,this.method=\\\"next\\\",this.arg=t,this.tryEntries.forEach(S),!e)for(var r in this)\\\"t\\\"===r.charAt(0)&&i.call(this,r)&&!isNaN(+r.slice(1))&&(this[r]=t)},stop:function(){this.done=!0;var e=this.tryEntries[0].completion;if(\\\"throw\\\"===e.type)throw e.arg;return this.rval},dispatchException:function(e){if(this.done)throw e;var r=this;function n(n,i){return s.type=\\\"throw\\\",s.arg=e,r.next=n,i&&(r.method=\\\"next\\\",r.arg=t),!!i}for(var a=this.tryEntries.length-1;a>=0;--a){var o=this.tryEntries[a],s=o.completion;if(\\\"root\\\"===o.tryLoc)return n(\\\"end\\\");if(o.tryLoc<=this.prev){var f=i.call(o,\\\"catchLoc\\\"),l=i.call(o,\\\"finallyLoc\\\");if(f&&l){if(this.prev<o.catchLoc)return n(o.catchLoc,!0);if(this.prev<o.finallyLoc)return n(o.finallyLoc)}else if(f){if(this.prev<o.catchLoc)return n(o.catchLoc,!0)}else{if(!l)throw new Error(\\\"try statement without catch or finally\\\");if(this.prev<o.finallyLoc)return n(o.finallyLoc)}}}},abrupt:function(e,t){for(var r=this.tryEntries.length-1;r>=0;--r){var n=this.tryEntries[r];if(n.tryLoc<=this.prev&&i.call(n,\\\"finallyLoc\\\")&&this.prev<n.finallyLoc){var a=n;break}}a&&(\\\"break\\\"===e||\\\"continue\\\"===e)&&a.tryLoc<=t&&t<=a.finallyLoc&&(a=null);var o=a?a.completion:{};return o.type=e,o.arg=t,a?(this.method=\\\"next\\\",this.next=a.finallyLoc,v):this.complete(o)},complete:function(e,t){if(\\\"throw\\\"===e.type)throw e.arg;return\\\"break\\\"===e.type||\\\"continue\\\"===e.type?this.next=e.arg:\\\"return\\\"===e.type?(this.rval=this.arg=e.arg,this.method=\\\"return\\\",this.next=\\\"end\\\"):\\\"normal\\\"===e.type&&t&&(this.next=t),v},finish:function(e){for(var t=this.tryEntries.length-1;t>=0;--t){var r=this.tryEntries[t];if(r.finallyLoc===e)return this.complete(r.completion,r.afterLoc),S(r),v}},catch:function(e){for(var t=this.tryEntries.length-1;t>=0;--t){var r=this.tryEntries[t];if(r.tryLoc===e){var n=r.completion;if(\\\"throw\\\"===n.type){var i=n.arg;S(r)}return i}}throw new Error(\\\"illegal catch attempt\\\")},delegateYield:function(e,r,n){return this.delegate={iterator:D(e),resultName:r,nextLoc:n},\\\"next\\\"===this.method&&(this.arg=t),v}},e}(e.exports);try{regeneratorRuntime=t}catch(e){\\\"object\\\"===(\\\"undefined\\\"==typeof globalThis?\\\"undefined\\\":r(globalThis))?globalThis.regeneratorRuntime=t:Function(\\\"r\\\",\\\"regeneratorRuntime = r\\\")(t)}}(n);var i=n.exports,a=new Map;function o(e,t){Array.isArray(e)||(e=[e]),e.forEach((function(e){return a.set(e,t)}))}function s(e){return f.apply(this,arguments)}function f(){return(f=t(i.mark((function e(t){var r,n;return i.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:if(r=a.get(t.Compression)){e.next=3;break}throw new Error(\\\"Unknown compression method identifier: \\\".concat(t.Compression));case 3:return e.next=5,r();case 5:return n=e.sent,e.abrupt(\\\"return\\\",new n(t));case 7:case\\\"end\\\":return e.stop()}}),e)})))).apply(this,arguments)}o([void 0,1],(function(){return Promise.resolve().then((function(){return _})).then((function(e){return e.default}))})),o(5,(function(){return Promise.resolve().then((function(){return S})).then((function(e){return e.default}))})),o(6,(function(){throw new Error(\\\"old style JPEG compression is not supported.\\\")})),o(7,(function(){return Promise.resolve().then((function(){return L})).then((function(e){return e.default}))})),o([8,32946],(function(){return Promise.resolve().then((function(){return Ne})).then((function(e){return e.default}))})),o(32773,(function(){return Promise.resolve().then((function(){return Ye})).then((function(e){return e.default}))})),o(34887,(function(){return Promise.resolve().then((function(){return ut})).then((function(e){return e.default}))})),o(50001,(function(){return Promise.resolve().then((function(){return dt})).then((function(e){return e.default}))}));var l=globalThis;function u(e,t){if(!(e instanceof t))throw new TypeError(\\\"Cannot call a class as a function\\\")}function c(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,\\\"value\\\"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function h(e,t,r){return t&&c(e.prototype,t),r&&c(e,r),e}function d(e,t){return d=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e},d(e,t)}function p(e,t){if(\\\"function\\\"!=typeof t&&null!==t)throw new TypeError(\\\"Super expression must either be null or a function\\\");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&d(e,t)}function m(e,t){if(t&&(\\\"object\\\"===r(t)||\\\"function\\\"==typeof t))return t;if(void 0!==t)throw new TypeError(\\\"Derived constructors may only return object or undefined\\\");return function(e){if(void 0===e)throw new ReferenceError(\\\"this hasn't been initialised - super() hasn't been called\\\");return e}(e)}function v(e){return v=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)},v(e)}function y(e,t){var r=e.length-t,n=0;do{for(var i=t;i>0;i--)e[n+t]+=e[n],n++;r-=t}while(r>0)}function w(e,t,r){for(var n=0,i=e.length,a=i/r;i>t;){for(var o=t;o>0;--o)e[n+t]+=e[n],++n;i-=t}for(var s=e.slice(),f=0;f<a;++f)for(var l=0;l<r;++l)e[r*f+l]=s[(r-l-1)*a+f]}function g(e,t,r,n,i,a){if(!t||1===t)return e;for(var o=0;o<i.length;++o){if(i[o]%8!=0)throw new Error(\\\"When decoding with predictor, only multiple of 8 bits are supported.\\\");if(i[o]!==i[0])throw new Error(\\\"When decoding with predictor, all samples must have the same size.\\\")}for(var s=i[0]/8,f=2===a?1:i.length,l=0;l<n&&!(l*f*r*s>=e.byteLength);++l){var u=void 0;if(2===t){switch(i[0]){case 8:u=new Uint8Array(e,l*f*r*s,f*r*s);break;case 16:u=new Uint16Array(e,l*f*r*s,f*r*s/2);break;case 32:u=new Uint32Array(e,l*f*r*s,f*r*s/4);break;default:throw new Error(\\\"Predictor 2 not allowed with \\\".concat(i[0],\\\" bits per sample.\\\"))}y(u,f)}else 3===t&&w(u=new Uint8Array(e,l*f*r*s,f*r*s),f,s)}return e}l.addEventListener(\\\"message\\\",function(){var e=t(i.mark((function e(t){var r,n,a,o,f,u;return i.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return r=t.data,n=r.id,a=r.fileDirectory,o=r.buffer,e.next=3,s(a);case 3:return f=e.sent,e.next=6,f.decode(a,o);case 6:u=e.sent,l.postMessage({decoded:u,id:n},[u]);case 8:case\\\"end\\\":return e.stop()}}),e)})));return function(t){return e.apply(this,arguments)}}());var b=function(){function e(){u(this,e)}var r;return h(e,[{key:\\\"decode\\\",value:(r=t(i.mark((function e(t,r){var n,a,o,s,f;return i.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,this.decodeBlock(r);case 2:if(n=e.sent,1===(a=t.Predictor||1)){e.next=9;break}return o=!t.StripOffsets,s=o?t.TileWidth:t.ImageWidth,f=o?t.TileLength:t.RowsPerStrip||t.ImageLength,e.abrupt(\\\"return\\\",g(n,a,s,f,t.BitsPerSample,t.PlanarConfiguration));case 9:return e.abrupt(\\\"return\\\",n);case 10:case\\\"end\\\":return e.stop()}}),e,this)}))),function(e,t){return r.apply(this,arguments)})}]),e}();function k(e){var t=function(){if(\\\"undefined\\\"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if(\\\"function\\\"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var r,n=v(e);if(t){var i=v(this).constructor;r=Reflect.construct(n,arguments,i)}else r=n.apply(this,arguments);return m(this,r)}}var x=function(e){p(r,b);var t=k(r);function r(){return u(this,r),t.apply(this,arguments)}return h(r,[{key:\\\"decodeBlock\\\",value:function(e){return e}}]),r}(),_=Object.freeze({__proto__:null,default:x});function A(e){var t=function(){if(\\\"undefined\\\"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if(\\\"function\\\"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var r,n=v(e);if(t){var i=v(this).constructor;r=Reflect.construct(n,arguments,i)}else r=n.apply(this,arguments);return m(this,r)}}function P(e,t){for(var r=t.length-1;r>=0;r--)e.push(t[r]);return e}function I(e){for(var t=new Uint16Array(4093),r=new Uint8Array(4093),n=0;n<=257;n++)t[n]=4096,r[n]=n;var i=258,a=9,o=0;function s(){i=258,a=9}function f(e){var t=function(e,t,r){var n=t%8,i=Math.floor(t/8),a=8-n,o=t+r-8*(i+1),s=8*(i+2)-(t+r),f=8*(i+2)-t;if(s=Math.max(0,s),i>=e.length)return console.warn(\\\"ran off the end of the buffer before finding EOI_CODE (end on input code)\\\"),257;var l=e[i]&Math.pow(2,8-n)-1,u=l<<=r-a;if(i+1<e.length){var c=e[i+1]>>>s;u+=c<<=Math.max(0,r-f)}if(o>8&&i+2<e.length){var h=8*(i+3)-(t+r);u+=e[i+2]>>>h}return u}(e,o,a);return o+=a,t}function l(e,n){return r[i]=n,t[i]=e,++i-1}function u(e){for(var n=[],i=e;4096!==i;i=t[i])n.push(r[i]);return n}var c=[];s();for(var h,d=new Uint8Array(e),p=f(d);257!==p;){if(256===p){for(s(),p=f(d);256===p;)p=f(d);if(257===p)break;if(p>256)throw new Error(\\\"corrupted code at scanline \\\".concat(p));P(c,u(p)),h=p}else if(p<i){var m=u(p);P(c,m),l(h,m[m.length-1]),h=p}else{var v=u(h);if(!v)throw new Error(\\\"Bogus entry. Not in dictionary, \\\".concat(h,\\\" / \\\").concat(i,\\\", position: \\\").concat(o));P(c,v),c.push(v[v.length-1]),l(h,v[v.length-1]),h=p}i+1>=Math.pow(2,a)&&(12===a?h=void 0:a++),p=f(d)}return new Uint8Array(c)}var U=function(e){p(r,b);var t=A(r);function r(){return u(this,r),t.apply(this,arguments)}return h(r,[{key:\\\"decodeBlock\\\",value:function(e){return I(e).buffer}}]),r}(),S=Object.freeze({__proto__:null,default:U});function T(e){var t=function(){if(\\\"undefined\\\"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if(\\\"function\\\"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var r,n=v(e);if(t){var i=v(this).constructor;r=Reflect.construct(n,arguments,i)}else r=n.apply(this,arguments);return m(this,r)}}var D=new Int32Array([0,1,8,16,9,2,3,10,17,24,32,25,18,11,4,5,12,19,26,33,40,48,41,34,27,20,13,6,7,14,21,28,35,42,49,56,57,50,43,36,29,22,15,23,30,37,44,51,58,59,52,45,38,31,39,46,53,60,61,54,47,55,62,63]);function E(e,t){for(var r=0,n=[],i=16;i>0&&!e[i-1];)--i;n.push({children:[],index:0});for(var a,o=n[0],s=0;s<i;s++){for(var f=0;f<e[s];f++){for((o=n.pop()).children[o.index]=t[r];o.index>0;)o=n.pop();for(o.index++,n.push(o);n.length<=s;)n.push(a={children:[],index:0}),o.children[o.index]=a.children,o=a;r++}s+1<i&&(n.push(a={children:[],index:0}),o.children[o.index]=a.children,o=a)}return n[0].children}function B(e,t,n,i,a,o,s,f,l){var u=n.mcusPerLine,c=n.progressive,h=t,d=t,p=0,m=0;function v(){if(m>0)return m--,p>>m&1;if(255===(p=e[d++])){var t=e[d++];if(t)throw new Error(\\\"unexpected marker: \\\".concat((p<<8|t).toString(16)))}return m=7,p>>>7}function y(e){for(var t,n=e;null!==(t=v());){if(\\\"number\\\"==typeof(n=n[t]))return n;if(\\\"object\\\"!==r(n))throw new Error(\\\"invalid huffman sequence\\\")}return null}function w(e){for(var t=e,r=0;t>0;){var n=v();if(null===n)return;r=r<<1|n,--t}return r}function g(e){var t=w(e);return t>=1<<e-1?t:t+(-1<<e)+1}var b=0;var k,x=0;function _(e,t,r,n,i){var a=r%u,o=(r/u|0)*e.v+n,s=a*e.h+i;t(e,e.blocks[o][s])}function A(e,t,r){var n=r/e.blocksPerLine|0,i=r%e.blocksPerLine;t(e,e.blocks[n][i])}var P,I,U,S,T,E,B=i.length;E=c?0===o?0===f?function(e,t){var r=y(e.huffmanTableDC),n=0===r?0:g(r)<<l;e.pred+=n,t[0]=e.pred}:function(e,t){t[0]|=v()<<l}:0===f?function(e,t){if(b>0)b--;else for(var r=o,n=s;r<=n;){var i=y(e.huffmanTableAC),a=15&i,f=i>>4;if(0===a){if(f<15){b=w(f)+(1<<f)-1;break}r+=16}else t[D[r+=f]]=g(a)*(1<<l),r++}}:function(e,t){for(var r=o,n=s,i=0;r<=n;){var a=D[r],f=t[a]<0?-1:1;switch(x){case 0:var u=y(e.huffmanTableAC),c=15&u;if(i=u>>4,0===c)i<15?(b=w(i)+(1<<i),x=4):(i=16,x=1);else{if(1!==c)throw new Error(\\\"invalid ACn encoding\\\");k=g(c),x=i?2:3}continue;case 1:case 2:t[a]?t[a]+=(v()<<l)*f:0==--i&&(x=2===x?3:0);break;case 3:t[a]?t[a]+=(v()<<l)*f:(t[a]=k<<l,x=0);break;case 4:t[a]&&(t[a]+=(v()<<l)*f)}r++}4===x&&0==--b&&(x=0)}:function(e,t){var r=y(e.huffmanTableDC),n=0===r?0:g(r);e.pred+=n,t[0]=e.pred;for(var i=1;i<64;){var a=y(e.huffmanTableAC),o=15&a,s=a>>4;if(0===o){if(s<15)break;i+=16}else t[D[i+=s]]=g(o),i++}};var O,M,C=0;M=1===B?i[0].blocksPerLine*i[0].blocksPerColumn:u*n.mcusPerColumn;for(var L=a||M;C<M;){for(I=0;I<B;I++)i[I].pred=0;if(b=0,1===B)for(P=i[0],T=0;T<L;T++)A(P,E,C),C++;else for(T=0;T<L;T++){for(I=0;I<B;I++){var R=P=i[I],V=R.h,G=R.v;for(U=0;U<G;U++)for(S=0;S<V;S++)_(P,E,C,U,S)}if(++C===M)break}if(m=0,(O=e[d]<<8|e[d+1])<65280)throw new Error(\\\"marker was not found\\\");if(!(O>=65488&&O<=65495))break;d+=2}return d-h}function O(e,t){var r=[],n=t.blocksPerLine,i=t.blocksPerColumn,a=n<<3,o=new Int32Array(64),s=new Uint8Array(64);function f(e,r,n){var i,a,o,s,f,l,u,c,h,d,p=t.quantizationTable,m=n;for(d=0;d<64;d++)m[d]=e[d]*p[d];for(d=0;d<8;++d){var v=8*d;0!==m[1+v]||0!==m[2+v]||0!==m[3+v]||0!==m[4+v]||0!==m[5+v]||0!==m[6+v]||0!==m[7+v]?(i=5793*m[0+v]+128>>8,a=5793*m[4+v]+128>>8,o=m[2+v],s=m[6+v],f=2896*(m[1+v]-m[7+v])+128>>8,c=2896*(m[1+v]+m[7+v])+128>>8,l=m[3+v]<<4,h=i-a+1>>1,i=i+a+1>>1,a=h,h=3784*o+1567*s+128>>8,o=1567*o-3784*s+128>>8,s=h,h=f-(u=m[5+v]<<4)+1>>1,f=f+u+1>>1,u=h,h=c+l+1>>1,l=c-l+1>>1,c=h,h=i-s+1>>1,i=i+s+1>>1,s=h,h=a-o+1>>1,a=a+o+1>>1,o=h,h=2276*f+3406*c+2048>>12,f=3406*f-2276*c+2048>>12,c=h,h=799*l+4017*u+2048>>12,l=4017*l-799*u+2048>>12,u=h,m[0+v]=i+c,m[7+v]=i-c,m[1+v]=a+u,m[6+v]=a-u,m[2+v]=o+l,m[5+v]=o-l,m[3+v]=s+f,m[4+v]=s-f):(h=5793*m[0+v]+512>>10,m[0+v]=h,m[1+v]=h,m[2+v]=h,m[3+v]=h,m[4+v]=h,m[5+v]=h,m[6+v]=h,m[7+v]=h)}for(d=0;d<8;++d){var y=d;0!==m[8+y]||0!==m[16+y]||0!==m[24+y]||0!==m[32+y]||0!==m[40+y]||0!==m[48+y]||0!==m[56+y]?(i=5793*m[0+y]+2048>>12,a=5793*m[32+y]+2048>>12,o=m[16+y],s=m[48+y],f=2896*(m[8+y]-m[56+y])+2048>>12,c=2896*(m[8+y]+m[56+y])+2048>>12,l=m[24+y],h=i-a+1>>1,i=i+a+1>>1,a=h,h=3784*o+1567*s+2048>>12,o=1567*o-3784*s+2048>>12,s=h,h=f-(u=m[40+y])+1>>1,f=f+u+1>>1,u=h,h=c+l+1>>1,l=c-l+1>>1,c=h,h=i-s+1>>1,i=i+s+1>>1,s=h,h=a-o+1>>1,a=a+o+1>>1,o=h,h=2276*f+3406*c+2048>>12,f=3406*f-2276*c+2048>>12,c=h,h=799*l+4017*u+2048>>12,l=4017*l-799*u+2048>>12,u=h,m[0+y]=i+c,m[56+y]=i-c,m[8+y]=a+u,m[48+y]=a-u,m[16+y]=o+l,m[40+y]=o-l,m[24+y]=s+f,m[32+y]=s-f):(h=5793*n[d+0]+8192>>14,m[0+y]=h,m[8+y]=h,m[16+y]=h,m[24+y]=h,m[32+y]=h,m[40+y]=h,m[48+y]=h,m[56+y]=h)}for(d=0;d<64;++d){var w=128+(m[d]+8>>4);r[d]=w<0?0:w>255?255:w}}for(var l=0;l<i;l++){for(var u=l<<3,c=0;c<8;c++)r.push(new Uint8Array(a));for(var h=0;h<n;h++){f(t.blocks[l][h],s,o);for(var d=0,p=h<<3,m=0;m<8;m++)for(var v=r[u+m],y=0;y<8;y++)v[p+y]=s[d++]}}return r}var M=function(){function e(){u(this,e),this.jfif=null,this.adobe=null,this.quantizationTables=[],this.huffmanTablesAC=[],this.huffmanTablesDC=[],this.resetFrames()}return h(e,[{key:\\\"resetFrames\\\",value:function(){this.frames=[]}},{key:\\\"parse\\\",value:function(e){var t=0;function r(){var r=e[t]<<8|e[t+1];return t+=2,r}function n(e){var t,r,n=0,i=0;for(r in e.components)e.components.hasOwnProperty(r)&&(n<(t=e.components[r]).h&&(n=t.h),i<t.v&&(i=t.v));var a=Math.ceil(e.samplesPerLine/8/n),o=Math.ceil(e.scanLines/8/i);for(r in e.components)if(e.components.hasOwnProperty(r)){t=e.components[r];for(var s=Math.ceil(Math.ceil(e.samplesPerLine/8)*t.h/n),f=Math.ceil(Math.ceil(e.scanLines/8)*t.v/i),l=a*t.h,u=o*t.v,c=[],h=0;h<u;h++){for(var d=[],p=0;p<l;p++)d.push(new Int32Array(64));c.push(d)}t.blocksPerLine=s,t.blocksPerColumn=f,t.blocks=c}e.maxH=n,e.maxV=i,e.mcusPerLine=a,e.mcusPerColumn=o}var i,a,o=r();if(65496!==o)throw new Error(\\\"SOI not found\\\");for(o=r();65497!==o;){switch(o){case 65280:break;case 65504:case 65505:case 65506:case 65507:case 65508:case 65509:case 65510:case 65511:case 65512:case 65513:case 65514:case 65515:case 65516:case 65517:case 65518:case 65519:case 65534:var s=(i=void 0,a=void 0,i=r(),a=e.subarray(t,t+i-2),t+=a.length,a);65504===o&&74===s[0]&&70===s[1]&&73===s[2]&&70===s[3]&&0===s[4]&&(this.jfif={version:{major:s[5],minor:s[6]},densityUnits:s[7],xDensity:s[8]<<8|s[9],yDensity:s[10]<<8|s[11],thumbWidth:s[12],thumbHeight:s[13],thumbData:s.subarray(14,14+3*s[12]*s[13])}),65518===o&&65===s[0]&&100===s[1]&&111===s[2]&&98===s[3]&&101===s[4]&&0===s[5]&&(this.adobe={version:s[6],flags0:s[7]<<8|s[8],flags1:s[9]<<8|s[10],transformCode:s[11]});break;case 65499:for(var f=r()+t-2;t<f;){var l=e[t++],u=new Int32Array(64);if(l>>4==0)for(var c=0;c<64;c++){u[D[c]]=e[t++]}else{if(l>>4!=1)throw new Error(\\\"DQT: invalid table spec\\\");for(var h=0;h<64;h++){u[D[h]]=r()}}this.quantizationTables[15&l]=u}break;case 65472:case 65473:case 65474:r();for(var d={extended:65473===o,progressive:65474===o,precision:e[t++],scanLines:r(),samplesPerLine:r(),components:{},componentsOrder:[]},p=e[t++],m=void 0,v=0;v<p;v++){m=e[t];var y=e[t+1]>>4,w=15&e[t+1],g=e[t+2];d.componentsOrder.push(m),d.components[m]={h:y,v:w,quantizationIdx:g},t+=3}n(d),this.frames.push(d);break;case 65476:for(var b=r(),k=2;k<b;){for(var x=e[t++],_=new Uint8Array(16),A=0,P=0;P<16;P++,t++)_[P]=e[t],A+=_[P];for(var I=new Uint8Array(A),U=0;U<A;U++,t++)I[U]=e[t];k+=17+A,x>>4==0?this.huffmanTablesDC[15&x]=E(_,I):this.huffmanTablesAC[15&x]=E(_,I)}break;case 65501:r(),this.resetInterval=r();break;case 65498:r();for(var S=e[t++],T=[],O=this.frames[0],M=0;M<S;M++){var C=O.components[e[t++]],L=e[t++];C.huffmanTableDC=this.huffmanTablesDC[L>>4],C.huffmanTableAC=this.huffmanTablesAC[15&L],T.push(C)}var R=e[t++],V=e[t++],G=e[t++],F=B(e,t,O,T,this.resetInterval,R,V,G>>4,15&G);t+=F;break;case 65535:255!==e[t]&&t--;break;default:if(255===e[t-3]&&e[t-2]>=192&&e[t-2]<=254){t-=3;break}throw new Error(\\\"unknown JPEG marker \\\".concat(o.toString(16)))}o=r()}}},{key:\\\"getResult\\\",value:function(){var e=this.frames;if(0===this.frames.length)throw new Error(\\\"no frames were decoded\\\");this.frames.length>1&&console.warn(\\\"more than one frame is not supported\\\");for(var t=0;t<this.frames.length;t++)for(var r=this.frames[t].components,n=0,i=Object.keys(r);n<i.length;n++){var a=i[n];r[a].quantizationTable=this.quantizationTables[r[a].quantizationIdx],delete r[a].quantizationIdx}for(var o=e[0],s=o.components,f=o.componentsOrder,l=[],u=o.samplesPerLine,c=o.scanLines,h=0;h<f.length;h++){var d=s[f[h]];l.push({lines:O(0,d),scaleX:d.h/o.maxH,scaleY:d.v/o.maxV})}for(var p=new Uint8Array(u*c*l.length),m=0,v=0;v<c;++v)for(var y=0;y<u;++y)for(var w=0;w<l.length;++w){var g=l[w];p[m]=g.lines[0|v*g.scaleY][0|y*g.scaleX],++m}return p}}]),e}(),C=function(e){p(r,b);var t=T(r);function r(e){var n;return u(this,r),(n=t.call(this)).reader=new M,e.JPEGTables&&n.reader.parse(e.JPEGTables),n}return h(r,[{key:\\\"decodeBlock\\\",value:function(e){return this.reader.resetFrames(),this.reader.parse(new Uint8Array(e)),this.reader.getResult().buffer}}]),r}(),L=Object.freeze({__proto__:null,default:C});function R(e){for(var t=e.length;--t>=0;)e[t]=0}R(new Array(576)),R(new Array(60)),R(new Array(512)),R(new Array(256)),R(new Array(29)),R(new Array(30));var V=function(e,t,r,n){for(var i=65535&e|0,a=e>>>16&65535|0,o=0;0!==r;){r-=o=r>2e3?2e3:r;do{a=a+(i=i+t[n++]|0)|0}while(--o);i%=65521,a%=65521}return i|a<<16|0},G=new Uint32Array(function(){for(var e,t=[],r=0;r<256;r++){e=r;for(var n=0;n<8;n++)e=1&e?3988292384^e>>>1:e>>>1;t[r]=e}return t}()),F=function(e,t,r,n){var i=G,a=n+r;e^=-1;for(var o=n;o<a;o++)e=e>>>8^i[255&(e^t[o])];return-1^e},z={2:\\\"need dictionary\\\",1:\\\"stream end\\\",0:\\\"\\\",\\\"-1\\\":\\\"file error\\\",\\\"-2\\\":\\\"stream error\\\",\\\"-3\\\":\\\"data error\\\",\\\"-4\\\":\\\"insufficient memory\\\",\\\"-5\\\":\\\"buffer error\\\",\\\"-6\\\":\\\"incompatible version\\\"},j={Z_NO_FLUSH:0,Z_PARTIAL_FLUSH:1,Z_SYNC_FLUSH:2,Z_FULL_FLUSH:3,Z_FINISH:4,Z_BLOCK:5,Z_TREES:6,Z_OK:0,Z_STREAM_END:1,Z_NEED_DICT:2,Z_ERRNO:-1,Z_STREAM_ERROR:-2,Z_DATA_ERROR:-3,Z_MEM_ERROR:-4,Z_BUF_ERROR:-5,Z_NO_COMPRESSION:0,Z_BEST_SPEED:1,Z_BEST_COMPRESSION:9,Z_DEFAULT_COMPRESSION:-1,Z_FILTERED:1,Z_HUFFMAN_ONLY:2,Z_RLE:3,Z_FIXED:4,Z_DEFAULT_STRATEGY:0,Z_BINARY:0,Z_TEXT:1,Z_UNKNOWN:2,Z_DEFLATED:8},N=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},Z=function(e){for(var t=Array.prototype.slice.call(arguments,1);t.length;){var n=t.shift();if(n){if(\\\"object\\\"!==r(n))throw new TypeError(n+\\\"must be non-object\\\");for(var i in n)N(n,i)&&(e[i]=n[i])}}return e},K=function(e){for(var t=0,r=0,n=e.length;r<n;r++)t+=e[r].length;for(var i=new Uint8Array(t),a=0,o=0,s=e.length;a<s;a++){var f=e[a];i.set(f,o),o+=f.length}return i},H=!0;try{String.fromCharCode.apply(null,new Uint8Array(1))}catch(e){H=!1}for(var Y=new Uint8Array(256),X=0;X<256;X++)Y[X]=X>=252?6:X>=248?5:X>=240?4:X>=224?3:X>=192?2:1;Y[254]=Y[254]=1;var W=function(e){if(\\\"function\\\"==typeof TextEncoder&&TextEncoder.prototype.encode)return(new TextEncoder).encode(e);var t,r,n,i,a,o=e.length,s=0;for(i=0;i<o;i++)55296==(64512&(r=e.charCodeAt(i)))&&i+1<o&&56320==(64512&(n=e.charCodeAt(i+1)))&&(r=65536+(r-55296<<10)+(n-56320),i++),s+=r<128?1:r<2048?2:r<65536?3:4;for(t=new Uint8Array(s),a=0,i=0;a<s;i++)55296==(64512&(r=e.charCodeAt(i)))&&i+1<o&&56320==(64512&(n=e.charCodeAt(i+1)))&&(r=65536+(r-55296<<10)+(n-56320),i++),r<128?t[a++]=r:r<2048?(t[a++]=192|r>>>6,t[a++]=128|63&r):r<65536?(t[a++]=224|r>>>12,t[a++]=128|r>>>6&63,t[a++]=128|63&r):(t[a++]=240|r>>>18,t[a++]=128|r>>>12&63,t[a++]=128|r>>>6&63,t[a++]=128|63&r);return t},q=function(e,t){var r,n,i=t||e.length;if(\\\"function\\\"==typeof TextDecoder&&TextDecoder.prototype.decode)return(new TextDecoder).decode(e.subarray(0,t));var a=new Array(2*i);for(n=0,r=0;r<i;){var o=e[r++];if(o<128)a[n++]=o;else{var s=Y[o];if(s>4)a[n++]=65533,r+=s-1;else{for(o&=2===s?31:3===s?15:7;s>1&&r<i;)o=o<<6|63&e[r++],s--;s>1?a[n++]=65533:o<65536?a[n++]=o:(o-=65536,a[n++]=55296|o>>10&1023,a[n++]=56320|1023&o)}}}return function(e,t){if(t<65534&&e.subarray&&H)return String.fromCharCode.apply(null,e.length===t?e:e.subarray(0,t));for(var r=\\\"\\\",n=0;n<t;n++)r+=String.fromCharCode(e[n]);return r}(a,n)},J=function(e,t){(t=t||e.length)>e.length&&(t=e.length);for(var r=t-1;r>=0&&128==(192&e[r]);)r--;return r<0||0===r?t:r+Y[e[r]]>t?r:t};var Q=function(){this.input=null,this.next_in=0,this.avail_in=0,this.total_in=0,this.output=null,this.next_out=0,this.avail_out=0,this.total_out=0,this.msg=\\\"\\\",this.state=null,this.data_type=2,this.adler=0},$=function(e,t){var r,n,i,a,o,s,f,l,u,c,h,d,p,m,v,y,w,g,b,k,x,_,A,P,I=e.state;r=e.next_in,A=e.input,n=r+(e.avail_in-5),i=e.next_out,P=e.output,a=i-(t-e.avail_out),o=i+(e.avail_out-257),s=I.dmax,f=I.wsize,l=I.whave,u=I.wnext,c=I.window,h=I.hold,d=I.bits,p=I.lencode,m=I.distcode,v=(1<<I.lenbits)-1,y=(1<<I.distbits)-1;e:do{d<15&&(h+=A[r++]<<d,d+=8,h+=A[r++]<<d,d+=8),w=p[h&v];t:for(;;){if(h>>>=g=w>>>24,d-=g,0===(g=w>>>16&255))P[i++]=65535&w;else{if(!(16&g)){if(0==(64&g)){w=p[(65535&w)+(h&(1<<g)-1)];continue t}if(32&g){I.mode=12;break e}e.msg=\\\"invalid literal/length code\\\",I.mode=30;break e}b=65535&w,(g&=15)&&(d<g&&(h+=A[r++]<<d,d+=8),b+=h&(1<<g)-1,h>>>=g,d-=g),d<15&&(h+=A[r++]<<d,d+=8,h+=A[r++]<<d,d+=8),w=m[h&y];r:for(;;){if(h>>>=g=w>>>24,d-=g,!(16&(g=w>>>16&255))){if(0==(64&g)){w=m[(65535&w)+(h&(1<<g)-1)];continue r}e.msg=\\\"invalid distance code\\\",I.mode=30;break e}if(k=65535&w,d<(g&=15)&&(h+=A[r++]<<d,(d+=8)<g&&(h+=A[r++]<<d,d+=8)),(k+=h&(1<<g)-1)>s){e.msg=\\\"invalid distance too far back\\\",I.mode=30;break e}if(h>>>=g,d-=g,k>(g=i-a)){if((g=k-g)>l&&I.sane){e.msg=\\\"invalid distance too far back\\\",I.mode=30;break e}if(x=0,_=c,0===u){if(x+=f-g,g<b){b-=g;do{P[i++]=c[x++]}while(--g);x=i-k,_=P}}else if(u<g){if(x+=f+u-g,(g-=u)<b){b-=g;do{P[i++]=c[x++]}while(--g);if(x=0,u<b){b-=g=u;do{P[i++]=c[x++]}while(--g);x=i-k,_=P}}}else if(x+=u-g,g<b){b-=g;do{P[i++]=c[x++]}while(--g);x=i-k,_=P}for(;b>2;)P[i++]=_[x++],P[i++]=_[x++],P[i++]=_[x++],b-=3;b&&(P[i++]=_[x++],b>1&&(P[i++]=_[x++]))}else{x=i-k;do{P[i++]=P[x++],P[i++]=P[x++],P[i++]=P[x++],b-=3}while(b>2);b&&(P[i++]=P[x++],b>1&&(P[i++]=P[x++]))}break}}break}}while(r<n&&i<o);r-=b=d>>3,h&=(1<<(d-=b<<3))-1,e.next_in=r,e.next_out=i,e.avail_in=r<n?n-r+5:5-(r-n),e.avail_out=i<o?o-i+257:257-(i-o),I.hold=h,I.bits=d},ee=new Uint16Array([3,4,5,6,7,8,9,10,11,13,15,17,19,23,27,31,35,43,51,59,67,83,99,115,131,163,195,227,258,0,0]),te=new Uint8Array([16,16,16,16,16,16,16,16,17,17,17,17,18,18,18,18,19,19,19,19,20,20,20,20,21,21,21,21,16,72,78]),re=new Uint16Array([1,2,3,4,5,7,9,13,17,25,33,49,65,97,129,193,257,385,513,769,1025,1537,2049,3073,4097,6145,8193,12289,16385,24577,0,0]),ne=new Uint8Array([16,16,16,16,17,17,18,18,19,19,20,20,21,21,22,22,23,23,24,24,25,25,26,26,27,27,28,28,29,29,64,64]),ie=function(e,t,r,n,i,a,o,s){var f,l,u,c,h,d,p,m,v,y=s.bits,w=0,g=0,b=0,k=0,x=0,_=0,A=0,P=0,I=0,U=0,S=null,T=0,D=new Uint16Array(16),E=new Uint16Array(16),B=null,O=0;for(w=0;w<=15;w++)D[w]=0;for(g=0;g<n;g++)D[t[r+g]]++;for(x=y,k=15;k>=1&&0===D[k];k--);if(x>k&&(x=k),0===k)return i[a++]=20971520,i[a++]=20971520,s.bits=1,0;for(b=1;b<k&&0===D[b];b++);for(x<b&&(x=b),P=1,w=1;w<=15;w++)if(P<<=1,(P-=D[w])<0)return-1;if(P>0&&(0===e||1!==k))return-1;for(E[1]=0,w=1;w<15;w++)E[w+1]=E[w]+D[w];for(g=0;g<n;g++)0!==t[r+g]&&(o[E[t[r+g]]++]=g);if(0===e?(S=B=o,d=19):1===e?(S=ee,T-=257,B=te,O-=257,d=256):(S=re,B=ne,d=-1),U=0,g=0,w=b,h=a,_=x,A=0,u=-1,c=(I=1<<x)-1,1===e&&I>852||2===e&&I>592)return 1;for(;;){p=w-A,o[g]<d?(m=0,v=o[g]):o[g]>d?(m=B[O+o[g]],v=S[T+o[g]]):(m=96,v=0),f=1<<w-A,b=l=1<<_;do{i[h+(U>>A)+(l-=f)]=p<<24|m<<16|v|0}while(0!==l);for(f=1<<w-1;U&f;)f>>=1;if(0!==f?(U&=f-1,U+=f):U=0,g++,0==--D[w]){if(w===k)break;w=t[r+o[g]]}if(w>x&&(U&c)!==u){for(0===A&&(A=x),h+=b,P=1<<(_=w-A);_+A<k&&!((P-=D[_+A])<=0);)_++,P<<=1;if(I+=1<<_,1===e&&I>852||2===e&&I>592)return 1;i[u=U&c]=x<<24|_<<16|h-a|0}}return 0!==U&&(i[h+U]=w-A<<24|64<<16|0),s.bits=x,0},ae=j.Z_FINISH,oe=j.Z_BLOCK,se=j.Z_TREES,fe=j.Z_OK,le=j.Z_STREAM_END,ue=j.Z_NEED_DICT,ce=j.Z_STREAM_ERROR,he=j.Z_DATA_ERROR,de=j.Z_MEM_ERROR,pe=j.Z_BUF_ERROR,me=j.Z_DEFLATED,ve=function(e){return(e>>>24&255)+(e>>>8&65280)+((65280&e)<<8)+((255&e)<<24)};function ye(){this.mode=0,this.last=!1,this.wrap=0,this.havedict=!1,this.flags=0,this.dmax=0,this.check=0,this.total=0,this.head=null,this.wbits=0,this.wsize=0,this.whave=0,this.wnext=0,this.window=null,this.hold=0,this.bits=0,this.length=0,this.offset=0,this.extra=0,this.lencode=null,this.distcode=null,this.lenbits=0,this.distbits=0,this.ncode=0,this.nlen=0,this.ndist=0,this.have=0,this.next=null,this.lens=new Uint16Array(320),this.work=new Uint16Array(288),this.lendyn=null,this.distdyn=null,this.sane=0,this.back=0,this.was=0}var we,ge,be=function(e){if(!e||!e.state)return ce;var t=e.state;return e.total_in=e.total_out=t.total=0,e.msg=\\\"\\\",t.wrap&&(e.adler=1&t.wrap),t.mode=1,t.last=0,t.havedict=0,t.dmax=32768,t.head=null,t.hold=0,t.bits=0,t.lencode=t.lendyn=new Int32Array(852),t.distcode=t.distdyn=new Int32Array(592),t.sane=1,t.back=-1,fe},ke=function(e){if(!e||!e.state)return ce;var t=e.state;return t.wsize=0,t.whave=0,t.wnext=0,be(e)},xe=function(e,t){var r;if(!e||!e.state)return ce;var n=e.state;return t<0?(r=0,t=-t):(r=1+(t>>4),t<48&&(t&=15)),t&&(t<8||t>15)?ce:(null!==n.window&&n.wbits!==t&&(n.window=null),n.wrap=r,n.wbits=t,ke(e))},_e=function(e,t){if(!e)return ce;var r=new ye;e.state=r,r.window=null;var n=xe(e,t);return n!==fe&&(e.state=null),n},Ae=!0,Pe=function(e){if(Ae){we=new Int32Array(512),ge=new Int32Array(32);for(var t=0;t<144;)e.lens[t++]=8;for(;t<256;)e.lens[t++]=9;for(;t<280;)e.lens[t++]=7;for(;t<288;)e.lens[t++]=8;for(ie(1,e.lens,0,288,we,0,e.work,{bits:9}),t=0;t<32;)e.lens[t++]=5;ie(2,e.lens,0,32,ge,0,e.work,{bits:5}),Ae=!1}e.lencode=we,e.lenbits=9,e.distcode=ge,e.distbits=5},Ie=function(e,t,r,n){var i,a=e.state;return null===a.window&&(a.wsize=1<<a.wbits,a.wnext=0,a.whave=0,a.window=new Uint8Array(a.wsize)),n>=a.wsize?(a.window.set(t.subarray(r-a.wsize,r),0),a.wnext=0,a.whave=a.wsize):((i=a.wsize-a.wnext)>n&&(i=n),a.window.set(t.subarray(r-n,r-n+i),a.wnext),(n-=i)?(a.window.set(t.subarray(r-n,r),0),a.wnext=n,a.whave=a.wsize):(a.wnext+=i,a.wnext===a.wsize&&(a.wnext=0),a.whave<a.wsize&&(a.whave+=i))),0},Ue={inflateReset:ke,inflateReset2:xe,inflateResetKeep:be,inflateInit:function(e){return _e(e,15)},inflateInit2:_e,inflate:function(e,t){var r,n,i,a,o,s,f,l,u,c,h,d,p,m,v,y,w,g,b,k,x,_,A,P,I=0,U=new Uint8Array(4),S=new Uint8Array([16,17,18,0,8,7,9,6,10,5,11,4,12,3,13,2,14,1,15]);if(!e||!e.state||!e.output||!e.input&&0!==e.avail_in)return ce;12===(r=e.state).mode&&(r.mode=13),o=e.next_out,i=e.output,f=e.avail_out,a=e.next_in,n=e.input,s=e.avail_in,l=r.hold,u=r.bits,c=s,h=f,_=fe;e:for(;;)switch(r.mode){case 1:if(0===r.wrap){r.mode=13;break}for(;u<16;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}if(2&r.wrap&&35615===l){r.check=0,U[0]=255&l,U[1]=l>>>8&255,r.check=F(r.check,U,2,0),l=0,u=0,r.mode=2;break}if(r.flags=0,r.head&&(r.head.done=!1),!(1&r.wrap)||(((255&l)<<8)+(l>>8))%31){e.msg=\\\"incorrect header check\\\",r.mode=30;break}if((15&l)!==me){e.msg=\\\"unknown compression method\\\",r.mode=30;break}if(u-=4,x=8+(15&(l>>>=4)),0===r.wbits)r.wbits=x;else if(x>r.wbits){e.msg=\\\"invalid window size\\\",r.mode=30;break}r.dmax=1<<r.wbits,e.adler=r.check=1,r.mode=512&l?10:12,l=0,u=0;break;case 2:for(;u<16;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}if(r.flags=l,(255&r.flags)!==me){e.msg=\\\"unknown compression method\\\",r.mode=30;break}if(57344&r.flags){e.msg=\\\"unknown header flags set\\\",r.mode=30;break}r.head&&(r.head.text=l>>8&1),512&r.flags&&(U[0]=255&l,U[1]=l>>>8&255,r.check=F(r.check,U,2,0)),l=0,u=0,r.mode=3;case 3:for(;u<32;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}r.head&&(r.head.time=l),512&r.flags&&(U[0]=255&l,U[1]=l>>>8&255,U[2]=l>>>16&255,U[3]=l>>>24&255,r.check=F(r.check,U,4,0)),l=0,u=0,r.mode=4;case 4:for(;u<16;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}r.head&&(r.head.xflags=255&l,r.head.os=l>>8),512&r.flags&&(U[0]=255&l,U[1]=l>>>8&255,r.check=F(r.check,U,2,0)),l=0,u=0,r.mode=5;case 5:if(1024&r.flags){for(;u<16;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}r.length=l,r.head&&(r.head.extra_len=l),512&r.flags&&(U[0]=255&l,U[1]=l>>>8&255,r.check=F(r.check,U,2,0)),l=0,u=0}else r.head&&(r.head.extra=null);r.mode=6;case 6:if(1024&r.flags&&((d=r.length)>s&&(d=s),d&&(r.head&&(x=r.head.extra_len-r.length,r.head.extra||(r.head.extra=new Uint8Array(r.head.extra_len)),r.head.extra.set(n.subarray(a,a+d),x)),512&r.flags&&(r.check=F(r.check,n,d,a)),s-=d,a+=d,r.length-=d),r.length))break e;r.length=0,r.mode=7;case 7:if(2048&r.flags){if(0===s)break e;d=0;do{x=n[a+d++],r.head&&x&&r.length<65536&&(r.head.name+=String.fromCharCode(x))}while(x&&d<s);if(512&r.flags&&(r.check=F(r.check,n,d,a)),s-=d,a+=d,x)break e}else r.head&&(r.head.name=null);r.length=0,r.mode=8;case 8:if(4096&r.flags){if(0===s)break e;d=0;do{x=n[a+d++],r.head&&x&&r.length<65536&&(r.head.comment+=String.fromCharCode(x))}while(x&&d<s);if(512&r.flags&&(r.check=F(r.check,n,d,a)),s-=d,a+=d,x)break e}else r.head&&(r.head.comment=null);r.mode=9;case 9:if(512&r.flags){for(;u<16;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}if(l!==(65535&r.check)){e.msg=\\\"header crc mismatch\\\",r.mode=30;break}l=0,u=0}r.head&&(r.head.hcrc=r.flags>>9&1,r.head.done=!0),e.adler=r.check=0,r.mode=12;break;case 10:for(;u<32;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}e.adler=r.check=ve(l),l=0,u=0,r.mode=11;case 11:if(0===r.havedict)return e.next_out=o,e.avail_out=f,e.next_in=a,e.avail_in=s,r.hold=l,r.bits=u,ue;e.adler=r.check=1,r.mode=12;case 12:if(t===oe||t===se)break e;case 13:if(r.last){l>>>=7&u,u-=7&u,r.mode=27;break}for(;u<3;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}switch(r.last=1&l,u-=1,3&(l>>>=1)){case 0:r.mode=14;break;case 1:if(Pe(r),r.mode=20,t===se){l>>>=2,u-=2;break e}break;case 2:r.mode=17;break;case 3:e.msg=\\\"invalid block type\\\",r.mode=30}l>>>=2,u-=2;break;case 14:for(l>>>=7&u,u-=7&u;u<32;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}if((65535&l)!=(l>>>16^65535)){e.msg=\\\"invalid stored block lengths\\\",r.mode=30;break}if(r.length=65535&l,l=0,u=0,r.mode=15,t===se)break e;case 15:r.mode=16;case 16:if(d=r.length){if(d>s&&(d=s),d>f&&(d=f),0===d)break e;i.set(n.subarray(a,a+d),o),s-=d,a+=d,f-=d,o+=d,r.length-=d;break}r.mode=12;break;case 17:for(;u<14;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}if(r.nlen=257+(31&l),l>>>=5,u-=5,r.ndist=1+(31&l),l>>>=5,u-=5,r.ncode=4+(15&l),l>>>=4,u-=4,r.nlen>286||r.ndist>30){e.msg=\\\"too many length or distance symbols\\\",r.mode=30;break}r.have=0,r.mode=18;case 18:for(;r.have<r.ncode;){for(;u<3;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}r.lens[S[r.have++]]=7&l,l>>>=3,u-=3}for(;r.have<19;)r.lens[S[r.have++]]=0;if(r.lencode=r.lendyn,r.lenbits=7,A={bits:r.lenbits},_=ie(0,r.lens,0,19,r.lencode,0,r.work,A),r.lenbits=A.bits,_){e.msg=\\\"invalid code lengths set\\\",r.mode=30;break}r.have=0,r.mode=19;case 19:for(;r.have<r.nlen+r.ndist;){for(;y=(I=r.lencode[l&(1<<r.lenbits)-1])>>>16&255,w=65535&I,!((v=I>>>24)<=u);){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}if(w<16)l>>>=v,u-=v,r.lens[r.have++]=w;else{if(16===w){for(P=v+2;u<P;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}if(l>>>=v,u-=v,0===r.have){e.msg=\\\"invalid bit length repeat\\\",r.mode=30;break}x=r.lens[r.have-1],d=3+(3&l),l>>>=2,u-=2}else if(17===w){for(P=v+3;u<P;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}u-=v,x=0,d=3+(7&(l>>>=v)),l>>>=3,u-=3}else{for(P=v+7;u<P;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}u-=v,x=0,d=11+(127&(l>>>=v)),l>>>=7,u-=7}if(r.have+d>r.nlen+r.ndist){e.msg=\\\"invalid bit length repeat\\\",r.mode=30;break}for(;d--;)r.lens[r.have++]=x}}if(30===r.mode)break;if(0===r.lens[256]){e.msg=\\\"invalid code -- missing end-of-block\\\",r.mode=30;break}if(r.lenbits=9,A={bits:r.lenbits},_=ie(1,r.lens,0,r.nlen,r.lencode,0,r.work,A),r.lenbits=A.bits,_){e.msg=\\\"invalid literal/lengths set\\\",r.mode=30;break}if(r.distbits=6,r.distcode=r.distdyn,A={bits:r.distbits},_=ie(2,r.lens,r.nlen,r.ndist,r.distcode,0,r.work,A),r.distbits=A.bits,_){e.msg=\\\"invalid distances set\\\",r.mode=30;break}if(r.mode=20,t===se)break e;case 20:r.mode=21;case 21:if(s>=6&&f>=258){e.next_out=o,e.avail_out=f,e.next_in=a,e.avail_in=s,r.hold=l,r.bits=u,$(e,h),o=e.next_out,i=e.output,f=e.avail_out,a=e.next_in,n=e.input,s=e.avail_in,l=r.hold,u=r.bits,12===r.mode&&(r.back=-1);break}for(r.back=0;y=(I=r.lencode[l&(1<<r.lenbits)-1])>>>16&255,w=65535&I,!((v=I>>>24)<=u);){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}if(y&&0==(240&y)){for(g=v,b=y,k=w;y=(I=r.lencode[k+((l&(1<<g+b)-1)>>g)])>>>16&255,w=65535&I,!(g+(v=I>>>24)<=u);){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}l>>>=g,u-=g,r.back+=g}if(l>>>=v,u-=v,r.back+=v,r.length=w,0===y){r.mode=26;break}if(32&y){r.back=-1,r.mode=12;break}if(64&y){e.msg=\\\"invalid literal/length code\\\",r.mode=30;break}r.extra=15&y,r.mode=22;case 22:if(r.extra){for(P=r.extra;u<P;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}r.length+=l&(1<<r.extra)-1,l>>>=r.extra,u-=r.extra,r.back+=r.extra}r.was=r.length,r.mode=23;case 23:for(;y=(I=r.distcode[l&(1<<r.distbits)-1])>>>16&255,w=65535&I,!((v=I>>>24)<=u);){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}if(0==(240&y)){for(g=v,b=y,k=w;y=(I=r.distcode[k+((l&(1<<g+b)-1)>>g)])>>>16&255,w=65535&I,!(g+(v=I>>>24)<=u);){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}l>>>=g,u-=g,r.back+=g}if(l>>>=v,u-=v,r.back+=v,64&y){e.msg=\\\"invalid distance code\\\",r.mode=30;break}r.offset=w,r.extra=15&y,r.mode=24;case 24:if(r.extra){for(P=r.extra;u<P;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}r.offset+=l&(1<<r.extra)-1,l>>>=r.extra,u-=r.extra,r.back+=r.extra}if(r.offset>r.dmax){e.msg=\\\"invalid distance too far back\\\",r.mode=30;break}r.mode=25;case 25:if(0===f)break e;if(d=h-f,r.offset>d){if((d=r.offset-d)>r.whave&&r.sane){e.msg=\\\"invalid distance too far back\\\",r.mode=30;break}d>r.wnext?(d-=r.wnext,p=r.wsize-d):p=r.wnext-d,d>r.length&&(d=r.length),m=r.window}else m=i,p=o-r.offset,d=r.length;d>f&&(d=f),f-=d,r.length-=d;do{i[o++]=m[p++]}while(--d);0===r.length&&(r.mode=21);break;case 26:if(0===f)break e;i[o++]=r.length,f--,r.mode=21;break;case 27:if(r.wrap){for(;u<32;){if(0===s)break e;s--,l|=n[a++]<<u,u+=8}if(h-=f,e.total_out+=h,r.total+=h,h&&(e.adler=r.check=r.flags?F(r.check,i,h,o-h):V(r.check,i,h,o-h)),h=f,(r.flags?l:ve(l))!==r.check){e.msg=\\\"incorrect data check\\\",r.mode=30;break}l=0,u=0}r.mode=28;case 28:if(r.wrap&&r.flags){for(;u<32;){if(0===s)break e;s--,l+=n[a++]<<u,u+=8}if(l!==(4294967295&r.total)){e.msg=\\\"incorrect length check\\\",r.mode=30;break}l=0,u=0}r.mode=29;case 29:_=le;break e;case 30:_=he;break e;case 31:return de;default:return ce}return e.next_out=o,e.avail_out=f,e.next_in=a,e.avail_in=s,r.hold=l,r.bits=u,(r.wsize||h!==e.avail_out&&r.mode<30&&(r.mode<27||t!==ae))&&Ie(e,e.output,e.next_out,h-e.avail_out),c-=e.avail_in,h-=e.avail_out,e.total_in+=c,e.total_out+=h,r.total+=h,r.wrap&&h&&(e.adler=r.check=r.flags?F(r.check,i,h,e.next_out-h):V(r.check,i,h,e.next_out-h)),e.data_type=r.bits+(r.last?64:0)+(12===r.mode?128:0)+(20===r.mode||15===r.mode?256:0),(0===c&&0===h||t===ae)&&_===fe&&(_=pe),_},inflateEnd:function(e){if(!e||!e.state)return ce;var t=e.state;return t.window&&(t.window=null),e.state=null,fe},inflateGetHeader:function(e,t){if(!e||!e.state)return ce;var r=e.state;return 0==(2&r.wrap)?ce:(r.head=t,t.done=!1,fe)},inflateSetDictionary:function(e,t){var r,n=t.length;return e&&e.state?0!==(r=e.state).wrap&&11!==r.mode?ce:11===r.mode&&V(1,t,n,0)!==r.check?he:Ie(e,t,n,n)?(r.mode=31,de):(r.havedict=1,fe):ce},inflateInfo:\\\"pako inflate (from Nodeca project)\\\"};var Se=function(){this.text=0,this.time=0,this.xflags=0,this.os=0,this.extra=null,this.extra_len=0,this.name=\\\"\\\",this.comment=\\\"\\\",this.hcrc=0,this.done=!1},Te=Object.prototype.toString,De=j.Z_NO_FLUSH,Ee=j.Z_FINISH,Be=j.Z_OK,Oe=j.Z_STREAM_END,Me=j.Z_NEED_DICT,Ce=j.Z_STREAM_ERROR,Le=j.Z_DATA_ERROR,Re=j.Z_MEM_ERROR;function Ve(e){this.options=Z({chunkSize:65536,windowBits:15,to:\\\"\\\"},e||{});var t=this.options;t.raw&&t.windowBits>=0&&t.windowBits<16&&(t.windowBits=-t.windowBits,0===t.windowBits&&(t.windowBits=-15)),!(t.windowBits>=0&&t.windowBits<16)||e&&e.windowBits||(t.windowBits+=32),t.windowBits>15&&t.windowBits<48&&0==(15&t.windowBits)&&(t.windowBits|=15),this.err=0,this.msg=\\\"\\\",this.ended=!1,this.chunks=[],this.strm=new Q,this.strm.avail_out=0;var r=Ue.inflateInit2(this.strm,t.windowBits);if(r!==Be)throw new Error(z[r]);if(this.header=new Se,Ue.inflateGetHeader(this.strm,this.header),t.dictionary&&(\\\"string\\\"==typeof t.dictionary?t.dictionary=W(t.dictionary):\\\"[object ArrayBuffer]\\\"===Te.call(t.dictionary)&&(t.dictionary=new Uint8Array(t.dictionary)),t.raw&&(r=Ue.inflateSetDictionary(this.strm,t.dictionary))!==Be))throw new Error(z[r])}function Ge(e,t){var r=new Ve(t);if(r.push(e),r.err)throw r.msg||z[r.err];return r.result}Ve.prototype.push=function(e,t){var r,n,i,a=this.strm,o=this.options.chunkSize,s=this.options.dictionary;if(this.ended)return!1;for(n=t===~~t?t:!0===t?Ee:De,\\\"[object ArrayBuffer]\\\"===Te.call(e)?a.input=new Uint8Array(e):a.input=e,a.next_in=0,a.avail_in=a.input.length;;){for(0===a.avail_out&&(a.output=new Uint8Array(o),a.next_out=0,a.avail_out=o),(r=Ue.inflate(a,n))===Me&&s&&((r=Ue.inflateSetDictionary(a,s))===Be?r=Ue.inflate(a,n):r===Le&&(r=Me));a.avail_in>0&&r===Oe&&a.state.wrap>0&&0!==e[a.next_in];)Ue.inflateReset(a),r=Ue.inflate(a,n);switch(r){case Ce:case Le:case Me:case Re:return this.onEnd(r),this.ended=!0,!1}if(i=a.avail_out,a.next_out&&(0===a.avail_out||r===Oe))if(\\\"string\\\"===this.options.to){var f=J(a.output,a.next_out),l=a.next_out-f,u=q(a.output,f);a.next_out=l,a.avail_out=o-l,l&&a.output.set(a.output.subarray(f,f+l),0),this.onData(u)}else this.onData(a.output.length===a.next_out?a.output:a.output.subarray(0,a.next_out));if(r!==Be||0!==i){if(r===Oe)return r=Ue.inflateEnd(this.strm),this.onEnd(r),this.ended=!0,!0;if(0===a.avail_in)break}}return!0},Ve.prototype.onData=function(e){this.chunks.push(e)},Ve.prototype.onEnd=function(e){e===Be&&(\\\"string\\\"===this.options.to?this.result=this.chunks.join(\\\"\\\"):this.result=K(this.chunks)),this.chunks=[],this.err=e,this.msg=this.strm.msg};var Fe={Inflate:Ve,inflate:Ge,inflateRaw:function(e,t){return(t=t||{}).raw=!0,Ge(e,t)},ungzip:Ge,constants:j}.inflate;function ze(e){var t=function(){if(\\\"undefined\\\"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if(\\\"function\\\"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var r,n=v(e);if(t){var i=v(this).constructor;r=Reflect.construct(n,arguments,i)}else r=n.apply(this,arguments);return m(this,r)}}var je=function(e){p(r,b);var t=ze(r);function r(){return u(this,r),t.apply(this,arguments)}return h(r,[{key:\\\"decodeBlock\\\",value:function(e){return Fe(new Uint8Array(e)).buffer}}]),r}(),Ne=Object.freeze({__proto__:null,default:je});function Ze(e){var t=function(){if(\\\"undefined\\\"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if(\\\"function\\\"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var r,n=v(e);if(t){var i=v(this).constructor;r=Reflect.construct(n,arguments,i)}else r=n.apply(this,arguments);return m(this,r)}}var Ke,He=function(e){p(r,b);var t=Ze(r);function r(){return u(this,r),t.apply(this,arguments)}return h(r,[{key:\\\"decodeBlock\\\",value:function(e){for(var t=new DataView(e),r=[],n=0;n<e.byteLength;++n){var i=t.getInt8(n);if(i<0){var a=t.getUint8(n+1);i=-i;for(var o=0;o<=i;++o)r.push(a);n+=1}else{for(var s=0;s<=i;++s)r.push(t.getUint8(n+s+1));n+=i+1}}return new Uint8Array(r).buffer}}]),r}(),Ye=Object.freeze({__proto__:null,default:He}),Xe={exports:{}};Ke=Xe,\\n/* Copyright 2015-2021 Esri. Licensed under the Apache License, Version 2.0 (the \\\"License\\\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 @preserve */\\nfunction(){var e,t,r,n,i,a,o,s,f,l,u,c,h,d,p,m,v=(e={defaultNoDataValue:-34027999387901484e22,decode:function(a,o){var s=(o=o||{}).encodedMaskData||null===o.encodedMaskData,f=i(a,o.inputOffset||0,s),l=null!==o.noDataValue?o.noDataValue:e.defaultNoDataValue,u=t(f,o.pixelType||Float32Array,o.encodedMaskData,l,o.returnMask),c={width:f.width,height:f.height,pixelData:u.resultPixels,minValue:u.minValue,maxValue:f.pixels.maxValue,noDataValue:l};return u.resultMask&&(c.maskData=u.resultMask),o.returnEncodedMask&&f.mask&&(c.encodedMaskData=f.mask.bitset?f.mask.bitset:null),o.returnFileInfo&&(c.fileInfo=r(f),o.computeUsedBitDepths&&(c.fileInfo.bitDepths=n(f))),c}},t=function(e,t,r,n,i){var o,s,f,l=0,u=e.pixels.numBlocksX,c=e.pixels.numBlocksY,h=Math.floor(e.width/u),d=Math.floor(e.height/c),p=2*e.maxZError,m=Number.MAX_VALUE;r=r||(e.mask?e.mask.bitset:null),s=new t(e.width*e.height),i&&r&&(f=new Uint8Array(e.width*e.height));for(var v,y,w=new Float32Array(h*d),g=0;g<=c;g++){var b=g!==c?d:e.height%c;if(0!==b)for(var k=0;k<=u;k++){var x=k!==u?h:e.width%u;if(0!==x){var _,A,P,I,U=g*e.width*d+k*h,S=e.width-x,T=e.pixels.blocks[l];if(T.encoding<2?(0===T.encoding?_=T.rawData:(a(T.stuffedData,T.bitsPerPixel,T.numValidPixels,T.offset,p,w,e.pixels.maxValue),_=w),A=0):P=2===T.encoding?0:T.offset,r)for(y=0;y<b;y++){for(7&U&&(I=r[U>>3],I<<=7&U),v=0;v<x;v++)7&U||(I=r[U>>3]),128&I?(f&&(f[U]=1),m=m>(o=T.encoding<2?_[A++]:P)?o:m,s[U++]=o):(f&&(f[U]=0),s[U++]=n),I<<=1;U+=S}else if(T.encoding<2)for(y=0;y<b;y++){for(v=0;v<x;v++)m=m>(o=_[A++])?o:m,s[U++]=o;U+=S}else for(m=m>P?P:m,y=0;y<b;y++){for(v=0;v<x;v++)s[U++]=P;U+=S}if(1===T.encoding&&A!==T.numValidPixels)throw\\\"Block and Mask do not match\\\";l++}}}return{resultPixels:s,resultMask:f,minValue:m}},r=function(e){return{fileIdentifierString:e.fileIdentifierString,fileVersion:e.fileVersion,imageType:e.imageType,height:e.height,width:e.width,maxZError:e.maxZError,eofOffset:e.eofOffset,mask:e.mask?{numBlocksX:e.mask.numBlocksX,numBlocksY:e.mask.numBlocksY,numBytes:e.mask.numBytes,maxValue:e.mask.maxValue}:null,pixels:{numBlocksX:e.pixels.numBlocksX,numBlocksY:e.pixels.numBlocksY,numBytes:e.pixels.numBytes,maxValue:e.pixels.maxValue,noDataValue:e.noDataValue}}},n=function(e){for(var t=e.pixels.numBlocksX*e.pixels.numBlocksY,r={},n=0;n<t;n++){var i=e.pixels.blocks[n];0===i.encoding?r.float32=!0:1===i.encoding?r[i.bitsPerPixel]=!0:r[0]=!0}return Object.keys(r)},i=function(e,t,r){var n={},i=new Uint8Array(e,t,10);if(n.fileIdentifierString=String.fromCharCode.apply(null,i),\\\"CntZImage\\\"!==n.fileIdentifierString.trim())throw\\\"Unexpected file identifier string: \\\"+n.fileIdentifierString;t+=10;var a=new DataView(e,t,24);if(n.fileVersion=a.getInt32(0,!0),n.imageType=a.getInt32(4,!0),n.height=a.getUint32(8,!0),n.width=a.getUint32(12,!0),n.maxZError=a.getFloat64(16,!0),t+=24,!r)if(a=new DataView(e,t,16),n.mask={},n.mask.numBlocksY=a.getUint32(0,!0),n.mask.numBlocksX=a.getUint32(4,!0),n.mask.numBytes=a.getUint32(8,!0),n.mask.maxValue=a.getFloat32(12,!0),t+=16,n.mask.numBytes>0){var o=new Uint8Array(Math.ceil(n.width*n.height/8)),s=(a=new DataView(e,t,n.mask.numBytes)).getInt16(0,!0),f=2,l=0;do{if(s>0)for(;s--;)o[l++]=a.getUint8(f++);else{var u=a.getUint8(f++);for(s=-s;s--;)o[l++]=u}s=a.getInt16(f,!0),f+=2}while(f<n.mask.numBytes);if(-32768!==s||l<o.length)throw\\\"Unexpected end of mask RLE encoding\\\";n.mask.bitset=o,t+=n.mask.numBytes}else 0==(n.mask.numBytes|n.mask.numBlocksY|n.mask.maxValue)&&(n.mask.bitset=new Uint8Array(Math.ceil(n.width*n.height/8)));a=new DataView(e,t,16),n.pixels={},n.pixels.numBlocksY=a.getUint32(0,!0),n.pixels.numBlocksX=a.getUint32(4,!0),n.pixels.numBytes=a.getUint32(8,!0),n.pixels.maxValue=a.getFloat32(12,!0),t+=16;var c=n.pixels.numBlocksX,h=n.pixels.numBlocksY,d=c+(n.width%c>0?1:0),p=h+(n.height%h>0?1:0);n.pixels.blocks=new Array(d*p);for(var m=0,v=0;v<p;v++)for(var y=0;y<d;y++){var w=0,g=e.byteLength-t;a=new DataView(e,t,Math.min(10,g));var b={};n.pixels.blocks[m++]=b;var k=a.getUint8(0);if(w++,b.encoding=63&k,b.encoding>3)throw\\\"Invalid block encoding (\\\"+b.encoding+\\\")\\\";if(2!==b.encoding){if(0!==k&&2!==k){if(k>>=6,b.offsetType=k,2===k)b.offset=a.getInt8(1),w++;else if(1===k)b.offset=a.getInt16(1,!0),w+=2;else{if(0!==k)throw\\\"Invalid block offset type\\\";b.offset=a.getFloat32(1,!0),w+=4}if(1===b.encoding)if(k=a.getUint8(w),w++,b.bitsPerPixel=63&k,k>>=6,b.numValidPixelsType=k,2===k)b.numValidPixels=a.getUint8(w),w++;else if(1===k)b.numValidPixels=a.getUint16(w,!0),w+=2;else{if(0!==k)throw\\\"Invalid valid pixel count type\\\";b.numValidPixels=a.getUint32(w,!0),w+=4}}var x;if(t+=w,3!==b.encoding)if(0===b.encoding){var _=(n.pixels.numBytes-1)/4;if(_!==Math.floor(_))throw\\\"uncompressed block has invalid length\\\";x=new ArrayBuffer(4*_),new Uint8Array(x).set(new Uint8Array(e,t,4*_));var A=new Float32Array(x);b.rawData=A,t+=4*_}else if(1===b.encoding){var P=Math.ceil(b.numValidPixels*b.bitsPerPixel/8),I=Math.ceil(P/4);x=new ArrayBuffer(4*I),new Uint8Array(x).set(new Uint8Array(e,t,P)),b.stuffedData=new Uint32Array(x),t+=P}}else t++}return n.eofOffset=t,n},a=function(e,t,r,n,i,a,o){var s,f,l,u=(1<<t)-1,c=0,h=0,d=Math.ceil((o-n)/i),p=4*e.length-Math.ceil(t*r/8);for(e[e.length-1]<<=8*p,s=0;s<r;s++){if(0===h&&(l=e[c++],h=32),h>=t)f=l>>>h-t&u,h-=t;else{var m=t-h;f=(l&u)<<m&u,f+=(l=e[c++])>>>(h=32-m)}a[s]=f<d?n+f*i:o}return a},e),y=(o=function(e,t,r,n,i,a,o,s){var f,l,u,c,h,d=(1<<r)-1,p=0,m=0,v=4*e.length-Math.ceil(r*n/8);if(e[e.length-1]<<=8*v,i)for(f=0;f<n;f++)0===m&&(u=e[p++],m=32),m>=r?(l=u>>>m-r&d,m-=r):(l=(u&d)<<(c=r-m)&d,l+=(u=e[p++])>>>(m=32-c)),t[f]=i[l];else for(h=Math.ceil((s-a)/o),f=0;f<n;f++)0===m&&(u=e[p++],m=32),m>=r?(l=u>>>m-r&d,m-=r):(l=(u&d)<<(c=r-m)&d,l+=(u=e[p++])>>>(m=32-c)),t[f]=l<h?a+l*o:s},s=function(e,t,r,n,i,a){var o,s=(1<<t)-1,f=0,l=0,u=0,c=0,h=0,d=[],p=4*e.length-Math.ceil(t*r/8);e[e.length-1]<<=8*p;var m=Math.ceil((a-n)/i);for(l=0;l<r;l++)0===c&&(o=e[f++],c=32),c>=t?(h=o>>>c-t&s,c-=t):(h=(o&s)<<(u=t-c)&s,h+=(o=e[f++])>>>(c=32-u)),d[l]=h<m?n+h*i:a;return d.unshift(n),d},f=function(e,t,r,n,i,a,o,s){var f,l,u,c,h=(1<<r)-1,d=0,p=0,m=0;if(i)for(f=0;f<n;f++)0===p&&(u=e[d++],p=32,m=0),p>=r?(l=u>>>m&h,p-=r,m+=r):(l=u>>>m&h,p=32-(c=r-p),l|=((u=e[d++])&(1<<c)-1)<<r-c,m=c),t[f]=i[l];else{var v=Math.ceil((s-a)/o);for(f=0;f<n;f++)0===p&&(u=e[d++],p=32,m=0),p>=r?(l=u>>>m&h,p-=r,m+=r):(l=u>>>m&h,p=32-(c=r-p),l|=((u=e[d++])&(1<<c)-1)<<r-c,m=c),t[f]=l<v?a+l*o:s}return t},l=function(e,t,r,n,i,a){var o,s=(1<<t)-1,f=0,l=0,u=0,c=0,h=0,d=0,p=[],m=Math.ceil((a-n)/i);for(l=0;l<r;l++)0===c&&(o=e[f++],c=32,d=0),c>=t?(h=o>>>d&s,c-=t,d+=t):(h=o>>>d&s,c=32-(u=t-c),h|=((o=e[f++])&(1<<u)-1)<<t-u,d=u),p[l]=h<m?n+h*i:a;return p.unshift(n),p},u=function(e,t,r,n){var i,a,o,s,f=(1<<r)-1,l=0,u=0,c=4*e.length-Math.ceil(r*n/8);for(e[e.length-1]<<=8*c,i=0;i<n;i++)0===u&&(o=e[l++],u=32),u>=r?(a=o>>>u-r&f,u-=r):(a=(o&f)<<(s=r-u)&f,a+=(o=e[l++])>>>(u=32-s)),t[i]=a;return t},c=function(e,t,r,n){var i,a,o,s,f=(1<<r)-1,l=0,u=0,c=0;for(i=0;i<n;i++)0===u&&(o=e[l++],u=32,c=0),u>=r?(a=o>>>c&f,u-=r,c+=r):(a=o>>>c&f,u=32-(s=r-u),a|=((o=e[l++])&(1<<s)-1)<<r-s,c=s),t[i]=a;return t},h={HUFFMAN_LUT_BITS_MAX:12,computeChecksumFletcher32:function(e){for(var t=65535,r=65535,n=e.length,i=Math.floor(n/2),a=0;i;){var o=i>=359?359:i;i-=o;do{t+=e[a++]<<8,r+=t+=e[a++]}while(--o);t=(65535&t)+(t>>>16),r=(65535&r)+(r>>>16)}return 1&n&&(r+=t+=e[a]<<8),((r=(65535&r)+(r>>>16))<<16|(t=(65535&t)+(t>>>16)))>>>0},readHeaderInfo:function(e,t){var r=t.ptr,n=new Uint8Array(e,r,6),i={};if(i.fileIdentifierString=String.fromCharCode.apply(null,n),0!==i.fileIdentifierString.lastIndexOf(\\\"Lerc2\\\",0))throw\\\"Unexpected file identifier string (expect Lerc2 ): \\\"+i.fileIdentifierString;r+=6;var a,o=new DataView(e,r,8),s=o.getInt32(0,!0);if(i.fileVersion=s,r+=4,s>=3&&(i.checksum=o.getUint32(4,!0),r+=4),o=new DataView(e,r,12),i.height=o.getUint32(0,!0),i.width=o.getUint32(4,!0),r+=8,s>=4?(i.numDims=o.getUint32(8,!0),r+=4):i.numDims=1,o=new DataView(e,r,40),i.numValidPixel=o.getUint32(0,!0),i.microBlockSize=o.getInt32(4,!0),i.blobSize=o.getInt32(8,!0),i.imageType=o.getInt32(12,!0),i.maxZError=o.getFloat64(16,!0),i.zMin=o.getFloat64(24,!0),i.zMax=o.getFloat64(32,!0),r+=40,t.headerInfo=i,t.ptr=r,s>=3&&(a=s>=4?52:48,this.computeChecksumFletcher32(new Uint8Array(e,r-a,i.blobSize-14))!==i.checksum))throw\\\"Checksum failed.\\\";return!0},checkMinMaxRanges:function(e,t){var r=t.headerInfo,n=this.getDataTypeArray(r.imageType),i=r.numDims*this.getDataTypeSize(r.imageType),a=this.readSubArray(e,t.ptr,n,i),o=this.readSubArray(e,t.ptr+i,n,i);t.ptr+=2*i;var s,f=!0;for(s=0;s<r.numDims;s++)if(a[s]!==o[s]){f=!1;break}return r.minValues=a,r.maxValues=o,f},readSubArray:function(e,t,r,n){var i;if(r===Uint8Array)i=new Uint8Array(e,t,n);else{var a=new ArrayBuffer(n);new Uint8Array(a).set(new Uint8Array(e,t,n)),i=new r(a)}return i},readMask:function(e,t){var r,n,i=t.ptr,a=t.headerInfo,o=a.width*a.height,s=a.numValidPixel,f=new DataView(e,i,4),l={};if(l.numBytes=f.getUint32(0,!0),i+=4,(0===s||o===s)&&0!==l.numBytes)throw\\\"invalid mask\\\";if(0===s)r=new Uint8Array(Math.ceil(o/8)),l.bitset=r,n=new Uint8Array(o),t.pixels.resultMask=n,i+=l.numBytes;else if(l.numBytes>0){r=new Uint8Array(Math.ceil(o/8));var u=(f=new DataView(e,i,l.numBytes)).getInt16(0,!0),c=2,h=0,d=0;do{if(u>0)for(;u--;)r[h++]=f.getUint8(c++);else for(d=f.getUint8(c++),u=-u;u--;)r[h++]=d;u=f.getInt16(c,!0),c+=2}while(c<l.numBytes);if(-32768!==u||h<r.length)throw\\\"Unexpected end of mask RLE encoding\\\";n=new Uint8Array(o);var p=0,m=0;for(m=0;m<o;m++)7&m?(p=r[m>>3],p<<=7&m):p=r[m>>3],128&p&&(n[m]=1);t.pixels.resultMask=n,l.bitset=r,i+=l.numBytes}return t.ptr=i,t.mask=l,!0},readDataOneSweep:function(e,t,r,n){var i,a=t.ptr,o=t.headerInfo,s=o.numDims,f=o.width*o.height,l=o.imageType,u=o.numValidPixel*h.getDataTypeSize(l)*s,c=t.pixels.resultMask;if(r===Uint8Array)i=new Uint8Array(e,a,u);else{var d=new ArrayBuffer(u);new Uint8Array(d).set(new Uint8Array(e,a,u)),i=new r(d)}if(i.length===f*s)t.pixels.resultPixels=n?h.swapDimensionOrder(i,f,s,r,!0):i;else{t.pixels.resultPixels=new r(f*s);var p=0,m=0,v=0,y=0;if(s>1){if(n){for(m=0;m<f;m++)if(c[m])for(y=m,v=0;v<s;v++,y+=f)t.pixels.resultPixels[y]=i[p++]}else for(m=0;m<f;m++)if(c[m])for(y=m*s,v=0;v<s;v++)t.pixels.resultPixels[y+v]=i[p++]}else for(m=0;m<f;m++)c[m]&&(t.pixels.resultPixels[m]=i[p++])}return a+=u,t.ptr=a,!0},readHuffmanTree:function(e,t){var r=this.HUFFMAN_LUT_BITS_MAX,n=new DataView(e,t.ptr,16);if(t.ptr+=16,n.getInt32(0,!0)<2)throw\\\"unsupported Huffman version\\\";var i=n.getInt32(4,!0),a=n.getInt32(8,!0),o=n.getInt32(12,!0);if(a>=o)return!1;var s=new Uint32Array(o-a);h.decodeBits(e,t,s);var f,l,u,c,p=[];for(f=a;f<o;f++)p[l=f-(f<i?0:i)]={first:s[f-a],second:null};var m=e.byteLength-t.ptr,v=Math.ceil(m/4),y=new ArrayBuffer(4*v);new Uint8Array(y).set(new Uint8Array(e,t.ptr,m));var w,g=new Uint32Array(y),b=0,k=0;for(w=g[0],f=a;f<o;f++)(c=p[l=f-(f<i?0:i)].first)>0&&(p[l].second=w<<b>>>32-c,32-b>=c?32===(b+=c)&&(b=0,w=g[++k]):(b+=c-32,w=g[++k],p[l].second|=w>>>32-b));var x=0,_=0,A=new d;for(f=0;f<p.length;f++)void 0!==p[f]&&(x=Math.max(x,p[f].first));_=x>=r?r:x;var P,I,U,S,T,D=[];for(f=a;f<o;f++)if((c=p[l=f-(f<i?0:i)].first)>0)if(P=[c,l],c<=_)for(I=p[l].second<<_-c,U=1<<_-c,u=0;u<U;u++)D[I|u]=P;else for(I=p[l].second,T=A,S=c-1;S>=0;S--)I>>>S&1?(T.right||(T.right=new d),T=T.right):(T.left||(T.left=new d),T=T.left),0!==S||T.val||(T.val=P[1]);return{decodeLut:D,numBitsLUTQick:_,numBitsLUT:x,tree:A,stuffedData:g,srcPtr:k,bitPos:b}},readHuffman:function(e,t,r,n){var i,a,o,s,f,l,u,c,d,p=t.headerInfo.numDims,m=t.headerInfo.height,v=t.headerInfo.width,y=v*m,w=this.readHuffmanTree(e,t),g=w.decodeLut,b=w.tree,k=w.stuffedData,x=w.srcPtr,_=w.bitPos,A=w.numBitsLUTQick,P=w.numBitsLUT,I=0===t.headerInfo.imageType?128:0,U=t.pixels.resultMask,S=0;_>0&&(x++,_=0);var T,D=k[x],E=1===t.encodeMode,B=new r(y*p),O=B;if(p<2||E){for(T=0;T<p;T++)if(p>1&&(O=new r(B.buffer,y*T,y),S=0),t.headerInfo.numValidPixel===v*m)for(c=0,l=0;l<m;l++)for(u=0;u<v;u++,c++){if(a=0,f=s=D<<_>>>32-A,32-_<A&&(f=s|=k[x+1]>>>64-_-A),g[f])a=g[f][1],_+=g[f][0];else for(f=s=D<<_>>>32-P,32-_<P&&(f=s|=k[x+1]>>>64-_-P),i=b,d=0;d<P;d++)if(!(i=s>>>P-d-1&1?i.right:i.left).left&&!i.right){a=i.val,_=_+d+1;break}_>=32&&(_-=32,D=k[++x]),o=a-I,E?(o+=u>0?S:l>0?O[c-v]:S,o&=255,O[c]=o,S=o):O[c]=o}else for(c=0,l=0;l<m;l++)for(u=0;u<v;u++,c++)if(U[c]){if(a=0,f=s=D<<_>>>32-A,32-_<A&&(f=s|=k[x+1]>>>64-_-A),g[f])a=g[f][1],_+=g[f][0];else for(f=s=D<<_>>>32-P,32-_<P&&(f=s|=k[x+1]>>>64-_-P),i=b,d=0;d<P;d++)if(!(i=s>>>P-d-1&1?i.right:i.left).left&&!i.right){a=i.val,_=_+d+1;break}_>=32&&(_-=32,D=k[++x]),o=a-I,E?(u>0&&U[c-1]?o+=S:l>0&&U[c-v]?o+=O[c-v]:o+=S,o&=255,O[c]=o,S=o):O[c]=o}}else for(c=0,l=0;l<m;l++)for(u=0;u<v;u++)if(c=l*v+u,!U||U[c])for(T=0;T<p;T++,c+=y){if(a=0,f=s=D<<_>>>32-A,32-_<A&&(f=s|=k[x+1]>>>64-_-A),g[f])a=g[f][1],_+=g[f][0];else for(f=s=D<<_>>>32-P,32-_<P&&(f=s|=k[x+1]>>>64-_-P),i=b,d=0;d<P;d++)if(!(i=s>>>P-d-1&1?i.right:i.left).left&&!i.right){a=i.val,_=_+d+1;break}_>=32&&(_-=32,D=k[++x]),o=a-I,O[c]=o}t.ptr=t.ptr+4*(x+1)+(_>0?4:0),t.pixels.resultPixels=B,p>1&&!n&&(t.pixels.resultPixels=h.swapDimensionOrder(B,y,p,r))},decodeBits:function(e,t,r,n,i){var a=t.headerInfo,h=a.fileVersion,d=0,p=e.byteLength-t.ptr>=5?5:e.byteLength-t.ptr,m=new DataView(e,t.ptr,p),v=m.getUint8(0);d++;var y=v>>6,w=0===y?4:3-y,g=(32&v)>0,b=31&v,k=0;if(1===w)k=m.getUint8(d),d++;else if(2===w)k=m.getUint16(d,!0),d+=2;else{if(4!==w)throw\\\"Invalid valid pixel count type\\\";k=m.getUint32(d,!0),d+=4}var x,_,A,P,I,U,S,T,D,E=2*a.maxZError,B=a.numDims>1?a.maxValues[i]:a.zMax;if(g){for(t.counter.lut++,T=m.getUint8(d),d++,P=Math.ceil((T-1)*b/8),I=Math.ceil(P/4),_=new ArrayBuffer(4*I),A=new Uint8Array(_),t.ptr+=d,A.set(new Uint8Array(e,t.ptr,P)),S=new Uint32Array(_),t.ptr+=P,D=0;T-1>>>D;)D++;P=Math.ceil(k*D/8),I=Math.ceil(P/4),_=new ArrayBuffer(4*I),(A=new Uint8Array(_)).set(new Uint8Array(e,t.ptr,P)),x=new Uint32Array(_),t.ptr+=P,U=h>=3?l(S,b,T-1,n,E,B):s(S,b,T-1,n,E,B),h>=3?f(x,r,D,k,U):o(x,r,D,k,U)}else t.counter.bitstuffer++,D=b,t.ptr+=d,D>0&&(P=Math.ceil(k*D/8),I=Math.ceil(P/4),_=new ArrayBuffer(4*I),(A=new Uint8Array(_)).set(new Uint8Array(e,t.ptr,P)),x=new Uint32Array(_),t.ptr+=P,h>=3?null==n?c(x,r,D,k):f(x,r,D,k,!1,n,E,B):null==n?u(x,r,D,k):o(x,r,D,k,!1,n,E,B))},readTiles:function(e,t,r,n){var i=t.headerInfo,a=i.width,o=i.height,s=a*o,f=i.microBlockSize,l=i.imageType,u=h.getDataTypeSize(l),c=Math.ceil(a/f),d=Math.ceil(o/f);t.pixels.numBlocksY=d,t.pixels.numBlocksX=c,t.pixels.ptr=0;var p,m,v,y,w,g,b,k,x,_,A=0,P=0,I=0,U=0,S=0,T=0,D=0,E=0,B=0,O=0,M=0,C=0,L=0,R=0,V=0,G=new r(f*f),F=o%f||f,z=a%f||f,j=i.numDims,N=t.pixels.resultMask,Z=t.pixels.resultPixels,K=i.fileVersion>=5?14:15,H=i.zMax;for(I=0;I<d;I++)for(S=I!==d-1?f:F,U=0;U<c;U++)for(O=I*a*f+U*f,M=a-(T=U!==c-1?f:z),k=0;k<j;k++){if(j>1?(_=Z,O=I*a*f+U*f,Z=new r(t.pixels.resultPixels.buffer,s*k*u,s),H=i.maxValues[k]):_=null,D=e.byteLength-t.ptr,m={},V=0,E=(p=new DataView(e,t.ptr,Math.min(10,D))).getUint8(0),V++,x=i.fileVersion>=5?4&E:0,B=E>>6&255,(E>>2&K)!=(U*f>>3&K))throw\\\"integrity issue\\\";if(x&&0===k)throw\\\"integrity issue\\\";if((w=3&E)>3)throw t.ptr+=V,\\\"Invalid block encoding (\\\"+w+\\\")\\\";if(2!==w)if(0===w){if(x)throw\\\"integrity issue\\\";if(t.counter.uncompressed++,t.ptr+=V,C=(C=S*T*u)<(L=e.byteLength-t.ptr)?C:L,v=new ArrayBuffer(C%u==0?C:C+u-C%u),new Uint8Array(v).set(new Uint8Array(e,t.ptr,C)),y=new r(v),R=0,N)for(A=0;A<S;A++){for(P=0;P<T;P++)N[O]&&(Z[O]=y[R++]),O++;O+=M}else for(A=0;A<S;A++){for(P=0;P<T;P++)Z[O++]=y[R++];O+=M}t.ptr+=R*u}else if(g=h.getDataTypeUsed(x&&l<6?4:l,B),b=h.getOnePixel(m,V,g,p),V+=h.getDataTypeSize(g),3===w)if(t.ptr+=V,t.counter.constantoffset++,N)for(A=0;A<S;A++){for(P=0;P<T;P++)N[O]&&(Z[O]=x?Math.min(H,_[O]+b):b),O++;O+=M}else for(A=0;A<S;A++){for(P=0;P<T;P++)Z[O]=x?Math.min(H,_[O]+b):b,O++;O+=M}else if(t.ptr+=V,h.decodeBits(e,t,G,b,k),V=0,x)if(N)for(A=0;A<S;A++){for(P=0;P<T;P++)N[O]&&(Z[O]=G[V++]+_[O]),O++;O+=M}else for(A=0;A<S;A++){for(P=0;P<T;P++)Z[O]=G[V++]+_[O],O++;O+=M}else if(N)for(A=0;A<S;A++){for(P=0;P<T;P++)N[O]&&(Z[O]=G[V++]),O++;O+=M}else for(A=0;A<S;A++){for(P=0;P<T;P++)Z[O++]=G[V++];O+=M}else{if(x)if(N)for(A=0;A<S;A++)for(P=0;P<T;P++)N[O]&&(Z[O]=_[O]),O++;else for(A=0;A<S;A++)for(P=0;P<T;P++)Z[O]=_[O],O++;t.counter.constant++,t.ptr+=V}}j>1&&!n&&(t.pixels.resultPixels=h.swapDimensionOrder(t.pixels.resultPixels,s,j,r))},formatFileInfo:function(e){return{fileIdentifierString:e.headerInfo.fileIdentifierString,fileVersion:e.headerInfo.fileVersion,imageType:e.headerInfo.imageType,height:e.headerInfo.height,width:e.headerInfo.width,numValidPixel:e.headerInfo.numValidPixel,microBlockSize:e.headerInfo.microBlockSize,blobSize:e.headerInfo.blobSize,maxZError:e.headerInfo.maxZError,pixelType:h.getPixelType(e.headerInfo.imageType),eofOffset:e.eofOffset,mask:e.mask?{numBytes:e.mask.numBytes}:null,pixels:{numBlocksX:e.pixels.numBlocksX,numBlocksY:e.pixels.numBlocksY,maxValue:e.headerInfo.zMax,minValue:e.headerInfo.zMin,noDataValue:e.noDataValue}}},constructConstantSurface:function(e,t){var r=e.headerInfo.zMax,n=e.headerInfo.zMin,i=e.headerInfo.maxValues,a=e.headerInfo.numDims,o=e.headerInfo.height*e.headerInfo.width,s=0,f=0,l=0,u=e.pixels.resultMask,c=e.pixels.resultPixels;if(u)if(a>1){if(t)for(s=0;s<a;s++)for(l=s*o,r=i[s],f=0;f<o;f++)u[f]&&(c[l+f]=r);else for(f=0;f<o;f++)if(u[f])for(l=f*a,s=0;s<a;s++)c[l+a]=i[s]}else for(f=0;f<o;f++)u[f]&&(c[f]=r);else if(a>1&&n!==r)if(t)for(s=0;s<a;s++)for(l=s*o,r=i[s],f=0;f<o;f++)c[l+f]=r;else for(f=0;f<o;f++)for(l=f*a,s=0;s<a;s++)c[l+s]=i[s];else for(f=0;f<o*a;f++)c[f]=r},getDataTypeArray:function(e){var t;switch(e){case 0:t=Int8Array;break;case 1:t=Uint8Array;break;case 2:t=Int16Array;break;case 3:t=Uint16Array;break;case 4:t=Int32Array;break;case 5:t=Uint32Array;break;case 6:default:t=Float32Array;break;case 7:t=Float64Array}return t},getPixelType:function(e){var t;switch(e){case 0:t=\\\"S8\\\";break;case 1:t=\\\"U8\\\";break;case 2:t=\\\"S16\\\";break;case 3:t=\\\"U16\\\";break;case 4:t=\\\"S32\\\";break;case 5:t=\\\"U32\\\";break;case 6:default:t=\\\"F32\\\";break;case 7:t=\\\"F64\\\"}return t},isValidPixelValue:function(e,t){if(null==t)return!1;var r;switch(e){case 0:r=t>=-128&&t<=127;break;case 1:r=t>=0&&t<=255;break;case 2:r=t>=-32768&&t<=32767;break;case 3:r=t>=0&&t<=65536;break;case 4:r=t>=-2147483648&&t<=2147483647;break;case 5:r=t>=0&&t<=4294967296;break;case 6:r=t>=-34027999387901484e22&&t<=34027999387901484e22;break;case 7:r=t>=-17976931348623157e292&&t<=17976931348623157e292;break;default:r=!1}return r},getDataTypeSize:function(e){var t=0;switch(e){case 0:case 1:t=1;break;case 2:case 3:t=2;break;case 4:case 5:case 6:t=4;break;case 7:t=8;break;default:t=e}return t},getDataTypeUsed:function(e,t){var r=e;switch(e){case 2:case 4:r=e-t;break;case 3:case 5:r=e-2*t;break;case 6:r=0===t?e:1===t?2:1;break;case 7:r=0===t?e:e-2*t+1;break;default:r=e}return r},getOnePixel:function(e,t,r,n){var i=0;switch(r){case 0:i=n.getInt8(t);break;case 1:i=n.getUint8(t);break;case 2:i=n.getInt16(t,!0);break;case 3:i=n.getUint16(t,!0);break;case 4:i=n.getInt32(t,!0);break;case 5:i=n.getUInt32(t,!0);break;case 6:i=n.getFloat32(t,!0);break;case 7:i=n.getFloat64(t,!0);break;default:throw\\\"the decoder does not understand this pixel type\\\"}return i},swapDimensionOrder:function(e,t,r,n,i){var a=0,o=0,s=0,f=0,l=e;if(r>1)if(l=new n(t*r),i)for(a=0;a<t;a++)for(f=a,s=0;s<r;s++,f+=t)l[f]=e[o++];else for(a=0;a<t;a++)for(f=a,s=0;s<r;s++,f+=t)l[o++]=e[f];return l}},d=function(e,t,r){this.val=e,this.left=t,this.right=r},{decode:function(e,t){var r=(t=t||{}).noDataValue,n=0,i={};i.ptr=t.inputOffset||0,i.pixels={},h.readHeaderInfo(e,i);var a=i.headerInfo,o=a.fileVersion,s=h.getDataTypeArray(a.imageType);if(o>5)throw\\\"unsupported lerc version 2.\\\"+o;h.readMask(e,i),a.numValidPixel===a.width*a.height||i.pixels.resultMask||(i.pixels.resultMask=t.maskData);var f=a.width*a.height;i.pixels.resultPixels=new s(f*a.numDims),i.counter={onesweep:0,uncompressed:0,lut:0,bitstuffer:0,constant:0,constantoffset:0};var l,u=!t.returnPixelInterleavedDims;if(0!==a.numValidPixel)if(a.zMax===a.zMin)h.constructConstantSurface(i,u);else if(o>=4&&h.checkMinMaxRanges(e,i))h.constructConstantSurface(i,u);else{var c=new DataView(e,i.ptr,2),d=c.getUint8(0);if(i.ptr++,d)h.readDataOneSweep(e,i,s,u);else if(o>1&&a.imageType<=1&&Math.abs(a.maxZError-.5)<1e-5){var p=c.getUint8(1);if(i.ptr++,i.encodeMode=p,p>2||o<4&&p>1)throw\\\"Invalid Huffman flag \\\"+p;p?h.readHuffman(e,i,s,u):h.readTiles(e,i,s,u)}else h.readTiles(e,i,s,u)}i.eofOffset=i.ptr,t.inputOffset?(l=i.headerInfo.blobSize+t.inputOffset-i.ptr,Math.abs(l)>=1&&(i.eofOffset=t.inputOffset+i.headerInfo.blobSize)):(l=i.headerInfo.blobSize-i.ptr,Math.abs(l)>=1&&(i.eofOffset=i.headerInfo.blobSize));var m={width:a.width,height:a.height,pixelData:i.pixels.resultPixels,minValue:a.zMin,maxValue:a.zMax,validPixelCount:a.numValidPixel,dimCount:a.numDims,dimStats:{minValues:a.minValues,maxValues:a.maxValues},maskData:i.pixels.resultMask};if(i.pixels.resultMask&&h.isValidPixelValue(a.imageType,r)){var v=i.pixels.resultMask;for(n=0;n<f;n++)v[n]||(m.pixelData[n]=r);m.noDataValue=r}return i.noDataValue=r,t.returnFileInfo&&(m.fileInfo=h.formatFileInfo(i)),m},getBandCount:function(e){for(var t=0,r=0,n={ptr:0,pixels:{}};r<e.byteLength-58;)h.readHeaderInfo(e,n),r+=n.headerInfo.blobSize,t++,n.ptr=r;return t}}),w=(p=new ArrayBuffer(4),m=new Uint8Array(p),new Uint32Array(p)[0]=1,1===m[0]),g={decode:function(e,t){if(!w)throw\\\"Big endian system is not supported.\\\";var r,n,i=(t=t||{}).inputOffset||0,a=new Uint8Array(e,i,10),o=String.fromCharCode.apply(null,a);if(\\\"CntZImage\\\"===o.trim())r=v,n=1;else{if(\\\"Lerc2\\\"!==o.substring(0,5))throw\\\"Unexpected file identifier string: \\\"+o;r=y,n=2}for(var s,f,l,u,c,h,d=0,p=e.byteLength-10,m=[],g={width:0,height:0,pixels:[],pixelType:t.pixelType,mask:null,statistics:[]},b=0;i<p;){var k=r.decode(e,{inputOffset:i,encodedMaskData:s,maskData:l,returnMask:0===d,returnEncodedMask:0===d,returnFileInfo:!0,returnPixelInterleavedDims:t.returnPixelInterleavedDims,pixelType:t.pixelType||null,noDataValue:t.noDataValue||null});i=k.fileInfo.eofOffset,l=k.maskData,0===d&&(s=k.encodedMaskData,g.width=k.width,g.height=k.height,g.dimCount=k.dimCount||1,g.pixelType=k.pixelType||k.fileInfo.pixelType,g.mask=l),n>1&&(l&&m.push(l),k.fileInfo.mask&&k.fileInfo.mask.numBytes>0&&b++),d++,g.pixels.push(k.pixelData),g.statistics.push({minValue:k.minValue,maxValue:k.maxValue,noDataValue:k.noDataValue,dimStats:k.dimStats})}if(n>1&&b>1){for(h=g.width*g.height,g.bandMasks=m,(l=new Uint8Array(h)).set(m[0]),u=1;u<m.length;u++)for(f=m[u],c=0;c<h;c++)l[c]=l[c]&f[c];g.maskData=l}return g}};Ke.exports?Ke.exports=g:this.Lerc=g}();var We=Xe.exports,qe={315:\\\"Artist\\\",258:\\\"BitsPerSample\\\",265:\\\"CellLength\\\",264:\\\"CellWidth\\\",320:\\\"ColorMap\\\",259:\\\"Compression\\\",33432:\\\"Copyright\\\",306:\\\"DateTime\\\",338:\\\"ExtraSamples\\\",266:\\\"FillOrder\\\",289:\\\"FreeByteCounts\\\",288:\\\"FreeOffsets\\\",291:\\\"GrayResponseCurve\\\",290:\\\"GrayResponseUnit\\\",316:\\\"HostComputer\\\",270:\\\"ImageDescription\\\",257:\\\"ImageLength\\\",256:\\\"ImageWidth\\\",271:\\\"Make\\\",281:\\\"MaxSampleValue\\\",280:\\\"MinSampleValue\\\",272:\\\"Model\\\",254:\\\"NewSubfileType\\\",274:\\\"Orientation\\\",262:\\\"PhotometricInterpretation\\\",284:\\\"PlanarConfiguration\\\",296:\\\"ResolutionUnit\\\",278:\\\"RowsPerStrip\\\",277:\\\"SamplesPerPixel\\\",305:\\\"Software\\\",279:\\\"StripByteCounts\\\",273:\\\"StripOffsets\\\",255:\\\"SubfileType\\\",263:\\\"Threshholding\\\",282:\\\"XResolution\\\",283:\\\"YResolution\\\",326:\\\"BadFaxLines\\\",327:\\\"CleanFaxData\\\",343:\\\"ClipPath\\\",328:\\\"ConsecutiveBadFaxLines\\\",433:\\\"Decode\\\",434:\\\"DefaultImageColor\\\",269:\\\"DocumentName\\\",336:\\\"DotRange\\\",321:\\\"HalftoneHints\\\",346:\\\"Indexed\\\",347:\\\"JPEGTables\\\",285:\\\"PageName\\\",297:\\\"PageNumber\\\",317:\\\"Predictor\\\",319:\\\"PrimaryChromaticities\\\",532:\\\"ReferenceBlackWhite\\\",339:\\\"SampleFormat\\\",340:\\\"SMinSampleValue\\\",341:\\\"SMaxSampleValue\\\",559:\\\"StripRowCounts\\\",330:\\\"SubIFDs\\\",292:\\\"T4Options\\\",293:\\\"T6Options\\\",325:\\\"TileByteCounts\\\",323:\\\"TileLength\\\",324:\\\"TileOffsets\\\",322:\\\"TileWidth\\\",301:\\\"TransferFunction\\\",318:\\\"WhitePoint\\\",344:\\\"XClipPathUnits\\\",286:\\\"XPosition\\\",529:\\\"YCbCrCoefficients\\\",531:\\\"YCbCrPositioning\\\",530:\\\"YCbCrSubSampling\\\",345:\\\"YClipPathUnits\\\",287:\\\"YPosition\\\",37378:\\\"ApertureValue\\\",40961:\\\"ColorSpace\\\",36868:\\\"DateTimeDigitized\\\",36867:\\\"DateTimeOriginal\\\",34665:\\\"Exif IFD\\\",36864:\\\"ExifVersion\\\",33434:\\\"ExposureTime\\\",41728:\\\"FileSource\\\",37385:\\\"Flash\\\",40960:\\\"FlashpixVersion\\\",33437:\\\"FNumber\\\",42016:\\\"ImageUniqueID\\\",37384:\\\"LightSource\\\",37500:\\\"MakerNote\\\",37377:\\\"ShutterSpeedValue\\\",37510:\\\"UserComment\\\",33723:\\\"IPTC\\\",34675:\\\"ICC Profile\\\",700:\\\"XMP\\\",42112:\\\"GDAL_METADATA\\\",42113:\\\"GDAL_NODATA\\\",34377:\\\"Photoshop\\\",33550:\\\"ModelPixelScale\\\",33922:\\\"ModelTiepoint\\\",34264:\\\"ModelTransformation\\\",34735:\\\"GeoKeyDirectory\\\",34736:\\\"GeoDoubleParams\\\",34737:\\\"GeoAsciiParams\\\",50674:\\\"LercParameters\\\"},Je={};for(var Qe in qe)qe.hasOwnProperty(Qe)&&(Je[qe[Qe]]=parseInt(Qe,10));Je.BitsPerSample,Je.ExtraSamples,Je.SampleFormat,Je.StripByteCounts,Je.StripOffsets,Je.StripRowCounts,Je.TileByteCounts,Je.TileOffsets,Je.SubIFDs;var $e={1:\\\"BYTE\\\",2:\\\"ASCII\\\",3:\\\"SHORT\\\",4:\\\"LONG\\\",5:\\\"RATIONAL\\\",6:\\\"SBYTE\\\",7:\\\"UNDEFINED\\\",8:\\\"SSHORT\\\",9:\\\"SLONG\\\",10:\\\"SRATIONAL\\\",11:\\\"FLOAT\\\",12:\\\"DOUBLE\\\",13:\\\"IFD\\\",16:\\\"LONG8\\\",17:\\\"SLONG8\\\",18:\\\"IFD8\\\"},et={};for(var tt in $e)$e.hasOwnProperty(tt)&&(et[$e[tt]]=parseInt(tt,10));var rt=1,nt=0,it=1,at={1024:\\\"GTModelTypeGeoKey\\\",1025:\\\"GTRasterTypeGeoKey\\\",1026:\\\"GTCitationGeoKey\\\",2048:\\\"GeographicTypeGeoKey\\\",2049:\\\"GeogCitationGeoKey\\\",2050:\\\"GeogGeodeticDatumGeoKey\\\",2051:\\\"GeogPrimeMeridianGeoKey\\\",2052:\\\"GeogLinearUnitsGeoKey\\\",2053:\\\"GeogLinearUnitSizeGeoKey\\\",2054:\\\"GeogAngularUnitsGeoKey\\\",2055:\\\"GeogAngularUnitSizeGeoKey\\\",2056:\\\"GeogEllipsoidGeoKey\\\",2057:\\\"GeogSemiMajorAxisGeoKey\\\",2058:\\\"GeogSemiMinorAxisGeoKey\\\",2059:\\\"GeogInvFlatteningGeoKey\\\",2060:\\\"GeogAzimuthUnitsGeoKey\\\",2061:\\\"GeogPrimeMeridianLongGeoKey\\\",2062:\\\"GeogTOWGS84GeoKey\\\",3072:\\\"ProjectedCSTypeGeoKey\\\",3073:\\\"PCSCitationGeoKey\\\",3074:\\\"ProjectionGeoKey\\\",3075:\\\"ProjCoordTransGeoKey\\\",3076:\\\"ProjLinearUnitsGeoKey\\\",3077:\\\"ProjLinearUnitSizeGeoKey\\\",3078:\\\"ProjStdParallel1GeoKey\\\",3079:\\\"ProjStdParallel2GeoKey\\\",3080:\\\"ProjNatOriginLongGeoKey\\\",3081:\\\"ProjNatOriginLatGeoKey\\\",3082:\\\"ProjFalseEastingGeoKey\\\",3083:\\\"ProjFalseNorthingGeoKey\\\",3084:\\\"ProjFalseOriginLongGeoKey\\\",3085:\\\"ProjFalseOriginLatGeoKey\\\",3086:\\\"ProjFalseOriginEastingGeoKey\\\",3087:\\\"ProjFalseOriginNorthingGeoKey\\\",3088:\\\"ProjCenterLongGeoKey\\\",3089:\\\"ProjCenterLatGeoKey\\\",3090:\\\"ProjCenterEastingGeoKey\\\",3091:\\\"ProjCenterNorthingGeoKey\\\",3092:\\\"ProjScaleAtNatOriginGeoKey\\\",3093:\\\"ProjScaleAtCenterGeoKey\\\",3094:\\\"ProjAzimuthAngleGeoKey\\\",3095:\\\"ProjStraightVertPoleLongGeoKey\\\",3096:\\\"ProjRectifiedGridAngleGeoKey\\\",4096:\\\"VerticalCSTypeGeoKey\\\",4097:\\\"VerticalCitationGeoKey\\\",4098:\\\"VerticalDatumGeoKey\\\",4099:\\\"VerticalUnitsGeoKey\\\"},ot={};for(var st in at)at.hasOwnProperty(st)&&(ot[at[st]]=parseInt(st,10));function ft(e){var t=function(){if(\\\"undefined\\\"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if(\\\"function\\\"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var r,n=v(e);if(t){var i=v(this).constructor;r=Reflect.construct(n,arguments,i)}else r=n.apply(this,arguments);return m(this,r)}}var lt=function(e){p(r,b);var t=ft(r);function r(e){var n;return u(this,r),(n=t.call(this)).planarConfiguration=void 0!==e.PlanarConfiguration?e.PlanarConfiguration:1,n.samplesPerPixel=void 0!==e.SamplesPerPixel?e.SamplesPerPixel:1,n.addCompression=e.LercParameters[rt],n}return h(r,[{key:\\\"decodeBlock\\\",value:function(e){switch(this.addCompression){case nt:break;case it:e=Fe(new Uint8Array(e)).buffer;break;default:throw new Error(\\\"Unsupported LERC additional compression method identifier: \\\".concat(this.addCompression))}return We.decode(e,{returnPixelInterleavedDims:1===this.planarConfiguration}).pixels[0].buffer}}]),r}(),ut=Object.freeze({__proto__:null,default:lt});function ct(e){var t=function(){if(\\\"undefined\\\"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if(\\\"function\\\"==typeof Proxy)return!0;try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}();return function(){var r,n=v(e);if(t){var i=v(this).constructor;r=Reflect.construct(n,arguments,i)}else r=n.apply(this,arguments);return m(this,r)}}var ht=function(e){p(a,b);var r,n=ct(a);function a(){var e;if(u(this,a),e=n.call(this),\\\"undefined\\\"==typeof createImageBitmap)throw new Error(\\\"Cannot decode WebImage as `createImageBitmap` is not available\\\");if(\\\"undefined\\\"==typeof document&&\\\"undefined\\\"==typeof OffscreenCanvas)throw new Error(\\\"Cannot decode WebImage as neither `document` nor `OffscreenCanvas` is not available\\\");return e}return h(a,[{key:\\\"decode\\\",value:(r=t(i.mark((function e(t,r){var n,a,o,s;return i.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return n=new Blob([r]),e.next=3,createImageBitmap(n);case 3:return a=e.sent,\\\"undefined\\\"!=typeof document?((o=document.createElement(\\\"canvas\\\")).width=a.width,o.height=a.height):o=new OffscreenCanvas(a.width,a.height),(s=o.getContext(\\\"2d\\\")).drawImage(a,0,0),e.abrupt(\\\"return\\\",s.getImageData(0,0,a.width,a.height).data.buffer);case 8:case\\\"end\\\":return e.stop()}}),e)}))),function(e,t){return r.apply(this,arguments)})}]),a}(),dt=Object.freeze({__proto__:null,default:ht});\";\n          return new web_worker__WEBPACK_IMPORTED_MODULE_0___default.a(typeof Blob === 'undefined'\n            ? 'data:application/javascript;base64,' + Buffer.from(source, 'binary').toString('base64')\n            : URL.createObjectURL(new Blob([source], {type: 'application/javascript'})));\n        }\n      \n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../buffer/index.js */ \"./node_modules/buffer/index.js\").Buffer))\n\n//# sourceURL=webpack:///./node_modules/geotiff/dist-module/worker/decoder.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return LercDecoder; });
+/* harmony import */ var pako__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pako */ "./node_modules/geotiff/node_modules/pako/dist/pako.esm.mjs");
+/* harmony import */ var lerc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lerc */ "./node_modules/lerc/LercDecode.js");
+/* harmony import */ var lerc__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lerc__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _basedecoder_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./basedecoder.js */ "./node_modules/geotiff/dist-module/compression/basedecoder.js");
+/* harmony import */ var _globals_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../globals.js */ "./node_modules/geotiff/dist-module/globals.js");
+
+
+
+
+
+class LercDecoder extends _basedecoder_js__WEBPACK_IMPORTED_MODULE_2__["default"] {
+  constructor(fileDirectory) {
+    super();
+
+    this.planarConfiguration = typeof fileDirectory.PlanarConfiguration !== 'undefined' ? fileDirectory.PlanarConfiguration : 1;
+    this.samplesPerPixel = typeof fileDirectory.SamplesPerPixel !== 'undefined' ? fileDirectory.SamplesPerPixel : 1;
+
+    this.addCompression = fileDirectory.LercParameters[_globals_js__WEBPACK_IMPORTED_MODULE_3__["LercParameters"].AddCompression];
+  }
+
+  decodeBlock(buffer) {
+    switch (this.addCompression) {
+      case _globals_js__WEBPACK_IMPORTED_MODULE_3__["LercAddCompression"].None:
+        break;
+      case _globals_js__WEBPACK_IMPORTED_MODULE_3__["LercAddCompression"].Deflate:
+        buffer = Object(pako__WEBPACK_IMPORTED_MODULE_0__["inflate"])(new Uint8Array(buffer)).buffer; // eslint-disable-line no-param-reassign, prefer-destructuring
+        break;
+      default:
+        throw new Error(`Unsupported LERC additional compression method identifier: ${this.addCompression}`);
+    }
+
+    const lercResult = lerc__WEBPACK_IMPORTED_MODULE_1___default.a.decode(buffer, { returnPixelInterleavedDims: this.planarConfiguration === 1 });
+    const lercData = lercResult.pixels[0];
+    return lercData.buffer;
+  }
+}
+
 
 /***/ }),
 
-/***/ "./node_modules/web-worker/cjs/browser.js":
-/*!************************************************!*\
-  !*** ./node_modules/web-worker/cjs/browser.js ***!
-  \************************************************/
+/***/ "./node_modules/lerc/LercDecode.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lerc/LercDecode.js ***!
+  \*****************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("/**\n * Copyright 2020 Google LLC\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n */\nmodule.exports = Worker;\n\n//# sourceURL=webpack:///./node_modules/web-worker/cjs/browser.js?");
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;﻿/* jshint forin: false, bitwise: false */
+/*
+Copyright 2015-2021 Esri
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+A copy of the license and additional notices are located with the
+source distribution at:
+
+http://github.com/Esri/lerc/
+
+Contributors:  Johannes Schmid, (LERC v1)
+               Chayanika Khatua, (LERC v1)
+               Wenxue Ju (LERC v1, v2.x)
+*/
+
+/* Copyright 2015-2021 Esri. Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 @preserve */
+
+/**
+ * a module for decoding LERC blobs
+ * @module Lerc
+ */
+(function() {
+  //this decoder supports all lerc versions, each version has its own class (LercDecode and Lerc2Decode). 
+  //the exported module handles format variation autoamtically.
+
+  //the original LercDecode for Version 1
+  var LercDecode = (function() {
+
+    // Note: currently, this module only has an implementation for decoding LERC data, not encoding. The name of
+    // the class was chosen to be future proof.
+
+    var CntZImage = {};
+
+    CntZImage.defaultNoDataValue = -3.4027999387901484e+38; // smallest Float32 value
+
+    /**
+     * Decode a LERC byte stream and return an object containing the pixel data and some required and optional
+     * information about it, such as the image's width and height.
+     *
+     * @param {ArrayBuffer} input The LERC input byte stream
+     * @param {object} [options] Decoding options, containing any of the following properties:
+     * @config {number} [inputOffset = 0]
+     *        Skip the first inputOffset bytes of the input byte stream. A valid LERC file is expected at that position.
+     * @config {Uint8Array} [encodedMask = null]
+     *        If specified, the decoder will not read mask information from the input and use the specified encoded
+     *        mask data instead. Mask header/data must not be present in the LERC byte stream in this case.
+     * @config {number} [noDataValue = LercCode.defaultNoDataValue]
+     *        Pixel value to use for masked pixels.
+     * @config {ArrayBufferView|Array} [pixelType = Float32Array]
+     *        The desired type of the pixelData array in the return value. Note that it is the caller's responsibility to
+     *        provide an appropriate noDataValue if the default pixelType is overridden.
+     * @config {boolean} [returnMask = false]
+     *        If true, the return value will contain a maskData property of type Uint8Array which has one element per
+     *        pixel, the value of which is 1 or 0 depending on whether that pixel's data is present or masked. If the
+     *        input LERC data does not contain a mask, maskData will not be returned.
+     * @config {boolean} [returnEncodedMask = false]
+     *        If true, the return value will contain a encodedMaskData property, which can be passed into encode() as
+     *        encodedMask.
+     * @config {boolean} [returnFileInfo = false]
+     *        If true, the return value will have a fileInfo property that contains metadata obtained from the
+     *        LERC headers and the decoding process.
+     * @config {boolean} [computeUsedBitDepths = false]
+     *        If true, the fileInfo property in the return value will contain the set of all block bit depths
+     *        encountered during decoding. Will only have an effect if returnFileInfo option is true.
+     * @returns {{width, height, pixelData, minValue, maxValue, noDataValue, maskData, encodedMaskData, fileInfo}}
+     */
+    CntZImage.decode = function(input, options) {
+      options = options || {};
+
+      var skipMask = options.encodedMaskData || (options.encodedMaskData === null);
+      var parsedData = parse(input, options.inputOffset || 0, skipMask);
+
+      var noDataValue = (options.noDataValue !== null) ? options.noDataValue : CntZImage.defaultNoDataValue;
+
+      var uncompressedData = uncompressPixelValues(parsedData, options.pixelType || Float32Array,
+        options.encodedMaskData, noDataValue, options.returnMask);
+
+      var result = {
+        width: parsedData.width,
+        height: parsedData.height,
+        pixelData: uncompressedData.resultPixels,
+        minValue: uncompressedData.minValue,
+        maxValue: parsedData.pixels.maxValue,
+        noDataValue: noDataValue
+      };
+
+      if (uncompressedData.resultMask) {
+        result.maskData = uncompressedData.resultMask;
+      }
+
+      if (options.returnEncodedMask && parsedData.mask) {
+        result.encodedMaskData = parsedData.mask.bitset ? parsedData.mask.bitset : null;
+      }
+
+      if (options.returnFileInfo) {
+        result.fileInfo = formatFileInfo(parsedData);
+        if (options.computeUsedBitDepths) {
+          result.fileInfo.bitDepths = computeUsedBitDepths(parsedData);
+        }
+      }
+
+      return result;
+    };
+
+    var uncompressPixelValues = function(data, TypedArrayClass, maskBitset, noDataValue, storeDecodedMask) {
+      var blockIdx = 0;
+      var numX = data.pixels.numBlocksX;
+      var numY = data.pixels.numBlocksY;
+      var blockWidth = Math.floor(data.width / numX);
+      var blockHeight = Math.floor(data.height / numY);
+      var scale = 2 * data.maxZError;
+      var minValue = Number.MAX_VALUE, currentValue;
+      maskBitset = maskBitset || ((data.mask) ? data.mask.bitset : null);
+
+      var resultPixels, resultMask;
+      resultPixels = new TypedArrayClass(data.width * data.height);
+      if (storeDecodedMask && maskBitset) {
+        resultMask = new Uint8Array(data.width * data.height);
+      }
+      var blockDataBuffer = new Float32Array(blockWidth * blockHeight);
+
+      var xx, yy;
+      for (var y = 0; y <= numY; y++) {
+        var thisBlockHeight = (y !== numY) ? blockHeight : (data.height % numY);
+        if (thisBlockHeight === 0) {
+          continue;
+        }
+        for (var x = 0; x <= numX; x++) {
+          var thisBlockWidth = (x !== numX) ? blockWidth : (data.width % numX);
+          if (thisBlockWidth === 0) {
+            continue;
+          }
+
+          var outPtr = y * data.width * blockHeight + x * blockWidth;
+          var outStride = data.width - thisBlockWidth;
+
+          var block = data.pixels.blocks[blockIdx];
+
+          var blockData, blockPtr, constValue;
+          if (block.encoding < 2) {
+            // block is either uncompressed or bit-stuffed (encodings 0 and 1)
+            if (block.encoding === 0) {
+              // block is uncompressed
+              blockData = block.rawData;
+            } else {
+              // block is bit-stuffed
+              unstuff(block.stuffedData, block.bitsPerPixel, block.numValidPixels, block.offset, scale, blockDataBuffer, data.pixels.maxValue);
+              blockData = blockDataBuffer;
+            }
+            blockPtr = 0;
+          }
+          else if (block.encoding === 2) {
+            // block is all 0
+            constValue = 0;
+          }
+          else {
+            // block has constant value (encoding === 3)
+            constValue = block.offset;
+          }
+
+          var maskByte;
+          if (maskBitset) {
+            for (yy = 0; yy < thisBlockHeight; yy++) {
+              if (outPtr & 7) {
+                //
+                maskByte = maskBitset[outPtr >> 3];
+                maskByte <<= outPtr & 7;
+              }
+              for (xx = 0; xx < thisBlockWidth; xx++) {
+                if (!(outPtr & 7)) {
+                  // read next byte from mask
+                  maskByte = maskBitset[outPtr >> 3];
+                }
+                if (maskByte & 128) {
+                  // pixel data present
+                  if (resultMask) {
+                    resultMask[outPtr] = 1;
+                  }
+                  currentValue = (block.encoding < 2) ? blockData[blockPtr++] : constValue;
+                  minValue = minValue > currentValue ? currentValue : minValue;
+                  resultPixels[outPtr++] = currentValue;
+                } else {
+                  // pixel data not present
+                  if (resultMask) {
+                    resultMask[outPtr] = 0;
+                  }
+                  resultPixels[outPtr++] = noDataValue;
+                }
+                maskByte <<= 1;
+              }
+              outPtr += outStride;
+            }
+          } else {
+            // mask not present, simply copy block over
+            if (block.encoding < 2) {
+              // duplicating this code block for performance reasons
+              // blockData case:
+              for (yy = 0; yy < thisBlockHeight; yy++) {
+                for (xx = 0; xx < thisBlockWidth; xx++) {
+                  currentValue = blockData[blockPtr++];
+                  minValue = minValue > currentValue ? currentValue : minValue;
+                  resultPixels[outPtr++] = currentValue;
+                }
+                outPtr += outStride;
+              }
+            }
+            else {
+              // constValue case:
+              minValue = minValue > constValue ? constValue : minValue;
+              for (yy = 0; yy < thisBlockHeight; yy++) {
+                for (xx = 0; xx < thisBlockWidth; xx++) {
+                  resultPixels[outPtr++] = constValue;
+                }
+                outPtr += outStride;
+              }
+            }
+          }
+          if ((block.encoding === 1) && (blockPtr !== block.numValidPixels)) {
+            throw "Block and Mask do not match";
+          }
+          blockIdx++;
+        }
+      }
+
+      return {
+        resultPixels: resultPixels,
+        resultMask: resultMask,
+        minValue: minValue
+      };
+    };
+
+    var formatFileInfo = function(data) {
+      return {
+        "fileIdentifierString": data.fileIdentifierString,
+        "fileVersion": data.fileVersion,
+        "imageType": data.imageType,
+        "height": data.height,
+        "width": data.width,
+        "maxZError": data.maxZError,
+        "eofOffset": data.eofOffset,
+        "mask": data.mask ? {
+          "numBlocksX": data.mask.numBlocksX,
+          "numBlocksY": data.mask.numBlocksY,
+          "numBytes": data.mask.numBytes,
+          "maxValue": data.mask.maxValue
+        } : null,
+        "pixels": {
+          "numBlocksX": data.pixels.numBlocksX,
+          "numBlocksY": data.pixels.numBlocksY,
+          "numBytes": data.pixels.numBytes,
+          "maxValue": data.pixels.maxValue,
+          "noDataValue": data.noDataValue
+        }
+      };
+    };
+
+    var computeUsedBitDepths = function(data) {
+      var numBlocks = data.pixels.numBlocksX * data.pixels.numBlocksY;
+      var bitDepths = {};
+      for (var i = 0; i < numBlocks; i++) {
+        var block = data.pixels.blocks[i];
+        if (block.encoding === 0) {
+          bitDepths.float32 = true;
+        } else if (block.encoding === 1) {
+          bitDepths[block.bitsPerPixel] = true;
+        } else {
+          bitDepths[0] = true;
+        }
+      }
+
+      return Object.keys(bitDepths);
+    };
+
+    var parse = function(input, fp, skipMask) {
+      var data = {};
+
+      // File header
+      var fileIdView = new Uint8Array(input, fp, 10);
+      data.fileIdentifierString = String.fromCharCode.apply(null, fileIdView);
+      if (data.fileIdentifierString.trim() !== "CntZImage") {
+        throw "Unexpected file identifier string: " + data.fileIdentifierString;
+      }
+      fp += 10;
+      var view = new DataView(input, fp, 24);
+      data.fileVersion = view.getInt32(0, true);
+      data.imageType = view.getInt32(4, true);
+      data.height = view.getUint32(8, true);
+      data.width = view.getUint32(12, true);
+      data.maxZError = view.getFloat64(16, true);
+      fp += 24;
+
+      // Mask Header
+      if (!skipMask) {
+        view = new DataView(input, fp, 16);
+        data.mask = {};
+        data.mask.numBlocksY = view.getUint32(0, true);
+        data.mask.numBlocksX = view.getUint32(4, true);
+        data.mask.numBytes = view.getUint32(8, true);
+        data.mask.maxValue = view.getFloat32(12, true);
+        fp += 16;
+
+        // Mask Data
+        if (data.mask.numBytes > 0) {
+          var bitset = new Uint8Array(Math.ceil(data.width * data.height / 8));
+          view = new DataView(input, fp, data.mask.numBytes);
+          var cnt = view.getInt16(0, true);
+          var ip = 2, op = 0;
+          do {
+            if (cnt > 0) {
+              while (cnt--) { bitset[op++] = view.getUint8(ip++); }
+            } else {
+              var val = view.getUint8(ip++);
+              cnt = -cnt;
+              while (cnt--) { bitset[op++] = val; }
+            }
+            cnt = view.getInt16(ip, true);
+            ip += 2;
+          } while (ip < data.mask.numBytes);
+          if ((cnt !== -32768) || (op < bitset.length)) {
+            throw "Unexpected end of mask RLE encoding";
+          }
+          data.mask.bitset = bitset;
+          fp += data.mask.numBytes;
+        }
+        else if ((data.mask.numBytes | data.mask.numBlocksY | data.mask.maxValue) === 0) {  // Special case, all nodata
+          data.mask.bitset = new Uint8Array(Math.ceil(data.width * data.height / 8));
+        }
+      }
+
+      // Pixel Header
+      view = new DataView(input, fp, 16);
+      data.pixels = {};
+      data.pixels.numBlocksY = view.getUint32(0, true);
+      data.pixels.numBlocksX = view.getUint32(4, true);
+      data.pixels.numBytes = view.getUint32(8, true);
+      data.pixels.maxValue = view.getFloat32(12, true);
+      fp += 16;
+
+      var numBlocksX = data.pixels.numBlocksX;
+      var numBlocksY = data.pixels.numBlocksY;
+      // the number of blocks specified in the header does not take into account the blocks at the end of
+      // each row/column with a special width/height that make the image complete in case the width is not
+      // evenly divisible by the number of blocks.
+      var actualNumBlocksX = numBlocksX + ((data.width % numBlocksX) > 0 ? 1 : 0);
+      var actualNumBlocksY = numBlocksY + ((data.height % numBlocksY) > 0 ? 1 : 0);
+      data.pixels.blocks = new Array(actualNumBlocksX * actualNumBlocksY);
+      var blockI = 0;
+      for (var blockY = 0; blockY < actualNumBlocksY; blockY++) {
+        for (var blockX = 0; blockX < actualNumBlocksX; blockX++) {
+
+          // Block
+          var size = 0;
+          var bytesLeft = input.byteLength - fp;
+          view = new DataView(input, fp, Math.min(10, bytesLeft));
+          var block = {};
+          data.pixels.blocks[blockI++] = block;
+          var headerByte = view.getUint8(0); size++;
+          block.encoding = headerByte & 63;
+          if (block.encoding > 3) {
+            throw "Invalid block encoding (" + block.encoding + ")";
+          }
+          if (block.encoding === 2) {
+            fp++;
+            continue;
+          }
+          if ((headerByte !== 0) && (headerByte !== 2)) {
+            headerByte >>= 6;
+            block.offsetType = headerByte;
+            if (headerByte === 2) {
+              block.offset = view.getInt8(1); size++;
+            } else if (headerByte === 1) {
+              block.offset = view.getInt16(1, true); size += 2;
+            } else if (headerByte === 0) {
+              block.offset = view.getFloat32(1, true); size += 4;
+            } else {
+              throw "Invalid block offset type";
+            }
+
+            if (block.encoding === 1) {
+              headerByte = view.getUint8(size); size++;
+              block.bitsPerPixel = headerByte & 63;
+              headerByte >>= 6;
+              block.numValidPixelsType = headerByte;
+              if (headerByte === 2) {
+                block.numValidPixels = view.getUint8(size); size++;
+              } else if (headerByte === 1) {
+                block.numValidPixels = view.getUint16(size, true); size += 2;
+              } else if (headerByte === 0) {
+                block.numValidPixels = view.getUint32(size, true); size += 4;
+              } else {
+                throw "Invalid valid pixel count type";
+              }
+            }
+          }
+          fp += size;
+
+          if (block.encoding === 3) {
+            continue;
+          }
+
+          var arrayBuf, store8;
+          if (block.encoding === 0) {
+            var numPixels = (data.pixels.numBytes - 1) / 4;
+            if (numPixels !== Math.floor(numPixels)) {
+              throw "uncompressed block has invalid length";
+            }
+            arrayBuf = new ArrayBuffer(numPixels * 4);
+            store8 = new Uint8Array(arrayBuf);
+            store8.set(new Uint8Array(input, fp, numPixels * 4));
+            var rawData = new Float32Array(arrayBuf);
+            block.rawData = rawData;
+            fp += numPixels * 4;
+          } else if (block.encoding === 1) {
+            var dataBytes = Math.ceil(block.numValidPixels * block.bitsPerPixel / 8);
+            var dataWords = Math.ceil(dataBytes / 4);
+            arrayBuf = new ArrayBuffer(dataWords * 4);
+            store8 = new Uint8Array(arrayBuf);
+            store8.set(new Uint8Array(input, fp, dataBytes));
+            block.stuffedData = new Uint32Array(arrayBuf);
+            fp += dataBytes;
+          }
+        }
+      }
+      data.eofOffset = fp;
+      return data;
+    };
+
+    var unstuff = function(src, bitsPerPixel, numPixels, offset, scale, dest, maxValue) {
+      var bitMask = (1 << bitsPerPixel) - 1;
+      var i = 0, o;
+      var bitsLeft = 0;
+      var n, buffer;
+      var nmax = Math.ceil((maxValue - offset) / scale);
+      // get rid of trailing bytes that are already part of next block
+      var numInvalidTailBytes = src.length * 4 - Math.ceil(bitsPerPixel * numPixels / 8);
+      src[src.length - 1] <<= 8 * numInvalidTailBytes;
+
+      for (o = 0; o < numPixels; o++) {
+        if (bitsLeft === 0) {
+          buffer = src[i++];
+          bitsLeft = 32;
+        }
+        if (bitsLeft >= bitsPerPixel) {
+          n = (buffer >>> (bitsLeft - bitsPerPixel)) & bitMask;
+          bitsLeft -= bitsPerPixel;
+        } else {
+          var missingBits = (bitsPerPixel - bitsLeft);
+          n = ((buffer & bitMask) << missingBits) & bitMask;
+          buffer = src[i++];
+          bitsLeft = 32 - missingBits;
+          n += (buffer >>> bitsLeft);
+        }
+        //pixel values may exceed max due to quantization
+        dest[o] = n < nmax ? offset + n * scale : maxValue;
+      }
+      return dest;
+    };
+
+    return CntZImage;
+  })();
+
+  //version 2. Supports 2.1, 2.2, 2.3
+  var Lerc2Decode = (function() {
+    "use strict";
+    // Note: currently, this module only has an implementation for decoding LERC data, not encoding. The name of
+    // the class was chosen to be future proof, following LercDecode.
+
+    /*****************************************
+    * private static class bitsutffer used by Lerc2Decode
+    *******************************************/
+    var BitStuffer = {
+      //methods ending with 2 are for the new byte order used by Lerc2.3 and above.
+      //originalUnstuff is used to unpack Huffman code table. code is duplicated to unstuffx for performance reasons.
+      unstuff: function(src, dest, bitsPerPixel, numPixels, lutArr, offset, scale, maxValue) {
+        var bitMask = (1 << bitsPerPixel) - 1;
+        var i = 0, o;
+        var bitsLeft = 0;
+        var n, buffer, missingBits, nmax;
+
+        // get rid of trailing bytes that are already part of next block
+        var numInvalidTailBytes = src.length * 4 - Math.ceil(bitsPerPixel * numPixels / 8);
+        src[src.length - 1] <<= 8 * numInvalidTailBytes;
+        if (lutArr) {
+          for (o = 0; o < numPixels; o++) {
+            if (bitsLeft === 0) {
+              buffer = src[i++];
+              bitsLeft = 32;
+            }
+            if (bitsLeft >= bitsPerPixel) {
+              n = (buffer >>> (bitsLeft - bitsPerPixel)) & bitMask;
+              bitsLeft -= bitsPerPixel;
+            }
+            else {
+              missingBits = (bitsPerPixel - bitsLeft);
+              n = ((buffer & bitMask) << missingBits) & bitMask;
+              buffer = src[i++];
+              bitsLeft = 32 - missingBits;
+              n += (buffer >>> bitsLeft);
+            }
+            dest[o] = lutArr[n];//offset + lutArr[n] * scale;
+          }
+        }
+        else {
+          nmax = Math.ceil((maxValue - offset) / scale);
+          for (o = 0; o < numPixels; o++) {
+            if (bitsLeft === 0) {
+              buffer = src[i++];
+              bitsLeft = 32;
+            }
+            if (bitsLeft >= bitsPerPixel) {
+              n = (buffer >>> (bitsLeft - bitsPerPixel)) & bitMask;
+              bitsLeft -= bitsPerPixel;
+            }
+            else {
+              missingBits = (bitsPerPixel - bitsLeft);
+              n = ((buffer & bitMask) << missingBits) & bitMask;
+              buffer = src[i++];
+              bitsLeft = 32 - missingBits;
+              n += (buffer >>> bitsLeft);
+            }
+            //pixel values may exceed max due to quantization
+            dest[o] = n < nmax ? offset + n * scale : maxValue;
+          }
+        }
+      },
+
+      unstuffLUT: function(src, bitsPerPixel, numPixels, offset, scale, maxValue) {
+        var bitMask = (1 << bitsPerPixel) - 1;
+        var i = 0, o = 0, missingBits = 0, bitsLeft = 0, n = 0;
+        var buffer;
+        var dest = [];
+
+        // get rid of trailing bytes that are already part of next block
+        var numInvalidTailBytes = src.length * 4 - Math.ceil(bitsPerPixel * numPixels / 8);
+        src[src.length - 1] <<= 8 * numInvalidTailBytes;
+
+        var nmax = Math.ceil((maxValue - offset) / scale);
+        for (o = 0; o < numPixels; o++) {
+          if (bitsLeft === 0) {
+            buffer = src[i++];
+            bitsLeft = 32;
+          }
+          if (bitsLeft >= bitsPerPixel) {
+            n = (buffer >>> (bitsLeft - bitsPerPixel)) & bitMask;
+            bitsLeft -= bitsPerPixel;
+          } else {
+            missingBits = (bitsPerPixel - bitsLeft);
+            n = ((buffer & bitMask) << missingBits) & bitMask;
+            buffer = src[i++];
+            bitsLeft = 32 - missingBits;
+            n += (buffer >>> bitsLeft);
+          }
+          //dest.push(n);
+          dest[o] = n < nmax ? offset + n * scale : maxValue;
+        }
+        dest.unshift(offset);//1st one
+        return dest;
+      },
+
+      unstuff2: function(src, dest, bitsPerPixel, numPixels, lutArr, offset, scale, maxValue) {
+        var bitMask = (1 << bitsPerPixel) - 1;
+        var i = 0, o;
+        var bitsLeft = 0, bitPos = 0;
+        var n, buffer, missingBits;
+        if (lutArr) {
+          for (o = 0; o < numPixels; o++) {
+            if (bitsLeft === 0) {
+              buffer = src[i++];
+              bitsLeft = 32;
+              bitPos = 0;
+            }
+            if (bitsLeft >= bitsPerPixel) {
+              n = ((buffer >>> bitPos) & bitMask);
+              bitsLeft -= bitsPerPixel;
+              bitPos += bitsPerPixel;
+            } else {
+              missingBits = (bitsPerPixel - bitsLeft);
+              n = (buffer >>> bitPos) & bitMask;
+              buffer = src[i++];
+              bitsLeft = 32 - missingBits;
+              n |= (buffer & ((1 << missingBits) - 1)) << (bitsPerPixel - missingBits);
+              bitPos = missingBits;
+            }
+            dest[o] = lutArr[n];
+          }
+        }
+        else {
+          var nmax = Math.ceil((maxValue - offset) / scale);
+          for (o = 0; o < numPixels; o++) {
+            if (bitsLeft === 0) {
+              buffer = src[i++];
+              bitsLeft = 32;
+              bitPos = 0;
+            }
+            if (bitsLeft >= bitsPerPixel) {
+              //no unsigned left shift
+              n = ((buffer >>> bitPos) & bitMask);
+              bitsLeft -= bitsPerPixel;
+              bitPos += bitsPerPixel;
+            } else {
+              missingBits = (bitsPerPixel - bitsLeft);
+              n = (buffer >>> bitPos) & bitMask;//((buffer & bitMask) << missingBits) & bitMask;
+              buffer = src[i++];
+              bitsLeft = 32 - missingBits;
+              n |= (buffer & ((1 << missingBits) - 1)) << (bitsPerPixel - missingBits);
+              bitPos = missingBits;
+            }
+            //pixel values may exceed max due to quantization
+            dest[o] = n < nmax ? offset + n * scale : maxValue;
+          }
+        }
+        return dest;
+      },
+
+      unstuffLUT2: function(src, bitsPerPixel, numPixels, offset, scale, maxValue) {
+        var bitMask = (1 << bitsPerPixel) - 1;
+        var i = 0, o = 0, missingBits = 0, bitsLeft = 0, n = 0, bitPos = 0;
+        var buffer;
+        var dest = [];
+        var nmax = Math.ceil((maxValue - offset) / scale);
+        for (o = 0; o < numPixels; o++) {
+          if (bitsLeft === 0) {
+            buffer = src[i++];
+            bitsLeft = 32;
+            bitPos = 0;
+          }
+          if (bitsLeft >= bitsPerPixel) {
+            //no unsigned left shift
+            n = ((buffer >>> bitPos) & bitMask);
+            bitsLeft -= bitsPerPixel;
+            bitPos += bitsPerPixel;
+          } else {
+            missingBits = (bitsPerPixel - bitsLeft);
+            n = (buffer >>> bitPos) & bitMask;//((buffer & bitMask) << missingBits) & bitMask;
+            buffer = src[i++];
+            bitsLeft = 32 - missingBits;
+            n |= (buffer & ((1 << missingBits) - 1)) << (bitsPerPixel - missingBits);
+            bitPos = missingBits;
+          }
+          //dest.push(n);
+          dest[o] = n < nmax ? offset + n * scale : maxValue;
+        }
+        dest.unshift(offset);
+        return dest;
+      },
+
+      originalUnstuff: function(src, dest, bitsPerPixel, numPixels) {
+        var bitMask = (1 << bitsPerPixel) - 1;
+        var i = 0, o;
+        var bitsLeft = 0;
+        var n, buffer, missingBits;
+
+        // get rid of trailing bytes that are already part of next block
+        var numInvalidTailBytes = src.length * 4 - Math.ceil(bitsPerPixel * numPixels / 8);
+        src[src.length - 1] <<= 8 * numInvalidTailBytes;
+
+        for (o = 0; o < numPixels; o++) {
+          if (bitsLeft === 0) {
+            buffer = src[i++];
+            bitsLeft = 32;
+          }
+          if (bitsLeft >= bitsPerPixel) {
+            n = (buffer >>> (bitsLeft - bitsPerPixel)) & bitMask;
+            bitsLeft -= bitsPerPixel;
+          }
+          else {
+            missingBits = (bitsPerPixel - bitsLeft);
+            n = ((buffer & bitMask) << missingBits) & bitMask;
+            buffer = src[i++];
+            bitsLeft = 32 - missingBits;
+            n += (buffer >>> bitsLeft);
+          }
+          dest[o] = n;
+        }
+        return dest;
+      },
+
+      originalUnstuff2: function(src, dest, bitsPerPixel, numPixels) {
+        var bitMask = (1 << bitsPerPixel) - 1;
+        var i = 0, o;
+        var bitsLeft = 0, bitPos = 0;
+        var n, buffer, missingBits;
+        //micro-optimizations
+        for (o = 0; o < numPixels; o++) {
+          if (bitsLeft === 0) {
+            buffer = src[i++];
+            bitsLeft = 32;
+            bitPos = 0;
+          }
+          if (bitsLeft >= bitsPerPixel) {
+            //no unsigned left shift
+            n = ((buffer >>> bitPos) & bitMask);
+            bitsLeft -= bitsPerPixel;
+            bitPos += bitsPerPixel;
+          } else {
+            missingBits = (bitsPerPixel - bitsLeft);
+            n = (buffer >>> bitPos) & bitMask;//((buffer & bitMask) << missingBits) & bitMask;
+            buffer = src[i++];
+            bitsLeft = 32 - missingBits;
+            n |= (buffer & ((1 << missingBits) - 1)) << (bitsPerPixel - missingBits);
+            bitPos = missingBits;
+          }
+          dest[o] = n;
+        }
+        return dest;
+      }
+    };
+
+    /*****************************************
+    *private static class used by Lerc2Decode
+    ******************************************/
+    var Lerc2Helpers = {
+      HUFFMAN_LUT_BITS_MAX: 12, //use 2^12 lut, treat it like constant
+      computeChecksumFletcher32: function(input) {
+
+        var sum1 = 0xffff, sum2 = 0xffff;
+        var len = input.length;
+        var words = Math.floor(len / 2);
+        var i = 0;
+        while (words) {
+          var tlen = (words >= 359) ? 359 : words;
+          words -= tlen;
+          do {
+            sum1 += (input[i++] << 8);
+            sum2 += sum1 += input[i++];
+          } while (--tlen);
+
+          sum1 = (sum1 & 0xffff) + (sum1 >>> 16);
+          sum2 = (sum2 & 0xffff) + (sum2 >>> 16);
+        }
+
+        // add the straggler byte if it exists
+        if (len & 1) {
+          sum2 += sum1 += (input[i] << 8);
+        }
+        // second reduction step to reduce sums to 16 bits
+        sum1 = (sum1 & 0xffff) + (sum1 >>> 16);
+        sum2 = (sum2 & 0xffff) + (sum2 >>> 16);
+
+        return (sum2 << 16 | sum1) >>> 0;
+      },
+
+      readHeaderInfo: function(input, data) {
+        var ptr = data.ptr;
+        var fileIdView = new Uint8Array(input, ptr, 6);
+        var headerInfo = {};
+        headerInfo.fileIdentifierString = String.fromCharCode.apply(null, fileIdView);
+        if (headerInfo.fileIdentifierString.lastIndexOf("Lerc2", 0) !== 0) {
+          throw "Unexpected file identifier string (expect Lerc2 ): " + headerInfo.fileIdentifierString;
+        }
+        ptr += 6;
+        var view = new DataView(input, ptr, 8);
+        var fileVersion = view.getInt32(0, true);
+        headerInfo.fileVersion = fileVersion;
+        ptr += 4;
+        if (fileVersion >= 3) {
+          headerInfo.checksum = view.getUint32(4, true); //nrows
+          ptr += 4;
+        }
+
+        //keys start from here
+        view = new DataView(input, ptr, 12);
+        headerInfo.height = view.getUint32(0, true); //nrows
+        headerInfo.width = view.getUint32(4, true); //ncols
+        ptr += 8;
+        if (fileVersion >= 4) {
+          headerInfo.numDims = view.getUint32(8, true);
+          ptr += 4;
+        }
+        else {
+          headerInfo.numDims = 1;
+        }
+
+        view = new DataView(input, ptr, 40);
+        headerInfo.numValidPixel = view.getUint32(0, true);
+        headerInfo.microBlockSize = view.getInt32(4, true);
+        headerInfo.blobSize = view.getInt32(8, true);
+        headerInfo.imageType = view.getInt32(12, true);
+
+        headerInfo.maxZError = view.getFloat64(16, true);
+        headerInfo.zMin = view.getFloat64(24, true);
+        headerInfo.zMax = view.getFloat64(32, true);
+        ptr += 40;
+        data.headerInfo = headerInfo;
+        data.ptr = ptr;
+
+        var checksum, keyLength;
+        if (fileVersion >= 3) {
+          keyLength = fileVersion >= 4 ? 52 : 48;
+          checksum = this.computeChecksumFletcher32(new Uint8Array(input, ptr - keyLength, headerInfo.blobSize - 14));
+          if (checksum !== headerInfo.checksum) {
+            throw "Checksum failed.";
+          }
+        }
+        return true;
+      },
+
+      checkMinMaxRanges: function(input, data) {
+        var headerInfo = data.headerInfo;
+        var OutPixelTypeArray = this.getDataTypeArray(headerInfo.imageType);
+        var rangeBytes = headerInfo.numDims * this.getDataTypeSize(headerInfo.imageType);
+        var minValues = this.readSubArray(input, data.ptr, OutPixelTypeArray, rangeBytes);
+        var maxValues = this.readSubArray(input, data.ptr + rangeBytes, OutPixelTypeArray, rangeBytes);
+        data.ptr += (2 * rangeBytes);
+        var i, equal = true;
+        for (i = 0; i < headerInfo.numDims; i++) {
+          if (minValues[i] !== maxValues[i]) {
+            equal = false;
+            break;
+          }
+        }
+        headerInfo.minValues = minValues;
+        headerInfo.maxValues = maxValues;
+        return equal;
+      },
+
+      readSubArray: function(input, ptr, OutPixelTypeArray, numBytes) {
+        var rawData;
+        if (OutPixelTypeArray === Uint8Array) {
+          rawData = new Uint8Array(input, ptr, numBytes);
+        }
+        else {
+          var arrayBuf = new ArrayBuffer(numBytes);
+          var store8 = new Uint8Array(arrayBuf);
+          store8.set(new Uint8Array(input, ptr, numBytes));
+          rawData = new OutPixelTypeArray(arrayBuf);
+        }
+        return rawData;
+      },
+
+      readMask: function(input, data) {
+        var ptr = data.ptr;
+        var headerInfo = data.headerInfo;
+        var numPixels = headerInfo.width * headerInfo.height;
+        var numValidPixel = headerInfo.numValidPixel;
+
+        var view = new DataView(input, ptr, 4);
+        var mask = {};
+        mask.numBytes = view.getUint32(0, true);
+        ptr += 4;
+
+        // Mask Data
+        if ((0 === numValidPixel || numPixels === numValidPixel) && 0 !== mask.numBytes) {
+          throw ("invalid mask");
+        }
+        var bitset, resultMask;
+        if (numValidPixel === 0) {
+          bitset = new Uint8Array(Math.ceil(numPixels / 8));
+          mask.bitset = bitset;
+          resultMask = new Uint8Array(numPixels);
+          data.pixels.resultMask = resultMask;
+          ptr += mask.numBytes;
+        }// ????? else if (data.mask.numBytes > 0 && data.mask.numBytes< data.numValidPixel) {
+        else if (mask.numBytes > 0) {
+          bitset = new Uint8Array(Math.ceil(numPixels / 8));
+          view = new DataView(input, ptr, mask.numBytes);
+          var cnt = view.getInt16(0, true);
+          var ip = 2, op = 0, val = 0;
+          do {
+            if (cnt > 0) {
+              while (cnt--) { bitset[op++] = view.getUint8(ip++); }
+            } else {
+              val = view.getUint8(ip++);
+              cnt = -cnt;
+              while (cnt--) { bitset[op++] = val; }
+            }
+            cnt = view.getInt16(ip, true);
+            ip += 2;
+          } while (ip < mask.numBytes);
+          if ((cnt !== -32768) || (op < bitset.length)) {
+            throw "Unexpected end of mask RLE encoding";
+          }
+
+          resultMask = new Uint8Array(numPixels);
+          var mb = 0, k = 0;
+
+          for (k = 0; k < numPixels; k++) {
+            if (k & 7) {
+              mb = bitset[k >> 3];
+              mb <<= k & 7;
+            }
+            else {
+              mb = bitset[k >> 3];
+            }
+            if (mb & 128) {
+              resultMask[k] = 1;
+            }
+          }
+          data.pixels.resultMask = resultMask;
+
+          mask.bitset = bitset;
+          ptr += mask.numBytes;
+        }
+        data.ptr = ptr;
+        data.mask = mask;
+        return true;
+      },
+
+      readDataOneSweep: function(input, data, OutPixelTypeArray, useBSQForOutputDim) {
+        var ptr = data.ptr;
+        var headerInfo = data.headerInfo;
+        var numDims = headerInfo.numDims;
+        var numPixels = headerInfo.width * headerInfo.height;
+        var imageType = headerInfo.imageType;
+        var numBytes = headerInfo.numValidPixel * Lerc2Helpers.getDataTypeSize(imageType) * numDims;
+        //data.pixels.numBytes = numBytes;
+        var rawData;
+        var mask = data.pixels.resultMask;
+        if (OutPixelTypeArray === Uint8Array) {
+          rawData = new Uint8Array(input, ptr, numBytes);
+        }
+        else {
+          var arrayBuf = new ArrayBuffer(numBytes);
+          var store8 = new Uint8Array(arrayBuf);
+          store8.set(new Uint8Array(input, ptr, numBytes));
+          rawData = new OutPixelTypeArray(arrayBuf);
+        }
+        if (rawData.length === numPixels * numDims) {
+          if (useBSQForOutputDim) {
+            data.pixels.resultPixels = Lerc2Helpers.swapDimensionOrder(rawData, numPixels, numDims, OutPixelTypeArray, true);
+          }
+          else {
+            data.pixels.resultPixels = rawData;
+          }
+        }
+        else  //mask
+        {
+          data.pixels.resultPixels = new OutPixelTypeArray(numPixels * numDims);
+          var z = 0, k = 0, i = 0, nStart = 0;
+          if (numDims > 1) {
+            if (useBSQForOutputDim) {
+              for (k = 0; k < numPixels; k++) {
+                if (mask[k]) {
+                  nStart = k;
+                  for (i = 0; i < numDims; i++, nStart+=numPixels) {
+                    data.pixels.resultPixels[nStart] = rawData[z++];
+                  }
+                }
+              }
+            }
+            else {
+              for (k = 0; k < numPixels; k++) {
+                if (mask[k]) {
+                  nStart = k * numDims;
+                  for (i = 0; i < numDims; i++) {
+                    data.pixels.resultPixels[nStart + i] = rawData[z++];
+                  }
+                }
+              }
+            }
+          }
+          else {
+            for (k = 0; k < numPixels; k++) {
+              if (mask[k]) {
+                data.pixels.resultPixels[k] = rawData[z++];
+              }
+            }
+          }
+        }
+        ptr += numBytes;
+        data.ptr = ptr;       //return data;
+        return true;
+      },
+
+      readHuffmanTree: function(input, data) {
+        var BITS_MAX = this.HUFFMAN_LUT_BITS_MAX; //8 is slow for the large test image
+        //var size_max = 1 << BITS_MAX;
+        /* ************************
+        * reading code table
+        *************************/
+        var view = new DataView(input, data.ptr, 16);
+        data.ptr += 16;
+        var version = view.getInt32(0, true);
+        if (version < 2) {
+          throw "unsupported Huffman version";
+        }
+        var size = view.getInt32(4, true);
+        var i0 = view.getInt32(8, true);
+        var i1 = view.getInt32(12, true);
+        if (i0 >= i1) {
+          return false;
+        }
+        var blockDataBuffer = new Uint32Array(i1 - i0);
+        Lerc2Helpers.decodeBits(input, data, blockDataBuffer);
+        var codeTable = []; //size
+        var i, j, k, len;
+
+        for (i = i0; i < i1; i++) {
+          j = i - (i < size ? 0 : size);//wrap around
+          codeTable[j] = { first: blockDataBuffer[i - i0], second: null };
+        }
+
+        var dataBytes = input.byteLength - data.ptr;
+        var dataWords = Math.ceil(dataBytes / 4);
+        var arrayBuf = new ArrayBuffer(dataWords * 4);
+        var store8 = new Uint8Array(arrayBuf);
+        store8.set(new Uint8Array(input, data.ptr, dataBytes));
+        var stuffedData = new Uint32Array(arrayBuf); //must start from x*4
+        var bitPos = 0, word, srcPtr = 0;
+        word = stuffedData[0];
+        for (i = i0; i < i1; i++) {
+          j = i - (i < size ? 0 : size);//wrap around
+          len = codeTable[j].first;
+          if (len > 0) {
+            codeTable[j].second = (word << bitPos) >>> (32 - len);
+
+            if (32 - bitPos >= len) {
+              bitPos += len;
+              if (bitPos === 32) {
+                bitPos = 0;
+                srcPtr++;
+                word = stuffedData[srcPtr];
+              }
+            }
+            else {
+              bitPos += len - 32;
+              srcPtr++;
+              word = stuffedData[srcPtr];
+              codeTable[j].second |= word >>> (32 - bitPos);
+            }
+          }
+        }
+
+        //finished reading code table
+
+        /* ************************
+        * building lut
+        *************************/
+        var numBitsLUT = 0, numBitsLUTQick = 0;
+        var tree = new TreeNode();
+        for (i = 0; i < codeTable.length; i++) {
+          if (codeTable[i] !== undefined) {
+            numBitsLUT = Math.max(numBitsLUT, codeTable[i].first);
+          }
+        }
+        if (numBitsLUT >= BITS_MAX) {
+          numBitsLUTQick = BITS_MAX;
+        }
+        else {
+          numBitsLUTQick = numBitsLUT;
+        }
+        // for debugging purpose
+        // if (numBitsLUT >= 30) {
+        //   console.log("WARning, large NUM LUT BITS IS " + numBitsLUT);
+        // }
+        var decodeLut = [], entry, code, numEntries, jj, currentBit, node;
+        for (i = i0; i < i1; i++) {
+          j = i - (i < size ? 0 : size);//wrap around
+          len = codeTable[j].first;
+          if (len > 0) {
+            entry = [len, j];
+            if (len <= numBitsLUTQick) {
+              code = codeTable[j].second << (numBitsLUTQick - len);
+              numEntries = 1 << (numBitsLUTQick - len);
+              for (k = 0; k < numEntries; k++) {
+                decodeLut[code | k] = entry;
+              }
+            }
+            else {
+              //build tree
+              code = codeTable[j].second;
+              node = tree;
+              for (jj = len - 1; jj >= 0; jj--) {
+                currentBit = code >>> jj & 1; //no left shift as length could be 30,31
+                if (currentBit) {
+                  if (!node.right) {
+                    node.right = new TreeNode();
+                  }
+                  node = node.right;
+                }
+                else {
+                  if (!node.left) {
+                    node.left = new TreeNode();
+                  }
+                  node = node.left;
+                }
+                if (jj === 0 && !node.val) {
+                  node.val = entry[1];
+                }
+              }
+            }
+          }
+        }
+        return {
+          decodeLut: decodeLut,
+          numBitsLUTQick: numBitsLUTQick,
+          numBitsLUT: numBitsLUT,
+          tree: tree,
+          stuffedData: stuffedData,
+          srcPtr: srcPtr,
+          bitPos: bitPos
+        };
+      },
+
+      readHuffman: function(input, data, OutPixelTypeArray, useBSQForOutputDim) {
+        var headerInfo = data.headerInfo;
+        var numDims = headerInfo.numDims;
+        var height = data.headerInfo.height;
+        var width = data.headerInfo.width;
+        var numPixels = width * height;
+        //var size_max = 1 << BITS_MAX;
+        /* ************************
+        * reading huffman structure info
+        *************************/
+        var huffmanInfo = this.readHuffmanTree(input, data);
+        var decodeLut = huffmanInfo.decodeLut;
+        var tree = huffmanInfo.tree;
+        //stuffedData includes huffman headers
+        var stuffedData = huffmanInfo.stuffedData;
+        var srcPtr = huffmanInfo.srcPtr;
+        var bitPos = huffmanInfo.bitPos;
+        var numBitsLUTQick = huffmanInfo.numBitsLUTQick;
+        var numBitsLUT = huffmanInfo.numBitsLUT;
+        var offset = data.headerInfo.imageType === 0 ? 128 : 0;
+        /*************************
+        *  decode
+        ***************************/
+        var node, val, delta, mask = data.pixels.resultMask, valTmp, valTmpQuick, currentBit;
+        var i, j, k, ii;
+        var prevVal = 0;
+        if (bitPos > 0) {
+          srcPtr++;
+          bitPos = 0;
+        }
+        var word = stuffedData[srcPtr];
+        var deltaEncode = data.encodeMode === 1;
+        var resultPixelsAllDim = new OutPixelTypeArray(numPixels * numDims);
+        var resultPixels = resultPixelsAllDim;
+        var iDim;
+        // TODO: reevaluate the need to keep inlined decoding code as IE support is phasing out
+        if (numDims < 2 || deltaEncode) {
+          for (iDim = 0; iDim < numDims; iDim++) {
+            if (numDims > 1) {
+              //get the mem block of current dimension
+              resultPixels = new OutPixelTypeArray(resultPixelsAllDim.buffer, numPixels * iDim, numPixels);
+              prevVal = 0;
+            }
+            if (data.headerInfo.numValidPixel === width * height) { //all valid
+              for (k = 0, i = 0; i < height; i++) {
+                for (j = 0; j < width; j++, k++) {
+                  val = 0;
+                  valTmp = (word << bitPos) >>> (32 - numBitsLUTQick);
+                  valTmpQuick = valTmp;// >>> deltaBits;
+                  if (32 - bitPos < numBitsLUTQick) {
+                    valTmp |= ((stuffedData[srcPtr + 1]) >>> (64 - bitPos - numBitsLUTQick));
+                    valTmpQuick = valTmp;// >>> deltaBits;
+                  }
+                  if (decodeLut[valTmpQuick])    // if there, move the correct number of bits and done
+                  {
+                    val = decodeLut[valTmpQuick][1];
+                    bitPos += decodeLut[valTmpQuick][0];
+                  }
+                  else {
+                    valTmp = (word << bitPos) >>> (32 - numBitsLUT);
+                    valTmpQuick = valTmp;// >>> deltaBits;
+                    if (32 - bitPos < numBitsLUT) {
+                      valTmp |= ((stuffedData[srcPtr + 1]) >>> (64 - bitPos - numBitsLUT));
+                      valTmpQuick = valTmp;// >>> deltaBits;
+                    }
+                    node = tree;
+                    for (ii = 0; ii < numBitsLUT; ii++) {
+                      currentBit = valTmp >>> (numBitsLUT - ii - 1) & 1;
+                      node = currentBit ? node.right : node.left;
+                      if (!(node.left || node.right)) {
+                        val = node.val;
+                        bitPos = bitPos + ii + 1;
+                        break;
+                      }
+                    }
+                  }
+    
+                  if (bitPos >= 32) {
+                    bitPos -= 32;
+                    srcPtr++;
+                    word = stuffedData[srcPtr];
+                  }
+    
+                  delta = val - offset;
+                  if (deltaEncode) {
+                    if (j > 0) {
+                      delta += prevVal;    // use overflow
+                    }
+                    else if (i > 0) {
+                      delta += resultPixels[k - width];
+                    }
+                    else {
+                      delta += prevVal;
+                    }
+                    delta &= 0xFF; //overflow
+                    resultPixels[k] = delta;//overflow
+                    prevVal = delta;
+                  }
+                  else {
+                    resultPixels[k] = delta;
+                  }
+                }
+              }
+            }
+            else { //not all valid, use mask
+              for (k = 0, i = 0; i < height; i++) {
+                for (j = 0; j < width; j++, k++) {
+                  if (mask[k]) {
+                    val = 0;
+                    valTmp = (word << bitPos) >>> (32 - numBitsLUTQick);
+                    valTmpQuick = valTmp;// >>> deltaBits;
+                    if (32 - bitPos < numBitsLUTQick) {
+                      valTmp |= ((stuffedData[srcPtr + 1]) >>> (64 - bitPos - numBitsLUTQick));
+                      valTmpQuick = valTmp;// >>> deltaBits;
+                    }
+                    if (decodeLut[valTmpQuick])    // if there, move the correct number of bits and done
+                    {
+                      val = decodeLut[valTmpQuick][1];
+                      bitPos += decodeLut[valTmpQuick][0];
+                    }
+                    else {
+                      valTmp = (word << bitPos) >>> (32 - numBitsLUT);
+                      valTmpQuick = valTmp;// >>> deltaBits;
+                      if (32 - bitPos < numBitsLUT) {
+                        valTmp |= ((stuffedData[srcPtr + 1]) >>> (64 - bitPos - numBitsLUT));
+                        valTmpQuick = valTmp;// >>> deltaBits;
+                      }
+                      node = tree;
+                      for (ii = 0; ii < numBitsLUT; ii++) {
+                        currentBit = valTmp >>> (numBitsLUT - ii - 1) & 1;
+                        node = currentBit ? node.right : node.left;
+                        if (!(node.left || node.right)) {
+                          val = node.val;
+                          bitPos = bitPos + ii + 1;
+                          break;
+                        }
+                      }
+                    }
+    
+                    if (bitPos >= 32) {
+                      bitPos -= 32;
+                      srcPtr++;
+                      word = stuffedData[srcPtr];
+                    }
+    
+                    delta = val - offset;
+                    if (deltaEncode) {
+                      if (j > 0 && mask[k - 1]) {
+                        delta += prevVal;    // use overflow
+                      }
+                      else if (i > 0 && mask[k - width]) {
+                        delta += resultPixels[k - width];
+                      }
+                      else {
+                        delta += prevVal;
+                      }
+    
+                      delta &= 0xFF; //overflow
+                      resultPixels[k] = delta;//overflow
+                      prevVal = delta;
+                    }
+                    else {
+                      resultPixels[k] = delta;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        else {
+          for (k = 0, i = 0; i < height; i++) {
+            for (j = 0; j < width; j++) {
+              k = i * width + j;
+              if (!mask || mask[k]) {
+                for (iDim = 0; iDim < numDims; iDim++, k+=numPixels) {
+                  val = 0;
+                  valTmp = (word << bitPos) >>> (32 - numBitsLUTQick);
+                  valTmpQuick = valTmp;
+                  if (32 - bitPos < numBitsLUTQick) {
+                    valTmp |= ((stuffedData[srcPtr + 1]) >>> (64 - bitPos - numBitsLUTQick));
+                    valTmpQuick = valTmp;
+                  }
+                  if (decodeLut[valTmpQuick])
+                  {
+                    val = decodeLut[valTmpQuick][1];
+                    bitPos += decodeLut[valTmpQuick][0];
+                  }
+                  else {
+                    valTmp = (word << bitPos) >>> (32 - numBitsLUT);
+                    valTmpQuick = valTmp;
+                    if (32 - bitPos < numBitsLUT) {
+                      valTmp |= ((stuffedData[srcPtr + 1]) >>> (64 - bitPos - numBitsLUT));
+                      valTmpQuick = valTmp;
+                    }
+                    node = tree;
+                    for (ii = 0; ii < numBitsLUT; ii++) {
+                      currentBit = valTmp >>> (numBitsLUT - ii - 1) & 1;
+                      node = currentBit ? node.right : node.left;
+                      if (!(node.left || node.right)) {
+                        val = node.val;
+                        bitPos = bitPos + ii + 1;
+                        break;
+                      }
+                    }
+                  }
+
+                  if (bitPos >= 32) {
+                    bitPos -= 32;
+                    srcPtr++;
+                    word = stuffedData[srcPtr];
+                  }
+
+                  delta = val - offset;
+                  resultPixels[k] = delta;
+                }
+              }
+            }
+          }
+        }
+        data.ptr = data.ptr + (srcPtr + 1) * 4 + (bitPos > 0 ? 4 : 0);
+        data.pixels.resultPixels = resultPixelsAllDim;
+        //swap for BIP layout
+        if (numDims > 1 && !useBSQForOutputDim) {
+          data.pixels.resultPixels = Lerc2Helpers.swapDimensionOrder(resultPixelsAllDim, numPixels, numDims, OutPixelTypeArray);
+        }
+      },
+
+      decodeBits: function(input, data, blockDataBuffer, offset, iDim) {
+        {
+          //bitstuff encoding is 3
+          var headerInfo = data.headerInfo;
+          var fileVersion = headerInfo.fileVersion;
+          //var block = {};
+          var blockPtr = 0;
+          var viewByteLength = ((input.byteLength - data.ptr) >= 5) ? 5 : (input.byteLength - data.ptr);
+          var view = new DataView(input, data.ptr, viewByteLength);
+          var headerByte = view.getUint8(0);
+          blockPtr++;
+          var bits67 = headerByte >> 6;
+          var n = (bits67 === 0) ? 4 : 3 - bits67;
+          var doLut = (headerByte & 32) > 0 ? true : false;//5th bit
+          var numBits = headerByte & 31;
+          var numElements = 0;
+          if (n === 1) {
+            numElements = view.getUint8(blockPtr); blockPtr++;
+          } else if (n === 2) {
+            numElements = view.getUint16(blockPtr, true); blockPtr += 2;
+          } else if (n === 4) {
+            numElements = view.getUint32(blockPtr, true); blockPtr += 4;
+          } else {
+            throw "Invalid valid pixel count type";
+          }
+          //fix: huffman codes are bit stuffed, but not bound by data's max value, so need to use originalUnstuff
+          //offset = offset || 0;
+          var scale = 2 * headerInfo.maxZError;
+          var stuffedData, arrayBuf, store8, dataBytes, dataWords;
+          var lutArr, lutData, lutBytes, lutBitsPerElement, bitsPerPixel;
+          var zMax = headerInfo.numDims > 1 ? headerInfo.maxValues[iDim] : headerInfo.zMax;
+          if (doLut) {
+            data.counter.lut++;
+            lutBytes = view.getUint8(blockPtr);
+            lutBitsPerElement = numBits;
+            blockPtr++;
+            dataBytes = Math.ceil((lutBytes - 1) * numBits / 8);
+            dataWords = Math.ceil(dataBytes / 4);
+            arrayBuf = new ArrayBuffer(dataWords * 4);
+            store8 = new Uint8Array(arrayBuf);
+
+            data.ptr += blockPtr;
+            store8.set(new Uint8Array(input, data.ptr, dataBytes));
+
+            lutData = new Uint32Array(arrayBuf);
+            data.ptr += dataBytes;
+
+            bitsPerPixel = 0;
+            while ((lutBytes - 1) >>> bitsPerPixel) {
+              bitsPerPixel++;
+            }
+            dataBytes = Math.ceil(numElements * bitsPerPixel / 8);
+            dataWords = Math.ceil(dataBytes / 4);
+            arrayBuf = new ArrayBuffer(dataWords * 4);
+            store8 = new Uint8Array(arrayBuf);
+            store8.set(new Uint8Array(input, data.ptr, dataBytes));
+            stuffedData = new Uint32Array(arrayBuf);
+            data.ptr += dataBytes;
+            if (fileVersion >= 3) {
+              lutArr = BitStuffer.unstuffLUT2(lutData, numBits, lutBytes - 1, offset, scale, zMax);
+            }
+            else {
+              lutArr = BitStuffer.unstuffLUT(lutData, numBits, lutBytes - 1, offset, scale, zMax);
+            }
+            //lutArr.unshift(0);
+            if (fileVersion >= 3) {
+              //BitStuffer.unstuff2(block, blockDataBuffer, headerInfo.zMax);
+              BitStuffer.unstuff2(stuffedData, blockDataBuffer, bitsPerPixel, numElements, lutArr);
+            }
+            else {
+              BitStuffer.unstuff(stuffedData, blockDataBuffer, bitsPerPixel, numElements, lutArr);
+            }
+          }
+          else {
+            //console.debug("bitstuffer");
+            data.counter.bitstuffer++;
+            bitsPerPixel = numBits;
+            data.ptr += blockPtr;
+            if (bitsPerPixel > 0) {
+              dataBytes = Math.ceil(numElements * bitsPerPixel / 8);
+              dataWords = Math.ceil(dataBytes / 4);
+              arrayBuf = new ArrayBuffer(dataWords * 4);
+              store8 = new Uint8Array(arrayBuf);
+              store8.set(new Uint8Array(input, data.ptr, dataBytes));
+              stuffedData = new Uint32Array(arrayBuf);
+              data.ptr += dataBytes;
+              if (fileVersion >= 3) {
+                if (offset == null) {
+                  BitStuffer.originalUnstuff2(stuffedData, blockDataBuffer, bitsPerPixel, numElements);
+                }
+                else {
+                  BitStuffer.unstuff2(stuffedData, blockDataBuffer, bitsPerPixel, numElements, false, offset, scale, zMax);
+                }
+              }
+              else {
+                if (offset == null) {
+                  BitStuffer.originalUnstuff(stuffedData, blockDataBuffer, bitsPerPixel, numElements);
+                }
+                else {
+                  BitStuffer.unstuff(stuffedData, blockDataBuffer, bitsPerPixel, numElements, false, offset, scale, zMax);
+                }
+              }
+            }
+          }
+        }
+
+      },
+
+      readTiles: function(input, data, OutPixelTypeArray, useBSQForOutputDim) {
+        var headerInfo = data.headerInfo;
+        var width = headerInfo.width;
+        var height = headerInfo.height;
+        var numPixels = width * height;
+        var microBlockSize = headerInfo.microBlockSize;
+        var imageType = headerInfo.imageType;
+        var dataTypeSize = Lerc2Helpers.getDataTypeSize(imageType);
+        var numBlocksX = Math.ceil(width / microBlockSize);
+        var numBlocksY = Math.ceil(height / microBlockSize);
+        data.pixels.numBlocksY = numBlocksY;
+        data.pixels.numBlocksX = numBlocksX;
+        data.pixels.ptr = 0;
+        var row = 0, col = 0, blockY = 0, blockX = 0, thisBlockHeight = 0, thisBlockWidth = 0, bytesLeft = 0, headerByte = 0, bits67 = 0, testCode = 0, outPtr = 0, outStride = 0, numBytes = 0, bytesleft = 0, z = 0, blockPtr = 0;
+        var view, block, arrayBuf, store8, rawData;
+        var blockEncoding;
+        var blockDataBuffer = new OutPixelTypeArray(microBlockSize * microBlockSize);
+        var lastBlockHeight = (height % microBlockSize) || microBlockSize;
+        var lastBlockWidth = (width % microBlockSize) || microBlockSize;
+        var offsetType, offset;
+        var numDims = headerInfo.numDims, iDim;
+        var mask = data.pixels.resultMask;
+        var resultPixels = data.pixels.resultPixels;
+        var fileVersion = headerInfo.fileVersion;
+        var fileVersionCheckNum = fileVersion >= 5 ? 14 : 15;
+        var isDiffEncoding;
+        var zMax = headerInfo.zMax;
+        //var resultPixelsAllDim = resultPixels;
+        var resultPixelsPrevDim;
+        for (blockY = 0; blockY < numBlocksY; blockY++) {
+          thisBlockHeight = (blockY !== numBlocksY - 1) ? microBlockSize : lastBlockHeight;
+          for (blockX = 0; blockX < numBlocksX; blockX++) {
+            //console.debug("y" + blockY + " x" + blockX);
+            thisBlockWidth = (blockX !== numBlocksX - 1) ? microBlockSize : lastBlockWidth;
+
+            outPtr = blockY * width * microBlockSize + blockX * microBlockSize;
+            outStride = width - thisBlockWidth;
+
+            for (iDim = 0; iDim < numDims; iDim++) {
+              if (numDims > 1) {
+                resultPixelsPrevDim = resultPixels;
+                outPtr = blockY * width * microBlockSize + blockX * microBlockSize;
+                resultPixels = new OutPixelTypeArray(data.pixels.resultPixels.buffer, numPixels * iDim * dataTypeSize, numPixels);
+                zMax = headerInfo.maxValues[iDim];
+              } else {
+                resultPixelsPrevDim = null;
+              }
+              bytesLeft = input.byteLength - data.ptr;
+              view = new DataView(input, data.ptr, Math.min(10, bytesLeft));
+              block = {};
+              blockPtr = 0;
+              headerByte = view.getUint8(0);
+              blockPtr++;
+              isDiffEncoding = headerInfo.fileVersion >= 5 ? headerByte & 4 : 0;
+              bits67 = (headerByte >> 6) & 0xFF;
+              testCode = (headerByte >> 2) & fileVersionCheckNum;    // use bits 2345 for integrity check
+              if (testCode !== (((blockX * microBlockSize) >> 3) & fileVersionCheckNum)) {
+                throw "integrity issue";
+              }
+
+              if (isDiffEncoding && iDim === 0) {
+                throw "integrity issue";
+              }
+
+              blockEncoding = headerByte & 3;
+              if (blockEncoding > 3) {
+                data.ptr += blockPtr;
+                throw "Invalid block encoding (" + blockEncoding + ")";
+              }
+              else if (blockEncoding === 2) { //constant 0
+                if (isDiffEncoding) {
+                  if (mask) {
+                    for (row = 0; row < thisBlockHeight; row++) {
+                      for (col = 0; col < thisBlockWidth; col++) {
+                        if (mask[outPtr]) {
+                          resultPixels[outPtr] = resultPixelsPrevDim[outPtr];
+                        }
+                        outPtr++;
+                      }
+                    }
+                  }
+                  else {
+                    for (row = 0; row < thisBlockHeight; row++) {
+                      for (col = 0; col < thisBlockWidth; col++) {
+                        resultPixels[outPtr] = resultPixelsPrevDim[outPtr];
+                        outPtr++;
+                      }
+                    }
+                  }
+                }
+                data.counter.constant++;
+                data.ptr += blockPtr;
+                continue;
+              }
+              else if (blockEncoding === 0) {  //uncompressed
+                if (isDiffEncoding) {
+                  // doesn't make sense, should not happen
+                  throw "integrity issue";
+                }
+                data.counter.uncompressed++;
+                data.ptr += blockPtr;
+                numBytes = thisBlockHeight * thisBlockWidth * dataTypeSize;
+                bytesleft = input.byteLength - data.ptr;
+                numBytes = numBytes < bytesleft ? numBytes : bytesleft;
+                //bit alignment
+                arrayBuf = new ArrayBuffer((numBytes % dataTypeSize) === 0 ? numBytes : (numBytes + dataTypeSize - numBytes % dataTypeSize));
+                store8 = new Uint8Array(arrayBuf);
+                store8.set(new Uint8Array(input, data.ptr, numBytes));
+                rawData = new OutPixelTypeArray(arrayBuf);
+                z = 0;
+                if (mask) {
+                  for (row = 0; row < thisBlockHeight; row++) {
+                    for (col = 0; col < thisBlockWidth; col++) {
+                      if (mask[outPtr]) {
+                        resultPixels[outPtr] = rawData[z++];
+                      }
+                      outPtr++;
+                    }
+                    outPtr += outStride;
+                  }
+                }
+                else {//all valid
+                  for (row = 0; row < thisBlockHeight; row++) {
+                    for (col = 0; col < thisBlockWidth; col++) {
+                      resultPixels[outPtr++] = rawData[z++];
+                    }
+                    outPtr += outStride;
+                  }
+                }
+                data.ptr += z * dataTypeSize;
+              }
+              else { //1 or 3
+                offsetType = Lerc2Helpers.getDataTypeUsed((isDiffEncoding && imageType < 6) ? 4 : imageType, bits67);
+                offset = Lerc2Helpers.getOnePixel(block, blockPtr, offsetType, view);
+                blockPtr += Lerc2Helpers.getDataTypeSize(offsetType);
+                if (blockEncoding === 3) //constant offset value
+                {
+                  data.ptr += blockPtr;
+                  data.counter.constantoffset++;
+                  //you can delete the following resultMask case in favor of performance because val is constant and users use nodata mask, otherwise nodatavalue post processing handles it too.
+                  //while the above statement is true, we're not doing it as we want to keep invalid pixel value at 0 rather than arbitrary values
+                  if (mask) {
+                    for (row = 0; row < thisBlockHeight; row++) {
+                      for (col = 0; col < thisBlockWidth; col++) {
+                        if (mask[outPtr]) {
+                          resultPixels[outPtr] = isDiffEncoding ? Math.min(zMax, resultPixelsPrevDim[outPtr] + offset) : offset;
+                        }
+                        outPtr++;
+                      }
+                      outPtr += outStride;
+                    }
+                  }
+                  else {
+                    for (row = 0; row < thisBlockHeight; row++) {
+                      for (col = 0; col < thisBlockWidth; col++) {
+                        resultPixels[outPtr] = isDiffEncoding ? Math.min(zMax, resultPixelsPrevDim[outPtr] + offset) : offset;
+                        outPtr++;
+                      }
+                      outPtr += outStride;
+                    }
+                  }
+                }
+                else { //bitstuff encoding is 3
+                  data.ptr += blockPtr;
+                  //heavy lifting
+                  Lerc2Helpers.decodeBits(input, data, blockDataBuffer, offset, iDim);
+                  blockPtr = 0;
+                  // duplicate code to favor performance, diff encoding is for multidimension only
+                  if (isDiffEncoding) {
+                    if (mask) {
+                      for (row = 0; row < thisBlockHeight; row++) {
+                        for (col = 0; col < thisBlockWidth; col++) {
+                          if (mask[outPtr]) {
+                            resultPixels[outPtr] = blockDataBuffer[blockPtr++] + resultPixelsPrevDim[outPtr];
+                          }
+                          outPtr++;
+                        }
+                        outPtr += outStride;
+                      }
+                    }
+                    else {
+                      for (row = 0; row < thisBlockHeight; row++) {
+                        for (col = 0; col < thisBlockWidth; col++) {
+                          resultPixels[outPtr] = blockDataBuffer[blockPtr++] + resultPixelsPrevDim[outPtr];
+                          outPtr++;
+                        }
+                        outPtr += outStride;
+                      }
+                    }
+                  }
+                  else if (mask) {
+                    for (row = 0; row < thisBlockHeight; row++) {
+                      for (col = 0; col < thisBlockWidth; col++) {
+                        if (mask[outPtr]) {
+                          resultPixels[outPtr] = blockDataBuffer[blockPtr++];
+                        }
+                        outPtr++;
+                      }
+                      outPtr += outStride;
+                    }
+                  }
+                  else {
+                    for (row = 0; row < thisBlockHeight; row++) {
+                      for (col = 0; col < thisBlockWidth; col++) {
+                        resultPixels[outPtr++] = blockDataBuffer[blockPtr++];
+                      }
+                      outPtr += outStride;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        //swap for BIP: it's always easier for clients to handle BSQ so we keep existing logic and introduce a swap here to minimze changes
+        if (numDims > 1 && !useBSQForOutputDim) {
+          data.pixels.resultPixels = Lerc2Helpers.swapDimensionOrder(data.pixels.resultPixels, numPixels, numDims, OutPixelTypeArray);
+        }
+      },
+
+      /*****************
+      *  private methods (helper methods)
+      *****************/
+
+      formatFileInfo: function(data) {
+        return {
+          "fileIdentifierString": data.headerInfo.fileIdentifierString,
+          "fileVersion": data.headerInfo.fileVersion,
+          "imageType": data.headerInfo.imageType,
+          "height": data.headerInfo.height,
+          "width": data.headerInfo.width,
+          "numValidPixel": data.headerInfo.numValidPixel,
+          "microBlockSize": data.headerInfo.microBlockSize,
+          "blobSize": data.headerInfo.blobSize,
+          "maxZError": data.headerInfo.maxZError,
+          "pixelType": Lerc2Helpers.getPixelType(data.headerInfo.imageType),
+          "eofOffset": data.eofOffset,
+          "mask": data.mask ? {
+            "numBytes": data.mask.numBytes
+          } : null,
+          "pixels": {
+            "numBlocksX": data.pixels.numBlocksX,
+            "numBlocksY": data.pixels.numBlocksY,
+            //"numBytes": data.pixels.numBytes,
+            "maxValue": data.headerInfo.zMax,
+            "minValue": data.headerInfo.zMin,
+            "noDataValue": data.noDataValue
+          }
+        };
+      },
+
+      constructConstantSurface: function(data, useBSQForOutputDim) {
+        var val = data.headerInfo.zMax;
+        var valMin = data.headerInfo.zMin;
+        var maxValues = data.headerInfo.maxValues;
+        var numDims = data.headerInfo.numDims;
+        var numPixels = data.headerInfo.height * data.headerInfo.width;
+        var i = 0, k = 0, nStart = 0;
+        var mask = data.pixels.resultMask;
+        var resultPixels = data.pixels.resultPixels;
+        if (mask) {
+          if (numDims > 1) {
+            if (useBSQForOutputDim) {
+              for (i = 0; i < numDims; i++) {
+                nStart = i * numPixels;
+                val = maxValues[i];
+                for (k = 0; k < numPixels; k++) {
+                  if (mask[k]) {
+                    resultPixels[nStart + k] = val;
+                  }
+                }
+              }  
+            }
+            else {
+              for (k = 0; k < numPixels; k++) {
+                if (mask[k]) {
+                  nStart = k * numDims;
+                  for (i = 0; i < numDims; i++) {
+                    resultPixels[nStart + numDims] = maxValues[i];
+                  }
+                }
+              }
+            }
+          }
+          else {
+            for (k = 0; k < numPixels; k++) {
+              if (mask[k]) {
+                resultPixels[k] = val;
+              }
+            }
+          }
+        }
+        else {
+          if (numDims > 1 && valMin !== val) {
+            if (useBSQForOutputDim) {
+              for (i = 0; i < numDims; i++) {
+                nStart = i * numPixels;
+                val = maxValues[i];
+                for (k = 0; k < numPixels; k++) {
+                  resultPixels[nStart + k] = val;
+                }
+              }
+            }
+            else {
+              for (k = 0; k < numPixels; k++) {
+                nStart = k * numDims;
+                for (i = 0; i < numDims; i++) {
+                  resultPixels[nStart + i] = maxValues[i];
+                }
+              }
+            }
+          }
+          else {
+            for (k = 0; k < numPixels * numDims; k++) {
+              resultPixels[k] = val;
+            }
+          }
+        }
+        return;
+      },
+
+      getDataTypeArray: function(t) {
+        var tp;
+        switch (t) {
+          case 0: //char
+            tp = Int8Array;
+            break;
+          case 1: //byte
+            tp = Uint8Array;
+            break;
+          case 2: //short
+            tp = Int16Array;
+            break;
+          case 3: //ushort
+            tp = Uint16Array;
+            break;
+          case 4:
+            tp = Int32Array;
+            break;
+          case 5:
+            tp = Uint32Array;
+            break;
+          case 6:
+            tp = Float32Array;
+            break;
+          case 7:
+            tp = Float64Array;
+            break;
+          default:
+            tp = Float32Array;
+        }
+        return tp;
+      },
+
+      getPixelType: function(t) {
+        var tp;
+        switch (t) {
+          case 0: //char
+            tp = "S8";
+            break;
+          case 1: //byte
+            tp = "U8";
+            break;
+          case 2: //short
+            tp = "S16";
+            break;
+          case 3: //ushort
+            tp = "U16";
+            break;
+          case 4:
+            tp = "S32";
+            break;
+          case 5:
+            tp = "U32";
+            break;
+          case 6:
+            tp = "F32";
+            break;
+          case 7:
+            tp = "F64";
+            break;
+          default:
+            tp = "F32";
+        }
+        return tp;
+      },
+
+      isValidPixelValue: function(t, val) {
+        if (val == null) {
+          return false;
+        }
+        var isValid;
+        switch (t) {
+          case 0: //char
+            isValid = val >= -128 && val <= 127;
+            break;
+          case 1: //byte  (unsigned char)
+            isValid = val >= 0 && val <= 255;
+            break;
+          case 2: //short
+            isValid = val >= -32768 && val <= 32767;
+            break;
+          case 3: //ushort
+            isValid = val >= 0 && val <= 65536;
+            break;
+          case 4: //int 32
+            isValid = val >= -2147483648 && val <= 2147483647;
+            break;
+          case 5: //uinit 32
+            isValid = val >= 0 && val <= 4294967296;
+            break;
+          case 6:
+            isValid = val >= -3.4027999387901484e+38 && val <= 3.4027999387901484e+38;
+            break;
+          case 7:
+            isValid = val >= -1.7976931348623157e+308 && val <= 1.7976931348623157e+308;
+            break;
+          default:
+            isValid = false;
+        }
+        return isValid;
+      },
+
+      getDataTypeSize: function(t) {
+        var s = 0;
+        switch (t) {
+          case 0: //ubyte
+          case 1: //byte
+            s = 1;
+            break;
+          case 2: //short
+          case 3: //ushort
+            s = 2;
+            break;
+          case 4:
+          case 5:
+          case 6:
+            s = 4;
+            break;
+          case 7:
+            s = 8;
+            break;
+          default:
+            s = t;
+        }
+        return s;
+      },
+
+      getDataTypeUsed: function(dt, tc) {
+        var t = dt;
+        switch (dt) {
+          case 2: //short
+          case 4: //long
+            t = dt - tc;
+            break;
+          case 3: //ushort
+          case 5: //ulong
+            t = dt - 2 * tc;
+            break;
+          case 6: //float
+            if (0 === tc) {
+              t = dt;
+            }
+            else if (1 === tc) {
+              t = 2;
+            }
+            else {
+              t = 1;//byte
+            }
+            break;
+          case 7: //double
+            if (0 === tc) {
+              t = dt;
+            }
+            else {
+              t = dt - 2 * tc + 1;
+            }
+            break;
+          default:
+            t = dt;
+            break;
+        }
+        return t;
+      },
+
+      getOnePixel: function(block, blockPtr, offsetType, view) {
+        var temp = 0;
+        switch (offsetType) {
+          case 0: //char
+            temp = view.getInt8(blockPtr);
+            break;
+          case 1: //byte
+            temp = view.getUint8(blockPtr);
+            break;
+          case 2:
+            temp = view.getInt16(blockPtr, true);
+            break;
+          case 3:
+            temp = view.getUint16(blockPtr, true);
+            break;
+          case 4:
+            temp = view.getInt32(blockPtr, true);
+            break;
+          case 5:
+            temp = view.getUInt32(blockPtr, true);
+            break;
+          case 6:
+            temp = view.getFloat32(blockPtr, true);
+            break;
+          case 7:
+            temp = view.getFloat64(blockPtr, true);
+            break;
+          default:
+            throw ("the decoder does not understand this pixel type");
+        }
+        return temp;
+      },
+
+      swapDimensionOrder: function(pixels, numPixels, numDims, OutPixelTypeArray, inputIsBIP) {
+        var i = 0, j = 0, iDim = 0, temp = 0, swap = pixels;
+        if (numDims > 1) {
+          swap = new OutPixelTypeArray(numPixels * numDims);
+          if (inputIsBIP) {
+            for (i=0; i<numPixels; i++) {
+              temp = i;
+              for (iDim=0; iDim < numDims; iDim++, temp += numPixels) {
+                swap[temp] = pixels[j++];
+              }
+            }  
+          }
+          else {
+            for (i=0; i<numPixels; i++) {
+              temp = i;
+              for (iDim=0; iDim < numDims; iDim++, temp += numPixels) {
+                swap[j++] = pixels[temp];
+              }
+            }
+          }
+        }
+        return swap;
+      }
+    };
+
+    /***************************************************
+    *private class for a tree node. Huffman code is in Lerc2Helpers
+    ****************************************************/
+    var TreeNode = function(val, left, right) {
+      this.val = val;
+      this.left = left;
+      this.right = right;
+    };
+
+    var Lerc2Decode = {
+      /*
+      * ********removed options compared to LERC1. We can bring some of them back if needed.
+       * removed pixel type. LERC2 is typed and doesn't require user to give pixel type
+       * changed encodedMaskData to maskData. LERC2 's js version make it faster to use maskData directly.
+       * removed returnMask. mask is used by LERC2 internally and is cost free. In case of user input mask, it's returned as well and has neglible cost.
+       * removed nodatavalue. Because LERC2 pixels are typed, nodatavalue will sacrify a useful value for many types (8bit, 16bit) etc,
+       *       user has to be knowledgable enough about raster and their data to avoid usability issues. so nodata value is simply removed now.
+       *       We can add it back later if their's a clear requirement.
+       * removed encodedMask. This option was not implemented in LercDecode. It can be done after decoding (less efficient)
+       * removed computeUsedBitDepths.
+       *
+       *
+       * response changes compared to LERC1
+       * 1. encodedMaskData is not available
+       * 2. noDataValue is optional (returns only if user's noDataValue is with in the valid data type range)
+       * 3. maskData is always available
+      */
+      /*****************
+      *  public properties
+      ******************/
+      //HUFFMAN_LUT_BITS_MAX: 12, //use 2^12 lut, not configurable
+
+      /*****************
+      *  public methods
+      *****************/
+
+      /**
+       * Decode a LERC2 byte stream and return an object containing the pixel data and optional metadata.
+       *
+       * @param {ArrayBuffer} input The LERC input byte stream
+       * @param {object} [options] options Decoding options
+       * @param {number} [options.inputOffset] The number of bytes to skip in the input byte stream. A valid LERC file is expected at that position
+       * @param {boolean} [options.returnFileInfo] If true, the return value will have a fileInfo property that contains metadata obtained from the LERC headers and the decoding process
+       * @param {boolean} [options.returnPixelInterleavedDims]  If true, returned dimensions are pixel-interleaved, a.k.a [p1_dim0, p1_dim1, p1_dimn, p2_dim0...], default is [p1_dim0, p2_dim0, ..., p1_dim1, p2_dim1...]
+       */
+      decode: function(/*byte array*/ input, /*object*/ options) {
+        //currently there's a bug in the sparse array, so please do not set to false
+        options = options || {};
+        var noDataValue = options.noDataValue;
+
+        //initialize
+        var i = 0, data = {};
+        data.ptr = options.inputOffset || 0;
+        data.pixels = {};
+
+        // File header
+        if (!Lerc2Helpers.readHeaderInfo(input, data)) {
+          return;
+        }
+
+        var headerInfo = data.headerInfo;
+        var fileVersion = headerInfo.fileVersion;
+        var OutPixelTypeArray = Lerc2Helpers.getDataTypeArray(headerInfo.imageType);
+
+        // version check
+        if (fileVersion > 5) {
+          throw "unsupported lerc version 2." + fileVersion;
+        }
+
+        // Mask Header
+        Lerc2Helpers.readMask(input, data);
+        if (headerInfo.numValidPixel !== headerInfo.width * headerInfo.height && !data.pixels.resultMask) {
+          data.pixels.resultMask = options.maskData;
+        }
+
+        var numPixels = headerInfo.width * headerInfo.height;
+        data.pixels.resultPixels = new OutPixelTypeArray(numPixels * headerInfo.numDims);
+
+        data.counter = {
+          onesweep: 0,
+          uncompressed: 0,
+          lut: 0,
+          bitstuffer: 0,
+          constant: 0,
+          constantoffset: 0
+        };
+        var useBSQForOutputDim = !options.returnPixelInterleavedDims;
+        if (headerInfo.numValidPixel !== 0) {
+          //not tested
+          if (headerInfo.zMax === headerInfo.zMin) //constant surface
+          {
+            Lerc2Helpers.constructConstantSurface(data, useBSQForOutputDim);
+          }
+          else if (fileVersion >= 4 && Lerc2Helpers.checkMinMaxRanges(input, data)) {
+            Lerc2Helpers.constructConstantSurface(data, useBSQForOutputDim);
+          }
+          else {
+            var view = new DataView(input, data.ptr, 2);
+            var bReadDataOneSweep = view.getUint8(0);
+            data.ptr++;
+            if (bReadDataOneSweep) {
+              //console.debug("OneSweep");
+              Lerc2Helpers.readDataOneSweep(input, data, OutPixelTypeArray, useBSQForOutputDim);
+            }
+            else {
+              //lerc2.1: //bitstuffing + lut
+              //lerc2.2: //bitstuffing + lut + huffman
+              //lerc2.3: new bitstuffer
+              if (fileVersion > 1 && headerInfo.imageType <= 1 && Math.abs(headerInfo.maxZError - 0.5) < 0.00001) {
+                //this is 2.x plus 8 bit (unsigned and signed) data, possiblity of Huffman
+                var flagHuffman = view.getUint8(1);
+                data.ptr++;
+                data.encodeMode = flagHuffman;
+                if (flagHuffman > 2 || (fileVersion < 4 && flagHuffman > 1)) {
+                  throw "Invalid Huffman flag " + flagHuffman;
+                }
+                if (flagHuffman) {//1 - delta Huffman, 2 - Huffman
+                  //console.log("Huffman");
+                  Lerc2Helpers.readHuffman(input, data, OutPixelTypeArray, useBSQForOutputDim);
+                }
+                else {
+                  //console.log("Tiles");
+                  Lerc2Helpers.readTiles(input, data, OutPixelTypeArray, useBSQForOutputDim);
+                }
+              }
+              else { //lerc2.x non-8 bit data
+                //console.log("Tiles");
+                Lerc2Helpers.readTiles(input, data, OutPixelTypeArray, useBSQForOutputDim);
+              }
+            }
+          }
+        }
+
+        data.eofOffset = data.ptr;
+        var diff;
+        if (options.inputOffset) {
+          diff = data.headerInfo.blobSize + options.inputOffset - data.ptr;
+          if (Math.abs(diff) >= 1) {
+            //console.debug("incorrect eof: dataptr " + data.ptr + " offset " + options.inputOffset + " blobsize " + data.headerInfo.blobSize + " diff: " + diff);
+            data.eofOffset = options.inputOffset + data.headerInfo.blobSize;
+          }
+        }
+        else {
+          diff = data.headerInfo.blobSize - data.ptr;
+          if (Math.abs(diff) >= 1) {
+            //console.debug("incorrect first band eof: dataptr " + data.ptr + " blobsize " + data.headerInfo.blobSize + " diff: " + diff);
+            data.eofOffset = data.headerInfo.blobSize;
+          }
+        }
+
+        var result = {
+          width: headerInfo.width,
+          height: headerInfo.height,
+          pixelData: data.pixels.resultPixels,
+          minValue: headerInfo.zMin,
+          maxValue: headerInfo.zMax,
+          validPixelCount: headerInfo.numValidPixel,
+          dimCount: headerInfo.numDims,
+          dimStats: {
+            minValues: headerInfo.minValues,
+            maxValues: headerInfo.maxValues
+          },
+          maskData: data.pixels.resultMask
+          //noDataValue: noDataValue
+        };
+
+        //we should remove this if there's no existing client
+        //optional noDataValue processing, it's user's responsiblity
+        if (data.pixels.resultMask && Lerc2Helpers.isValidPixelValue(headerInfo.imageType, noDataValue)) {
+          var mask = data.pixels.resultMask;
+          for (i = 0; i < numPixels; i++) {
+            if (!mask[i]) {
+              result.pixelData[i] = noDataValue;
+            }
+          }
+          result.noDataValue = noDataValue;
+        }
+        data.noDataValue = noDataValue;
+        if (options.returnFileInfo) {
+          result.fileInfo = Lerc2Helpers.formatFileInfo(data);
+        }
+        return result;
+      },
+
+      getBandCount: function(/*byte array*/ input) {
+        var count = 0;
+        var i = 0;
+        var temp = {};
+        temp.ptr = 0;
+        temp.pixels = {};
+        while (i < input.byteLength - 58) {
+          Lerc2Helpers.readHeaderInfo(input, temp);
+          i += temp.headerInfo.blobSize;
+          count++;
+          temp.ptr = i;
+        }
+        return count;
+      }
+    };
+
+    return Lerc2Decode;
+  })();
+
+  var isPlatformLittleEndian = (function() {
+    var a = new ArrayBuffer(4);
+    var b = new Uint8Array(a);
+    var c = new Uint32Array(a);
+    c[0] = 1;
+    return b[0] === 1;
+  })();
+
+  var Lerc = {
+    /************wrapper**********************************************/
+    /**
+     * A wrapper for decoding both LERC1 and LERC2 byte streams capable of handling multiband pixel blocks for various pixel types.
+     *
+     * @alias module:Lerc
+     * @param {ArrayBuffer} input The LERC input byte stream
+     * @param {object} [options] The decoding options below are optional.
+     * @param {number} [options.inputOffset] The number of bytes to skip in the input byte stream. A valid Lerc file is expected at that position.
+     * @param {string} [options.pixelType] (LERC1 only) Default value is F32. Valid pixel types for input are U8/S8/S16/U16/S32/U32/F32.
+     * @param {number} [options.noDataValue] (LERC1 only). It is recommended to use the returned mask instead of setting this value.
+     * @param {boolean} [options.returnPixelInterleavedDims] (nDim LERC2 only) If true, returned dimensions are pixel-interleaved, a.k.a [p1_dim0, p1_dim1, p1_dimn, p2_dim0...], default is [p1_dim0, p2_dim0, ..., p1_dim1, p2_dim1...]
+     * @returns {{width, height, pixels, pixelType, mask, statistics}}
+       * @property {number} width Width of decoded image.
+       * @property {number} height Height of decoded image.
+       * @property {array} pixels [band1, band2, …] Each band is a typed array of width*height.
+       * @property {string} pixelType The type of pixels represented in the output.
+       * @property {mask} mask Typed array with a size of width*height, or null if all pixels are valid.
+       * @property {array} statistics [statistics_band1, statistics_band2, …] Each element is a statistics object representing min and max values
+    **/
+    decode: function(encodedData, options) {
+      if (!isPlatformLittleEndian) {
+        throw "Big endian system is not supported.";
+      }
+      options = options || {};
+      var inputOffset = options.inputOffset || 0;
+      var fileIdView = new Uint8Array(encodedData, inputOffset, 10);
+      var fileIdentifierString = String.fromCharCode.apply(null, fileIdView);
+      var lerc, majorVersion;
+      if (fileIdentifierString.trim() === "CntZImage") {
+        lerc = LercDecode;
+        majorVersion = 1;
+      }
+      else if (fileIdentifierString.substring(0, 5) === "Lerc2") {
+        lerc = Lerc2Decode;
+        majorVersion = 2;
+      }
+      else {
+        throw "Unexpected file identifier string: " + fileIdentifierString;
+      }
+
+      var iPlane = 0, eof = encodedData.byteLength - 10, encodedMaskData, bandMasks = [], bandMask, maskData;
+      var decodedPixelBlock = {
+        width: 0,
+        height: 0,
+        pixels: [],
+        pixelType: options.pixelType,
+        mask: null,
+        statistics: []
+      };
+      var uniqueBandMaskCount = 0;
+
+      while (inputOffset < eof) {
+        var result = lerc.decode(encodedData, {
+          inputOffset: inputOffset,//for both lerc1 and lerc2
+          encodedMaskData: encodedMaskData,//lerc1 only
+          maskData: maskData,//lerc2 only
+          returnMask: iPlane === 0 ? true : false,//lerc1 only
+          returnEncodedMask: iPlane === 0 ? true : false,//lerc1 only
+          returnFileInfo: true,//for both lerc1 and lerc2
+          returnPixelInterleavedDims: options.returnPixelInterleavedDims,//for ndim lerc2 only
+          pixelType: options.pixelType || null,//lerc1 only
+          noDataValue: options.noDataValue || null//lerc1 only
+        });
+
+        inputOffset = result.fileInfo.eofOffset;
+        maskData = result.maskData;//lerc2
+        if (iPlane === 0) {
+          encodedMaskData = result.encodedMaskData;//lerc1
+          decodedPixelBlock.width = result.width;
+          decodedPixelBlock.height = result.height;
+          decodedPixelBlock.dimCount = result.dimCount || 1;
+          //decodedPixelBlock.dimStats = decodedPixelBlock.dimStats;
+          decodedPixelBlock.pixelType = result.pixelType || result.fileInfo.pixelType;
+          decodedPixelBlock.mask = maskData;
+        }
+        if (majorVersion > 1) {
+          if (maskData) {
+            bandMasks.push(maskData);
+          }
+          if (result.fileInfo.mask && result.fileInfo.mask.numBytes > 0) {
+            uniqueBandMaskCount++;
+          }
+        }
+
+        iPlane++;
+        decodedPixelBlock.pixels.push(result.pixelData);
+        decodedPixelBlock.statistics.push({
+          minValue: result.minValue,
+          maxValue: result.maxValue,
+          noDataValue: result.noDataValue,
+          dimStats: result.dimStats
+        });
+      }
+      var i, j, numPixels;
+      if (majorVersion > 1 && uniqueBandMaskCount > 1) {
+        numPixels = decodedPixelBlock.width * decodedPixelBlock.height;
+        decodedPixelBlock.bandMasks = bandMasks;
+        maskData = new Uint8Array(numPixels);
+        maskData.set(bandMasks[0]);
+        for (i = 1; i < bandMasks.length; i++) {
+          bandMask = bandMasks[i];
+          for (j = 0; j < numPixels; j++) {
+            maskData[j] = maskData[j] & bandMask[j];
+          }
+        }
+        decodedPixelBlock.maskData = maskData;
+      }
+
+      return decodedPixelBlock;
+    }
+  };
+
+  if (true) {/* jshint ignore:line */
+    //amd loaders such as dojo and requireJS
+    //http://wiki.commonjs.org/wiki/Modules/AsynchronousDefinition
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() { return Lerc; }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));/* jshint ignore:line */
+  }
+  else {}
+
+})();
+
 
 /***/ })
 
 }]);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9ub2RlX21vZHVsZXMvZ2VvdGlmZi9kaXN0LW1vZHVsZS9jb21wcmVzc2lvbi9sZXJjLmpzIiwid2VicGFjazovLy8uL25vZGVfbW9kdWxlcy9sZXJjL0xlcmNEZWNvZGUuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQStCO0FBQ1A7QUFDbUI7QUFDd0I7O0FBRXBELDBCQUEwQix1REFBVztBQUNwRDtBQUNBOztBQUVBO0FBQ0E7O0FBRUEsdURBQXVELDBEQUFjO0FBQ3JFOztBQUVBO0FBQ0E7QUFDQSxXQUFXLDhEQUFrQjtBQUM3QjtBQUNBLFdBQVcsOERBQWtCO0FBQzdCLGlCQUFpQixvREFBTyxnQ0FBZ0M7QUFDeEQ7QUFDQTtBQUNBLHNGQUFzRixvQkFBb0I7QUFDMUc7O0FBRUEsdUJBQXVCLDJDQUFJLGlCQUFpQiw2REFBNkQ7QUFDekc7QUFDQTtBQUNBO0FBQ0E7Ozs7Ozs7Ozs7OztBQzlCQTtBQUNBO0FBQ0E7O0FBRUE7QUFDQTtBQUNBOztBQUVBOztBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBRUE7QUFDQTs7QUFFQTs7QUFFQTtBQUNBO0FBQ0E7QUFDQTs7QUFFQSw0RkFBNEY7O0FBRTVGO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0E7O0FBRUE7QUFDQTs7QUFFQTs7QUFFQSwyREFBMkQ7O0FBRTNEO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsZUFBZSxZQUFZO0FBQzNCLGVBQWUsT0FBTztBQUN0QixnQkFBZ0IsT0FBTztBQUN2QjtBQUNBLGdCQUFnQixXQUFXO0FBQzNCO0FBQ0E7QUFDQSxnQkFBZ0IsT0FBTztBQUN2QjtBQUNBLGdCQUFnQixzQkFBc0I7QUFDdEM7QUFDQTtBQUNBLGdCQUFnQixRQUFRO0FBQ3hCO0FBQ0E7QUFDQTtBQUNBLGdCQUFnQixRQUFRO0FBQ3hCO0FBQ0E7QUFDQSxnQkFBZ0Is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QUNBO0FBQ0E7QUFDQTtBQUNBLE9BQU87O0FBRVA7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxPQUFPOztBQUVQO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsT0FBTzs7QUFFUDtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLE9BQU87O0FBRVA7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLE9BQU87O0FBRVA7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxvQkFBb0I7QUFDcEI7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EsT0FBTzs7QUFFUDtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FB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QTtBQUNBOztBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSxTQUFTOztBQUVUO0FBQ0EsbUNBQW1DO0FBQ25DO0FBQ0EsbURBQW1EO0FBQ25EO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTs7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLFNBQVM7QUFDVDtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLG1CQUFtQixzQkFBc0I7QUFDekM7QUFDQSxxQkFBcUIsZUFBZTtBQUNwQztBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0E7QUFDQTs7QUFFQSxNQUFNLElBQTBDLEdBQUc7QUFDbkQ7QUFDQTtBQUNBLElBQUksaUNBQU8sRUFBRSxtQ0FBRSxZQUFZLGFBQWEsRUFBRTtBQUFBLG9HQUFDLENBQUM7QUFDNUM7QUFDQSxPQUFPLEVBUUo7O0FBRUgsQ0FBQyIsImZpbGUiOiJqcy8xNTYuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBpbmZsYXRlIH0gZnJvbSAncGFrbyc7XG5pbXBvcnQgTGVyYyBmcm9tICdsZXJjJztcbmltcG9ydCBCYXNlRGVjb2RlciBmcm9tICcuL2Jhc2VkZWNvZGVyLmpzJztcbmltcG9ydCB7IExlcmNQYXJhbWV0ZXJzLCBMZXJjQWRkQ29tcHJlc3Npb24gfSBmcm9tICcuLi9nbG9iYWxzLmpzJztcblxuZXhwb3J0IGRlZmF1bHQgY2xhc3MgTGVyY0RlY29kZXIgZXh0ZW5kcyBCYXNlRGVjb2RlciB7XG4gIGNvbnN0cnVjdG9yKGZpbGVEaXJlY3RvcnkpIHtcbiAgICBzdXBlcigpO1xuXG4gICAgdGhpcy5wbGFuYXJDb25maWd1cmF0aW9uID0gdHlwZW9mIGZpbGVEaXJlY3RvcnkuUGxhbmFyQ29uZmlndXJhdGlvbiAhPT0gJ3VuZGVmaW5lZCcgPyBmaWxlRGlyZWN0b3J5LlBsYW5hckNvbmZpZ3VyYXRpb24gOiAxO1xuICAgIHRoaXMuc2FtcGxlc1BlclBpeGVsID0gdHlwZW9mIGZpbGVEaXJlY3RvcnkuU2FtcGxlc1BlclBpeGVsICE9PSAndW5kZWZpbmVkJyA/IGZpbGVEaXJlY3RvcnkuU2FtcGxlc1BlclBpeGVsIDogMTtcblxuICAgIHRoaXMuYWRkQ29tcHJlc3Npb24gPSBmaWxlRGlyZWN0b3J5LkxlcmNQYXJhbWV0ZXJzW0xlcmNQYXJhbWV0ZXJzLkFkZENvbXByZXNzaW9uXTtcbiAgfVxuXG4gIGRlY29kZUJsb2NrKGJ1ZmZlcikge1xuICAgIHN3aXRjaCAodGhpcy5hZGRDb21wcmVzc2lvbikge1xuICAgICAgY2FzZSBMZXJjQWRkQ29tcHJlc3Npb24uTm9uZTpcbiAgICAgICAgYnJlYWs7XG4gICAgICBjYXNlIExlcmNBZGRDb21wcmVzc2lvbi5EZWZsYXRlOlxuICAgICAgICBidWZmZXIgPSBpbmZsYXRlKG5ldyBVaW50OEFycmF5KGJ1ZmZlcikpLmJ1ZmZlcjsgLy8gZXNsaW50LWRpc2FibGUtbGluZSBuby1wYXJhbS1yZWFzc2lnbiwgcHJlZmVyLWRlc3RydWN0dXJpbmdcbiAgICAgICAgYnJlYWs7XG4gICAgICBkZWZhdWx0OlxuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYFVuc3VwcG9ydGVkIExFUkMgYWRkaXRpb25hbCBjb21wcmVzc2lvbiBtZXRob2QgaWRlbnRpZmllcjogJHt0aGlzLmFkZENvbXByZXNzaW9ufWApO1xuICAgIH1cblxuICAgIGNvbnN0IGxlcmNSZXN1bHQgPSBMZXJjLmRlY29kZShidWZmZXIsIHsgcmV0dXJuUGl4ZWxJbnRlcmxlYXZlZERpbXM6IHRoaXMucGxhbmFyQ29uZmlndXJhdGlvbiA9PT0gMSB9KTtcbiAgICBjb25zdCBsZXJjRGF0YSA9IGxlcmNSZXN1bHQucGl4ZWxzWzBdO1xuICAgIHJldHVybiBsZXJjRGF0YS5idWZmZXI7XG4gIH1cbn1cbiIsIu+7vy8qIGpzaGludCBmb3JpbjogZmFsc2UsIGJpdHdpc2U6IGZhbHNlICovXG4vKlxuQ29weXJpZ2h0IDIwMTUtMjAyMSBFc3JpXG5cbkxpY2Vuc2VkIHVuZGVyIHRoZSBBcGFjaGUgTGljZW5zZSwgVmVyc2lvbiAyLjAgKHRoZSBcIkxpY2Vuc2VcIik7XG55b3UgbWF5IG5vdCB1c2UgdGhpcyBmaWxlIGV4Y2VwdCBpbiBjb21wbGlhbmNlIHdpdGggdGhlIExpY2Vuc2UuXG5Zb3UgbWF5IG9idGFpbiBhIGNvcHkgb2YgdGhlIExpY2Vuc2UgYXRcblxuaHR0cDovL3d3dy5hcGFjaGUub3JnL2xpY2Vuc2VzL0xJQ0VOU0UtMi4wXG5cblVubGVzcyByZXF1aXJlZCBieSBhcHBsaWNhYmxlIGxhdyBvciBhZ3JlZWQgdG8gaW4gd3JpdGluZywgc29mdHdhcmVcbmRpc3RyaWJ1dGVkIHVuZGVyIHRoZSBMaWNlbnNlIGlzIGRpc3RyaWJ1dGVkIG9uIGFuIFwiQVMgSVNcIiBCQVNJUyxcbldJVEhPVVQgV0FSUkFOVElFUyBPUiBDT05ESVRJT05TIE9GIEFOWSBLSU5ELCBlaXRoZXIgZXhwcmVzcyBvciBpbXBsaWVkLlxuU2VlIHRoZSBMaWNlbnNlIGZvciB0aGUgc3BlY2lmaWMgbGFuZ3VhZ2UgZ292ZXJuaW5nIHBlcm1pc3Npb25zIGFuZFxubGltaXRhdGlvbnMgdW5kZXIgdGhlIExpY2Vuc2UuXG5cbkEgY29weSBvZiB0aGUgbGljZW5zZSBhbmQgYWRkaXRpb25hbCBub3RpY2VzIGFyZSBsb2NhdGVkIHdpdGggdGhlXG5zb3VyY2UgZGlzdHJpYnV0aW9uIGF0OlxuXG5odHRwOi8vZ2l0aHViLmNvbS9Fc3JpL2xlcmMvXG5cbkNvbnRyaWJ1dG9yczogIEpvaGFubmVzIFNjaG1pZCwgKExFUkMgdjEpXG4gICAgICAgICAgICAgICBDaGF5YW5pa2EgS2hhdHVhLCAoTEVSQyB2MSlcbiAgICAgICAgICAgICAgIFdlbnh1ZSBKdSAoTEVSQyB2MSwgdjIueClcbiovXG5cbi8qIENvcHlyaWdodCAyMDE1LTIwMjEgRXNyaS4gTGljZW5zZWQgdW5kZXIgdGhlIEFwYWNoZSBMaWNlbnNlLCBWZXJzaW9uIDIuMCAodGhlIFwiTGljZW5zZVwiKTsgeW91IG1heSBub3QgdXNlIHRoaXMgZmlsZSBleGNlcHQgaW4gY29tcGxpYW5jZSB3aXRoIHRoZSBMaWNlbnNlLiBZb3UgbWF5IG9idGFpbiBhIGNvcHkgb2YgdGhlIExpY2Vuc2UgYXQgaHR0cDovL3d3dy5hcGFjaGUub3JnL2xpY2Vuc2VzL0xJQ0VOU0UtMi4wIEBwcmVzZXJ2ZSAqL1xuXG4vKipcbiAqIGEgbW9kdWxlIGZvciBkZWNvZGluZyBMRVJDIGJsb2JzXG4gKiBAbW9kdWxlIExlcmNcbiAqL1xuKGZ1bmN0aW9uKCkge1xuICAvL3RoaXMgZGVjb2RlciBzdXBwb3J0cyBhbGwgbGVyYyB2ZXJzaW9ucywgZWFjaCB2ZXJzaW9uIGhhcyBpdHMgb3duIGNsYXNzIChMZXJjRGVjb2RlIGFuZCBMZXJjMkRlY29kZSkuIFxuICAvL3RoZSBleHBvcnRlZCBtb2R1bGUgaGFuZGxlcyBmb3JtYXQgdmFyaWF0aW9uIGF1dG9hbXRpY2FsbHkuXG5cbiAgLy90aGUgb3JpZ2luYWwgTGVyY0RlY29kZSBmb3IgVmVyc2lvbiAxXG4gIHZhciBMZXJjRGVjb2RlID0gKGZ1bmN0aW9uKCkge1xuXG4gICAgLy8gTm90ZTogY3VycmVudGx5LCB0aGlzIG1vZHVsZSBvbmx5IGhhcyBhbiBpbXBsZW1lbnRhdGlvbiBmb3IgZGVjb2RpbmcgTEVSQyBkYXRhLCBub3QgZW5jb2RpbmcuIFRoZSBuYW1lIG9mXG4gICAgLy8gdGhlIGNsYXNzIHdhcyBjaG9zZW4gdG8gYmUgZnV0dXJlIHByb29mLlxuXG4gICAgdmFyIENudFpJbWFnZSA9IHt9O1xuXG4gICAgQ250WkltYWdlLmRlZmF1bHROb0RhdGFWYWx1ZSA9IC0zLjQwMjc5OTkzODc5MDE0ODRlKzM4OyAvLyBzbWFsbGVzdCBGbG9hdDMyIHZhbHVlXG5cbiAgICAvKipcbiAgICAgKiBEZWNvZGUgYSBMRVJDIGJ5dGUgc3RyZWFtIGFuZCByZXR1cm4gYW4gb2JqZWN0IGNvbnRhaW5pbmcgdGhlIHBpeGVsIGRhdGEgYW5kIHNvbWUgcmVxdWlyZWQgYW5kIG9wdGlvbmFsXG4gICAgICogaW5mb3JtYXRpb24gYWJvdXQgaXQsIHN1Y2ggYXMgdGhlIGltYWdlJ3Mgd2lkdGggYW5kIGhlaWdodC5cbiAgICAgKlxuICAgICAqIEBwYXJhbSB7QXJyYXlCdWZmZXJ9IGlucHV0IFRoZSBMRVJDIGlucHV0IGJ5dGUgc3RyZWFtXG4gICAgICogQHBhcmFtIHtvYmplY3R9IFtvcHRpb25zXSBEZWNvZGluZyBvcHRpb25zLCBjb250YWluaW5nIGFueSBvZiB0aGUgZm9sbG93aW5nIHByb3BlcnRpZXM6XG4gICAgICogQGNvbmZpZyB7bnVtYmVyfSBbaW5wdXRPZmZzZXQgPSAwXVxuICAgICAqICAgICAgICBTa2lwIHRoZSBmaXJzdCBpbnB1dE9mZnNldCBieXRlcyBvZiB0aGUgaW5wdXQgYnl0ZSBzdHJlYW0uIEEgdmFsaWQgTEVSQyBmaWxlIGlzIGV4cGVjdGVkIGF0IHRoYXQgcG9zaXRpb24uXG4gICAgICogQGNvbmZpZyB7VWludDhBcnJheX0gW2VuY29kZWRNYXNrID0gbnVsbF1cbiAgICAgKiAgICAgICAgSWYgc3BlY2lmaWVkLCB0aGUgZGVjb2RlciB3aWxsIG5vdCByZWFkIG1hc2sgaW5mb3JtYXRpb24gZnJvbSB0aGUgaW5wdXQgYW5kIHVzZSB0aGUgc3BlY2lmaWVkIGVuY29kZWRcbiAgICAgKiAgICAgICAgbWFzayBkYXRhIGluc3RlYWQuIE1hc2sgaGVhZGVyL2RhdGEgbXVzdCBub3QgYmUgcHJlc2VudCBpbiB0aGUgTEVSQyBieXRlIHN0cmVhbSBpbiB0aGlzIGNhc2UuXG4gICAgICogQGNvbmZpZyB7bnVtYmVyfSBbbm9EYXRhVmFsdWUgPSBMZXJjQ29kZS5kZWZhdWx0Tm9EYXRhVmFsdWVdXG4gICAgICogICAgICAgIFBpeGVsIHZhbHVlIHRvIHVzZSBmb3IgbWFza2VkIHBpeGVscy5cbiAgICAgKiBAY29uZmlnIHtBcnJheUJ1ZmZlclZpZXd8QXJyYXl9IFtwaXhlbFR5cGUgPSBGbG9hdDMyQXJyYXldXG4gICAgICogICAgICAgIFRoZSBkZXNpcmVkIHR5cGUgb2YgdGhlIHBpeGVsRGF0YSBhcnJheSBpbiB0aGUgcmV0dXJuIHZhbHVlLiBOb3RlIHRoYXQgaXQgaXMgdGhlIGNhbGxlcidzIHJlc3BvbnNpYmlsaXR5IHRvXG4gICAgICogICAgICAgIHByb3ZpZGUgYW4gYXBwcm9wcmlhdGUgbm9EYXRhVmFsdWUgaWYgdGhlIGRlZmF1bHQgcGl4ZWxUeXBlIGlzIG92ZXJyaWRkZW4uXG4gICAgICogQGNvbmZpZyB7Ym9vbGVhbn0gW3JldHVybk1hc2sgPSBmYWxzZV1cbiAgICAgKiAgICAgICAgSWYgdHJ1ZSwgdGhlIHJldHVybiB2YWx1ZSB3aWxsIGNvbnRhaW4gYSBtYXNrRGF0YSBwcm9wZXJ0eSBvZiB0eXBlIFVpbnQ4QXJyYXkgd2hpY2ggaGFzIG9uZSBlbGVtZW50IHBlclxuICAgICAqICAgICAgICBwaXhlbCwgdGhlIHZhbHVlIG9mIHdoaWNoIGlzIDEgb3IgMCBkZXBlbmRpbmcgb24gd2hldGhlciB0aGF0IHBpeGVsJ3MgZGF0YSBpcyBwcmVzZW50IG9yIG1hc2tlZC4gSWYgdGhlXG4gICAgICogICAgICAgIGlucHV0IExFUkMgZGF0YSBkb2VzIG5vdCBjb250YWluIGEgbWFzaywgbWFza0RhdGEgd2lsbCBub3QgYmUgcmV0dXJuZWQuXG4gICAgICogQGNvbmZpZyB7Ym9vbGVhbn0gW3JldHVybkVuY29kZWRNYXNrID0gZmFsc2VdXG4gICAgICogICAgICAgIElmIHRydWUsIHRoZSByZXR1cm4gdmFsdWUgd2lsbCBjb250YWluIGEgZW5jb2RlZE1hc2tEYXRhIHByb3BlcnR5LCB3aGljaCBjYW4gYmUgcGFzc2VkIGludG8gZW5jb2RlKCkgYXNcbiAgICAgKiAgICAgICAgZW5jb2RlZE1hc2suXG4gICAgICogQGNvbmZpZyB7Ym9vbGVhbn0gW3JldHVybkZpbGVJbmZvID0gZmFsc2VdXG4gICAgICogICAgICAgIElmIHRydWUsIHRoZSByZXR1cm4gdmFsdWUgd2lsbCBoYXZlIGEgZmlsZUluZm8gcHJvcGVydHkgdGhhdCBjb250YWlucyBtZXRhZGF0YSBvYnRhaW5lZCBmcm9tIHRoZVxuICAgICAqICAgICAgICBMRVJDIGhlYWRlcnMgYW5kIHRoZSBkZWNvZGluZyBwcm9jZXNzLlxuICAgICAqIEBjb25maWcge2Jvb2xlYW59IFtjb21wdXRlVXNlZEJpdERlcHRocyA9IGZhbHNlXVxuICAgICAqICAgICAgICBJZiB0cnVlLCB0aGUgZmlsZUluZm8gcHJvcGVydHkgaW4gdGhlIHJldHVybiB2YWx1ZSB3aWxsIGNvbnRhaW4gdGhlIHNldCBvZiBhbGwgYmxvY2sgYml0IGRlcHRoc1xuICAgICAqICAgICAgICBlbmNvdW50ZXJlZCBkdXJpbmcgZGVjb2RpbmcuIFdpbGwgb25seSBoYXZlIGFuIGVmZmVjdCBpZiByZXR1cm5GaWxlSW5mbyBvcHRpb24gaXMgdHJ1ZS5cbiAgICAgKiBAcmV0dXJucyB7e3dpZHRoLCBoZWlnaHQsIHBpeGVsRGF0YSwgbWluVmFsdWUsIG1heFZhbHVlLCBub0RhdGFWYWx1ZSwgbWFza0RhdGEsIGVuY29kZWRNYXNrRGF0YSwgZmlsZUluZm99fVxuICAgICAqL1xuICAgIENudFpJbWFnZS5kZWNvZGUgPSBmdW5jdGlvbihpbnB1dCwgb3B0aW9ucykge1xuICAgICAgb3B0aW9ucyA9IG9wdGlvbnMgfHwge307XG5cbiAgICAgIHZhciBza2lwTWFzayA9IG9wdGlvbnMuZW5jb2RlZE1hc2tEYXRhIHx8IChvcHRpb25zLmVuY29kZWRNYXNrRGF0YSA9PT0gbnVsbCk7XG4gICAgICB2YXIgcGFyc2VkRGF0YSA9IHBhcnNlKGlucHV0LCBvcHRpb25zLmlucHV0T2Zmc2V0IHx8IDAsIHNraXBNYXNrKTtcblxuICAgICAgdmFyIG5vRGF0YVZhbHVlID0gKG9wdGlvbnMubm9EYXRhVmFsdWUgIT09IG51bGwpID8gb3B0aW9ucy5ub0RhdGFWYWx1ZSA6IENudFpJbWFnZS5kZWZhdWx0Tm9EYXRhVmFsdWU7XG5cbiAgICAgIHZhciB1bmNvbXByZXNzZWREYXRhID0gdW5jb21wcmVzc1BpeGVsVmFsdWVzKHBhcnNlZERhdGEsIG9wdGlvbnMucGl4ZWxUeXBlIHx8IEZsb2F0MzJBcnJheSxcbiAgICAgICAgb3B0aW9ucy5lbmNvZGVkTWFza0RhdGEsIG5vRGF0YVZhbHVlLCBvcHRpb25zLnJldHVybk1hc2spO1xuXG4gICAgICB2YXIgcmVzdWx0ID0ge1xuICAgICAgICB3aWR0aDogcGFyc2VkRGF0YS53aWR0aCxcbiAgICAgICAgaGVpZ2h0OiBwYXJzZWREYXRhLmhlaWdodCxcbiAgICAgICAgcGl4ZWxEYXRhOiB1bmNvbXByZXNzZWREYXRhLnJlc3VsdFBpeGVscyxcbiAgICAgICAgbWluVmFsdWU6IHVuY29tcHJlc3NlZERhdGEubWluVmFsdWUsXG4gICAgICAgIG1heFZhbHVlOiBwYXJzZWREYXRhLnBpeGVscy5tYXhWYWx1ZSxcbiAgICAgICAgbm9EYXRhVmFsdWU6IG5vRGF0YVZhbHVlXG4gICAgICB9O1xuXG4gICAgICBpZiAodW5jb21wcmVzc2VkRGF0YS5yZXN1bHRNYXNrKSB7XG4gICAgICAgIHJlc3VsdC5tYXNrRGF0YSA9IHVuY29tcHJlc3NlZERhdGEucmVzdWx0TWFzaztcbiAgICAgIH1cblxuICAgICAgaWYgKG9wdGlvbnMucmV0dXJuRW5jb2RlZE1hc2sgJiYgcGFyc2VkRGF0YS5tYXNrKSB7XG4gICAgICAgIHJlc3VsdC5lbmNvZGVkTWFza0RhdGEgPSBwYXJzZWREYXRhLm1hc2suYml0c2V0ID8gcGFyc2VkRGF0YS5tYXNrLmJpdHNldCA6IG51bGw7XG4gICAgICB9XG5cbiAgICAgIGlmIChvcHRpb25zLnJldHVybkZpbGVJbmZvKSB7XG4gICAgICAgIHJlc3VsdC5maWxlSW5mbyA9IGZvcm1hdEZpbGVJbmZvKHBhcnNlZERhdGEpO1xuICAgICAgICBpZiAob3B0aW9ucy5jb21wdXRlVXNlZEJpdERlcHRocykge1xuICAgICAgICAgIHJlc3VsdC5maWxlSW5mby5iaXREZXB0aHMgPSBjb21wdXRlVXNlZEJpdERlcHRocyhwYXJzZWREYXRhKTtcbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICByZXR1cm4gcmVzdWx0O1xuICAgIH07XG5cbiAgICB2YXIgdW5jb21wcmVzc1BpeGVsVmFsdWVzID0gZnVuY3Rpb24oZGF0YSwgVHlwZWRBcnJheUNsYXNzLCBtYXNrQml0c2V0LCBub0RhdGFWYWx1ZSwgc3RvcmVEZWNvZGVkTWFzaykge1xuICAgICAgdmFyIGJsb2NrSWR4ID0gMDtcbiAgICAgIHZhciBudW1YID0gZGF0YS5waXhlbHMubnVtQmxvY2tzWDtcbiAgICAgIHZhciBudW1ZID0gZGF0YS5waXhlbHMubnVtQmxvY2tzWTtcbiAgICAgIHZhciBibG9ja1dpZHRoID0gTWF0aC5mbG9vcihkYXRhLndpZHRoIC8gbnVtWCk7XG4gICAgICB2YXIgYmxvY2tIZWlnaHQgPSBNYXRoLmZsb29yKGRhdGEuaGVpZ2h0IC8gbnVtWSk7XG4gICAgICB2YXIgc2NhbGUgPSAyICogZGF0YS5tYXhaRXJyb3I7XG4gICAgICB2YXIgbWluVmFsdWUgPSBOdW1iZXIuTUFYX1ZBTFVFLCBjdXJyZW50VmFsdWU7XG4gICAgICBtYXNrQml0c2V0ID0gbWFza0JpdHNldCB8fCAoKGRhdGEubWFzaykgPyBkYXRhLm1hc2suYml0c2V0IDogbnVsbCk7XG5cbiAgICAgIHZhciByZXN1bHRQaXhlbHMsIHJlc3VsdE1hc2s7XG4gICAgICByZXN1bHRQaXhlbHMgPSBuZXcgVHlwZWRBcnJheUNsYXNzKGRhdGEud2lkdGggKiBkYXRhLmhlaWdodCk7XG4gICAgICBpZiAoc3RvcmVEZWNvZGVkTWFzayAmJiBtYXNrQml0c2V0KSB7XG4gICAgICAgIHJlc3VsdE1hc2sgPSBuZXcgVWludDhBcnJheShkYXRhLndpZHRoICogZGF0YS5oZWlnaHQpO1xuICAgICAgfVxuICAgICAgdmFyIGJsb2NrRGF0YUJ1ZmZlciA9IG5ldyBGbG9hdDMyQXJyYXkoYmxvY2tXaWR0aCAqIGJsb2NrSGVpZ2h0KTtcblxuICAgICAgdmFyIHh4LCB5eTtcbiAgICAgIGZvciAodmFyIHkgPSAwOyB5IDw9IG51bVk7IHkrKykge1xuICAgICAgICB2YXIgdGhpc0Jsb2NrSGVpZ2h0ID0gKHkgIT09IG51bVkpID8gYmxvY2tIZWlnaHQgOiAoZGF0YS5oZWlnaHQgJSBudW1ZKTtcbiAgICAgICAgaWYgKHRoaXNCbG9ja0hlaWdodCA9PT0gMCkge1xuICAgICAgICAgIGNvbnRpbnVlO1xuICAgICAgICB9XG4gICAgICAgIGZvciAodmFyIHggPSAwOyB4IDw9IG51bVg7IHgrKykge1xuICAgICAgICAgIHZhciB0aGlzQmxvY2tXaWR0aCA9ICh4ICE9PSBudW1YKSA/IGJsb2NrV2lkdGggOiAoZGF0YS53aWR0aCAlIG51bVgpO1xuICAgICAgICAgIGlmICh0aGlzQmxvY2tXaWR0aCA9PT0gMCkge1xuICAgICAgICAgICAgY29udGludWU7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgdmFyIG91dFB0ciA9IHkgKiBkYXRhLndpZHRoICogYmxvY2tIZWlnaHQgKyB4ICogYmxvY2tXaWR0aDtcbiAgICAgICAgICB2YXIgb3V0U3RyaWRlID0gZGF0YS53aWR0aCAtIHRoaXNCbG9ja1dpZHRoO1xuXG4gICAgICAgICAgdmFyIGJsb2NrID0gZGF0YS5waXhlbHMuYmxvY2tzW2Jsb2NrSWR4XTtcblxuICAgICAgICAgIHZhciBibG9ja0RhdGEsIGJsb2NrUHRyLCBjb25zdFZhbHVlO1xuICAgICAgICAgIGlmIChibG9jay5lbmNvZGluZyA8IDIpIHtcbiAgICAgICAgICAgIC8vIGJsb2NrIGlzIGVpdGhlciB1bmNvbXByZXNzZWQgb3IgYml0LXN0dWZmZWQgKGVuY29kaW5ncyAwIGFuZCAxKVxuICAgICAgICAgICAgaWYgKGJsb2NrLmVuY29kaW5nID09PSAwKSB7XG4gICAgICAgICAgICAgIC8vIGJsb2NrIGlzIHVuY29tcHJlc3NlZFxuICAgICAgICAgICAgICBibG9ja0RhdGEgPSBibG9jay5yYXdEYXRhO1xuICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgLy8gYmxvY2sgaXMgYml0LXN0dWZmZWRcbiAgICAgICAgICAgICAgdW5zdHVmZihibG9jay5zdHVmZmVkRGF0YSwgYmxvY2suYml0c1BlclBpeGVsLCBibG9jay5udW1WYWxpZFBpeGVscywgYmxvY2sub2Zmc2V0LCBzY2FsZSwgYmxvY2tEYXRhQnVmZmVyLCBkYXRhLnBpeGVscy5tYXhWYWx1ZSk7XG4gICAgICAgICAgICAgIGJsb2NrRGF0YSA9IGJsb2NrRGF0YUJ1ZmZlcjtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGJsb2NrUHRyID0gMDtcbiAgICAgICAgICB9XG4gICAgICAgICAgZWxzZSBpZiAoYmxvY2suZW5jb2RpbmcgPT09IDIpIHtcbiAgICAgICAgICAgIC8vIGJsb2NrIGlzIGFsbCAwXG4gICAgICAgICAgICBjb25zdFZhbHVlID0gMDtcbiAgICAgICAgICB9XG4gICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAvLyBibG9jayBoYXMgY29uc3RhbnQgdmFsdWUgKGVuY29kaW5nID09PSAzKVxuICAgICAgICAgICAgY29uc3RWYWx1ZSA9IGJsb2NrLm9mZnNldDtcbiAgICAgICAgICB9XG5cbiAgICAgICAgICB2YXIgbWFza0J5dGU7XG4gICAgICAgICAgaWYgKG1hc2tCaXRzZXQpIHtcbiAgICAgICAgICAgIGZvciAoeXkgPSAwOyB5eSA8IHRoaXNCbG9ja0hlaWdodDsgeXkrKykge1xuICAgICAgICAgICAgICBpZiAob3V0UHRyICYgNykge1xuICAgICAgICAgICAgICAgIC8vXG4gICAgICAgICAgICAgICAgbWFza0J5dGUgPSBtYXNrQml0c2V0W291dFB0ciA+PiAzXTtcbiAgICAgICAgICAgICAgICBtYXNrQnl0ZSA8PD0gb3V0UHRyICYgNztcbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICBmb3IgKHh4ID0gMDsgeHggPCB0aGlzQmxvY2tXaWR0aDsgeHgrKykge1xuICAgICAgICAgICAgICAgIGlmICghKG91dFB0ciAmIDcpKSB7XG4gICAgICAgICAgICAgICAgICAvLyByZWFkIG5leHQgYnl0ZSBmcm9tIG1hc2tcbiAgICAgICAgICAgICAgICAgIG1hc2tCeXRlID0gbWFza0JpdHNldFtvdXRQdHIgPj4gM107XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGlmIChtYXNrQnl0ZSAmIDEyOCkge1xuICAgICAgICAgICAgICAgICAgLy8gcGl4ZWwgZGF0YSBwcmVzZW50XG4gICAgICAgICAgICAgICAgICBpZiAocmVzdWx0TWFzaykge1xuICAgICAgICAgICAgICAgICAgICByZXN1bHRNYXNrW291dFB0cl0gPSAxO1xuICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgY3VycmVudFZhbHVlID0gKGJsb2NrLmVuY29kaW5nIDwgMikgPyBibG9ja0RhdGFbYmxvY2tQdHIrK10gOiBjb25zdFZhbHVlO1xuICAgICAgICAgICAgICAgICAgbWluVmFsdWUgPSBtaW5WYWx1ZSA+IGN1cnJlbnRWYWx1ZSA/IGN1cnJlbnRWYWx1ZSA6IG1pblZhbHVlO1xuICAgICAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzW291dFB0cisrXSA9IGN1cnJlbnRWYWx1ZTtcbiAgICAgICAgICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgICAgICAgLy8gcGl4ZWwgZGF0YSBub3QgcHJlc2VudFxuICAgICAgICAgICAgICAgICAgaWYgKHJlc3VsdE1hc2spIHtcbiAgICAgICAgICAgICAgICAgICAgcmVzdWx0TWFza1tvdXRQdHJdID0gMDtcbiAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgIHJlc3VsdFBpeGVsc1tvdXRQdHIrK10gPSBub0RhdGFWYWx1ZTtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgbWFza0J5dGUgPDw9IDE7XG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgb3V0UHRyICs9IG91dFN0cmlkZTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgLy8gbWFzayBub3QgcHJlc2VudCwgc2ltcGx5IGNvcHkgYmxvY2sgb3ZlclxuICAgICAgICAgICAgaWYgKGJsb2NrLmVuY29kaW5nIDwgMikge1xuICAgICAgICAgICAgICAvLyBkdXBsaWNhdGluZyB0aGlzIGNvZGUgYmxvY2sgZm9yIHBlcmZvcm1hbmNlIHJlYXNvbnNcbiAgICAgICAgICAgICAgLy8gYmxvY2tEYXRhIGNhc2U6XG4gICAgICAgICAgICAgIGZvciAoeXkgPSAwOyB5eSA8IHRoaXNCbG9ja0hlaWdodDsgeXkrKykge1xuICAgICAgICAgICAgICAgIGZvciAoeHggPSAwOyB4eCA8IHRoaXNCbG9ja1dpZHRoOyB4eCsrKSB7XG4gICAgICAgICAgICAgICAgICBjdXJyZW50VmFsdWUgPSBibG9ja0RhdGFbYmxvY2tQdHIrK107XG4gICAgICAgICAgICAgICAgICBtaW5WYWx1ZSA9IG1pblZhbHVlID4gY3VycmVudFZhbHVlID8gY3VycmVudFZhbHVlIDogbWluVmFsdWU7XG4gICAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHNbb3V0UHRyKytdID0gY3VycmVudFZhbHVlO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBvdXRQdHIgKz0gb3V0U3RyaWRlO1xuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgLy8gY29uc3RWYWx1ZSBjYXNlOlxuICAgICAgICAgICAgICBtaW5WYWx1ZSA9IG1pblZhbHVlID4gY29uc3RWYWx1ZSA/IGNvbnN0VmFsdWUgOiBtaW5WYWx1ZTtcbiAgICAgICAgICAgICAgZm9yICh5eSA9IDA7IHl5IDwgdGhpc0Jsb2NrSGVpZ2h0OyB5eSsrKSB7XG4gICAgICAgICAgICAgICAgZm9yICh4eCA9IDA7IHh4IDwgdGhpc0Jsb2NrV2lkdGg7IHh4KyspIHtcbiAgICAgICAgICAgICAgICAgIHJlc3VsdFBpeGVsc1tvdXRQdHIrK10gPSBjb25zdFZhbHVlO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBvdXRQdHIgKz0gb3V0U3RyaWRlO1xuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgfVxuICAgICAgICAgIGlmICgoYmxvY2suZW5jb2RpbmcgPT09IDEpICYmIChibG9ja1B0ciAhPT0gYmxvY2subnVtVmFsaWRQaXhlbHMpKSB7XG4gICAgICAgICAgICB0aHJvdyBcIkJsb2NrIGFuZCBNYXNrIGRvIG5vdCBtYXRjaFwiO1xuICAgICAgICAgIH1cbiAgICAgICAgICBibG9ja0lkeCsrO1xuICAgICAgICB9XG4gICAgICB9XG5cbiAgICAgIHJldHVybiB7XG4gICAgICAgIHJlc3VsdFBpeGVsczogcmVzdWx0UGl4ZWxzLFxuICAgICAgICByZXN1bHRNYXNrOiByZXN1bHRNYXNrLFxuICAgICAgICBtaW5WYWx1ZTogbWluVmFsdWVcbiAgICAgIH07XG4gICAgfTtcblxuICAgIHZhciBmb3JtYXRGaWxlSW5mbyA9IGZ1bmN0aW9uKGRhdGEpIHtcbiAgICAgIHJldHVybiB7XG4gICAgICAgIFwiZmlsZUlkZW50aWZpZXJTdHJpbmdcIjogZGF0YS5maWxlSWRlbnRpZmllclN0cmluZyxcbiAgICAgICAgXCJmaWxlVmVyc2lvblwiOiBkYXRhLmZpbGVWZXJzaW9uLFxuICAgICAgICBcImltYWdlVHlwZVwiOiBkYXRhLmltYWdlVHlwZSxcbiAgICAgICAgXCJoZWlnaHRcIjogZGF0YS5oZWlnaHQsXG4gICAgICAgIFwid2lkdGhcIjogZGF0YS53aWR0aCxcbiAgICAgICAgXCJtYXhaRXJyb3JcIjogZGF0YS5tYXhaRXJyb3IsXG4gICAgICAgIFwiZW9mT2Zmc2V0XCI6IGRhdGEuZW9mT2Zmc2V0LFxuICAgICAgICBcIm1hc2tcIjogZGF0YS5tYXNrID8ge1xuICAgICAgICAgIFwibnVtQmxvY2tzWFwiOiBkYXRhLm1hc2subnVtQmxvY2tzWCxcbiAgICAgICAgICBcIm51bUJsb2Nrc1lcIjogZGF0YS5tYXNrLm51bUJsb2Nrc1ksXG4gICAgICAgICAgXCJudW1CeXRlc1wiOiBkYXRhLm1hc2subnVtQnl0ZXMsXG4gICAgICAgICAgXCJtYXhWYWx1ZVwiOiBkYXRhLm1hc2subWF4VmFsdWVcbiAgICAgICAgfSA6IG51bGwsXG4gICAgICAgIFwicGl4ZWxzXCI6IHtcbiAgICAgICAgICBcIm51bUJsb2Nrc1hcIjogZGF0YS5waXhlbHMubnVtQmxvY2tzWCxcbiAgICAgICAgICBcIm51bUJsb2Nrc1lcIjogZGF0YS5waXhlbHMubnVtQmxvY2tzWSxcbiAgICAgICAgICBcIm51bUJ5dGVzXCI6IGRhdGEucGl4ZWxzLm51bUJ5dGVzLFxuICAgICAgICAgIFwibWF4VmFsdWVcIjogZGF0YS5waXhlbHMubWF4VmFsdWUsXG4gICAgICAgICAgXCJub0RhdGFWYWx1ZVwiOiBkYXRhLm5vRGF0YVZhbHVlXG4gICAgICAgIH1cbiAgICAgIH07XG4gICAgfTtcblxuICAgIHZhciBjb21wdXRlVXNlZEJpdERlcHRocyA9IGZ1bmN0aW9uKGRhdGEpIHtcbiAgICAgIHZhciBudW1CbG9ja3MgPSBkYXRhLnBpeGVscy5udW1CbG9ja3NYICogZGF0YS5waXhlbHMubnVtQmxvY2tzWTtcbiAgICAgIHZhciBiaXREZXB0aHMgPSB7fTtcbiAgICAgIGZvciAodmFyIGkgPSAwOyBpIDwgbnVtQmxvY2tzOyBpKyspIHtcbiAgICAgICAgdmFyIGJsb2NrID0gZGF0YS5waXhlbHMuYmxvY2tzW2ldO1xuICAgICAgICBpZiAoYmxvY2suZW5jb2RpbmcgPT09IDApIHtcbiAgICAgICAgICBiaXREZXB0aHMuZmxvYXQzMiA9IHRydWU7XG4gICAgICAgIH0gZWxzZSBpZiAoYmxvY2suZW5jb2RpbmcgPT09IDEpIHtcbiAgICAgICAgICBiaXREZXB0aHNbYmxvY2suYml0c1BlclBpeGVsXSA9IHRydWU7XG4gICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgYml0RGVwdGhzWzBdID0gdHJ1ZTtcbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICByZXR1cm4gT2JqZWN0LmtleXMoYml0RGVwdGhzKTtcbiAgICB9O1xuXG4gICAgdmFyIHBhcnNlID0gZnVuY3Rpb24oaW5wdXQsIGZwLCBza2lwTWFzaykge1xuICAgICAgdmFyIGRhdGEgPSB7fTtcblxuICAgICAgLy8gRmlsZSBoZWFkZXJcbiAgICAgIHZhciBmaWxlSWRWaWV3ID0gbmV3IFVpbnQ4QXJyYXkoaW5wdXQsIGZwLCAxMCk7XG4gICAgICBkYXRhLmZpbGVJZGVudGlmaWVyU3RyaW5nID0gU3RyaW5nLmZyb21DaGFyQ29kZS5hcHBseShudWxsLCBmaWxlSWRWaWV3KTtcbiAgICAgIGlmIChkYXRhLmZpbGVJZGVudGlmaWVyU3RyaW5nLnRyaW0oKSAhPT0gXCJDbnRaSW1hZ2VcIikge1xuICAgICAgICB0aHJvdyBcIlVuZXhwZWN0ZWQgZmlsZSBpZGVudGlmaWVyIHN0cmluZzogXCIgKyBkYXRhLmZpbGVJZGVudGlmaWVyU3RyaW5nO1xuICAgICAgfVxuICAgICAgZnAgKz0gMTA7XG4gICAgICB2YXIgdmlldyA9IG5ldyBEYXRhVmlldyhpbnB1dCwgZnAsIDI0KTtcbiAgICAgIGRhdGEuZmlsZVZlcnNpb24gPSB2aWV3LmdldEludDMyKDAsIHRydWUpO1xuICAgICAgZGF0YS5pbWFnZVR5cGUgPSB2aWV3LmdldEludDMyKDQsIHRydWUpO1xuICAgICAgZGF0YS5oZWlnaHQgPSB2aWV3LmdldFVpbnQzMig4LCB0cnVlKTtcbiAgICAgIGRhdGEud2lkdGggPSB2aWV3LmdldFVpbnQzMigxMiwgdHJ1ZSk7XG4gICAgICBkYXRhLm1heFpFcnJvciA9IHZpZXcuZ2V0RmxvYXQ2NCgxNiwgdHJ1ZSk7XG4gICAgICBmcCArPSAyNDtcblxuICAgICAgLy8gTWFzayBIZWFkZXJcbiAgICAgIGlmICghc2tpcE1hc2spIHtcbiAgICAgICAgdmlldyA9IG5ldyBEYXRhVmlldyhpbnB1dCwgZnAsIDE2KTtcbiAgICAgICAgZGF0YS5tYXNrID0ge307XG4gICAgICAgIGRhdGEubWFzay5udW1CbG9ja3NZID0gdmlldy5nZXRVaW50MzIoMCwgdHJ1ZSk7XG4gICAgICAgIGRhdGEubWFzay5udW1CbG9ja3NYID0gdmlldy5nZXRVaW50MzIoNCwgdHJ1ZSk7XG4gICAgICAgIGRhdGEubWFzay5udW1CeXRlcyA9IHZpZXcuZ2V0VWludDMyKDgsIHRydWUpO1xuICAgICAgICBkYXRhLm1hc2subWF4VmFsdWUgPSB2aWV3LmdldEZsb2F0MzIoMTIsIHRydWUpO1xuICAgICAgICBmcCArPSAxNjtcblxuICAgICAgICAvLyBNYXNrIERhdGFcbiAgICAgICAgaWYgKGRhdGEubWFzay5udW1CeXRlcyA+IDApIHtcbiAgICAgICAgICB2YXIgYml0c2V0ID0gbmV3IFVpbnQ4QXJyYXkoTWF0aC5jZWlsKGRhdGEud2lkdGggKiBkYXRhLmhlaWdodCAvIDgpKTtcbiAgICAgICAgICB2aWV3ID0gbmV3IERhdGFWaWV3KGlucHV0LCBmcCwgZGF0YS5tYXNrLm51bUJ5dGVzKTtcbiAgICAgICAgICB2YXIgY250ID0gdmlldy5nZXRJbnQxNigwLCB0cnVlKTtcbiAgICAgICAgICB2YXIgaXAgPSAyLCBvcCA9IDA7XG4gICAgICAgICAgZG8ge1xuICAgICAgICAgICAgaWYgKGNudCA+IDApIHtcbiAgICAgICAgICAgICAgd2hpbGUgKGNudC0tKSB7IGJpdHNldFtvcCsrXSA9IHZpZXcuZ2V0VWludDgoaXArKyk7IH1cbiAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgIHZhciB2YWwgPSB2aWV3LmdldFVpbnQ4KGlwKyspO1xuICAgICAgICAgICAgICBjbnQgPSAtY250O1xuICAgICAgICAgICAgICB3aGlsZSAoY250LS0pIHsgYml0c2V0W29wKytdID0gdmFsOyB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBjbnQgPSB2aWV3LmdldEludDE2KGlwLCB0cnVlKTtcbiAgICAgICAgICAgIGlwICs9IDI7XG4gICAgICAgICAgfSB3aGlsZSAoaXAgPCBkYXRhLm1hc2subnVtQnl0ZXMpO1xuICAgICAgICAgIGlmICgoY250ICE9PSAtMzI3NjgpIHx8IChvcCA8IGJpdHNldC5sZW5ndGgpKSB7XG4gICAgICAgICAgICB0aHJvdyBcIlVuZXhwZWN0ZWQgZW5kIG9mIG1hc2sgUkxFIGVuY29kaW5nXCI7XG4gICAgICAgICAgfVxuICAgICAgICAgIGRhdGEubWFzay5iaXRzZXQgPSBiaXRzZXQ7XG4gICAgICAgICAgZnAgKz0gZGF0YS5tYXNrLm51bUJ5dGVzO1xuICAgICAgICB9XG4gICAgICAgIGVsc2UgaWYgKChkYXRhLm1hc2subnVtQnl0ZXMgfCBkYXRhLm1hc2subnVtQmxvY2tzWSB8IGRhdGEubWFzay5tYXhWYWx1ZSkgPT09IDApIHsgIC8vIFNwZWNpYWwgY2FzZSwgYWxsIG5vZGF0YVxuICAgICAgICAgIGRhdGEubWFzay5iaXRzZXQgPSBuZXcgVWludDhBcnJheShNYXRoLmNlaWwoZGF0YS53aWR0aCAqIGRhdGEuaGVpZ2h0IC8gOCkpO1xuICAgICAgICB9XG4gICAgICB9XG5cbiAgICAgIC8vIFBpeGVsIEhlYWRlclxuICAgICAgdmlldyA9IG5ldyBEYXRhVmlldyhpbnB1dCwgZnAsIDE2KTtcbiAgICAgIGRhdGEucGl4ZWxzID0ge307XG4gICAgICBkYXRhLnBpeGVscy5udW1CbG9ja3NZID0gdmlldy5nZXRVaW50MzIoMCwgdHJ1ZSk7XG4gICAgICBkYXRhLnBpeGVscy5udW1CbG9ja3NYID0gdmlldy5nZXRVaW50MzIoNCwgdHJ1ZSk7XG4gICAgICBkYXRhLnBpeGVscy5udW1CeXRlcyA9IHZpZXcuZ2V0VWludDMyKDgsIHRydWUpO1xuICAgICAgZGF0YS5waXhlbHMubWF4VmFsdWUgPSB2aWV3LmdldEZsb2F0MzIoMTIsIHRydWUpO1xuICAgICAgZnAgKz0gMTY7XG5cbiAgICAgIHZhciBudW1CbG9ja3NYID0gZGF0YS5waXhlbHMubnVtQmxvY2tzWDtcbiAgICAgIHZhciBudW1CbG9ja3NZID0gZGF0YS5waXhlbHMubnVtQmxvY2tzWTtcbiAgICAgIC8vIHRoZSBudW1iZXIgb2YgYmxvY2tzIHNwZWNpZmllZCBpbiB0aGUgaGVhZGVyIGRvZXMgbm90IHRha2UgaW50byBhY2NvdW50IHRoZSBibG9ja3MgYXQgdGhlIGVuZCBvZlxuICAgICAgLy8gZWFjaCByb3cvY29sdW1uIHdpdGggYSBzcGVjaWFsIHdpZHRoL2hlaWdodCB0aGF0IG1ha2UgdGhlIGltYWdlIGNvbXBsZXRlIGluIGNhc2UgdGhlIHdpZHRoIGlzIG5vdFxuICAgICAgLy8gZXZlbmx5IGRpdmlzaWJsZSBieSB0aGUgbnVtYmVyIG9mIGJsb2Nrcy5cbiAgICAgIHZhciBhY3R1YWxOdW1CbG9ja3NYID0gbnVtQmxvY2tzWCArICgoZGF0YS53aWR0aCAlIG51bUJsb2Nrc1gpID4gMCA/IDEgOiAwKTtcbiAgICAgIHZhciBhY3R1YWxOdW1CbG9ja3NZID0gbnVtQmxvY2tzWSArICgoZGF0YS5oZWlnaHQgJSBudW1CbG9ja3NZKSA+IDAgPyAxIDogMCk7XG4gICAgICBkYXRhLnBpeGVscy5ibG9ja3MgPSBuZXcgQXJyYXkoYWN0dWFsTnVtQmxvY2tzWCAqIGFjdHVhbE51bUJsb2Nrc1kpO1xuICAgICAgdmFyIGJsb2NrSSA9IDA7XG4gICAgICBmb3IgKHZhciBibG9ja1kgPSAwOyBibG9ja1kgPCBhY3R1YWxOdW1CbG9ja3NZOyBibG9ja1krKykge1xuICAgICAgICBmb3IgKHZhciBibG9ja1ggPSAwOyBibG9ja1ggPCBhY3R1YWxOdW1CbG9ja3NYOyBibG9ja1grKykge1xuXG4gICAgICAgICAgLy8gQmxvY2tcbiAgICAgICAgICB2YXIgc2l6ZSA9IDA7XG4gICAgICAgICAgdmFyIGJ5dGVzTGVmdCA9IGlucHV0LmJ5dGVMZW5ndGggLSBmcDtcbiAgICAgICAgICB2aWV3ID0gbmV3IERhdGFWaWV3KGlucHV0LCBmcCwgTWF0aC5taW4oMTAsIGJ5dGVzTGVmdCkpO1xuICAgICAgICAgIHZhciBibG9jayA9IHt9O1xuICAgICAgICAgIGRhdGEucGl4ZWxzLmJsb2Nrc1tibG9ja0krK10gPSBibG9jaztcbiAgICAgICAgICB2YXIgaGVhZGVyQnl0ZSA9IHZpZXcuZ2V0VWludDgoMCk7IHNpemUrKztcbiAgICAgICAgICBibG9jay5lbmNvZGluZyA9IGhlYWRlckJ5dGUgJiA2MztcbiAgICAgICAgICBpZiAoYmxvY2suZW5jb2RpbmcgPiAzKSB7XG4gICAgICAgICAgICB0aHJvdyBcIkludmFsaWQgYmxvY2sgZW5jb2RpbmcgKFwiICsgYmxvY2suZW5jb2RpbmcgKyBcIilcIjtcbiAgICAgICAgICB9XG4gICAgICAgICAgaWYgKGJsb2NrLmVuY29kaW5nID09PSAyKSB7XG4gICAgICAgICAgICBmcCsrO1xuICAgICAgICAgICAgY29udGludWU7XG4gICAgICAgICAgfVxuICAgICAgICAgIGlmICgoaGVhZGVyQnl0ZSAhPT0gMCkgJiYgKGhlYWRlckJ5dGUgIT09IDIpKSB7XG4gICAgICAgICAgICBoZWFkZXJCeXRlID4+PSA2O1xuICAgICAgICAgICAgYmxvY2sub2Zmc2V0VHlwZSA9IGhlYWRlckJ5dGU7XG4gICAgICAgICAgICBpZiAoaGVhZGVyQnl0ZSA9PT0gMikge1xuICAgICAgICAgICAgICBibG9jay5vZmZzZXQgPSB2aWV3LmdldEludDgoMSk7IHNpemUrKztcbiAgICAgICAgICAgIH0gZWxzZSBpZiAoaGVhZGVyQnl0ZSA9PT0gMSkge1xuICAgICAgICAgICAgICBibG9jay5vZmZzZXQgPSB2aWV3LmdldEludDE2KDEsIHRydWUpOyBzaXplICs9IDI7XG4gICAgICAgICAgICB9IGVsc2UgaWYgKGhlYWRlckJ5dGUgPT09IDApIHtcbiAgICAgICAgICAgICAgYmxvY2sub2Zmc2V0ID0gdmlldy5nZXRGbG9hdDMyKDEsIHRydWUpOyBzaXplICs9IDQ7XG4gICAgICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgICB0aHJvdyBcIkludmFsaWQgYmxvY2sgb2Zmc2V0IHR5cGVcIjtcbiAgICAgICAgICAgIH1cblxuICAgICAgICAgICAgaWYgKGJsb2NrLmVuY29kaW5nID09PSAxKSB7XG4gICAgICAgICAgICAgIGhlYWRlckJ5dGUgPSB2aWV3LmdldFVpbnQ4KHNpemUpOyBzaXplKys7XG4gICAgICAgICAgICAgIGJsb2NrLmJpdHNQZXJQaXhlbCA9IGhlYWRlckJ5dGUgJiA2MztcbiAgICAgICAgICAgICAgaGVhZGVyQnl0ZSA+Pj0gNjtcbiAgICAgICAgICAgICAgYmxvY2subnVtVmFsaWRQaXhlbHNUeXBlID0gaGVhZGVyQnl0ZTtcbiAgICAgICAgICAgICAgaWYgKGhlYWRlckJ5dGUgPT09IDIpIHtcbiAgICAgICAgICAgICAgICBibG9jay5udW1WYWxpZFBpeGVscyA9IHZpZXcuZ2V0VWludDgoc2l6ZSk7IHNpemUrKztcbiAgICAgICAgICAgICAgfSBlbHNlIGlmIChoZWFkZXJCeXRlID09PSAxKSB7XG4gICAgICAgICAgICAgICAgYmxvY2subnVtVmFsaWRQaXhlbHMgPSB2aWV3LmdldFVpbnQxNihzaXplLCB0cnVlKTsgc2l6ZSArPSAyO1xuICAgICAgICAgICAgICB9IGVsc2UgaWYgKGhlYWRlckJ5dGUgPT09IDApIHtcbiAgICAgICAgICAgICAgICBibG9jay5udW1WYWxpZFBpeGVscyA9IHZpZXcuZ2V0VWludDMyKHNpemUsIHRydWUpOyBzaXplICs9IDQ7XG4gICAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgdGhyb3cgXCJJbnZhbGlkIHZhbGlkIHBpeGVsIGNvdW50IHR5cGVcIjtcbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cbiAgICAgICAgICBmcCArPSBzaXplO1xuXG4gICAgICAgICAgaWYgKGJsb2NrLmVuY29kaW5nID09PSAzKSB7XG4gICAgICAgICAgICBjb250aW51ZTtcbiAgICAgICAgICB9XG5cbiAgICAgICAgICB2YXIgYXJyYXlCdWYsIHN0b3JlODtcbiAgICAgICAgICBpZiAoYmxvY2suZW5jb2RpbmcgPT09IDApIHtcbiAgICAgICAgICAgIHZhciBudW1QaXhlbHMgPSAoZGF0YS5waXhlbHMubnVtQnl0ZXMgLSAxKSAvIDQ7XG4gICAgICAgICAgICBpZiAobnVtUGl4ZWxzICE9PSBNYXRoLmZsb29yKG51bVBpeGVscykpIHtcbiAgICAgICAgICAgICAgdGhyb3cgXCJ1bmNvbXByZXNzZWQgYmxvY2sgaGFzIGludmFsaWQgbGVuZ3RoXCI7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBhcnJheUJ1ZiA9IG5ldyBBcnJheUJ1ZmZlcihudW1QaXhlbHMgKiA0KTtcbiAgICAgICAgICAgIHN0b3JlOCA9IG5ldyBVaW50OEFycmF5KGFycmF5QnVmKTtcbiAgICAgICAgICAgIHN0b3JlOC5zZXQobmV3IFVpbnQ4QXJyYXkoaW5wdXQsIGZwLCBudW1QaXhlbHMgKiA0KSk7XG4gICAgICAgICAgICB2YXIgcmF3RGF0YSA9IG5ldyBGbG9hdDMyQXJyYXkoYXJyYXlCdWYpO1xuICAgICAgICAgICAgYmxvY2sucmF3RGF0YSA9IHJhd0RhdGE7XG4gICAgICAgICAgICBmcCArPSBudW1QaXhlbHMgKiA0O1xuICAgICAgICAgIH0gZWxzZSBpZiAoYmxvY2suZW5jb2RpbmcgPT09IDEpIHtcbiAgICAgICAgICAgIHZhciBkYXRhQnl0ZXMgPSBNYXRoLmNlaWwoYmxvY2subnVtVmFsaWRQaXhlbHMgKiBibG9jay5iaXRzUGVyUGl4ZWwgLyA4KTtcbiAgICAgICAgICAgIHZhciBkYXRhV29yZHMgPSBNYXRoLmNlaWwoZGF0YUJ5dGVzIC8gNCk7XG4gICAgICAgICAgICBhcnJheUJ1ZiA9IG5ldyBBcnJheUJ1ZmZlcihkYXRhV29yZHMgKiA0KTtcbiAgICAgICAgICAgIHN0b3JlOCA9IG5ldyBVaW50OEFycmF5KGFycmF5QnVmKTtcbiAgICAgICAgICAgIHN0b3JlOC5zZXQobmV3IFVpbnQ4QXJyYXkoaW5wdXQsIGZwLCBkYXRhQnl0ZXMpKTtcbiAgICAgICAgICAgIGJsb2NrLnN0dWZmZWREYXRhID0gbmV3IFVpbnQzMkFycmF5KGFycmF5QnVmKTtcbiAgICAgICAgICAgIGZwICs9IGRhdGFCeXRlcztcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICAgIGRhdGEuZW9mT2Zmc2V0ID0gZnA7XG4gICAgICByZXR1cm4gZGF0YTtcbiAgICB9O1xuXG4gICAgdmFyIHVuc3R1ZmYgPSBmdW5jdGlvbihzcmMsIGJpdHNQZXJQaXhlbCwgbnVtUGl4ZWxzLCBvZmZzZXQsIHNjYWxlLCBkZXN0LCBtYXhWYWx1ZSkge1xuICAgICAgdmFyIGJpdE1hc2sgPSAoMSA8PCBiaXRzUGVyUGl4ZWwpIC0gMTtcbiAgICAgIHZhciBpID0gMCwgbztcbiAgICAgIHZhciBiaXRzTGVmdCA9IDA7XG4gICAgICB2YXIgbiwgYnVmZmVyO1xuICAgICAgdmFyIG5tYXggPSBNYXRoLmNlaWwoKG1heFZhbHVlIC0gb2Zmc2V0KSAvIHNjYWxlKTtcbiAgICAgIC8vIGdldCByaWQgb2YgdHJhaWxpbmcgYnl0ZXMgdGhhdCBhcmUgYWxyZWFkeSBwYXJ0IG9mIG5leHQgYmxvY2tcbiAgICAgIHZhciBudW1JbnZhbGlkVGFpbEJ5dGVzID0gc3JjLmxlbmd0aCAqIDQgLSBNYXRoLmNlaWwoYml0c1BlclBpeGVsICogbnVtUGl4ZWxzIC8gOCk7XG4gICAgICBzcmNbc3JjLmxlbmd0aCAtIDFdIDw8PSA4ICogbnVtSW52YWxpZFRhaWxCeXRlcztcblxuICAgICAgZm9yIChvID0gMDsgbyA8IG51bVBpeGVsczsgbysrKSB7XG4gICAgICAgIGlmIChiaXRzTGVmdCA9PT0gMCkge1xuICAgICAgICAgIGJ1ZmZlciA9IHNyY1tpKytdO1xuICAgICAgICAgIGJpdHNMZWZ0ID0gMzI7XG4gICAgICAgIH1cbiAgICAgICAgaWYgKGJpdHNMZWZ0ID49IGJpdHNQZXJQaXhlbCkge1xuICAgICAgICAgIG4gPSAoYnVmZmVyID4+PiAoYml0c0xlZnQgLSBiaXRzUGVyUGl4ZWwpKSAmIGJpdE1hc2s7XG4gICAgICAgICAgYml0c0xlZnQgLT0gYml0c1BlclBpeGVsO1xuICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgIHZhciBtaXNzaW5nQml0cyA9IChiaXRzUGVyUGl4ZWwgLSBiaXRzTGVmdCk7XG4gICAgICAgICAgbiA9ICgoYnVmZmVyICYgYml0TWFzaykgPDwgbWlzc2luZ0JpdHMpICYgYml0TWFzaztcbiAgICAgICAgICBidWZmZXIgPSBzcmNbaSsrXTtcbiAgICAgICAgICBiaXRzTGVmdCA9IDMyIC0gbWlzc2luZ0JpdHM7XG4gICAgICAgICAgbiArPSAoYnVmZmVyID4+PiBiaXRzTGVmdCk7XG4gICAgICAgIH1cbiAgICAgICAgLy9waXhlbCB2YWx1ZXMgbWF5IGV4Y2VlZCBtYXggZHVlIHRvIHF1YW50aXphdGlvblxuICAgICAgICBkZXN0W29dID0gbiA8IG5tYXggPyBvZmZzZXQgKyBuICogc2NhbGUgOiBtYXhWYWx1ZTtcbiAgICAgIH1cbiAgICAgIHJldHVybiBkZXN0O1xuICAgIH07XG5cbiAgICByZXR1cm4gQ250WkltYWdlO1xuICB9KSgpO1xuXG4gIC8vdmVyc2lvbiAyLiBTdXBwb3J0cyAyLjEsIDIuMiwgMi4zXG4gIHZhciBMZXJjMkRlY29kZSA9IChmdW5jdGlvbigpIHtcbiAgICBcInVzZSBzdHJpY3RcIjtcbiAgICAvLyBOb3RlOiBjdXJyZW50bHksIHRoaXMgbW9kdWxlIG9ubHkgaGFzIGFuIGltcGxlbWVudGF0aW9uIGZvciBkZWNvZGluZyBMRVJDIGRhdGEsIG5vdCBlbmNvZGluZy4gVGhlIG5hbWUgb2ZcbiAgICAvLyB0aGUgY2xhc3Mgd2FzIGNob3NlbiB0byBiZSBmdXR1cmUgcHJvb2YsIGZvbGxvd2luZyBMZXJjRGVjb2RlLlxuXG4gICAgLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqXG4gICAgKiBwcml2YXRlIHN0YXRpYyBjbGFzcyBiaXRzdXRmZmVyIHVzZWQgYnkgTGVyYzJEZWNvZGVcbiAgICAqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqL1xuICAgIHZhciBCaXRTdHVmZmVyID0ge1xuICAgICAgLy9tZXRob2RzIGVuZGluZyB3aXRoIDIgYXJlIGZvciB0aGUgbmV3IGJ5dGUgb3JkZXIgdXNlZCBieSBMZXJjMi4zIGFuZCBhYm92ZS5cbiAgICAgIC8vb3JpZ2luYWxVbnN0dWZmIGlzIHVzZWQgdG8gdW5wYWNrIEh1ZmZtYW4gY29kZSB0YWJsZS4gY29kZSBpcyBkdXBsaWNhdGVkIHRvIHVuc3R1ZmZ4IGZvciBwZXJmb3JtYW5jZSByZWFzb25zLlxuICAgICAgdW5zdHVmZjogZnVuY3Rpb24oc3JjLCBkZXN0LCBiaXRzUGVyUGl4ZWwsIG51bVBpeGVscywgbHV0QXJyLCBvZmZzZXQsIHNjYWxlLCBtYXhWYWx1ZSkge1xuICAgICAgICB2YXIgYml0TWFzayA9ICgxIDw8IGJpdHNQZXJQaXhlbCkgLSAxO1xuICAgICAgICB2YXIgaSA9IDAsIG87XG4gICAgICAgIHZhciBiaXRzTGVmdCA9IDA7XG4gICAgICAgIHZhciBuLCBidWZmZXIsIG1pc3NpbmdCaXRzLCBubWF4O1xuXG4gICAgICAgIC8vIGdldCByaWQgb2YgdHJhaWxpbmcgYnl0ZXMgdGhhdCBhcmUgYWxyZWFkeSBwYXJ0IG9mIG5leHQgYmxvY2tcbiAgICAgICAgdmFyIG51bUludmFsaWRUYWlsQnl0ZXMgPSBzcmMubGVuZ3RoICogNCAtIE1hdGguY2VpbChiaXRzUGVyUGl4ZWwgKiBudW1QaXhlbHMgLyA4KTtcbiAgICAgICAgc3JjW3NyYy5sZW5ndGggLSAxXSA8PD0gOCAqIG51bUludmFsaWRUYWlsQnl0ZXM7XG4gICAgICAgIGlmIChsdXRBcnIpIHtcbiAgICAgICAgICBmb3IgKG8gPSAwOyBvIDwgbnVtUGl4ZWxzOyBvKyspIHtcbiAgICAgICAgICAgIGlmIChiaXRzTGVmdCA9PT0gMCkge1xuICAgICAgICAgICAgICBidWZmZXIgPSBzcmNbaSsrXTtcbiAgICAgICAgICAgICAgYml0c0xlZnQgPSAzMjtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGlmIChiaXRzTGVmdCA+PSBiaXRzUGVyUGl4ZWwpIHtcbiAgICAgICAgICAgICAgbiA9IChidWZmZXIgPj4+IChiaXRzTGVmdCAtIGJpdHNQZXJQaXhlbCkpICYgYml0TWFzaztcbiAgICAgICAgICAgICAgYml0c0xlZnQgLT0gYml0c1BlclBpeGVsO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgIG1pc3NpbmdCaXRzID0gKGJpdHNQZXJQaXhlbCAtIGJpdHNMZWZ0KTtcbiAgICAgICAgICAgICAgbiA9ICgoYnVmZmVyICYgYml0TWFzaykgPDwgbWlzc2luZ0JpdHMpICYgYml0TWFzaztcbiAgICAgICAgICAgICAgYnVmZmVyID0gc3JjW2krK107XG4gICAgICAgICAgICAgIGJpdHNMZWZ0ID0gMzIgLSBtaXNzaW5nQml0cztcbiAgICAgICAgICAgICAgbiArPSAoYnVmZmVyID4+PiBiaXRzTGVmdCk7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBkZXN0W29dID0gbHV0QXJyW25dOy8vb2Zmc2V0ICsgbHV0QXJyW25dICogc2NhbGU7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIGVsc2Uge1xuICAgICAgICAgIG5tYXggPSBNYXRoLmNlaWwoKG1heFZhbHVlIC0gb2Zmc2V0KSAvIHNjYWxlKTtcbiAgICAgICAgICBmb3IgKG8gPSAwOyBvIDwgbnVtUGl4ZWxzOyBvKyspIHtcbiAgICAgICAgICAgIGlmIChiaXRzTGVmdCA9PT0gMCkge1xuICAgICAgICAgICAgICBidWZmZXIgPSBzcmNbaSsrXTtcbiAgICAgICAgICAgICAgYml0c0xlZnQgPSAzMjtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGlmIChiaXRzTGVmdCA+PSBiaXRzUGVyUGl4ZWwpIHtcbiAgICAgICAgICAgICAgbiA9IChidWZmZXIgPj4+IChiaXRzTGVmdCAtIGJpdHNQZXJQaXhlbCkpICYgYml0TWFzaztcbiAgICAgICAgICAgICAgYml0c0xlZnQgLT0gYml0c1BlclBpeGVsO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgIG1pc3NpbmdCaXRzID0gKGJpdHNQZXJQaXhlbCAtIGJpdHNMZWZ0KTtcbiAgICAgICAgICAgICAgbiA9ICgoYnVmZmVyICYgYml0TWFzaykgPDwgbWlzc2luZ0JpdHMpICYgYml0TWFzaztcbiAgICAgICAgICAgICAgYnVmZmVyID0gc3JjW2krK107XG4gICAgICAgICAgICAgIGJpdHNMZWZ0ID0gMzIgLSBtaXNzaW5nQml0cztcbiAgICAgICAgICAgICAgbiArPSAoYnVmZmVyID4+PiBiaXRzTGVmdCk7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICAvL3BpeGVsIHZhbHVlcyBtYXkgZXhjZWVkIG1heCBkdWUgdG8gcXVhbnRpemF0aW9uXG4gICAgICAgICAgICBkZXN0W29dID0gbiA8IG5tYXggPyBvZmZzZXQgKyBuICogc2NhbGUgOiBtYXhWYWx1ZTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgIH0sXG5cbiAgICAgIHVuc3R1ZmZMVVQ6IGZ1bmN0aW9uKHNyYywgYml0c1BlclBpeGVsLCBudW1QaXhlbHMsIG9mZnNldCwgc2NhbGUsIG1heFZhbHVlKSB7XG4gICAgICAgIHZhciBiaXRNYXNrID0gKDEgPDwgYml0c1BlclBpeGVsKSAtIDE7XG4gICAgICAgIHZhciBpID0gMCwgbyA9IDAsIG1pc3NpbmdCaXRzID0gMCwgYml0c0xlZnQgPSAwLCBuID0gMDtcbiAgICAgICAgdmFyIGJ1ZmZlcjtcbiAgICAgICAgdmFyIGRlc3QgPSBbXTtcblxuICAgICAgICAvLyBnZXQgcmlkIG9mIHRyYWlsaW5nIGJ5dGVzIHRoYXQgYXJlIGFscmVhZHkgcGFydCBvZiBuZXh0IGJsb2NrXG4gICAgICAgIHZhciBudW1JbnZhbGlkVGFpbEJ5dGVzID0gc3JjLmxlbmd0aCAqIDQgLSBNYXRoLmNlaWwoYml0c1BlclBpeGVsICogbnVtUGl4ZWxzIC8gOCk7XG4gICAgICAgIHNyY1tzcmMubGVuZ3RoIC0gMV0gPDw9IDggKiBudW1JbnZhbGlkVGFpbEJ5dGVzO1xuXG4gICAgICAgIHZhciBubWF4ID0gTWF0aC5jZWlsKChtYXhWYWx1ZSAtIG9mZnNldCkgLyBzY2FsZSk7XG4gICAgICAgIGZvciAobyA9IDA7IG8gPCBudW1QaXhlbHM7IG8rKykge1xuICAgICAgICAgIGlmIChiaXRzTGVmdCA9PT0gMCkge1xuICAgICAgICAgICAgYnVmZmVyID0gc3JjW2krK107XG4gICAgICAgICAgICBiaXRzTGVmdCA9IDMyO1xuICAgICAgICAgIH1cbiAgICAgICAgICBpZiAoYml0c0xlZnQgPj0gYml0c1BlclBpeGVsKSB7XG4gICAgICAgICAgICBuID0gKGJ1ZmZlciA+Pj4gKGJpdHNMZWZ0IC0gYml0c1BlclBpeGVsKSkgJiBiaXRNYXNrO1xuICAgICAgICAgICAgYml0c0xlZnQgLT0gYml0c1BlclBpeGVsO1xuICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICBtaXNzaW5nQml0cyA9IChiaXRzUGVyUGl4ZWwgLSBiaXRzTGVmdCk7XG4gICAgICAgICAgICBuID0gKChidWZmZXIgJiBiaXRNYXNrKSA8PCBtaXNzaW5nQml0cykgJiBiaXRNYXNrO1xuICAgICAgICAgICAgYnVmZmVyID0gc3JjW2krK107XG4gICAgICAgICAgICBiaXRzTGVmdCA9IDMyIC0gbWlzc2luZ0JpdHM7XG4gICAgICAgICAgICBuICs9IChidWZmZXIgPj4+IGJpdHNMZWZ0KTtcbiAgICAgICAgICB9XG4gICAgICAgICAgLy9kZXN0LnB1c2gobik7XG4gICAgICAgICAgZGVzdFtvXSA9IG4gPCBubWF4ID8gb2Zmc2V0ICsgbiAqIHNjYWxlIDogbWF4VmFsdWU7XG4gICAgICAgIH1cbiAgICAgICAgZGVzdC51bnNoaWZ0KG9mZnNldCk7Ly8xc3Qgb25lXG4gICAgICAgIHJldHVybiBkZXN0O1xuICAgICAgfSxcblxuICAgICAgdW5zdHVmZjI6IGZ1bmN0aW9uKHNyYywgZGVzdCwgYml0c1BlclBpeGVsLCBudW1QaXhlbHMsIGx1dEFyciwgb2Zmc2V0LCBzY2FsZSwgbWF4VmFsdWUpIHtcbiAgICAgICAgdmFyIGJpdE1hc2sgPSAoMSA8PCBiaXRzUGVyUGl4ZWwpIC0gMTtcbiAgICAgICAgdmFyIGkgPSAwLCBvO1xuICAgICAgICB2YXIgYml0c0xlZnQgPSAwLCBiaXRQb3MgPSAwO1xuICAgICAgICB2YXIgbiwgYnVmZmVyLCBtaXNzaW5nQml0cztcbiAgICAgICAgaWYgKGx1dEFycikge1xuICAgICAgICAgIGZvciAobyA9IDA7IG8gPCBudW1QaXhlbHM7IG8rKykge1xuICAgICAgICAgICAgaWYgKGJpdHNMZWZ0ID09PSAwKSB7XG4gICAgICAgICAgICAgIGJ1ZmZlciA9IHNyY1tpKytdO1xuICAgICAgICAgICAgICBiaXRzTGVmdCA9IDMyO1xuICAgICAgICAgICAgICBiaXRQb3MgPSAwO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgaWYgKGJpdHNMZWZ0ID49IGJpdHNQZXJQaXhlbCkge1xuICAgICAgICAgICAgICBuID0gKChidWZmZXIgPj4+IGJpdFBvcykgJiBiaXRNYXNrKTtcbiAgICAgICAgICAgICAgYml0c0xlZnQgLT0gYml0c1BlclBpeGVsO1xuICAgICAgICAgICAgICBiaXRQb3MgKz0gYml0c1BlclBpeGVsO1xuICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgbWlzc2luZ0JpdHMgPSAoYml0c1BlclBpeGVsIC0gYml0c0xlZnQpO1xuICAgICAgICAgICAgICBuID0gKGJ1ZmZlciA+Pj4gYml0UG9zKSAmIGJpdE1hc2s7XG4gICAgICAgICAgICAgIGJ1ZmZlciA9IHNyY1tpKytdO1xuICAgICAgICAgICAgICBiaXRzTGVmdCA9IDMyIC0gbWlzc2luZ0JpdHM7XG4gICAgICAgICAgICAgIG4gfD0gKGJ1ZmZlciAmICgoMSA8PCBtaXNzaW5nQml0cykgLSAxKSkgPDwgKGJpdHNQZXJQaXhlbCAtIG1pc3NpbmdCaXRzKTtcbiAgICAgICAgICAgICAgYml0UG9zID0gbWlzc2luZ0JpdHM7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBkZXN0W29dID0gbHV0QXJyW25dO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBlbHNlIHtcbiAgICAgICAgICB2YXIgbm1heCA9IE1hdGguY2VpbCgobWF4VmFsdWUgLSBvZmZzZXQpIC8gc2NhbGUpO1xuICAgICAgICAgIGZvciAobyA9IDA7IG8gPCBudW1QaXhlbHM7IG8rKykge1xuICAgICAgICAgICAgaWYgKGJpdHNMZWZ0ID09PSAwKSB7XG4gICAgICAgICAgICAgIGJ1ZmZlciA9IHNyY1tpKytdO1xuICAgICAgICAgICAgICBiaXRzTGVmdCA9IDMyO1xuICAgICAgICAgICAgICBiaXRQb3MgPSAwO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgaWYgKGJpdHNMZWZ0ID49IGJpdHNQZXJQaXhlbCkge1xuICAgICAgICAgICAgICAvL25vIHVuc2lnbmVkIGxlZnQgc2hpZnRcbiAgICAgICAgICAgICAgbiA9ICgoYnVmZmVyID4+PiBiaXRQb3MpICYgYml0TWFzayk7XG4gICAgICAgICAgICAgIGJpdHNMZWZ0IC09IGJpdHNQZXJQaXhlbDtcbiAgICAgICAgICAgICAgYml0UG9zICs9IGJpdHNQZXJQaXhlbDtcbiAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgIG1pc3NpbmdCaXRzID0gKGJpdHNQZXJQaXhlbCAtIGJpdHNMZWZ0KTtcbiAgICAgICAgICAgICAgbiA9IChidWZmZXIgPj4+IGJpdFBvcykgJiBiaXRNYXNrOy8vKChidWZmZXIgJiBiaXRNYXNrKSA8PCBtaXNzaW5nQml0cykgJiBiaXRNYXNrO1xuICAgICAgICAgICAgICBidWZmZXIgPSBzcmNbaSsrXTtcbiAgICAgICAgICAgICAgYml0c0xlZnQgPSAzMiAtIG1pc3NpbmdCaXRzO1xuICAgICAgICAgICAgICBuIHw9IChidWZmZXIgJiAoKDEgPDwgbWlzc2luZ0JpdHMpIC0gMSkpIDw8IChiaXRzUGVyUGl4ZWwgLSBtaXNzaW5nQml0cyk7XG4gICAgICAgICAgICAgIGJpdFBvcyA9IG1pc3NpbmdCaXRzO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgLy9waXhlbCB2YWx1ZXMgbWF5IGV4Y2VlZCBtYXggZHVlIHRvIHF1YW50aXphdGlvblxuICAgICAgICAgICAgZGVzdFtvXSA9IG4gPCBubWF4ID8gb2Zmc2V0ICsgbiAqIHNjYWxlIDogbWF4VmFsdWU7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIHJldHVybiBkZXN0O1xuICAgICAgfSxcblxuICAgICAgdW5zdHVmZkxVVDI6IGZ1bmN0aW9uKHNyYywgYml0c1BlclBpeGVsLCBudW1QaXhlbHMsIG9mZnNldCwgc2NhbGUsIG1heFZhbHVlKSB7XG4gICAgICAgIHZhciBiaXRNYXNrID0gKDEgPDwgYml0c1BlclBpeGVsKSAtIDE7XG4gICAgICAgIHZhciBpID0gMCwgbyA9IDAsIG1pc3NpbmdCaXRzID0gMCwgYml0c0xlZnQgPSAwLCBuID0gMCwgYml0UG9zID0gMDtcbiAgICAgICAgdmFyIGJ1ZmZlcjtcbiAgICAgICAgdmFyIGRlc3QgPSBbXTtcbiAgICAgICAgdmFyIG5tYXggPSBNYXRoLmNlaWwoKG1heFZhbHVlIC0gb2Zmc2V0KSAvIHNjYWxlKTtcbiAgICAgICAgZm9yIChvID0gMDsgbyA8IG51bVBpeGVsczsgbysrKSB7XG4gICAgICAgICAgaWYgKGJpdHNMZWZ0ID09PSAwKSB7XG4gICAgICAgICAgICBidWZmZXIgPSBzcmNbaSsrXTtcbiAgICAgICAgICAgIGJpdHNMZWZ0ID0gMzI7XG4gICAgICAgICAgICBiaXRQb3MgPSAwO1xuICAgICAgICAgIH1cbiAgICAgICAgICBpZiAoYml0c0xlZnQgPj0gYml0c1BlclBpeGVsKSB7XG4gICAgICAgICAgICAvL25vIHVuc2lnbmVkIGxlZnQgc2hpZnRcbiAgICAgICAgICAgIG4gPSAoKGJ1ZmZlciA+Pj4gYml0UG9zKSAmIGJpdE1hc2spO1xuICAgICAgICAgICAgYml0c0xlZnQgLT0gYml0c1BlclBpeGVsO1xuICAgICAgICAgICAgYml0UG9zICs9IGJpdHNQZXJQaXhlbDtcbiAgICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgbWlzc2luZ0JpdHMgPSAoYml0c1BlclBpeGVsIC0gYml0c0xlZnQpO1xuICAgICAgICAgICAgbiA9IChidWZmZXIgPj4+IGJpdFBvcykgJiBiaXRNYXNrOy8vKChidWZmZXIgJiBiaXRNYXNrKSA8PCBtaXNzaW5nQml0cykgJiBiaXRNYXNrO1xuICAgICAgICAgICAgYnVmZmVyID0gc3JjW2krK107XG4gICAgICAgICAgICBiaXRzTGVmdCA9IDMyIC0gbWlzc2luZ0JpdHM7XG4gICAgICAgICAgICBuIHw9IChidWZmZXIgJiAoKDEgPDwgbWlzc2luZ0JpdHMpIC0gMSkpIDw8IChiaXRzUGVyUGl4ZWwgLSBtaXNzaW5nQml0cyk7XG4gICAgICAgICAgICBiaXRQb3MgPSBtaXNzaW5nQml0cztcbiAgICAgICAgICB9XG4gICAgICAgICAgLy9kZXN0LnB1c2gobik7XG4gICAgICAgICAgZGVzdFtvXSA9IG4gPCBubWF4ID8gb2Zmc2V0ICsgbiAqIHNjYWxlIDogbWF4VmFsdWU7XG4gICAgICAgIH1cbiAgICAgICAgZGVzdC51bnNoaWZ0KG9mZnNldCk7XG4gICAgICAgIHJldHVybiBkZXN0O1xuICAgICAgfSxcblxuICAgICAgb3JpZ2luYWxVbnN0dWZmOiBmdW5jdGlvbihzcmMsIGRlc3QsIGJpdHNQZXJQaXhlbCwgbnVtUGl4ZWxzKSB7XG4gICAgICAgIHZhciBiaXRNYXNrID0gKDEgPDwgYml0c1BlclBpeGVsKSAtIDE7XG4gICAgICAgIHZhciBpID0gMCwgbztcbiAgICAgICAgdmFyIGJpdHNMZWZ0ID0gMDtcbiAgICAgICAgdmFyIG4sIGJ1ZmZlciwgbWlzc2luZ0JpdHM7XG5cbiAgICAgICAgLy8gZ2V0IHJpZCBvZiB0cmFpbGluZyBieXRlcyB0aGF0IGFyZSBhbHJlYWR5IHBhcnQgb2YgbmV4dCBibG9ja1xuICAgICAgICB2YXIgbnVtSW52YWxpZFRhaWxCeXRlcyA9IHNyYy5sZW5ndGggKiA0IC0gTWF0aC5jZWlsKGJpdHNQZXJQaXhlbCAqIG51bVBpeGVscyAvIDgpO1xuICAgICAgICBzcmNbc3JjLmxlbmd0aCAtIDFdIDw8PSA4ICogbnVtSW52YWxpZFRhaWxCeXRlcztcblxuICAgICAgICBmb3IgKG8gPSAwOyBvIDwgbnVtUGl4ZWxzOyBvKyspIHtcbiAgICAgICAgICBpZiAoYml0c0xlZnQgPT09IDApIHtcbiAgICAgICAgICAgIGJ1ZmZlciA9IHNyY1tpKytdO1xuICAgICAgICAgICAgYml0c0xlZnQgPSAzMjtcbiAgICAgICAgICB9XG4gICAgICAgICAgaWYgKGJpdHNMZWZ0ID49IGJpdHNQZXJQaXhlbCkge1xuICAgICAgICAgICAgbiA9IChidWZmZXIgPj4+IChiaXRzTGVmdCAtIGJpdHNQZXJQaXhlbCkpICYgYml0TWFzaztcbiAgICAgICAgICAgIGJpdHNMZWZ0IC09IGJpdHNQZXJQaXhlbDtcbiAgICAgICAgICB9XG4gICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICBtaXNzaW5nQml0cyA9IChiaXRzUGVyUGl4ZWwgLSBiaXRzTGVmdCk7XG4gICAgICAgICAgICBuID0gKChidWZmZXIgJiBiaXRNYXNrKSA8PCBtaXNzaW5nQml0cykgJiBiaXRNYXNrO1xuICAgICAgICAgICAgYnVmZmVyID0gc3JjW2krK107XG4gICAgICAgICAgICBiaXRzTGVmdCA9IDMyIC0gbWlzc2luZ0JpdHM7XG4gICAgICAgICAgICBuICs9IChidWZmZXIgPj4+IGJpdHNMZWZ0KTtcbiAgICAgICAgICB9XG4gICAgICAgICAgZGVzdFtvXSA9IG47XG4gICAgICAgIH1cbiAgICAgICAgcmV0dXJuIGRlc3Q7XG4gICAgICB9LFxuXG4gICAgICBvcmlnaW5hbFVuc3R1ZmYyOiBmdW5jdGlvbihzcmMsIGRlc3QsIGJpdHNQZXJQaXhlbCwgbnVtUGl4ZWxzKSB7XG4gICAgICAgIHZhciBiaXRNYXNrID0gKDEgPDwgYml0c1BlclBpeGVsKSAtIDE7XG4gICAgICAgIHZhciBpID0gMCwgbztcbiAgICAgICAgdmFyIGJpdHNMZWZ0ID0gMCwgYml0UG9zID0gMDtcbiAgICAgICAgdmFyIG4sIGJ1ZmZlciwgbWlzc2luZ0JpdHM7XG4gICAgICAgIC8vbWljcm8tb3B0aW1pemF0aW9uc1xuICAgICAgICBmb3IgKG8gPSAwOyBvIDwgbnVtUGl4ZWxzOyBvKyspIHtcbiAgICAgICAgICBpZiAoYml0c0xlZnQgPT09IDApIHtcbiAgICAgICAgICAgIGJ1ZmZlciA9IHNyY1tpKytdO1xuICAgICAgICAgICAgYml0c0xlZnQgPSAzMjtcbiAgICAgICAgICAgIGJpdFBvcyA9IDA7XG4gICAgICAgICAgfVxuICAgICAgICAgIGlmIChiaXRzTGVmdCA+PSBiaXRzUGVyUGl4ZWwpIHtcbiAgICAgICAgICAgIC8vbm8gdW5zaWduZWQgbGVmdCBzaGlmdFxuICAgICAgICAgICAgbiA9ICgoYnVmZmVyID4+PiBiaXRQb3MpICYgYml0TWFzayk7XG4gICAgICAgICAgICBiaXRzTGVmdCAtPSBiaXRzUGVyUGl4ZWw7XG4gICAgICAgICAgICBiaXRQb3MgKz0gYml0c1BlclBpeGVsO1xuICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICBtaXNzaW5nQml0cyA9IChiaXRzUGVyUGl4ZWwgLSBiaXRzTGVmdCk7XG4gICAgICAgICAgICBuID0gKGJ1ZmZlciA+Pj4gYml0UG9zKSAmIGJpdE1hc2s7Ly8oKGJ1ZmZlciAmIGJpdE1hc2spIDw8IG1pc3NpbmdCaXRzKSAmIGJpdE1hc2s7XG4gICAgICAgICAgICBidWZmZXIgPSBzcmNbaSsrXTtcbiAgICAgICAgICAgIGJpdHNMZWZ0ID0gMzIgLSBtaXNzaW5nQml0cztcbiAgICAgICAgICAgIG4gfD0gKGJ1ZmZlciAmICgoMSA8PCBtaXNzaW5nQml0cykgLSAxKSkgPDwgKGJpdHNQZXJQaXhlbCAtIG1pc3NpbmdCaXRzKTtcbiAgICAgICAgICAgIGJpdFBvcyA9IG1pc3NpbmdCaXRzO1xuICAgICAgICAgIH1cbiAgICAgICAgICBkZXN0W29dID0gbjtcbiAgICAgICAgfVxuICAgICAgICByZXR1cm4gZGVzdDtcbiAgICAgIH1cbiAgICB9O1xuXG4gICAgLyoqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqXG4gICAgKnByaXZhdGUgc3RhdGljIGNsYXNzIHVzZWQgYnkgTGVyYzJEZWNvZGVcbiAgICAqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiovXG4gICAgdmFyIExlcmMySGVscGVycyA9IHtcbiAgICAgIEhVRkZNQU5fTFVUX0JJVFNfTUFYOiAxMiwgLy91c2UgMl4xMiBsdXQsIHRyZWF0IGl0IGxpa2UgY29uc3RhbnRcbiAgICAgIGNvbXB1dGVDaGVja3N1bUZsZXRjaGVyMzI6IGZ1bmN0aW9uKGlucHV0KSB7XG5cbiAgICAgICAgdmFyIHN1bTEgPSAweGZmZmYsIHN1bTIgPSAweGZmZmY7XG4gICAgICAgIHZhciBsZW4gPSBpbnB1dC5sZW5ndGg7XG4gICAgICAgIHZhciB3b3JkcyA9IE1hdGguZmxvb3IobGVuIC8gMik7XG4gICAgICAgIHZhciBpID0gMDtcbiAgICAgICAgd2hpbGUgKHdvcmRzKSB7XG4gICAgICAgICAgdmFyIHRsZW4gPSAod29yZHMgPj0gMzU5KSA/IDM1OSA6IHdvcmRzO1xuICAgICAgICAgIHdvcmRzIC09IHRsZW47XG4gICAgICAgICAgZG8ge1xuICAgICAgICAgICAgc3VtMSArPSAoaW5wdXRbaSsrXSA8PCA4KTtcbiAgICAgICAgICAgIHN1bTIgKz0gc3VtMSArPSBpbnB1dFtpKytdO1xuICAgICAgICAgIH0gd2hpbGUgKC0tdGxlbik7XG5cbiAgICAgICAgICBzdW0xID0gKHN1bTEgJiAweGZmZmYpICsgKHN1bTEgPj4+IDE2KTtcbiAgICAgICAgICBzdW0yID0gKHN1bTIgJiAweGZmZmYpICsgKHN1bTIgPj4+IDE2KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIGFkZCB0aGUgc3RyYWdnbGVyIGJ5dGUgaWYgaXQgZXhpc3RzXG4gICAgICAgIGlmIChsZW4gJiAxKSB7XG4gICAgICAgICAgc3VtMiArPSBzdW0xICs9IChpbnB1dFtpXSA8PCA4KTtcbiAgICAgICAgfVxuICAgICAgICAvLyBzZWNvbmQgcmVkdWN0aW9uIHN0ZXAgdG8gcmVkdWNlIHN1bXMgdG8gMTYgYml0c1xuICAgICAgICBzdW0xID0gKHN1bTEgJiAweGZmZmYpICsgKHN1bTEgPj4+IDE2KTtcbiAgICAgICAgc3VtMiA9IChzdW0yICYgMHhmZmZmKSArIChzdW0yID4+PiAxNik7XG5cbiAgICAgICAgcmV0dXJuIChzdW0yIDw8IDE2IHwgc3VtMSkgPj4+IDA7XG4gICAgICB9LFxuXG4gICAgICByZWFkSGVhZGVySW5mbzogZnVuY3Rpb24oaW5wdXQsIGRhdGEpIHtcbiAgICAgICAgdmFyIHB0ciA9IGRhdGEucHRyO1xuICAgICAgICB2YXIgZmlsZUlkVmlldyA9IG5ldyBVaW50OEFycmF5KGlucHV0LCBwdHIsIDYpO1xuICAgICAgICB2YXIgaGVhZGVySW5mbyA9IHt9O1xuICAgICAgICBoZWFkZXJJbmZvLmZpbGVJZGVudGlmaWVyU3RyaW5nID0gU3RyaW5nLmZyb21DaGFyQ29kZS5hcHBseShudWxsLCBmaWxlSWRWaWV3KTtcbiAgICAgICAgaWYgKGhlYWRlckluZm8uZmlsZUlkZW50aWZpZXJTdHJpbmcubGFzdEluZGV4T2YoXCJMZXJjMlwiLCAwKSAhPT0gMCkge1xuICAgICAgICAgIHRocm93IFwiVW5leHBlY3RlZCBmaWxlIGlkZW50aWZpZXIgc3RyaW5nIChleHBlY3QgTGVyYzIgKTogXCIgKyBoZWFkZXJJbmZvLmZpbGVJZGVudGlmaWVyU3RyaW5nO1xuICAgICAgICB9XG4gICAgICAgIHB0ciArPSA2O1xuICAgICAgICB2YXIgdmlldyA9IG5ldyBEYXRhVmlldyhpbnB1dCwgcHRyLCA4KTtcbiAgICAgICAgdmFyIGZpbGVWZXJzaW9uID0gdmlldy5nZXRJbnQzMigwLCB0cnVlKTtcbiAgICAgICAgaGVhZGVySW5mby5maWxlVmVyc2lvbiA9IGZpbGVWZXJzaW9uO1xuICAgICAgICBwdHIgKz0gNDtcbiAgICAgICAgaWYgKGZpbGVWZXJzaW9uID49IDMpIHtcbiAgICAgICAgICBoZWFkZXJJbmZvLmNoZWNrc3VtID0gdmlldy5nZXRVaW50MzIoNCwgdHJ1ZSk7IC8vbnJvd3NcbiAgICAgICAgICBwdHIgKz0gNDtcbiAgICAgICAgfVxuXG4gICAgICAgIC8va2V5cyBzdGFydCBmcm9tIGhlcmVcbiAgICAgICAgdmlldyA9IG5ldyBEYXRhVmlldyhpbnB1dCwgcHRyLCAxMik7XG4gICAgICAgIGhlYWRlckluZm8uaGVpZ2h0ID0gdmlldy5nZXRVaW50MzIoMCwgdHJ1ZSk7IC8vbnJvd3NcbiAgICAgICAgaGVhZGVySW5mby53aWR0aCA9IHZpZXcuZ2V0VWludDMyKDQsIHRydWUpOyAvL25jb2xzXG4gICAgICAgIHB0ciArPSA4O1xuICAgICAgICBpZiAoZmlsZVZlcnNpb24gPj0gNCkge1xuICAgICAgICAgIGhlYWRlckluZm8ubnVtRGltcyA9IHZpZXcuZ2V0VWludDMyKDgsIHRydWUpO1xuICAgICAgICAgIHB0ciArPSA0O1xuICAgICAgICB9XG4gICAgICAgIGVsc2Uge1xuICAgICAgICAgIGhlYWRlckluZm8ubnVtRGltcyA9IDE7XG4gICAgICAgIH1cblxuICAgICAgICB2aWV3ID0gbmV3IERhdGFWaWV3KGlucHV0LCBwdHIsIDQwKTtcbiAgICAgICAgaGVhZGVySW5mby5udW1WYWxpZFBpeGVsID0gdmlldy5nZXRVaW50MzIoMCwgdHJ1ZSk7XG4gICAgICAgIGhlYWRlckluZm8ubWljcm9CbG9ja1NpemUgPSB2aWV3LmdldEludDMyKDQsIHRydWUpO1xuICAgICAgICBoZWFkZXJJbmZvLmJsb2JTaXplID0gdmlldy5nZXRJbnQzMig4LCB0cnVlKTtcbiAgICAgICAgaGVhZGVySW5mby5pbWFnZVR5cGUgPSB2aWV3LmdldEludDMyKDEyLCB0cnVlKTtcblxuICAgICAgICBoZWFkZXJJbmZvLm1heFpFcnJvciA9IHZpZXcuZ2V0RmxvYXQ2NCgxNiwgdHJ1ZSk7XG4gICAgICAgIGhlYWRlckluZm8uek1pbiA9IHZpZXcuZ2V0RmxvYXQ2NCgyNCwgdHJ1ZSk7XG4gICAgICAgIGhlYWRlckluZm8uek1heCA9IHZpZXcuZ2V0RmxvYXQ2NCgzMiwgdHJ1ZSk7XG4gICAgICAgIHB0ciArPSA0MDtcbiAgICAgICAgZGF0YS5oZWFkZXJJbmZvID0gaGVhZGVySW5mbztcbiAgICAgICAgZGF0YS5wdHIgPSBwdHI7XG5cbiAgICAgICAgdmFyIGNoZWNrc3VtLCBrZXlMZW5ndGg7XG4gICAgICAgIGlmIChmaWxlVmVyc2lvbiA+PSAzKSB7XG4gICAgICAgICAga2V5TGVuZ3RoID0gZmlsZVZlcnNpb24gPj0gNCA/IDUyIDogNDg7XG4gICAgICAgICAgY2hlY2tzdW0gPSB0aGlzLmNvbXB1dGVDaGVja3N1bUZsZXRjaGVyMzIobmV3IFVpbnQ4QXJyYXkoaW5wdXQsIHB0ciAtIGtleUxlbmd0aCwgaGVhZGVySW5mby5ibG9iU2l6ZSAtIDE0KSk7XG4gICAgICAgICAgaWYgKGNoZWNrc3VtICE9PSBoZWFkZXJJbmZvLmNoZWNrc3VtKSB7XG4gICAgICAgICAgICB0aHJvdyBcIkNoZWNrc3VtIGZhaWxlZC5cIjtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgcmV0dXJuIHRydWU7XG4gICAgICB9LFxuXG4gICAgICBjaGVja01pbk1heFJhbmdlczogZnVuY3Rpb24oaW5wdXQsIGRhdGEpIHtcbiAgICAgICAgdmFyIGhlYWRlckluZm8gPSBkYXRhLmhlYWRlckluZm87XG4gICAgICAgIHZhciBPdXRQaXhlbFR5cGVBcnJheSA9IHRoaXMuZ2V0RGF0YVR5cGVBcnJheShoZWFkZXJJbmZvLmltYWdlVHlwZSk7XG4gICAgICAgIHZhciByYW5nZUJ5dGVzID0gaGVhZGVySW5mby5udW1EaW1zICogdGhpcy5nZXREYXRhVHlwZVNpemUoaGVhZGVySW5mby5pbWFnZVR5cGUpO1xuICAgICAgICB2YXIgbWluVmFsdWVzID0gdGhpcy5yZWFkU3ViQXJyYXkoaW5wdXQsIGRhdGEucHRyLCBPdXRQaXhlbFR5cGVBcnJheSwgcmFuZ2VCeXRlcyk7XG4gICAgICAgIHZhciBtYXhWYWx1ZXMgPSB0aGlzLnJlYWRTdWJBcnJheShpbnB1dCwgZGF0YS5wdHIgKyByYW5nZUJ5dGVzLCBPdXRQaXhlbFR5cGVBcnJheSwgcmFuZ2VCeXRlcyk7XG4gICAgICAgIGRhdGEucHRyICs9ICgyICogcmFuZ2VCeXRlcyk7XG4gICAgICAgIHZhciBpLCBlcXVhbCA9IHRydWU7XG4gICAgICAgIGZvciAoaSA9IDA7IGkgPCBoZWFkZXJJbmZvLm51bURpbXM7IGkrKykge1xuICAgICAgICAgIGlmIChtaW5WYWx1ZXNbaV0gIT09IG1heFZhbHVlc1tpXSkge1xuICAgICAgICAgICAgZXF1YWwgPSBmYWxzZTtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBoZWFkZXJJbmZvLm1pblZhbHVlcyA9IG1pblZhbHVlcztcbiAgICAgICAgaGVhZGVySW5mby5tYXhWYWx1ZXMgPSBtYXhWYWx1ZXM7XG4gICAgICAgIHJldHVybiBlcXVhbDtcbiAgICAgIH0sXG5cbiAgICAgIHJlYWRTdWJBcnJheTogZnVuY3Rpb24oaW5wdXQsIHB0ciwgT3V0UGl4ZWxUeXBlQXJyYXksIG51bUJ5dGVzKSB7XG4gICAgICAgIHZhciByYXdEYXRhO1xuICAgICAgICBpZiAoT3V0UGl4ZWxUeXBlQXJyYXkgPT09IFVpbnQ4QXJyYXkpIHtcbiAgICAgICAgICByYXdEYXRhID0gbmV3IFVpbnQ4QXJyYXkoaW5wdXQsIHB0ciwgbnVtQnl0ZXMpO1xuICAgICAgICB9XG4gICAgICAgIGVsc2Uge1xuICAgICAgICAgIHZhciBhcnJheUJ1ZiA9IG5ldyBBcnJheUJ1ZmZlcihudW1CeXRlcyk7XG4gICAgICAgICAgdmFyIHN0b3JlOCA9IG5ldyBVaW50OEFycmF5KGFycmF5QnVmKTtcbiAgICAgICAgICBzdG9yZTguc2V0KG5ldyBVaW50OEFycmF5KGlucHV0LCBwdHIsIG51bUJ5dGVzKSk7XG4gICAgICAgICAgcmF3RGF0YSA9IG5ldyBPdXRQaXhlbFR5cGVBcnJheShhcnJheUJ1Zik7XG4gICAgICAgIH1cbiAgICAgICAgcmV0dXJuIHJhd0RhdGE7XG4gICAgICB9LFxuXG4gICAgICByZWFkTWFzazogZnVuY3Rpb24oaW5wdXQsIGRhdGEpIHtcbiAgICAgICAgdmFyIHB0ciA9IGRhdGEucHRyO1xuICAgICAgICB2YXIgaGVhZGVySW5mbyA9IGRhdGEuaGVhZGVySW5mbztcbiAgICAgICAgdmFyIG51bVBpeGVscyA9IGhlYWRlckluZm8ud2lkdGggKiBoZWFkZXJJbmZvLmhlaWdodDtcbiAgICAgICAgdmFyIG51bVZhbGlkUGl4ZWwgPSBoZWFkZXJJbmZvLm51bVZhbGlkUGl4ZWw7XG5cbiAgICAgICAgdmFyIHZpZXcgPSBuZXcgRGF0YVZpZXcoaW5wdXQsIHB0ciwgNCk7XG4gICAgICAgIHZhciBtYXNrID0ge307XG4gICAgICAgIG1hc2subnVtQnl0ZXMgPSB2aWV3LmdldFVpbnQzMigwLCB0cnVlKTtcbiAgICAgICAgcHRyICs9IDQ7XG5cbiAgICAgICAgLy8gTWFzayBEYXRhXG4gICAgICAgIGlmICgoMCA9PT0gbnVtVmFsaWRQaXhlbCB8fCBudW1QaXhlbHMgPT09IG51bVZhbGlkUGl4ZWwpICYmIDAgIT09IG1hc2subnVtQnl0ZXMpIHtcbiAgICAgICAgICB0aHJvdyAoXCJpbnZhbGlkIG1hc2tcIik7XG4gICAgICAgIH1cbiAgICAgICAgdmFyIGJpdHNldCwgcmVzdWx0TWFzaztcbiAgICAgICAgaWYgKG51bVZhbGlkUGl4ZWwgPT09IDApIHtcbiAgICAgICAgICBiaXRzZXQgPSBuZXcgVWludDhBcnJheShNYXRoLmNlaWwobnVtUGl4ZWxzIC8gOCkpO1xuICAgICAgICAgIG1hc2suYml0c2V0ID0gYml0c2V0O1xuICAgICAgICAgIHJlc3VsdE1hc2sgPSBuZXcgVWludDhBcnJheShudW1QaXhlbHMpO1xuICAgICAgICAgIGRhdGEucGl4ZWxzLnJlc3VsdE1hc2sgPSByZXN1bHRNYXNrO1xuICAgICAgICAgIHB0ciArPSBtYXNrLm51bUJ5dGVzO1xuICAgICAgICB9Ly8gPz8/Pz8gZWxzZSBpZiAoZGF0YS5tYXNrLm51bUJ5dGVzID4gMCAmJiBkYXRhLm1hc2subnVtQnl0ZXM8IGRhdGEubnVtVmFsaWRQaXhlbCkge1xuICAgICAgICBlbHNlIGlmIChtYXNrLm51bUJ5dGVzID4gMCkge1xuICAgICAgICAgIGJpdHNldCA9IG5ldyBVaW50OEFycmF5KE1hdGguY2VpbChudW1QaXhlbHMgLyA4KSk7XG4gICAgICAgICAgdmlldyA9IG5ldyBEYXRhVmlldyhpbnB1dCwgcHRyLCBtYXNrLm51bUJ5dGVzKTtcbiAgICAgICAgICB2YXIgY250ID0gdmlldy5nZXRJbnQxNigwLCB0cnVlKTtcbiAgICAgICAgICB2YXIgaXAgPSAyLCBvcCA9IDAsIHZhbCA9IDA7XG4gICAgICAgICAgZG8ge1xuICAgICAgICAgICAgaWYgKGNudCA+IDApIHtcbiAgICAgICAgICAgICAgd2hpbGUgKGNudC0tKSB7IGJpdHNldFtvcCsrXSA9IHZpZXcuZ2V0VWludDgoaXArKyk7IH1cbiAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgIHZhbCA9IHZpZXcuZ2V0VWludDgoaXArKyk7XG4gICAgICAgICAgICAgIGNudCA9IC1jbnQ7XG4gICAgICAgICAgICAgIHdoaWxlIChjbnQtLSkgeyBiaXRzZXRbb3ArK10gPSB2YWw7IH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGNudCA9IHZpZXcuZ2V0SW50MTYoaXAsIHRydWUpO1xuICAgICAgICAgICAgaXAgKz0gMjtcbiAgICAgICAgICB9IHdoaWxlIChpcCA8IG1hc2subnVtQnl0ZXMpO1xuICAgICAgICAgIGlmICgoY250ICE9PSAtMzI3NjgpIHx8IChvcCA8IGJpdHNldC5sZW5ndGgpKSB7XG4gICAgICAgICAgICB0aHJvdyBcIlVuZXhwZWN0ZWQgZW5kIG9mIG1hc2sgUkxFIGVuY29kaW5nXCI7XG4gICAgICAgICAgfVxuXG4gICAgICAgICAgcmVzdWx0TWFzayA9IG5ldyBVaW50OEFycmF5KG51bVBpeGVscyk7XG4gICAgICAgICAgdmFyIG1iID0gMCwgayA9IDA7XG5cbiAgICAgICAgICBmb3IgKGsgPSAwOyBrIDwgbnVtUGl4ZWxzOyBrKyspIHtcbiAgICAgICAgICAgIGlmIChrICYgNykge1xuICAgICAgICAgICAgICBtYiA9IGJpdHNldFtrID4+IDNdO1xuICAgICAgICAgICAgICBtYiA8PD0gayAmIDc7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgbWIgPSBiaXRzZXRbayA+PiAzXTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGlmIChtYiAmIDEyOCkge1xuICAgICAgICAgICAgICByZXN1bHRNYXNrW2tdID0gMTtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICB9XG4gICAgICAgICAgZGF0YS5waXhlbHMucmVzdWx0TWFzayA9IHJlc3VsdE1hc2s7XG5cbiAgICAgICAgICBtYXNrLmJpdHNldCA9IGJpdHNldDtcbiAgICAgICAgICBwdHIgKz0gbWFzay5udW1CeXRlcztcbiAgICAgICAgfVxuICAgICAgICBkYXRhLnB0ciA9IHB0cjtcbiAgICAgICAgZGF0YS5tYXNrID0gbWFzaztcbiAgICAgICAgcmV0dXJuIHRydWU7XG4gICAgICB9LFxuXG4gICAgICByZWFkRGF0YU9uZVN3ZWVwOiBmdW5jdGlvbihpbnB1dCwgZGF0YSwgT3V0UGl4ZWxUeXBlQXJyYXksIHVzZUJTUUZvck91dHB1dERpbSkge1xuICAgICAgICB2YXIgcHRyID0gZGF0YS5wdHI7XG4gICAgICAgIHZhciBoZWFkZXJJbmZvID0gZGF0YS5oZWFkZXJJbmZvO1xuICAgICAgICB2YXIgbnVtRGltcyA9IGhlYWRlckluZm8ubnVtRGltcztcbiAgICAgICAgdmFyIG51bVBpeGVscyA9IGhlYWRlckluZm8ud2lkdGggKiBoZWFkZXJJbmZvLmhlaWdodDtcbiAgICAgICAgdmFyIGltYWdlVHlwZSA9IGhlYWRlckluZm8uaW1hZ2VUeXBlO1xuICAgICAgICB2YXIgbnVtQnl0ZXMgPSBoZWFkZXJJbmZvLm51bVZhbGlkUGl4ZWwgKiBMZXJjMkhlbHBlcnMuZ2V0RGF0YVR5cGVTaXplKGltYWdlVHlwZSkgKiBudW1EaW1zO1xuICAgICAgICAvL2RhdGEucGl4ZWxzLm51bUJ5dGVzID0gbnVtQnl0ZXM7XG4gICAgICAgIHZhciByYXdEYXRhO1xuICAgICAgICB2YXIgbWFzayA9IGRhdGEucGl4ZWxzLnJlc3VsdE1hc2s7XG4gICAgICAgIGlmIChPdXRQaXhlbFR5cGVBcnJheSA9PT0gVWludDhBcnJheSkge1xuICAgICAgICAgIHJhd0RhdGEgPSBuZXcgVWludDhBcnJheShpbnB1dCwgcHRyLCBudW1CeXRlcyk7XG4gICAgICAgIH1cbiAgICAgICAgZWxzZSB7XG4gICAgICAgICAgdmFyIGFycmF5QnVmID0gbmV3IEFycmF5QnVmZmVyKG51bUJ5dGVzKTtcbiAgICAgICAgICB2YXIgc3RvcmU4ID0gbmV3IFVpbnQ4QXJyYXkoYXJyYXlCdWYpO1xuICAgICAgICAgIHN0b3JlOC5zZXQobmV3IFVpbnQ4QXJyYXkoaW5wdXQsIHB0ciwgbnVtQnl0ZXMpKTtcbiAgICAgICAgICByYXdEYXRhID0gbmV3IE91dFBpeGVsVHlwZUFycmF5KGFycmF5QnVmKTtcbiAgICAgICAgfVxuICAgICAgICBpZiAocmF3RGF0YS5sZW5ndGggPT09IG51bVBpeGVscyAqIG51bURpbXMpIHtcbiAgICAgICAgICBpZiAodXNlQlNRRm9yT3V0cHV0RGltKSB7XG4gICAgICAgICAgICBkYXRhLnBpeGVscy5yZXN1bHRQaXhlbHMgPSBMZXJjMkhlbHBlcnMuc3dhcERpbWVuc2lvbk9yZGVyKHJhd0RhdGEsIG51bVBpeGVscywgbnVtRGltcywgT3V0UGl4ZWxUeXBlQXJyYXksIHRydWUpO1xuICAgICAgICAgIH1cbiAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgIGRhdGEucGl4ZWxzLnJlc3VsdFBpeGVscyA9IHJhd0RhdGE7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIGVsc2UgIC8vbWFza1xuICAgICAgICB7XG4gICAgICAgICAgZGF0YS5waXhlbHMucmVzdWx0UGl4ZWxzID0gbmV3IE91dFBpeGVsVHlwZUFycmF5KG51bVBpeGVscyAqIG51bURpbXMpO1xuICAgICAgICAgIHZhciB6ID0gMCwgayA9IDAsIGkgPSAwLCBuU3RhcnQgPSAwO1xuICAgICAgICAgIGlmIChudW1EaW1zID4gMSkge1xuICAgICAgICAgICAgaWYgKHVzZUJTUUZvck91dHB1dERpbSkge1xuICAgICAgICAgICAgICBmb3IgKGsgPSAwOyBrIDwgbnVtUGl4ZWxzOyBrKyspIHtcbiAgICAgICAgICAgICAgICBpZiAobWFza1trXSkge1xuICAgICAgICAgICAgICAgICAgblN0YXJ0ID0gaztcbiAgICAgICAgICAgICAgICAgIGZvciAoaSA9IDA7IGkgPCBudW1EaW1zOyBpKyssIG5TdGFydCs9bnVtUGl4ZWxzKSB7XG4gICAgICAgICAgICAgICAgICAgIGRhdGEucGl4ZWxzLnJlc3VsdFBpeGVsc1tuU3RhcnRdID0gcmF3RGF0YVt6KytdO1xuICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgIGZvciAoayA9IDA7IGsgPCBudW1QaXhlbHM7IGsrKykge1xuICAgICAgICAgICAgICAgIGlmIChtYXNrW2tdKSB7XG4gICAgICAgICAgICAgICAgICBuU3RhcnQgPSBrICogbnVtRGltcztcbiAgICAgICAgICAgICAgICAgIGZvciAoaSA9IDA7IGkgPCBudW1EaW1zOyBpKyspIHtcbiAgICAgICAgICAgICAgICAgICAgZGF0YS5waXhlbHMucmVzdWx0UGl4ZWxzW25TdGFydCArIGldID0gcmF3RGF0YVt6KytdO1xuICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cbiAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgIGZvciAoayA9IDA7IGsgPCBudW1QaXhlbHM7IGsrKykge1xuICAgICAgICAgICAgICBpZiAobWFza1trXSkge1xuICAgICAgICAgICAgICAgIGRhdGEucGl4ZWxzLnJlc3VsdFBpeGVsc1trXSA9IHJhd0RhdGFbeisrXTtcbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBwdHIgKz0gbnVtQnl0ZXM7XG4gICAgICAgIGRhdGEucHRyID0gcHRyOyAgICAgICAvL3JldHVybiBkYXRhO1xuICAgICAgICByZXR1cm4gdHJ1ZTtcbiAgICAgIH0sXG5cbiAgICAgIHJlYWRIdWZmbWFuVHJlZTogZnVuY3Rpb24oaW5wdXQsIGRhdGEpIHtcbiAgICAgICAgdmFyIEJJVFNfTUFYID0gdGhpcy5IVUZGTUFOX0xVVF9CSVRTX01BWDsgLy84IGlzIHNsb3cgZm9yIHRoZSBsYXJnZSB0ZXN0IGltYWdlXG4gICAgICAgIC8vdmFyIHNpemVfbWF4ID0gMSA8PCBCSVRTX01BWDtcbiAgICAgICAgLyogKioqKioqKioqKioqKioqKioqKioqKioqXG4gICAgICAgICogcmVhZGluZyBjb2RlIHRhYmxlXG4gICAgICAgICoqKioqKioqKioqKioqKioqKioqKioqKiovXG4gICAgICAgIHZhciB2aWV3ID0gbmV3IERhdGFWaWV3KGlucHV0LCBkYXRhLnB0ciwgMTYpO1xuICAgICAgICBkYXRhLnB0ciArPSAxNjtcbiAgICAgICAgdmFyIHZlcnNpb24gPSB2aWV3LmdldEludDMyKDAsIHRydWUpO1xuICAgICAgICBpZiAodmVyc2lvbiA8IDIpIHtcbiAgICAgICAgICB0aHJvdyBcInVuc3VwcG9ydGVkIEh1ZmZtYW4gdmVyc2lvblwiO1xuICAgICAgICB9XG4gICAgICAgIHZhciBzaXplID0gdmlldy5nZXRJbnQzMig0LCB0cnVlKTtcbiAgICAgICAgdmFyIGkwID0gdmlldy5nZXRJbnQzMig4LCB0cnVlKTtcbiAgICAgICAgdmFyIGkxID0gdmlldy5nZXRJbnQzMigxMiwgdHJ1ZSk7XG4gICAgICAgIGlmIChpMCA+PSBpMSkge1xuICAgICAgICAgIHJldHVybiBmYWxzZTtcbiAgICAgICAgfVxuICAgICAgICB2YXIgYmxvY2tEYXRhQnVmZmVyID0gbmV3IFVpbnQzMkFycmF5KGkxIC0gaTApO1xuICAgICAgICBMZXJjMkhlbHBlcnMuZGVjb2RlQml0cyhpbnB1dCwgZGF0YSwgYmxvY2tEYXRhQnVmZmVyKTtcbiAgICAgICAgdmFyIGNvZGVUYWJsZSA9IFtdOyAvL3NpemVcbiAgICAgICAgdmFyIGksIGosIGssIGxlbjtcblxuICAgICAgICBmb3IgKGkgPSBpMDsgaSA8IGkxOyBpKyspIHtcbiAgICAgICAgICBqID0gaSAtIChpIDwgc2l6ZSA/IDAgOiBzaXplKTsvL3dyYXAgYXJvdW5kXG4gICAgICAgICAgY29kZVRhYmxlW2pdID0geyBmaXJzdDogYmxvY2tEYXRhQnVmZmVyW2kgLSBpMF0sIHNlY29uZDogbnVsbCB9O1xuICAgICAgICB9XG5cbiAgICAgICAgdmFyIGRhdGFCeXRlcyA9IGlucHV0LmJ5dGVMZW5ndGggLSBkYXRhLnB0cjtcbiAgICAgICAgdmFyIGRhdGFXb3JkcyA9IE1hdGguY2VpbChkYXRhQnl0ZXMgLyA0KTtcbiAgICAgICAgdmFyIGFycmF5QnVmID0gbmV3IEFycmF5QnVmZmVyKGRhdGFXb3JkcyAqIDQpO1xuICAgICAgICB2YXIgc3RvcmU4ID0gbmV3IFVpbnQ4QXJyYXkoYXJyYXlCdWYpO1xuICAgICAgICBzdG9yZTguc2V0KG5ldyBVaW50OEFycmF5KGlucHV0LCBkYXRhLnB0ciwgZGF0YUJ5dGVzKSk7XG4gICAgICAgIHZhciBzdHVmZmVkRGF0YSA9IG5ldyBVaW50MzJBcnJheShhcnJheUJ1Zik7IC8vbXVzdCBzdGFydCBmcm9tIHgqNFxuICAgICAgICB2YXIgYml0UG9zID0gMCwgd29yZCwgc3JjUHRyID0gMDtcbiAgICAgICAgd29yZCA9IHN0dWZmZWREYXRhWzBdO1xuICAgICAgICBmb3IgKGkgPSBpMDsgaSA8IGkxOyBpKyspIHtcbiAgICAgICAgICBqID0gaSAtIChpIDwgc2l6ZSA/IDAgOiBzaXplKTsvL3dyYXAgYXJvdW5kXG4gICAgICAgICAgbGVuID0gY29kZVRhYmxlW2pdLmZpcnN0O1xuICAgICAgICAgIGlmIChsZW4gPiAwKSB7XG4gICAgICAgICAgICBjb2RlVGFibGVbal0uc2Vjb25kID0gKHdvcmQgPDwgYml0UG9zKSA+Pj4gKDMyIC0gbGVuKTtcblxuICAgICAgICAgICAgaWYgKDMyIC0gYml0UG9zID49IGxlbikge1xuICAgICAgICAgICAgICBiaXRQb3MgKz0gbGVuO1xuICAgICAgICAgICAgICBpZiAoYml0UG9zID09PSAzMikge1xuICAgICAgICAgICAgICAgIGJpdFBvcyA9IDA7XG4gICAgICAgICAgICAgICAgc3JjUHRyKys7XG4gICAgICAgICAgICAgICAgd29yZCA9IHN0dWZmZWREYXRhW3NyY1B0cl07XG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGVsc2Uge1xuICAgICAgICAgICAgICBiaXRQb3MgKz0gbGVuIC0gMzI7XG4gICAgICAgICAgICAgIHNyY1B0cisrO1xuICAgICAgICAgICAgICB3b3JkID0gc3R1ZmZlZERhdGFbc3JjUHRyXTtcbiAgICAgICAgICAgICAgY29kZVRhYmxlW2pdLnNlY29uZCB8PSB3b3JkID4+PiAoMzIgLSBiaXRQb3MpO1xuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgIC8vZmluaXNoZWQgcmVhZGluZyBjb2RlIHRhYmxlXG5cbiAgICAgICAgLyogKioqKioqKioqKioqKioqKioqKioqKioqXG4gICAgICAgICogYnVpbGRpbmcgbHV0XG4gICAgICAgICoqKioqKioqKioqKioqKioqKioqKioqKiovXG4gICAgICAgIHZhciBudW1CaXRzTFVUID0gMCwgbnVtQml0c0xVVFFpY2sgPSAwO1xuICAgICAgICB2YXIgdHJlZSA9IG5ldyBUcmVlTm9kZSgpO1xuICAgICAgICBmb3IgKGkgPSAwOyBpIDwgY29kZVRhYmxlLmxlbmd0aDsgaSsrKSB7XG4gICAgICAgICAgaWYgKGNvZGVUYWJsZVtpXSAhPT0gdW5kZWZpbmVkKSB7XG4gICAgICAgICAgICBudW1CaXRzTFVUID0gTWF0aC5tYXgobnVtQml0c0xVVCwgY29kZVRhYmxlW2ldLmZpcnN0KTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgaWYgKG51bUJpdHNMVVQgPj0gQklUU19NQVgpIHtcbiAgICAgICAgICBudW1CaXRzTFVUUWljayA9IEJJVFNfTUFYO1xuICAgICAgICB9XG4gICAgICAgIGVsc2Uge1xuICAgICAgICAgIG51bUJpdHNMVVRRaWNrID0gbnVtQml0c0xVVDtcbiAgICAgICAgfVxuICAgICAgICAvLyBmb3IgZGVidWdnaW5nIHB1cnBvc2VcbiAgICAgICAgLy8gaWYgKG51bUJpdHNMVVQgPj0gMzApIHtcbiAgICAgICAgLy8gICBjb25zb2xlLmxvZyhcIldBUm5pbmcsIGxhcmdlIE5VTSBMVVQgQklUUyBJUyBcIiArIG51bUJpdHNMVVQpO1xuICAgICAgICAvLyB9XG4gICAgICAgIHZhciBkZWNvZGVMdXQgPSBbXSwgZW50cnksIGNvZGUsIG51bUVudHJpZXMsIGpqLCBjdXJyZW50Qml0LCBub2RlO1xuICAgICAgICBmb3IgKGkgPSBpMDsgaSA8IGkxOyBpKyspIHtcbiAgICAgICAgICBqID0gaSAtIChpIDwgc2l6ZSA/IDAgOiBzaXplKTsvL3dyYXAgYXJvdW5kXG4gICAgICAgICAgbGVuID0gY29kZVRhYmxlW2pdLmZpcnN0O1xuICAgICAgICAgIGlmIChsZW4gPiAwKSB7XG4gICAgICAgICAgICBlbnRyeSA9IFtsZW4sIGpdO1xuICAgICAgICAgICAgaWYgKGxlbiA8PSBudW1CaXRzTFVUUWljaykge1xuICAgICAgICAgICAgICBjb2RlID0gY29kZVRhYmxlW2pdLnNlY29uZCA8PCAobnVtQml0c0xVVFFpY2sgLSBsZW4pO1xuICAgICAgICAgICAgICBudW1FbnRyaWVzID0gMSA8PCAobnVtQml0c0xVVFFpY2sgLSBsZW4pO1xuICAgICAgICAgICAgICBmb3IgKGsgPSAwOyBrIDwgbnVtRW50cmllczsgaysrKSB7XG4gICAgICAgICAgICAgICAgZGVjb2RlTHV0W2NvZGUgfCBrXSA9IGVudHJ5O1xuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgLy9idWlsZCB0cmVlXG4gICAgICAgICAgICAgIGNvZGUgPSBjb2RlVGFibGVbal0uc2Vjb25kO1xuICAgICAgICAgICAgICBub2RlID0gdHJlZTtcbiAgICAgICAgICAgICAgZm9yIChqaiA9IGxlbiAtIDE7IGpqID49IDA7IGpqLS0pIHtcbiAgICAgICAgICAgICAgICBjdXJyZW50Qml0ID0gY29kZSA+Pj4gamogJiAxOyAvL25vIGxlZnQgc2hpZnQgYXMgbGVuZ3RoIGNvdWxkIGJlIDMwLDMxXG4gICAgICAgICAgICAgICAgaWYgKGN1cnJlbnRCaXQpIHtcbiAgICAgICAgICAgICAgICAgIGlmICghbm9kZS5yaWdodCkge1xuICAgICAgICAgICAgICAgICAgICBub2RlLnJpZ2h0ID0gbmV3IFRyZWVOb2RlKCk7XG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICBub2RlID0gbm9kZS5yaWdodDtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgICAgICBpZiAoIW5vZGUubGVmdCkge1xuICAgICAgICAgICAgICAgICAgICBub2RlLmxlZnQgPSBuZXcgVHJlZU5vZGUoKTtcbiAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgIG5vZGUgPSBub2RlLmxlZnQ7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGlmIChqaiA9PT0gMCAmJiAhbm9kZS52YWwpIHtcbiAgICAgICAgICAgICAgICAgIG5vZGUudmFsID0gZW50cnlbMV07XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIHJldHVybiB7XG4gICAgICAgICAgZGVjb2RlTHV0OiBkZWNvZGVMdXQsXG4gICAgICAgICAgbnVtQml0c0xVVFFpY2s6IG51bUJpdHNMVVRRaWNrLFxuICAgICAgICAgIG51bUJpdHNMVVQ6IG51bUJpdHNMVVQsXG4gICAgICAgICAgdHJlZTogdHJlZSxcbiAgICAgICAgICBzdHVmZmVkRGF0YTogc3R1ZmZlZERhdGEsXG4gICAgICAgICAgc3JjUHRyOiBzcmNQdHIsXG4gICAgICAgICAgYml0UG9zOiBiaXRQb3NcbiAgICAgICAgfTtcbiAgICAgIH0sXG5cbiAgICAgIHJlYWRIdWZmbWFuOiBmdW5jdGlvbihpbnB1dCwgZGF0YSwgT3V0UGl4ZWxUeXBlQXJyYXksIHVzZUJTUUZvck91dHB1dERpbSkge1xuICAgICAgICB2YXIgaGVhZGVySW5mbyA9IGRhdGEuaGVhZGVySW5mbztcbiAgICAgICAgdmFyIG51bURpbXMgPSBoZWFkZXJJbmZvLm51bURpbXM7XG4gICAgICAgIHZhciBoZWlnaHQgPSBkYXRhLmhlYWRlckluZm8uaGVpZ2h0O1xuICAgICAgICB2YXIgd2lkdGggPSBkYXRhLmhlYWRlckluZm8ud2lkdGg7XG4gICAgICAgIHZhciBudW1QaXhlbHMgPSB3aWR0aCAqIGhlaWdodDtcbiAgICAgICAgLy92YXIgc2l6ZV9tYXggPSAxIDw8IEJJVFNfTUFYO1xuICAgICAgICAvKiAqKioqKioqKioqKioqKioqKioqKioqKipcbiAgICAgICAgKiByZWFkaW5nIGh1ZmZtYW4gc3RydWN0dXJlIGluZm9cbiAgICAgICAgKioqKioqKioqKioqKioqKioqKioqKioqKi9cbiAgICAgICAgdmFyIGh1ZmZtYW5JbmZvID0gdGhpcy5yZWFkSHVmZm1hblRyZWUoaW5wdXQsIGRhdGEpO1xuICAgICAgICB2YXIgZGVjb2RlTHV0ID0gaHVmZm1hbkluZm8uZGVjb2RlTHV0O1xuICAgICAgICB2YXIgdHJlZSA9IGh1ZmZtYW5JbmZvLnRyZWU7XG4gICAgICAgIC8vc3R1ZmZlZERhdGEgaW5jbHVkZXMgaHVmZm1hbiBoZWFkZXJzXG4gICAgICAgIHZhciBzdHVmZmVkRGF0YSA9IGh1ZmZtYW5JbmZvLnN0dWZmZWREYXRhO1xuICAgICAgICB2YXIgc3JjUHRyID0gaHVmZm1hbkluZm8uc3JjUHRyO1xuICAgICAgICB2YXIgYml0UG9zID0gaHVmZm1hbkluZm8uYml0UG9zO1xuICAgICAgICB2YXIgbnVtQml0c0xVVFFpY2sgPSBodWZmbWFuSW5mby5udW1CaXRzTFVUUWljaztcbiAgICAgICAgdmFyIG51bUJpdHNMVVQgPSBodWZmbWFuSW5mby5udW1CaXRzTFVUO1xuICAgICAgICB2YXIgb2Zmc2V0ID0gZGF0YS5oZWFkZXJJbmZvLmltYWdlVHlwZSA9PT0gMCA/IDEyOCA6IDA7XG4gICAgICAgIC8qKioqKioqKioqKioqKioqKioqKioqKioqXG4gICAgICAgICogIGRlY29kZVxuICAgICAgICAqKioqKioqKioqKioqKioqKioqKioqKioqKiovXG4gICAgICAgIHZhciBub2RlLCB2YWwsIGRlbHRhLCBtYXNrID0gZGF0YS5waXhlbHMucmVzdWx0TWFzaywgdmFsVG1wLCB2YWxUbXBRdWljaywgY3VycmVudEJpdDtcbiAgICAgICAgdmFyIGksIGosIGssIGlpO1xuICAgICAgICB2YXIgcHJldlZhbCA9IDA7XG4gICAgICAgIGlmIChiaXRQb3MgPiAwKSB7XG4gICAgICAgICAgc3JjUHRyKys7XG4gICAgICAgICAgYml0UG9zID0gMDtcbiAgICAgICAgfVxuICAgICAgICB2YXIgd29yZCA9IHN0dWZmZWREYXRhW3NyY1B0cl07XG4gICAgICAgIHZhciBkZWx0YUVuY29kZSA9IGRhdGEuZW5jb2RlTW9kZSA9PT0gMTtcbiAgICAgICAgdmFyIHJlc3VsdFBpeGVsc0FsbERpbSA9IG5ldyBPdXRQaXhlbFR5cGVBcnJheShudW1QaXhlbHMgKiBudW1EaW1zKTtcbiAgICAgICAgdmFyIHJlc3VsdFBpeGVscyA9IHJlc3VsdFBpeGVsc0FsbERpbTtcbiAgICAgICAgdmFyIGlEaW07XG4gICAgICAgIC8vIFRPRE86IHJlZXZhbHVhdGUgdGhlIG5lZWQgdG8ga2VlcCBpbmxpbmVkIGRlY29kaW5nIGNvZGUgYXMgSUUgc3VwcG9ydCBpcyBwaGFzaW5nIG91dFxuICAgICAgICBpZiAobnVtRGltcyA8IDIgfHwgZGVsdGFFbmNvZGUpIHtcbiAgICAgICAgICBmb3IgKGlEaW0gPSAwOyBpRGltIDwgbnVtRGltczsgaURpbSsrKSB7XG4gICAgICAgICAgICBpZiAobnVtRGltcyA+IDEpIHtcbiAgICAgICAgICAgICAgLy9nZXQgdGhlIG1lbSBibG9jayBvZiBjdXJyZW50IGRpbWVuc2lvblxuICAgICAgICAgICAgICByZXN1bHRQaXhlbHMgPSBuZXcgT3V0UGl4ZWxUeXBlQXJyYXkocmVzdWx0UGl4ZWxzQWxsRGltLmJ1ZmZlciwgbnVtUGl4ZWxzICogaURpbSwgbnVtUGl4ZWxzKTtcbiAgICAgICAgICAgICAgcHJldlZhbCA9IDA7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBpZiAoZGF0YS5oZWFkZXJJbmZvLm51bVZhbGlkUGl4ZWwgPT09IHdpZHRoICogaGVpZ2h0KSB7IC8vYWxsIHZhbGlkXG4gICAgICAgICAgICAgIGZvciAoayA9IDAsIGkgPSAwOyBpIDwgaGVpZ2h0OyBpKyspIHtcbiAgICAgICAgICAgICAgICBmb3IgKGogPSAwOyBqIDwgd2lkdGg7IGorKywgaysrKSB7XG4gICAgICAgICAgICAgICAgICB2YWwgPSAwO1xuICAgICAgICAgICAgICAgICAgdmFsVG1wID0gKHdvcmQgPDwgYml0UG9zKSA+Pj4gKDMyIC0gbnVtQml0c0xVVFFpY2spO1xuICAgICAgICAgICAgICAgICAgdmFsVG1wUXVpY2sgPSB2YWxUbXA7Ly8gPj4+IGRlbHRhQml0cztcbiAgICAgICAgICAgICAgICAgIGlmICgzMiAtIGJpdFBvcyA8IG51bUJpdHNMVVRRaWNrKSB7XG4gICAgICAgICAgICAgICAgICAgIHZhbFRtcCB8PSAoKHN0dWZmZWREYXRhW3NyY1B0ciArIDFdKSA+Pj4gKDY0IC0gYml0UG9zIC0gbnVtQml0c0xVVFFpY2spKTtcbiAgICAgICAgICAgICAgICAgICAgdmFsVG1wUXVpY2sgPSB2YWxUbXA7Ly8gPj4+IGRlbHRhQml0cztcbiAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgIGlmIChkZWNvZGVMdXRbdmFsVG1wUXVpY2tdKSAgICAvLyBpZiB0aGVyZSwgbW92ZSB0aGUgY29ycmVjdCBudW1iZXIgb2YgYml0cyBhbmQgZG9uZVxuICAgICAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgICAgICB2YWwgPSBkZWNvZGVMdXRbdmFsVG1wUXVpY2tdWzFdO1xuICAgICAgICAgICAgICAgICAgICBiaXRQb3MgKz0gZGVjb2RlTHV0W3ZhbFRtcFF1aWNrXVswXTtcbiAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgIGVsc2Uge1xuICAgICAgICAgICAgICAgICAgICB2YWxUbXAgPSAod29yZCA8PCBiaXRQb3MpID4+PiAoMzIgLSBudW1CaXRzTFVUKTtcbiAgICAgICAgICAgICAgICAgICAgdmFsVG1wUXVpY2sgPSB2YWxUbXA7Ly8gPj4+IGRlbHRhQml0cztcbiAgICAgICAgICAgICAgICAgICAgaWYgKDMyIC0gYml0UG9zIDwgbnVtQml0c0xVVCkge1xuICAgICAgICAgICAgICAgICAgICAgIHZhbFRtcCB8PSAoKHN0dWZmZWREYXRhW3NyY1B0ciArIDFdKSA+Pj4gKDY0IC0gYml0UG9zIC0gbnVtQml0c0xVVCkpO1xuICAgICAgICAgICAgICAgICAgICAgIHZhbFRtcFF1aWNrID0gdmFsVG1wOy8vID4+PiBkZWx0YUJpdHM7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgbm9kZSA9IHRyZWU7XG4gICAgICAgICAgICAgICAgICAgIGZvciAoaWkgPSAwOyBpaSA8IG51bUJpdHNMVVQ7IGlpKyspIHtcbiAgICAgICAgICAgICAgICAgICAgICBjdXJyZW50Qml0ID0gdmFsVG1wID4+PiAobnVtQml0c0xVVCAtIGlpIC0gMSkgJiAxO1xuICAgICAgICAgICAgICAgICAgICAgIG5vZGUgPSBjdXJyZW50Qml0ID8gbm9kZS5yaWdodCA6IG5vZGUubGVmdDtcbiAgICAgICAgICAgICAgICAgICAgICBpZiAoIShub2RlLmxlZnQgfHwgbm9kZS5yaWdodCkpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIHZhbCA9IG5vZGUudmFsO1xuICAgICAgICAgICAgICAgICAgICAgICAgYml0UG9zID0gYml0UG9zICsgaWkgKyAxO1xuICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICB9XG4gICAgXG4gICAgICAgICAgICAgICAgICBpZiAoYml0UG9zID49IDMyKSB7XG4gICAgICAgICAgICAgICAgICAgIGJpdFBvcyAtPSAzMjtcbiAgICAgICAgICAgICAgICAgICAgc3JjUHRyKys7XG4gICAgICAgICAgICAgICAgICAgIHdvcmQgPSBzdHVmZmVkRGF0YVtzcmNQdHJdO1xuICAgICAgICAgICAgICAgICAgfVxuICAgIFxuICAgICAgICAgICAgICAgICAgZGVsdGEgPSB2YWwgLSBvZmZzZXQ7XG4gICAgICAgICAgICAgICAgICBpZiAoZGVsdGFFbmNvZGUpIHtcbiAgICAgICAgICAgICAgICAgICAgaWYgKGogPiAwKSB7XG4gICAgICAgICAgICAgICAgICAgICAgZGVsdGEgKz0gcHJldlZhbDsgICAgLy8gdXNlIG92ZXJmbG93XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgZWxzZSBpZiAoaSA+IDApIHtcbiAgICAgICAgICAgICAgICAgICAgICBkZWx0YSArPSByZXN1bHRQaXhlbHNbayAtIHdpZHRoXTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgICAgICAgICBkZWx0YSArPSBwcmV2VmFsO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIGRlbHRhICY9IDB4RkY7IC8vb3ZlcmZsb3dcbiAgICAgICAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzW2tdID0gZGVsdGE7Ly9vdmVyZmxvd1xuICAgICAgICAgICAgICAgICAgICBwcmV2VmFsID0gZGVsdGE7XG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzW2tdID0gZGVsdGE7XG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBlbHNlIHsgLy9ub3QgYWxsIHZhbGlkLCB1c2UgbWFza1xuICAgICAgICAgICAgICBmb3IgKGsgPSAwLCBpID0gMDsgaSA8IGhlaWdodDsgaSsrKSB7XG4gICAgICAgICAgICAgICAgZm9yIChqID0gMDsgaiA8IHdpZHRoOyBqKyssIGsrKykge1xuICAgICAgICAgICAgICAgICAgaWYgKG1hc2tba10pIHtcbiAgICAgICAgICAgICAgICAgICAgdmFsID0gMDtcbiAgICAgICAgICAgICAgICAgICAgdmFsVG1wID0gKHdvcmQgPDwgYml0UG9zKSA+Pj4gKDMyIC0gbnVtQml0c0xVVFFpY2spO1xuICAgICAgICAgICAgICAgICAgICB2YWxUbXBRdWljayA9IHZhbFRtcDsvLyA+Pj4gZGVsdGFCaXRzO1xuICAgICAgICAgICAgICAgICAgICBpZiAoMzIgLSBiaXRQb3MgPCBudW1CaXRzTFVUUWljaykge1xuICAgICAgICAgICAgICAgICAgICAgIHZhbFRtcCB8PSAoKHN0dWZmZWREYXRhW3NyY1B0ciArIDFdKSA+Pj4gKDY0IC0gYml0UG9zIC0gbnVtQml0c0xVVFFpY2spKTtcbiAgICAgICAgICAgICAgICAgICAgICB2YWxUbXBRdWljayA9IHZhbFRtcDsvLyA+Pj4gZGVsdGFCaXRzO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIGlmIChkZWNvZGVMdXRbdmFsVG1wUXVpY2tdKSAgICAvLyBpZiB0aGVyZSwgbW92ZSB0aGUgY29ycmVjdCBudW1iZXIgb2YgYml0cyBhbmQgZG9uZVxuICAgICAgICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgICAgICAgdmFsID0gZGVjb2RlTHV0W3ZhbFRtcFF1aWNrXVsxXTtcbiAgICAgICAgICAgICAgICAgICAgICBiaXRQb3MgKz0gZGVjb2RlTHV0W3ZhbFRtcFF1aWNrXVswXTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgICAgICAgICB2YWxUbXAgPSAod29yZCA8PCBiaXRQb3MpID4+PiAoMzIgLSBudW1CaXRzTFVUKTtcbiAgICAgICAgICAgICAgICAgICAgICB2YWxUbXBRdWljayA9IHZhbFRtcDsvLyA+Pj4gZGVsdGFCaXRzO1xuICAgICAgICAgICAgICAgICAgICAgIGlmICgzMiAtIGJpdFBvcyA8IG51bUJpdHNMVVQpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIHZhbFRtcCB8PSAoKHN0dWZmZWREYXRhW3NyY1B0ciArIDFdKSA+Pj4gKDY0IC0gYml0UG9zIC0gbnVtQml0c0xVVCkpO1xuICAgICAgICAgICAgICAgICAgICAgICAgdmFsVG1wUXVpY2sgPSB2YWxUbXA7Ly8gPj4+IGRlbHRhQml0cztcbiAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgICAgbm9kZSA9IHRyZWU7XG4gICAgICAgICAgICAgICAgICAgICAgZm9yIChpaSA9IDA7IGlpIDwgbnVtQml0c0xVVDsgaWkrKykge1xuICAgICAgICAgICAgICAgICAgICAgICAgY3VycmVudEJpdCA9IHZhbFRtcCA+Pj4gKG51bUJpdHNMVVQgLSBpaSAtIDEpICYgMTtcbiAgICAgICAgICAgICAgICAgICAgICAgIG5vZGUgPSBjdXJyZW50Qml0ID8gbm9kZS5yaWdodCA6IG5vZGUubGVmdDtcbiAgICAgICAgICAgICAgICAgICAgICAgIGlmICghKG5vZGUubGVmdCB8fCBub2RlLnJpZ2h0KSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgICB2YWwgPSBub2RlLnZhbDtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgYml0UG9zID0gYml0UG9zICsgaWkgKyAxO1xuICAgICAgICAgICAgICAgICAgICAgICAgICBicmVhaztcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICBcbiAgICAgICAgICAgICAgICAgICAgaWYgKGJpdFBvcyA+PSAzMikge1xuICAgICAgICAgICAgICAgICAgICAgIGJpdFBvcyAtPSAzMjtcbiAgICAgICAgICAgICAgICAgICAgICBzcmNQdHIrKztcbiAgICAgICAgICAgICAgICAgICAgICB3b3JkID0gc3R1ZmZlZERhdGFbc3JjUHRyXTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgIFxuICAgICAgICAgICAgICAgICAgICBkZWx0YSA9IHZhbCAtIG9mZnNldDtcbiAgICAgICAgICAgICAgICAgICAgaWYgKGRlbHRhRW5jb2RlKSB7XG4gICAgICAgICAgICAgICAgICAgICAgaWYgKGogPiAwICYmIG1hc2tbayAtIDFdKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBkZWx0YSArPSBwcmV2VmFsOyAgICAvLyB1c2Ugb3ZlcmZsb3dcbiAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgICAgZWxzZSBpZiAoaSA+IDAgJiYgbWFza1trIC0gd2lkdGhdKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBkZWx0YSArPSByZXN1bHRQaXhlbHNbayAtIHdpZHRoXTtcbiAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBkZWx0YSArPSBwcmV2VmFsO1xuICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICBcbiAgICAgICAgICAgICAgICAgICAgICBkZWx0YSAmPSAweEZGOyAvL292ZXJmbG93XG4gICAgICAgICAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzW2tdID0gZGVsdGE7Ly9vdmVyZmxvd1xuICAgICAgICAgICAgICAgICAgICAgIHByZXZWYWwgPSBkZWx0YTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHNba10gPSBkZWx0YTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBlbHNlIHtcbiAgICAgICAgICBmb3IgKGsgPSAwLCBpID0gMDsgaSA8IGhlaWdodDsgaSsrKSB7XG4gICAgICAgICAgICBmb3IgKGogPSAwOyBqIDwgd2lkdGg7IGorKykge1xuICAgICAgICAgICAgICBrID0gaSAqIHdpZHRoICsgajtcbiAgICAgICAgICAgICAgaWYgKCFtYXNrIHx8IG1hc2tba10pIHtcbiAgICAgICAgICAgICAgICBmb3IgKGlEaW0gPSAwOyBpRGltIDwgbnVtRGltczsgaURpbSsrLCBrKz1udW1QaXhlbHMpIHtcbiAgICAgICAgICAgICAgICAgIHZhbCA9IDA7XG4gICAgICAgICAgICAgICAgICB2YWxUbXAgPSAod29yZCA8PCBiaXRQb3MpID4+PiAoMzIgLSBudW1CaXRzTFVUUWljayk7XG4gICAgICAgICAgICAgICAgICB2YWxUbXBRdWljayA9IHZhbFRtcDtcbiAgICAgICAgICAgICAgICAgIGlmICgzMiAtIGJpdFBvcyA8IG51bUJpdHNMVVRRaWNrKSB7XG4gICAgICAgICAgICAgICAgICAgIHZhbFRtcCB8PSAoKHN0dWZmZWREYXRhW3NyY1B0ciArIDFdKSA+Pj4gKDY0IC0gYml0UG9zIC0gbnVtQml0c0xVVFFpY2spKTtcbiAgICAgICAgICAgICAgICAgICAgdmFsVG1wUXVpY2sgPSB2YWxUbXA7XG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICBpZiAoZGVjb2RlTHV0W3ZhbFRtcFF1aWNrXSlcbiAgICAgICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICAgICAgdmFsID0gZGVjb2RlTHV0W3ZhbFRtcFF1aWNrXVsxXTtcbiAgICAgICAgICAgICAgICAgICAgYml0UG9zICs9IGRlY29kZUx1dFt2YWxUbXBRdWlja11bMF07XG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgICAgICAgdmFsVG1wID0gKHdvcmQgPDwgYml0UG9zKSA+Pj4gKDMyIC0gbnVtQml0c0xVVCk7XG4gICAgICAgICAgICAgICAgICAgIHZhbFRtcFF1aWNrID0gdmFsVG1wO1xuICAgICAgICAgICAgICAgICAgICBpZiAoMzIgLSBiaXRQb3MgPCBudW1CaXRzTFVUKSB7XG4gICAgICAgICAgICAgICAgICAgICAgdmFsVG1wIHw9ICgoc3R1ZmZlZERhdGFbc3JjUHRyICsgMV0pID4+PiAoNjQgLSBiaXRQb3MgLSBudW1CaXRzTFVUKSk7XG4gICAgICAgICAgICAgICAgICAgICAgdmFsVG1wUXVpY2sgPSB2YWxUbXA7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgbm9kZSA9IHRyZWU7XG4gICAgICAgICAgICAgICAgICAgIGZvciAoaWkgPSAwOyBpaSA8IG51bUJpdHNMVVQ7IGlpKyspIHtcbiAgICAgICAgICAgICAgICAgICAgICBjdXJyZW50Qml0ID0gdmFsVG1wID4+PiAobnVtQml0c0xVVCAtIGlpIC0gMSkgJiAxO1xuICAgICAgICAgICAgICAgICAgICAgIG5vZGUgPSBjdXJyZW50Qml0ID8gbm9kZS5yaWdodCA6IG5vZGUubGVmdDtcbiAgICAgICAgICAgICAgICAgICAgICBpZiAoIShub2RlLmxlZnQgfHwgbm9kZS5yaWdodCkpIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIHZhbCA9IG5vZGUudmFsO1xuICAgICAgICAgICAgICAgICAgICAgICAgYml0UG9zID0gYml0UG9zICsgaWkgKyAxO1xuICAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICAgICAgIGlmIChiaXRQb3MgPj0gMzIpIHtcbiAgICAgICAgICAgICAgICAgICAgYml0UG9zIC09IDMyO1xuICAgICAgICAgICAgICAgICAgICBzcmNQdHIrKztcbiAgICAgICAgICAgICAgICAgICAgd29yZCA9IHN0dWZmZWREYXRhW3NyY1B0cl07XG4gICAgICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICAgICAgIGRlbHRhID0gdmFsIC0gb2Zmc2V0O1xuICAgICAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzW2tdID0gZGVsdGE7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIGRhdGEucHRyID0gZGF0YS5wdHIgKyAoc3JjUHRyICsgMSkgKiA0ICsgKGJpdFBvcyA+IDAgPyA0IDogMCk7XG4gICAgICAgIGRhdGEucGl4ZWxzLnJlc3VsdFBpeGVscyA9IHJlc3VsdFBpeGVsc0FsbERpbTtcbiAgICAgICAgLy9zd2FwIGZvciBCSVAgbGF5b3V0XG4gICAgICAgIGlmIChudW1EaW1zID4gMSAmJiAhdXNlQlNRRm9yT3V0cHV0RGltKSB7XG4gICAgICAgICAgZGF0YS5waXhlbHMucmVzdWx0UGl4ZWxzID0gTGVyYzJIZWxwZXJzLnN3YXBEaW1lbnNpb25PcmRlcihyZXN1bHRQaXhlbHNBbGxEaW0sIG51bVBpeGVscywgbnVtRGltcywgT3V0UGl4ZWxUeXBlQXJyYXkpO1xuICAgICAgICB9XG4gICAgICB9LFxuXG4gICAgICBkZWNvZGVCaXRzOiBmdW5jdGlvbihpbnB1dCwgZGF0YSwgYmxvY2tEYXRhQnVmZmVyLCBvZmZzZXQsIGlEaW0pIHtcbiAgICAgICAge1xuICAgICAgICAgIC8vYml0c3R1ZmYgZW5jb2RpbmcgaXMgM1xuICAgICAgICAgIHZhciBoZWFkZXJJbmZvID0gZGF0YS5oZWFkZXJJbmZvO1xuICAgICAgICAgIHZhciBmaWxlVmVyc2lvbiA9IGhlYWRlckluZm8uZmlsZVZlcnNpb247XG4gICAgICAgICAgLy92YXIgYmxvY2sgPSB7fTtcbiAgICAgICAgICB2YXIgYmxvY2tQdHIgPSAwO1xuICAgICAgICAgIHZhciB2aWV3Qnl0ZUxlbmd0aCA9ICgoaW5wdXQuYnl0ZUxlbmd0aCAtIGRhdGEucHRyKSA+PSA1KSA/IDUgOiAoaW5wdXQuYnl0ZUxlbmd0aCAtIGRhdGEucHRyKTtcbiAgICAgICAgICB2YXIgdmlldyA9IG5ldyBEYXRhVmlldyhpbnB1dCwgZGF0YS5wdHIsIHZpZXdCeXRlTGVuZ3RoKTtcbiAgICAgICAgICB2YXIgaGVhZGVyQnl0ZSA9IHZpZXcuZ2V0VWludDgoMCk7XG4gICAgICAgICAgYmxvY2tQdHIrKztcbiAgICAgICAgICB2YXIgYml0czY3ID0gaGVhZGVyQnl0ZSA+PiA2O1xuICAgICAgICAgIHZhciBuID0gKGJpdHM2NyA9PT0gMCkgPyA0IDogMyAtIGJpdHM2NztcbiAgICAgICAgICB2YXIgZG9MdXQgPSAoaGVhZGVyQnl0ZSAmIDMyKSA+IDAgPyB0cnVlIDogZmFsc2U7Ly81dGggYml0XG4gICAgICAgICAgdmFyIG51bUJpdHMgPSBoZWFkZXJCeXRlICYgMzE7XG4gICAgICAgICAgdmFyIG51bUVsZW1lbnRzID0gMDtcbiAgICAgICAgICBpZiAobiA9PT0gMSkge1xuICAgICAgICAgICAgbnVtRWxlbWVudHMgPSB2aWV3LmdldFVpbnQ4KGJsb2NrUHRyKTsgYmxvY2tQdHIrKztcbiAgICAgICAgICB9IGVsc2UgaWYgKG4gPT09IDIpIHtcbiAgICAgICAgICAgIG51bUVsZW1lbnRzID0gdmlldy5nZXRVaW50MTYoYmxvY2tQdHIsIHRydWUpOyBibG9ja1B0ciArPSAyO1xuICAgICAgICAgIH0gZWxzZSBpZiAobiA9PT0gNCkge1xuICAgICAgICAgICAgbnVtRWxlbWVudHMgPSB2aWV3LmdldFVpbnQzMihibG9ja1B0ciwgdHJ1ZSk7IGJsb2NrUHRyICs9IDQ7XG4gICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgIHRocm93IFwiSW52YWxpZCB2YWxpZCBwaXhlbCBjb3VudCB0eXBlXCI7XG4gICAgICAgICAgfVxuICAgICAgICAgIC8vZml4OiBodWZmbWFuIGNvZGVzIGFyZSBiaXQgc3R1ZmZlZCwgYnV0IG5vdCBib3VuZCBieSBkYXRhJ3MgbWF4IHZhbHVlLCBzbyBuZWVkIHRvIHVzZSBvcmlnaW5hbFVuc3R1ZmZcbiAgICAgICAgICAvL29mZnNldCA9IG9mZnNldCB8fCAwO1xuICAgICAgICAgIHZhciBzY2FsZSA9IDIgKiBoZWFkZXJJbmZvLm1heFpFcnJvcjtcbiAgICAgICAgICB2YXIgc3R1ZmZlZERhdGEsIGFycmF5QnVmLCBzdG9yZTgsIGRhdGFCeXRlcywgZGF0YVdvcmRzO1xuICAgICAgICAgIHZhciBsdXRBcnIsIGx1dERhdGEsIGx1dEJ5dGVzLCBsdXRCaXRzUGVyRWxlbWVudCwgYml0c1BlclBpeGVsO1xuICAgICAgICAgIHZhciB6TWF4ID0gaGVhZGVySW5mby5udW1EaW1zID4gMSA/IGhlYWRlckluZm8ubWF4VmFsdWVzW2lEaW1dIDogaGVhZGVySW5mby56TWF4O1xuICAgICAgICAgIGlmIChkb0x1dCkge1xuICAgICAgICAgICAgZGF0YS5jb3VudGVyLmx1dCsrO1xuICAgICAgICAgICAgbHV0Qnl0ZXMgPSB2aWV3LmdldFVpbnQ4KGJsb2NrUHRyKTtcbiAgICAgICAgICAgIGx1dEJpdHNQZXJFbGVtZW50ID0gbnVtQml0cztcbiAgICAgICAgICAgIGJsb2NrUHRyKys7XG4gICAgICAgICAgICBkYXRhQnl0ZXMgPSBNYXRoLmNlaWwoKGx1dEJ5dGVzIC0gMSkgKiBudW1CaXRzIC8gOCk7XG4gICAgICAgICAgICBkYXRhV29yZHMgPSBNYXRoLmNlaWwoZGF0YUJ5dGVzIC8gNCk7XG4gICAgICAgICAgICBhcnJheUJ1ZiA9IG5ldyBBcnJheUJ1ZmZlcihkYXRhV29yZHMgKiA0KTtcbiAgICAgICAgICAgIHN0b3JlOCA9IG5ldyBVaW50OEFycmF5KGFycmF5QnVmKTtcblxuICAgICAgICAgICAgZGF0YS5wdHIgKz0gYmxvY2tQdHI7XG4gICAgICAgICAgICBzdG9yZTguc2V0KG5ldyBVaW50OEFycmF5KGlucHV0LCBkYXRhLnB0ciwgZGF0YUJ5dGVzKSk7XG5cbiAgICAgICAgICAgIGx1dERhdGEgPSBuZXcgVWludDMyQXJyYXkoYXJyYXlCdWYpO1xuICAgICAgICAgICAgZGF0YS5wdHIgKz0gZGF0YUJ5dGVzO1xuXG4gICAgICAgICAgICBiaXRzUGVyUGl4ZWwgPSAwO1xuICAgICAgICAgICAgd2hpbGUgKChsdXRCeXRlcyAtIDEpID4+PiBiaXRzUGVyUGl4ZWwpIHtcbiAgICAgICAgICAgICAgYml0c1BlclBpeGVsKys7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBkYXRhQnl0ZXMgPSBNYXRoLmNlaWwobnVtRWxlbWVudHMgKiBiaXRzUGVyUGl4ZWwgLyA4KTtcbiAgICAgICAgICAgIGRhdGFXb3JkcyA9IE1hdGguY2VpbChkYXRhQnl0ZXMgLyA0KTtcbiAgICAgICAgICAgIGFycmF5QnVmID0gbmV3IEFycmF5QnVmZmVyKGRhdGFXb3JkcyAqIDQpO1xuICAgICAgICAgICAgc3RvcmU4ID0gbmV3IFVpbnQ4QXJyYXkoYXJyYXlCdWYpO1xuICAgICAgICAgICAgc3RvcmU4LnNldChuZXcgVWludDhBcnJheShpbnB1dCwgZGF0YS5wdHIsIGRhdGFCeXRlcykpO1xuICAgICAgICAgICAgc3R1ZmZlZERhdGEgPSBuZXcgVWludDMyQXJyYXkoYXJyYXlCdWYpO1xuICAgICAgICAgICAgZGF0YS5wdHIgKz0gZGF0YUJ5dGVzO1xuICAgICAgICAgICAgaWYgKGZpbGVWZXJzaW9uID49IDMpIHtcbiAgICAgICAgICAgICAgbHV0QXJyID0gQml0U3R1ZmZlci51bnN0dWZmTFVUMihsdXREYXRhLCBudW1CaXRzLCBsdXRCeXRlcyAtIDEsIG9mZnNldCwgc2NhbGUsIHpNYXgpO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgIGx1dEFyciA9IEJpdFN0dWZmZXIudW5zdHVmZkxVVChsdXREYXRhLCBudW1CaXRzLCBsdXRCeXRlcyAtIDEsIG9mZnNldCwgc2NhbGUsIHpNYXgpO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgLy9sdXRBcnIudW5zaGlmdCgwKTtcbiAgICAgICAgICAgIGlmIChmaWxlVmVyc2lvbiA+PSAzKSB7XG4gICAgICAgICAgICAgIC8vQml0U3R1ZmZlci51bnN0dWZmMihibG9jaywgYmxvY2tEYXRhQnVmZmVyLCBoZWFkZXJJbmZvLnpNYXgpO1xuICAgICAgICAgICAgICBCaXRTdHVmZmVyLnVuc3R1ZmYyKHN0dWZmZWREYXRhLCBibG9ja0RhdGFCdWZmZXIsIGJpdHNQZXJQaXhlbCwgbnVtRWxlbWVudHMsIGx1dEFycik7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgQml0U3R1ZmZlci51bnN0dWZmKHN0dWZmZWREYXRhLCBibG9ja0RhdGFCdWZmZXIsIGJpdHNQZXJQaXhlbCwgbnVtRWxlbWVudHMsIGx1dEFycik7XG4gICAgICAgICAgICB9XG4gICAgICAgICAgfVxuICAgICAgICAgIGVsc2Uge1xuICAgICAgICAgICAgLy9jb25zb2xlLmRlYnVnKFwiYml0c3R1ZmZlclwiKTtcbiAgICAgICAgICAgIGRhdGEuY291bnRlci5iaXRzdHVmZmVyKys7XG4gICAgICAgICAgICBiaXRzUGVyUGl4ZWwgPSBudW1CaXRzO1xuICAgICAgICAgICAgZGF0YS5wdHIgKz0gYmxvY2tQdHI7XG4gICAgICAgICAgICBpZiAoYml0c1BlclBpeGVsID4gMCkge1xuICAgICAgICAgICAgICBkYXRhQnl0ZXMgPSBNYXRoLmNlaWwobnVtRWxlbWVudHMgKiBiaXRzUGVyUGl4ZWwgLyA4KTtcbiAgICAgICAgICAgICAgZGF0YVdvcmRzID0gTWF0aC5jZWlsKGRhdGFCeXRlcyAvIDQpO1xuICAgICAgICAgICAgICBhcnJheUJ1ZiA9IG5ldyBBcnJheUJ1ZmZlcihkYXRhV29yZHMgKiA0KTtcbiAgICAgICAgICAgICAgc3RvcmU4ID0gbmV3IFVpbnQ4QXJyYXkoYXJyYXlCdWYpO1xuICAgICAgICAgICAgICBzdG9yZTguc2V0KG5ldyBVaW50OEFycmF5KGlucHV0LCBkYXRhLnB0ciwgZGF0YUJ5dGVzKSk7XG4gICAgICAgICAgICAgIHN0dWZmZWREYXRhID0gbmV3IFVpbnQzMkFycmF5KGFycmF5QnVmKTtcbiAgICAgICAgICAgICAgZGF0YS5wdHIgKz0gZGF0YUJ5dGVzO1xuICAgICAgICAgICAgICBpZiAoZmlsZVZlcnNpb24gPj0gMykge1xuICAgICAgICAgICAgICAgIGlmIChvZmZzZXQgPT0gbnVsbCkge1xuICAgICAgICAgICAgICAgICAgQml0U3R1ZmZlci5vcmlnaW5hbFVuc3R1ZmYyKHN0dWZmZWREYXRhLCBibG9ja0RhdGFCdWZmZXIsIGJpdHNQZXJQaXhlbCwgbnVtRWxlbWVudHMpO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgICAgIEJpdFN0dWZmZXIudW5zdHVmZjIoc3R1ZmZlZERhdGEsIGJsb2NrRGF0YUJ1ZmZlciwgYml0c1BlclBpeGVsLCBudW1FbGVtZW50cywgZmFsc2UsIG9mZnNldCwgc2NhbGUsIHpNYXgpO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgICBpZiAob2Zmc2V0ID09IG51bGwpIHtcbiAgICAgICAgICAgICAgICAgIEJpdFN0dWZmZXIub3JpZ2luYWxVbnN0dWZmKHN0dWZmZWREYXRhLCBibG9ja0RhdGFCdWZmZXIsIGJpdHNQZXJQaXhlbCwgbnVtRWxlbWVudHMpO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgICAgIEJpdFN0dWZmZXIudW5zdHVmZihzdHVmZmVkRGF0YSwgYmxvY2tEYXRhQnVmZmVyLCBiaXRzUGVyUGl4ZWwsIG51bUVsZW1lbnRzLCBmYWxzZSwgb2Zmc2V0LCBzY2FsZSwgek1heCk7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgfVxuICAgICAgICB9XG5cbiAgICAgIH0sXG5cbiAgICAgIHJlYWRUaWxlczogZnVuY3Rpb24oaW5wdXQsIGRhdGEsIE91dFBpeGVsVHlwZUFycmF5LCB1c2VCU1FGb3JPdXRwdXREaW0pIHtcbiAgICAgICAgdmFyIGhlYWRlckluZm8gPSBkYXRhLmhlYWRlckluZm87XG4gICAgICAgIHZhciB3aWR0aCA9IGhlYWRlckluZm8ud2lkdGg7XG4gICAgICAgIHZhciBoZWlnaHQgPSBoZWFkZXJJbmZvLmhlaWdodDtcbiAgICAgICAgdmFyIG51bVBpeGVscyA9IHdpZHRoICogaGVpZ2h0O1xuICAgICAgICB2YXIgbWljcm9CbG9ja1NpemUgPSBoZWFkZXJJbmZvLm1pY3JvQmxvY2tTaXplO1xuICAgICAgICB2YXIgaW1hZ2VUeXBlID0gaGVhZGVySW5mby5pbWFnZVR5cGU7XG4gICAgICAgIHZhciBkYXRhVHlwZVNpemUgPSBMZXJjMkhlbHBlcnMuZ2V0RGF0YVR5cGVTaXplKGltYWdlVHlwZSk7XG4gICAgICAgIHZhciBudW1CbG9ja3NYID0gTWF0aC5jZWlsKHdpZHRoIC8gbWljcm9CbG9ja1NpemUpO1xuICAgICAgICB2YXIgbnVtQmxvY2tzWSA9IE1hdGguY2VpbChoZWlnaHQgLyBtaWNyb0Jsb2NrU2l6ZSk7XG4gICAgICAgIGRhdGEucGl4ZWxzLm51bUJsb2Nrc1kgPSBudW1CbG9ja3NZO1xuICAgICAgICBkYXRhLnBpeGVscy5udW1CbG9ja3NYID0gbnVtQmxvY2tzWDtcbiAgICAgICAgZGF0YS5waXhlbHMucHRyID0gMDtcbiAgICAgICAgdmFyIHJvdyA9IDAsIGNvbCA9IDAsIGJsb2NrWSA9IDAsIGJsb2NrWCA9IDAsIHRoaXNCbG9ja0hlaWdodCA9IDAsIHRoaXNCbG9ja1dpZHRoID0gMCwgYnl0ZXNMZWZ0ID0gMCwgaGVhZGVyQnl0ZSA9IDAsIGJpdHM2NyA9IDAsIHRlc3RDb2RlID0gMCwgb3V0UHRyID0gMCwgb3V0U3RyaWRlID0gMCwgbnVtQnl0ZXMgPSAwLCBieXRlc2xlZnQgPSAwLCB6ID0gMCwgYmxvY2tQdHIgPSAwO1xuICAgICAgICB2YXIgdmlldywgYmxvY2ssIGFycmF5QnVmLCBzdG9yZTgsIHJhd0RhdGE7XG4gICAgICAgIHZhciBibG9ja0VuY29kaW5nO1xuICAgICAgICB2YXIgYmxvY2tEYXRhQnVmZmVyID0gbmV3IE91dFBpeGVsVHlwZUFycmF5KG1pY3JvQmxvY2tTaXplICogbWljcm9CbG9ja1NpemUpO1xuICAgICAgICB2YXIgbGFzdEJsb2NrSGVpZ2h0ID0gKGhlaWdodCAlIG1pY3JvQmxvY2tTaXplKSB8fCBtaWNyb0Jsb2NrU2l6ZTtcbiAgICAgICAgdmFyIGxhc3RCbG9ja1dpZHRoID0gKHdpZHRoICUgbWljcm9CbG9ja1NpemUpIHx8IG1pY3JvQmxvY2tTaXplO1xuICAgICAgICB2YXIgb2Zmc2V0VHlwZSwgb2Zmc2V0O1xuICAgICAgICB2YXIgbnVtRGltcyA9IGhlYWRlckluZm8ubnVtRGltcywgaURpbTtcbiAgICAgICAgdmFyIG1hc2sgPSBkYXRhLnBpeGVscy5yZXN1bHRNYXNrO1xuICAgICAgICB2YXIgcmVzdWx0UGl4ZWxzID0gZGF0YS5waXhlbHMucmVzdWx0UGl4ZWxzO1xuICAgICAgICB2YXIgZmlsZVZlcnNpb24gPSBoZWFkZXJJbmZvLmZpbGVWZXJzaW9uO1xuICAgICAgICB2YXIgZmlsZVZlcnNpb25DaGVja051bSA9IGZpbGVWZXJzaW9uID49IDUgPyAxNCA6IDE1O1xuICAgICAgICB2YXIgaXNEaWZmRW5jb2Rpbmc7XG4gICAgICAgIHZhciB6TWF4ID0gaGVhZGVySW5mby56TWF4O1xuICAgICAgICAvL3ZhciByZXN1bHRQaXhlbHNBbGxEaW0gPSByZXN1bHRQaXhlbHM7XG4gICAgICAgIHZhciByZXN1bHRQaXhlbHNQcmV2RGltO1xuICAgICAgICBmb3IgKGJsb2NrWSA9IDA7IGJsb2NrWSA8IG51bUJsb2Nrc1k7IGJsb2NrWSsrKSB7XG4gICAgICAgICAgdGhpc0Jsb2NrSGVpZ2h0ID0gKGJsb2NrWSAhPT0gbnVtQmxvY2tzWSAtIDEpID8gbWljcm9CbG9ja1NpemUgOiBsYXN0QmxvY2tIZWlnaHQ7XG4gICAgICAgICAgZm9yIChibG9ja1ggPSAwOyBibG9ja1ggPCBudW1CbG9ja3NYOyBibG9ja1grKykge1xuICAgICAgICAgICAgLy9jb25zb2xlLmRlYnVnKFwieVwiICsgYmxvY2tZICsgXCIgeFwiICsgYmxvY2tYKTtcbiAgICAgICAgICAgIHRoaXNCbG9ja1dpZHRoID0gKGJsb2NrWCAhPT0gbnVtQmxvY2tzWCAtIDEpID8gbWljcm9CbG9ja1NpemUgOiBsYXN0QmxvY2tXaWR0aDtcblxuICAgICAgICAgICAgb3V0UHRyID0gYmxvY2tZICogd2lkdGggKiBtaWNyb0Jsb2NrU2l6ZSArIGJsb2NrWCAqIG1pY3JvQmxvY2tTaXplO1xuICAgICAgICAgICAgb3V0U3RyaWRlID0gd2lkdGggLSB0aGlzQmxvY2tXaWR0aDtcblxuICAgICAgICAgICAgZm9yIChpRGltID0gMDsgaURpbSA8IG51bURpbXM7IGlEaW0rKykge1xuICAgICAgICAgICAgICBpZiAobnVtRGltcyA+IDEpIHtcbiAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHNQcmV2RGltID0gcmVzdWx0UGl4ZWxzO1xuICAgICAgICAgICAgICAgIG91dFB0ciA9IGJsb2NrWSAqIHdpZHRoICogbWljcm9CbG9ja1NpemUgKyBibG9ja1ggKiBtaWNyb0Jsb2NrU2l6ZTtcbiAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHMgPSBuZXcgT3V0UGl4ZWxUeXBlQXJyYXkoZGF0YS5waXhlbHMucmVzdWx0UGl4ZWxzLmJ1ZmZlciwgbnVtUGl4ZWxzICogaURpbSAqIGRhdGFUeXBlU2l6ZSwgbnVtUGl4ZWxzKTtcbiAgICAgICAgICAgICAgICB6TWF4ID0gaGVhZGVySW5mby5tYXhWYWx1ZXNbaURpbV07XG4gICAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzUHJldkRpbSA9IG51bGw7XG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgYnl0ZXNMZWZ0ID0gaW5wdXQuYnl0ZUxlbmd0aCAtIGRhdGEucHRyO1xuICAgICAgICAgICAgICB2aWV3ID0gbmV3IERhdGFWaWV3KGlucHV0LCBkYXRhLnB0ciwgTWF0aC5taW4oMTAsIGJ5dGVzTGVmdCkpO1xuICAgICAgICAgICAgICBibG9jayA9IHt9O1xuICAgICAgICAgICAgICBibG9ja1B0ciA9IDA7XG4gICAgICAgICAgICAgIGhlYWRlckJ5dGUgPSB2aWV3LmdldFVpbnQ4KDApO1xuICAgICAgICAgICAgICBibG9ja1B0cisrO1xuICAgICAgICAgICAgICBpc0RpZmZFbmNvZGluZyA9IGhlYWRlckluZm8uZmlsZVZlcnNpb24gPj0gNSA/IGhlYWRlckJ5dGUgJiA0IDogMDtcbiAgICAgICAgICAgICAgYml0czY3ID0gKGhlYWRlckJ5dGUgPj4gNikgJiAweEZGO1xuICAgICAgICAgICAgICB0ZXN0Q29kZSA9IChoZWFkZXJCeXRlID4+IDIpICYgZmlsZVZlcnNpb25DaGVja051bTsgICAgLy8gdXNlIGJpdHMgMjM0NSBmb3IgaW50ZWdyaXR5IGNoZWNrXG4gICAgICAgICAgICAgIGlmICh0ZXN0Q29kZSAhPT0gKCgoYmxvY2tYICogbWljcm9CbG9ja1NpemUpID4+IDMpICYgZmlsZVZlcnNpb25DaGVja051bSkpIHtcbiAgICAgICAgICAgICAgICB0aHJvdyBcImludGVncml0eSBpc3N1ZVwiO1xuICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICAgaWYgKGlzRGlmZkVuY29kaW5nICYmIGlEaW0gPT09IDApIHtcbiAgICAgICAgICAgICAgICB0aHJvdyBcImludGVncml0eSBpc3N1ZVwiO1xuICAgICAgICAgICAgICB9XG5cbiAgICAgICAgICAgICAgYmxvY2tFbmNvZGluZyA9IGhlYWRlckJ5dGUgJiAzO1xuICAgICAgICAgICAgICBpZiAoYmxvY2tFbmNvZGluZyA+IDMpIHtcbiAgICAgICAgICAgICAgICBkYXRhLnB0ciArPSBibG9ja1B0cjtcbiAgICAgICAgICAgICAgICB0aHJvdyBcIkludmFsaWQgYmxvY2sgZW5jb2RpbmcgKFwiICsgYmxvY2tFbmNvZGluZyArIFwiKVwiO1xuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgIGVsc2UgaWYgKGJsb2NrRW5jb2RpbmcgPT09IDIpIHsgLy9jb25zdGFudCAwXG4gICAgICAgICAgICAgICAgaWYgKGlzRGlmZkVuY29kaW5nKSB7XG4gICAgICAgICAgICAgICAgICBpZiAobWFzaykge1xuICAgICAgICAgICAgICAgICAgICBmb3IgKHJvdyA9IDA7IHJvdyA8IHRoaXNCbG9ja0hlaWdodDsgcm93KyspIHtcbiAgICAgICAgICAgICAgICAgICAgICBmb3IgKGNvbCA9IDA7IGNvbCA8IHRoaXNCbG9ja1dpZHRoOyBjb2wrKykge1xuICAgICAgICAgICAgICAgICAgICAgICAgaWYgKG1hc2tbb3V0UHRyXSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHNbb3V0UHRyXSA9IHJlc3VsdFBpeGVsc1ByZXZEaW1bb3V0UHRyXTtcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgICAgIG91dFB0cisrO1xuICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgICAgICAgIGZvciAocm93ID0gMDsgcm93IDwgdGhpc0Jsb2NrSGVpZ2h0OyByb3crKykge1xuICAgICAgICAgICAgICAgICAgICAgIGZvciAoY29sID0gMDsgY29sIDwgdGhpc0Jsb2NrV2lkdGg7IGNvbCsrKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHNbb3V0UHRyXSA9IHJlc3VsdFBpeGVsc1ByZXZEaW1bb3V0UHRyXTtcbiAgICAgICAgICAgICAgICAgICAgICAgIG91dFB0cisrO1xuICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBkYXRhLmNvdW50ZXIuY29uc3RhbnQrKztcbiAgICAgICAgICAgICAgICBkYXRhLnB0ciArPSBibG9ja1B0cjtcbiAgICAgICAgICAgICAgICBjb250aW51ZTtcbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICBlbHNlIGlmIChibG9ja0VuY29kaW5nID09PSAwKSB7ICAvL3VuY29tcHJlc3NlZFxuICAgICAgICAgICAgICAgIGlmIChpc0RpZmZFbmNvZGluZykge1xuICAgICAgICAgICAgICAgICAgLy8gZG9lc24ndCBtYWtlIHNlbnNlLCBzaG91bGQgbm90IGhhcHBlblxuICAgICAgICAgICAgICAgICAgdGhyb3cgXCJpbnRlZ3JpdHkgaXNzdWVcIjtcbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgZGF0YS5jb3VudGVyLnVuY29tcHJlc3NlZCsrO1xuICAgICAgICAgICAgICAgIGRhdGEucHRyICs9IGJsb2NrUHRyO1xuICAgICAgICAgICAgICAgIG51bUJ5dGVzID0gdGhpc0Jsb2NrSGVpZ2h0ICogdGhpc0Jsb2NrV2lkdGggKiBkYXRhVHlwZVNpemU7XG4gICAgICAgICAgICAgICAgYnl0ZXNsZWZ0ID0gaW5wdXQuYnl0ZUxlbmd0aCAtIGRhdGEucHRyO1xuICAgICAgICAgICAgICAgIG51bUJ5dGVzID0gbnVtQnl0ZXMgPCBieXRlc2xlZnQgPyBudW1CeXRlcyA6IGJ5dGVzbGVmdDtcbiAgICAgICAgICAgICAgICAvL2JpdCBhbGlnbm1lbnRcbiAgICAgICAgICAgICAgICBhcnJheUJ1ZiA9IG5ldyBBcnJheUJ1ZmZlcigobnVtQnl0ZXMgJSBkYXRhVHlwZVNpemUpID09PSAwID8gbnVtQnl0ZXMgOiAobnVtQnl0ZXMgKyBkYXRhVHlwZVNpemUgLSBudW1CeXRlcyAlIGRhdGFUeXBlU2l6ZSkpO1xuICAgICAgICAgICAgICAgIHN0b3JlOCA9IG5ldyBVaW50OEFycmF5KGFycmF5QnVmKTtcbiAgICAgICAgICAgICAgICBzdG9yZTguc2V0KG5ldyBVaW50OEFycmF5KGlucHV0LCBkYXRhLnB0ciwgbnVtQnl0ZXMpKTtcbiAgICAgICAgICAgICAgICByYXdEYXRhID0gbmV3IE91dFBpeGVsVHlwZUFycmF5KGFycmF5QnVmKTtcbiAgICAgICAgICAgICAgICB6ID0gMDtcbiAgICAgICAgICAgICAgICBpZiAobWFzaykge1xuICAgICAgICAgICAgICAgICAgZm9yIChyb3cgPSAwOyByb3cgPCB0aGlzQmxvY2tIZWlnaHQ7IHJvdysrKSB7XG4gICAgICAgICAgICAgICAgICAgIGZvciAoY29sID0gMDsgY29sIDwgdGhpc0Jsb2NrV2lkdGg7IGNvbCsrKSB7XG4gICAgICAgICAgICAgICAgICAgICAgaWYgKG1hc2tbb3V0UHRyXSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzW291dFB0cl0gPSByYXdEYXRhW3orK107XG4gICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICAgIG91dFB0cisrO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIG91dFB0ciArPSBvdXRTdHJpZGU7XG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGVsc2Ugey8vYWxsIHZhbGlkXG4gICAgICAgICAgICAgICAgICBmb3IgKHJvdyA9IDA7IHJvdyA8IHRoaXNCbG9ja0hlaWdodDsgcm93KyspIHtcbiAgICAgICAgICAgICAgICAgICAgZm9yIChjb2wgPSAwOyBjb2wgPCB0aGlzQmxvY2tXaWR0aDsgY29sKyspIHtcbiAgICAgICAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHNbb3V0UHRyKytdID0gcmF3RGF0YVt6KytdO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIG91dFB0ciArPSBvdXRTdHJpZGU7XG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGRhdGEucHRyICs9IHogKiBkYXRhVHlwZVNpemU7XG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgZWxzZSB7IC8vMSBvciAzXG4gICAgICAgICAgICAgICAgb2Zmc2V0VHlwZSA9IExlcmMySGVscGVycy5nZXREYXRhVHlwZVVzZWQoKGlzRGlmZkVuY29kaW5nICYmIGltYWdlVHlwZSA8IDYpID8gNCA6IGltYWdlVHlwZSwgYml0czY3KTtcbiAgICAgICAgICAgICAgICBvZmZzZXQgPSBMZXJjMkhlbHBlcnMuZ2V0T25lUGl4ZWwoYmxvY2ssIGJsb2NrUHRyLCBvZmZzZXRUeXBlLCB2aWV3KTtcbiAgICAgICAgICAgICAgICBibG9ja1B0ciArPSBMZXJjMkhlbHBlcnMuZ2V0RGF0YVR5cGVTaXplKG9mZnNldFR5cGUpO1xuICAgICAgICAgICAgICAgIGlmIChibG9ja0VuY29kaW5nID09PSAzKSAvL2NvbnN0YW50IG9mZnNldCB2YWx1ZVxuICAgICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICAgIGRhdGEucHRyICs9IGJsb2NrUHRyO1xuICAgICAgICAgICAgICAgICAgZGF0YS5jb3VudGVyLmNvbnN0YW50b2Zmc2V0Kys7XG4gICAgICAgICAgICAgICAgICAvL3lvdSBjYW4gZGVsZXRlIHRoZSBmb2xsb3dpbmcgcmVzdWx0TWFzayBjYXNlIGluIGZhdm9yIG9mIHBlcmZvcm1hbmNlIGJlY2F1c2UgdmFsIGlzIGNvbnN0YW50IGFuZCB1c2VycyB1c2Ugbm9kYXRhIG1hc2ssIG90aGVyd2lzZSBub2RhdGF2YWx1ZSBwb3N0IHByb2Nlc3NpbmcgaGFuZGxlcyBpdCB0b28uXG4gICAgICAgICAgICAgICAgICAvL3doaWxlIHRoZSBhYm92ZSBzdGF0ZW1lbnQgaXMgdHJ1ZSwgd2UncmUgbm90IGRvaW5nIGl0IGFzIHdlIHdhbnQgdG8ga2VlcCBpbnZhbGlkIHBpeGVsIHZhbHVlIGF0IDAgcmF0aGVyIHRoYW4gYXJiaXRyYXJ5IHZhbHVlc1xuICAgICAgICAgICAgICAgICAgaWYgKG1hc2spIHtcbiAgICAgICAgICAgICAgICAgICAgZm9yIChyb3cgPSAwOyByb3cgPCB0aGlzQmxvY2tIZWlnaHQ7IHJvdysrKSB7XG4gICAgICAgICAgICAgICAgICAgICAgZm9yIChjb2wgPSAwOyBjb2wgPCB0aGlzQmxvY2tXaWR0aDsgY29sKyspIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIGlmIChtYXNrW291dFB0cl0pIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzW291dFB0cl0gPSBpc0RpZmZFbmNvZGluZyA/IE1hdGgubWluKHpNYXgsIHJlc3VsdFBpeGVsc1ByZXZEaW1bb3V0UHRyXSArIG9mZnNldCkgOiBvZmZzZXQ7XG4gICAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgICAgICBvdXRQdHIrKztcbiAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgICAgb3V0UHRyICs9IG91dFN0cmlkZTtcbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgICAgICAgIGZvciAocm93ID0gMDsgcm93IDwgdGhpc0Jsb2NrSGVpZ2h0OyByb3crKykge1xuICAgICAgICAgICAgICAgICAgICAgIGZvciAoY29sID0gMDsgY29sIDwgdGhpc0Jsb2NrV2lkdGg7IGNvbCsrKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHNbb3V0UHRyXSA9IGlzRGlmZkVuY29kaW5nID8gTWF0aC5taW4oek1heCwgcmVzdWx0UGl4ZWxzUHJldkRpbVtvdXRQdHJdICsgb2Zmc2V0KSA6IG9mZnNldDtcbiAgICAgICAgICAgICAgICAgICAgICAgIG91dFB0cisrO1xuICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgICBvdXRQdHIgKz0gb3V0U3RyaWRlO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIGVsc2UgeyAvL2JpdHN0dWZmIGVuY29kaW5nIGlzIDNcbiAgICAgICAgICAgICAgICAgIGRhdGEucHRyICs9IGJsb2NrUHRyO1xuICAgICAgICAgICAgICAgICAgLy9oZWF2eSBsaWZ0aW5nXG4gICAgICAgICAgICAgICAgICBMZXJjMkhlbHBlcnMuZGVjb2RlQml0cyhpbnB1dCwgZGF0YSwgYmxvY2tEYXRhQnVmZmVyLCBvZmZzZXQsIGlEaW0pO1xuICAgICAgICAgICAgICAgICAgYmxvY2tQdHIgPSAwO1xuICAgICAgICAgICAgICAgICAgLy8gZHVwbGljYXRlIGNvZGUgdG8gZmF2b3IgcGVyZm9ybWFuY2UsIGRpZmYgZW5jb2RpbmcgaXMgZm9yIG11bHRpZGltZW5zaW9uIG9ubHlcbiAgICAgICAgICAgICAgICAgIGlmIChpc0RpZmZFbmNvZGluZykge1xuICAgICAgICAgICAgICAgICAgICBpZiAobWFzaykge1xuICAgICAgICAgICAgICAgICAgICAgIGZvciAocm93ID0gMDsgcm93IDwgdGhpc0Jsb2NrSGVpZ2h0OyByb3crKykge1xuICAgICAgICAgICAgICAgICAgICAgICAgZm9yIChjb2wgPSAwOyBjb2wgPCB0aGlzQmxvY2tXaWR0aDsgY29sKyspIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgaWYgKG1hc2tbb3V0UHRyXSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJlc3VsdFBpeGVsc1tvdXRQdHJdID0gYmxvY2tEYXRhQnVmZmVyW2Jsb2NrUHRyKytdICsgcmVzdWx0UGl4ZWxzUHJldkRpbVtvdXRQdHJdO1xuICAgICAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgICAgICAgIG91dFB0cisrO1xuICAgICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICAgICAgb3V0UHRyICs9IG91dFN0cmlkZTtcbiAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgICAgICAgICAgZm9yIChyb3cgPSAwOyByb3cgPCB0aGlzQmxvY2tIZWlnaHQ7IHJvdysrKSB7XG4gICAgICAgICAgICAgICAgICAgICAgICBmb3IgKGNvbCA9IDA7IGNvbCA8IHRoaXNCbG9ja1dpZHRoOyBjb2wrKykge1xuICAgICAgICAgICAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHNbb3V0UHRyXSA9IGJsb2NrRGF0YUJ1ZmZlcltibG9ja1B0cisrXSArIHJlc3VsdFBpeGVsc1ByZXZEaW1bb3V0UHRyXTtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgb3V0UHRyKys7XG4gICAgICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICAgICAgICBvdXRQdHIgKz0gb3V0U3RyaWRlO1xuICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgZWxzZSBpZiAobWFzaykge1xuICAgICAgICAgICAgICAgICAgICBmb3IgKHJvdyA9IDA7IHJvdyA8IHRoaXNCbG9ja0hlaWdodDsgcm93KyspIHtcbiAgICAgICAgICAgICAgICAgICAgICBmb3IgKGNvbCA9IDA7IGNvbCA8IHRoaXNCbG9ja1dpZHRoOyBjb2wrKykge1xuICAgICAgICAgICAgICAgICAgICAgICAgaWYgKG1hc2tbb3V0UHRyXSkge1xuICAgICAgICAgICAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHNbb3V0UHRyXSA9IGJsb2NrRGF0YUJ1ZmZlcltibG9ja1B0cisrXTtcbiAgICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgICAgIG91dFB0cisrO1xuICAgICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgICAgICBvdXRQdHIgKz0gb3V0U3RyaWRlO1xuICAgICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgICAgICAgZm9yIChyb3cgPSAwOyByb3cgPCB0aGlzQmxvY2tIZWlnaHQ7IHJvdysrKSB7XG4gICAgICAgICAgICAgICAgICAgICAgZm9yIChjb2wgPSAwOyBjb2wgPCB0aGlzQmxvY2tXaWR0aDsgY29sKyspIHtcbiAgICAgICAgICAgICAgICAgICAgICAgIHJlc3VsdFBpeGVsc1tvdXRQdHIrK10gPSBibG9ja0RhdGFCdWZmZXJbYmxvY2tQdHIrK107XG4gICAgICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgICAgICAgIG91dFB0ciArPSBvdXRTdHJpZGU7XG4gICAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgLy9zd2FwIGZvciBCSVA6IGl0J3MgYWx3YXlzIGVhc2llciBmb3IgY2xpZW50cyB0byBoYW5kbGUgQlNRIHNvIHdlIGtlZXAgZXhpc3RpbmcgbG9naWMgYW5kIGludHJvZHVjZSBhIHN3YXAgaGVyZSB0byBtaW5pbXplIGNoYW5nZXNcbiAgICAgICAgaWYgKG51bURpbXMgPiAxICYmICF1c2VCU1FGb3JPdXRwdXREaW0pIHtcbiAgICAgICAgICBkYXRhLnBpeGVscy5yZXN1bHRQaXhlbHMgPSBMZXJjMkhlbHBlcnMuc3dhcERpbWVuc2lvbk9yZGVyKGRhdGEucGl4ZWxzLnJlc3VsdFBpeGVscywgbnVtUGl4ZWxzLCBudW1EaW1zLCBPdXRQaXhlbFR5cGVBcnJheSk7XG4gICAgICAgIH1cbiAgICAgIH0sXG5cbiAgICAgIC8qKioqKioqKioqKioqKioqKlxuICAgICAgKiAgcHJpdmF0ZSBtZXRob2RzIChoZWxwZXIgbWV0aG9kcylcbiAgICAgICoqKioqKioqKioqKioqKioqL1xuXG4gICAgICBmb3JtYXRGaWxlSW5mbzogZnVuY3Rpb24oZGF0YSkge1xuICAgICAgICByZXR1cm4ge1xuICAgICAgICAgIFwiZmlsZUlkZW50aWZpZXJTdHJpbmdcIjogZGF0YS5oZWFkZXJJbmZvLmZpbGVJZGVudGlmaWVyU3RyaW5nLFxuICAgICAgICAgIFwiZmlsZVZlcnNpb25cIjogZGF0YS5oZWFkZXJJbmZvLmZpbGVWZXJzaW9uLFxuICAgICAgICAgIFwiaW1hZ2VUeXBlXCI6IGRhdGEuaGVhZGVySW5mby5pbWFnZVR5cGUsXG4gICAgICAgICAgXCJoZWlnaHRcIjogZGF0YS5oZWFkZXJJbmZvLmhlaWdodCxcbiAgICAgICAgICBcIndpZHRoXCI6IGRhdGEuaGVhZGVySW5mby53aWR0aCxcbiAgICAgICAgICBcIm51bVZhbGlkUGl4ZWxcIjogZGF0YS5oZWFkZXJJbmZvLm51bVZhbGlkUGl4ZWwsXG4gICAgICAgICAgXCJtaWNyb0Jsb2NrU2l6ZVwiOiBkYXRhLmhlYWRlckluZm8ubWljcm9CbG9ja1NpemUsXG4gICAgICAgICAgXCJibG9iU2l6ZVwiOiBkYXRhLmhlYWRlckluZm8uYmxvYlNpemUsXG4gICAgICAgICAgXCJtYXhaRXJyb3JcIjogZGF0YS5oZWFkZXJJbmZvLm1heFpFcnJvcixcbiAgICAgICAgICBcInBpeGVsVHlwZVwiOiBMZXJjMkhlbHBlcnMuZ2V0UGl4ZWxUeXBlKGRhdGEuaGVhZGVySW5mby5pbWFnZVR5cGUpLFxuICAgICAgICAgIFwiZW9mT2Zmc2V0XCI6IGRhdGEuZW9mT2Zmc2V0LFxuICAgICAgICAgIFwibWFza1wiOiBkYXRhLm1hc2sgPyB7XG4gICAgICAgICAgICBcIm51bUJ5dGVzXCI6IGRhdGEubWFzay5udW1CeXRlc1xuICAgICAgICAgIH0gOiBudWxsLFxuICAgICAgICAgIFwicGl4ZWxzXCI6IHtcbiAgICAgICAgICAgIFwibnVtQmxvY2tzWFwiOiBkYXRhLnBpeGVscy5udW1CbG9ja3NYLFxuICAgICAgICAgICAgXCJudW1CbG9ja3NZXCI6IGRhdGEucGl4ZWxzLm51bUJsb2Nrc1ksXG4gICAgICAgICAgICAvL1wibnVtQnl0ZXNcIjogZGF0YS5waXhlbHMubnVtQnl0ZXMsXG4gICAgICAgICAgICBcIm1heFZhbHVlXCI6IGRhdGEuaGVhZGVySW5mby56TWF4LFxuICAgICAgICAgICAgXCJtaW5WYWx1ZVwiOiBkYXRhLmhlYWRlckluZm8uek1pbixcbiAgICAgICAgICAgIFwibm9EYXRhVmFsdWVcIjogZGF0YS5ub0RhdGFWYWx1ZVxuICAgICAgICAgIH1cbiAgICAgICAgfTtcbiAgICAgIH0sXG5cbiAgICAgIGNvbnN0cnVjdENvbnN0YW50U3VyZmFjZTogZnVuY3Rpb24oZGF0YSwgdXNlQlNRRm9yT3V0cHV0RGltKSB7XG4gICAgICAgIHZhciB2YWwgPSBkYXRhLmhlYWRlckluZm8uek1heDtcbiAgICAgICAgdmFyIHZhbE1pbiA9IGRhdGEuaGVhZGVySW5mby56TWluO1xuICAgICAgICB2YXIgbWF4VmFsdWVzID0gZGF0YS5oZWFkZXJJbmZvLm1heFZhbHVlcztcbiAgICAgICAgdmFyIG51bURpbXMgPSBkYXRhLmhlYWRlckluZm8ubnVtRGltcztcbiAgICAgICAgdmFyIG51bVBpeGVscyA9IGRhdGEuaGVhZGVySW5mby5oZWlnaHQgKiBkYXRhLmhlYWRlckluZm8ud2lkdGg7XG4gICAgICAgIHZhciBpID0gMCwgayA9IDAsIG5TdGFydCA9IDA7XG4gICAgICAgIHZhciBtYXNrID0gZGF0YS5waXhlbHMucmVzdWx0TWFzaztcbiAgICAgICAgdmFyIHJlc3VsdFBpeGVscyA9IGRhdGEucGl4ZWxzLnJlc3VsdFBpeGVscztcbiAgICAgICAgaWYgKG1hc2spIHtcbiAgICAgICAgICBpZiAobnVtRGltcyA+IDEpIHtcbiAgICAgICAgICAgIGlmICh1c2VCU1FGb3JPdXRwdXREaW0pIHtcbiAgICAgICAgICAgICAgZm9yIChpID0gMDsgaSA8IG51bURpbXM7IGkrKykge1xuICAgICAgICAgICAgICAgIG5TdGFydCA9IGkgKiBudW1QaXhlbHM7XG4gICAgICAgICAgICAgICAgdmFsID0gbWF4VmFsdWVzW2ldO1xuICAgICAgICAgICAgICAgIGZvciAoayA9IDA7IGsgPCBudW1QaXhlbHM7IGsrKykge1xuICAgICAgICAgICAgICAgICAgaWYgKG1hc2tba10pIHtcbiAgICAgICAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzW25TdGFydCArIGtdID0gdmFsO1xuICAgICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgfSAgXG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgZm9yIChrID0gMDsgayA8IG51bVBpeGVsczsgaysrKSB7XG4gICAgICAgICAgICAgICAgaWYgKG1hc2tba10pIHtcbiAgICAgICAgICAgICAgICAgIG5TdGFydCA9IGsgKiBudW1EaW1zO1xuICAgICAgICAgICAgICAgICAgZm9yIChpID0gMDsgaSA8IG51bURpbXM7IGkrKykge1xuICAgICAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHNbblN0YXJ0ICsgbnVtRGltc10gPSBtYXhWYWx1ZXNbaV07XG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgfVxuICAgICAgICAgIGVsc2Uge1xuICAgICAgICAgICAgZm9yIChrID0gMDsgayA8IG51bVBpeGVsczsgaysrKSB7XG4gICAgICAgICAgICAgIGlmIChtYXNrW2tdKSB7XG4gICAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzW2tdID0gdmFsO1xuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIGVsc2Uge1xuICAgICAgICAgIGlmIChudW1EaW1zID4gMSAmJiB2YWxNaW4gIT09IHZhbCkge1xuICAgICAgICAgICAgaWYgKHVzZUJTUUZvck91dHB1dERpbSkge1xuICAgICAgICAgICAgICBmb3IgKGkgPSAwOyBpIDwgbnVtRGltczsgaSsrKSB7XG4gICAgICAgICAgICAgICAgblN0YXJ0ID0gaSAqIG51bVBpeGVscztcbiAgICAgICAgICAgICAgICB2YWwgPSBtYXhWYWx1ZXNbaV07XG4gICAgICAgICAgICAgICAgZm9yIChrID0gMDsgayA8IG51bVBpeGVsczsgaysrKSB7XG4gICAgICAgICAgICAgICAgICByZXN1bHRQaXhlbHNbblN0YXJ0ICsga10gPSB2YWw7XG4gICAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgZm9yIChrID0gMDsgayA8IG51bVBpeGVsczsgaysrKSB7XG4gICAgICAgICAgICAgICAgblN0YXJ0ID0gayAqIG51bURpbXM7XG4gICAgICAgICAgICAgICAgZm9yIChpID0gMDsgaSA8IG51bURpbXM7IGkrKykge1xuICAgICAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzW25TdGFydCArIGldID0gbWF4VmFsdWVzW2ldO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cbiAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgIGZvciAoayA9IDA7IGsgPCBudW1QaXhlbHMgKiBudW1EaW1zOyBrKyspIHtcbiAgICAgICAgICAgICAgcmVzdWx0UGl4ZWxzW2tdID0gdmFsO1xuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICByZXR1cm47XG4gICAgICB9LFxuXG4gICAgICBnZXREYXRhVHlwZUFycmF5OiBmdW5jdGlvbih0KSB7XG4gICAgICAgIHZhciB0cDtcbiAgICAgICAgc3dpdGNoICh0KSB7XG4gICAgICAgICAgY2FzZSAwOiAvL2NoYXJcbiAgICAgICAgICAgIHRwID0gSW50OEFycmF5O1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSAxOiAvL2J5dGVcbiAgICAgICAgICAgIHRwID0gVWludDhBcnJheTtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgMjogLy9zaG9ydFxuICAgICAgICAgICAgdHAgPSBJbnQxNkFycmF5O1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSAzOiAvL3VzaG9ydFxuICAgICAgICAgICAgdHAgPSBVaW50MTZBcnJheTtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgNDpcbiAgICAgICAgICAgIHRwID0gSW50MzJBcnJheTtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgNTpcbiAgICAgICAgICAgIHRwID0gVWludDMyQXJyYXk7XG4gICAgICAgICAgICBicmVhaztcbiAgICAgICAgICBjYXNlIDY6XG4gICAgICAgICAgICB0cCA9IEZsb2F0MzJBcnJheTtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgNzpcbiAgICAgICAgICAgIHRwID0gRmxvYXQ2NEFycmF5O1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgZGVmYXVsdDpcbiAgICAgICAgICAgIHRwID0gRmxvYXQzMkFycmF5O1xuICAgICAgICB9XG4gICAgICAgIHJldHVybiB0cDtcbiAgICAgIH0sXG5cbiAgICAgIGdldFBpeGVsVHlwZTogZnVuY3Rpb24odCkge1xuICAgICAgICB2YXIgdHA7XG4gICAgICAgIHN3aXRjaCAodCkge1xuICAgICAgICAgIGNhc2UgMDogLy9jaGFyXG4gICAgICAgICAgICB0cCA9IFwiUzhcIjtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgMTogLy9ieXRlXG4gICAgICAgICAgICB0cCA9IFwiVThcIjtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgMjogLy9zaG9ydFxuICAgICAgICAgICAgdHAgPSBcIlMxNlwiO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSAzOiAvL3VzaG9ydFxuICAgICAgICAgICAgdHAgPSBcIlUxNlwiO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSA0OlxuICAgICAgICAgICAgdHAgPSBcIlMzMlwiO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSA1OlxuICAgICAgICAgICAgdHAgPSBcIlUzMlwiO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSA2OlxuICAgICAgICAgICAgdHAgPSBcIkYzMlwiO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSA3OlxuICAgICAgICAgICAgdHAgPSBcIkY2NFwiO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgZGVmYXVsdDpcbiAgICAgICAgICAgIHRwID0gXCJGMzJcIjtcbiAgICAgICAgfVxuICAgICAgICByZXR1cm4gdHA7XG4gICAgICB9LFxuXG4gICAgICBpc1ZhbGlkUGl4ZWxWYWx1ZTogZnVuY3Rpb24odCwgdmFsKSB7XG4gICAgICAgIGlmICh2YWwgPT0gbnVsbCkge1xuICAgICAgICAgIHJldHVybiBmYWxzZTtcbiAgICAgICAgfVxuICAgICAgICB2YXIgaXNWYWxpZDtcbiAgICAgICAgc3dpdGNoICh0KSB7XG4gICAgICAgICAgY2FzZSAwOiAvL2NoYXJcbiAgICAgICAgICAgIGlzVmFsaWQgPSB2YWwgPj0gLTEyOCAmJiB2YWwgPD0gMTI3O1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSAxOiAvL2J5dGUgICh1bnNpZ25lZCBjaGFyKVxuICAgICAgICAgICAgaXNWYWxpZCA9IHZhbCA+PSAwICYmIHZhbCA8PSAyNTU7XG4gICAgICAgICAgICBicmVhaztcbiAgICAgICAgICBjYXNlIDI6IC8vc2hvcnRcbiAgICAgICAgICAgIGlzVmFsaWQgPSB2YWwgPj0gLTMyNzY4ICYmIHZhbCA8PSAzMjc2NztcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgMzogLy91c2hvcnRcbiAgICAgICAgICAgIGlzVmFsaWQgPSB2YWwgPj0gMCAmJiB2YWwgPD0gNjU1MzY7XG4gICAgICAgICAgICBicmVhaztcbiAgICAgICAgICBjYXNlIDQ6IC8vaW50IDMyXG4gICAgICAgICAgICBpc1ZhbGlkID0gdmFsID49IC0yMTQ3NDgzNjQ4ICYmIHZhbCA8PSAyMTQ3NDgzNjQ3O1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSA1OiAvL3Vpbml0IDMyXG4gICAgICAgICAgICBpc1ZhbGlkID0gdmFsID49IDAgJiYgdmFsIDw9IDQyOTQ5NjcyOTY7XG4gICAgICAgICAgICBicmVhaztcbiAgICAgICAgICBjYXNlIDY6XG4gICAgICAgICAgICBpc1ZhbGlkID0gdmFsID49IC0zLjQwMjc5OTkzODc5MDE0ODRlKzM4ICYmIHZhbCA8PSAzLjQwMjc5OTkzODc5MDE0ODRlKzM4O1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSA3OlxuICAgICAgICAgICAgaXNWYWxpZCA9IHZhbCA+PSAtMS43OTc2OTMxMzQ4NjIzMTU3ZSszMDggJiYgdmFsIDw9IDEuNzk3NjkzMTM0ODYyMzE1N2UrMzA4O1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgZGVmYXVsdDpcbiAgICAgICAgICAgIGlzVmFsaWQgPSBmYWxzZTtcbiAgICAgICAgfVxuICAgICAgICByZXR1cm4gaXNWYWxpZDtcbiAgICAgIH0sXG5cbiAgICAgIGdldERhdGFUeXBlU2l6ZTogZnVuY3Rpb24odCkge1xuICAgICAgICB2YXIgcyA9IDA7XG4gICAgICAgIHN3aXRjaCAodCkge1xuICAgICAgICAgIGNhc2UgMDogLy91Ynl0ZVxuICAgICAgICAgIGNhc2UgMTogLy9ieXRlXG4gICAgICAgICAgICBzID0gMTtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgMjogLy9zaG9ydFxuICAgICAgICAgIGNhc2UgMzogLy91c2hvcnRcbiAgICAgICAgICAgIHMgPSAyO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSA0OlxuICAgICAgICAgIGNhc2UgNTpcbiAgICAgICAgICBjYXNlIDY6XG4gICAgICAgICAgICBzID0gNDtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgNzpcbiAgICAgICAgICAgIHMgPSA4O1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgZGVmYXVsdDpcbiAgICAgICAgICAgIHMgPSB0O1xuICAgICAgICB9XG4gICAgICAgIHJldHVybiBzO1xuICAgICAgfSxcblxuICAgICAgZ2V0RGF0YVR5cGVVc2VkOiBmdW5jdGlvbihkdCwgdGMpIHtcbiAgICAgICAgdmFyIHQgPSBkdDtcbiAgICAgICAgc3dpdGNoIChkdCkge1xuICAgICAgICAgIGNhc2UgMjogLy9zaG9ydFxuICAgICAgICAgIGNhc2UgNDogLy9sb25nXG4gICAgICAgICAgICB0ID0gZHQgLSB0YztcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgMzogLy91c2hvcnRcbiAgICAgICAgICBjYXNlIDU6IC8vdWxvbmdcbiAgICAgICAgICAgIHQgPSBkdCAtIDIgKiB0YztcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgNjogLy9mbG9hdFxuICAgICAgICAgICAgaWYgKDAgPT09IHRjKSB7XG4gICAgICAgICAgICAgIHQgPSBkdDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGVsc2UgaWYgKDEgPT09IHRjKSB7XG4gICAgICAgICAgICAgIHQgPSAyO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgIHQgPSAxOy8vYnl0ZVxuICAgICAgICAgICAgfVxuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSA3OiAvL2RvdWJsZVxuICAgICAgICAgICAgaWYgKDAgPT09IHRjKSB7XG4gICAgICAgICAgICAgIHQgPSBkdDtcbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGVsc2Uge1xuICAgICAgICAgICAgICB0ID0gZHQgLSAyICogdGMgKyAxO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgZGVmYXVsdDpcbiAgICAgICAgICAgIHQgPSBkdDtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICB9XG4gICAgICAgIHJldHVybiB0O1xuICAgICAgfSxcblxuICAgICAgZ2V0T25lUGl4ZWw6IGZ1bmN0aW9uKGJsb2NrLCBibG9ja1B0ciwgb2Zmc2V0VHlwZSwgdmlldykge1xuICAgICAgICB2YXIgdGVtcCA9IDA7XG4gICAgICAgIHN3aXRjaCAob2Zmc2V0VHlwZSkge1xuICAgICAgICAgIGNhc2UgMDogLy9jaGFyXG4gICAgICAgICAgICB0ZW1wID0gdmlldy5nZXRJbnQ4KGJsb2NrUHRyKTtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgMTogLy9ieXRlXG4gICAgICAgICAgICB0ZW1wID0gdmlldy5nZXRVaW50OChibG9ja1B0cik7XG4gICAgICAgICAgICBicmVhaztcbiAgICAgICAgICBjYXNlIDI6XG4gICAgICAgICAgICB0ZW1wID0gdmlldy5nZXRJbnQxNihibG9ja1B0ciwgdHJ1ZSk7XG4gICAgICAgICAgICBicmVhaztcbiAgICAgICAgICBjYXNlIDM6XG4gICAgICAgICAgICB0ZW1wID0gdmlldy5nZXRVaW50MTYoYmxvY2tQdHIsIHRydWUpO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSA0OlxuICAgICAgICAgICAgdGVtcCA9IHZpZXcuZ2V0SW50MzIoYmxvY2tQdHIsIHRydWUpO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSA1OlxuICAgICAgICAgICAgdGVtcCA9IHZpZXcuZ2V0VUludDMyKGJsb2NrUHRyLCB0cnVlKTtcbiAgICAgICAgICAgIGJyZWFrO1xuICAgICAgICAgIGNhc2UgNjpcbiAgICAgICAgICAgIHRlbXAgPSB2aWV3LmdldEZsb2F0MzIoYmxvY2tQdHIsIHRydWUpO1xuICAgICAgICAgICAgYnJlYWs7XG4gICAgICAgICAgY2FzZSA3OlxuICAgICAgICAgICAgdGVtcCA9IHZpZXcuZ2V0RmxvYXQ2NChibG9ja1B0ciwgdHJ1ZSk7XG4gICAgICAgICAgICBicmVhaztcbiAgICAgICAgICBkZWZhdWx0OlxuICAgICAgICAgICAgdGhyb3cgKFwidGhlIGRlY29kZXIgZG9lcyBub3QgdW5kZXJzdGFuZCB0aGlzIHBpeGVsIHR5cGVcIik7XG4gICAgICAgIH1cbiAgICAgICAgcmV0dXJuIHRlbXA7XG4gICAgICB9LFxuXG4gICAgICBzd2FwRGltZW5zaW9uT3JkZXI6IGZ1bmN0aW9uKHBpeGVscywgbnVtUGl4ZWxzLCBudW1EaW1zLCBPdXRQaXhlbFR5cGVBcnJheSwgaW5wdXRJc0JJUCkge1xuICAgICAgICB2YXIgaSA9IDAsIGogPSAwLCBpRGltID0gMCwgdGVtcCA9IDAsIHN3YXAgPSBwaXhlbHM7XG4gICAgICAgIGlmIChudW1EaW1zID4gMSkge1xuICAgICAgICAgIHN3YXAgPSBuZXcgT3V0UGl4ZWxUeXBlQXJyYXkobnVtUGl4ZWxzICogbnVtRGltcyk7XG4gICAgICAgICAgaWYgKGlucHV0SXNCSVApIHtcbiAgICAgICAgICAgIGZvciAoaT0wOyBpPG51bVBpeGVsczsgaSsrKSB7XG4gICAgICAgICAgICAgIHRlbXAgPSBpO1xuICAgICAgICAgICAgICBmb3IgKGlEaW09MDsgaURpbSA8IG51bURpbXM7IGlEaW0rKywgdGVtcCArPSBudW1QaXhlbHMpIHtcbiAgICAgICAgICAgICAgICBzd2FwW3RlbXBdID0gcGl4ZWxzW2orK107XG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH0gIFxuICAgICAgICAgIH1cbiAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgIGZvciAoaT0wOyBpPG51bVBpeGVsczsgaSsrKSB7XG4gICAgICAgICAgICAgIHRlbXAgPSBpO1xuICAgICAgICAgICAgICBmb3IgKGlEaW09MDsgaURpbSA8IG51bURpbXM7IGlEaW0rKywgdGVtcCArPSBudW1QaXhlbHMpIHtcbiAgICAgICAgICAgICAgICBzd2FwW2orK10gPSBwaXhlbHNbdGVtcF07XG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgcmV0dXJuIHN3YXA7XG4gICAgICB9XG4gICAgfTtcblxuICAgIC8qKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKipcbiAgICAqcHJpdmF0ZSBjbGFzcyBmb3IgYSB0cmVlIG5vZGUuIEh1ZmZtYW4gY29kZSBpcyBpbiBMZXJjMkhlbHBlcnNcbiAgICAqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqL1xuICAgIHZhciBUcmVlTm9kZSA9IGZ1bmN0aW9uKHZhbCwgbGVmdCwgcmlnaHQpIHtcbiAgICAgIHRoaXMudmFsID0gdmFsO1xuICAgICAgdGhpcy5sZWZ0ID0gbGVmdDtcbiAgICAgIHRoaXMucmlnaHQgPSByaWdodDtcbiAgICB9O1xuXG4gICAgdmFyIExlcmMyRGVjb2RlID0ge1xuICAgICAgLypcbiAgICAgICogKioqKioqKipyZW1vdmVkIG9wdGlvbnMgY29tcGFyZWQgdG8gTEVSQzEuIFdlIGNhbiBicmluZyBzb21lIG9mIHRoZW0gYmFjayBpZiBuZWVkZWQuXG4gICAgICAgKiByZW1vdmVkIHBpeGVsIHR5cGUuIExFUkMyIGlzIHR5cGVkIGFuZCBkb2Vzbid0IHJlcXVpcmUgdXNlciB0byBnaXZlIHBpeGVsIHR5cGVcbiAgICAgICAqIGNoYW5nZWQgZW5jb2RlZE1hc2tEYXRhIHRvIG1hc2tEYXRhLiBMRVJDMiAncyBqcyB2ZXJzaW9uIG1ha2UgaXQgZmFzdGVyIHRvIHVzZSBtYXNrRGF0YSBkaXJlY3RseS5cbiAgICAgICAqIHJlbW92ZWQgcmV0dXJuTWFzay4gbWFzayBpcyB1c2VkIGJ5IExFUkMyIGludGVybmFsbHkgYW5kIGlzIGNvc3QgZnJlZS4gSW4gY2FzZSBvZiB1c2VyIGlucHV0IG1hc2ssIGl0J3MgcmV0dXJuZWQgYXMgd2VsbCBhbmQgaGFzIG5lZ2xpYmxlIGNvc3QuXG4gICAgICAgKiByZW1vdmVkIG5vZGF0YXZhbHVlLiBCZWNhdXNlIExFUkMyIHBpeGVscyBhcmUgdHlwZWQsIG5vZGF0YXZhbHVlIHdpbGwgc2FjcmlmeSBhIHVzZWZ1bCB2YWx1ZSBmb3IgbWFueSB0eXBlcyAoOGJpdCwgMTZiaXQpIGV0YyxcbiAgICAgICAqICAgICAgIHVzZXIgaGFzIHRvIGJlIGtub3dsZWRnYWJsZSBlbm91Z2ggYWJvdXQgcmFzdGVyIGFuZCB0aGVpciBkYXRhIHRvIGF2b2lkIHVzYWJpbGl0eSBpc3N1ZXMuIHNvIG5vZGF0YSB2YWx1ZSBpcyBzaW1wbHkgcmVtb3ZlZCBub3cuXG4gICAgICAgKiAgICAgICBXZSBjYW4gYWRkIGl0IGJhY2sgbGF0ZXIgaWYgdGhlaXIncyBhIGNsZWFyIHJlcXVpcmVtZW50LlxuICAgICAgICogcmVtb3ZlZCBlbmNvZGVkTWFzay4gVGhpcyBvcHRpb24gd2FzIG5vdCBpbXBsZW1lbnRlZCBpbiBMZXJjRGVjb2RlLiBJdCBjYW4gYmUgZG9uZSBhZnRlciBkZWNvZGluZyAobGVzcyBlZmZpY2llbnQpXG4gICAgICAgKiByZW1vdmVkIGNvbXB1dGVVc2VkQml0RGVwdGhzLlxuICAgICAgICpcbiAgICAgICAqXG4gICAgICAgKiByZXNwb25zZSBjaGFuZ2VzIGNvbXBhcmVkIHRvIExFUkMxXG4gICAgICAgKiAxLiBlbmNvZGVkTWFza0RhdGEgaXMgbm90IGF2YWlsYWJsZVxuICAgICAgICogMi4gbm9EYXRhVmFsdWUgaXMgb3B0aW9uYWwgKHJldHVybnMgb25seSBpZiB1c2VyJ3Mgbm9EYXRhVmFsdWUgaXMgd2l0aCBpbiB0aGUgdmFsaWQgZGF0YSB0eXBlIHJhbmdlKVxuICAgICAgICogMy4gbWFza0RhdGEgaXMgYWx3YXlzIGF2YWlsYWJsZVxuICAgICAgKi9cbiAgICAgIC8qKioqKioqKioqKioqKioqKlxuICAgICAgKiAgcHVibGljIHByb3BlcnRpZXNcbiAgICAgICoqKioqKioqKioqKioqKioqKi9cbiAgICAgIC8vSFVGRk1BTl9MVVRfQklUU19NQVg6IDEyLCAvL3VzZSAyXjEyIGx1dCwgbm90IGNvbmZpZ3VyYWJsZVxuXG4gICAgICAvKioqKioqKioqKioqKioqKipcbiAgICAgICogIHB1YmxpYyBtZXRob2RzXG4gICAgICAqKioqKioqKioqKioqKioqKi9cblxuICAgICAgLyoqXG4gICAgICAgKiBEZWNvZGUgYSBMRVJDMiBieXRlIHN0cmVhbSBhbmQgcmV0dXJuIGFuIG9iamVjdCBjb250YWluaW5nIHRoZSBwaXhlbCBkYXRhIGFuZCBvcHRpb25hbCBtZXRhZGF0YS5cbiAgICAgICAqXG4gICAgICAgKiBAcGFyYW0ge0FycmF5QnVmZmVyfSBpbnB1dCBUaGUgTEVSQyBpbnB1dCBieXRlIHN0cmVhbVxuICAgICAgICogQHBhcmFtIHtvYmplY3R9IFtvcHRpb25zXSBvcHRpb25zIERlY29kaW5nIG9wdGlvbnNcbiAgICAgICAqIEBwYXJhbSB7bnVtYmVyfSBbb3B0aW9ucy5pbnB1dE9mZnNldF0gVGhlIG51bWJlciBvZiBieXRlcyB0byBza2lwIGluIHRoZSBpbnB1dCBieXRlIHN0cmVhbS4gQSB2YWxpZCBMRVJDIGZpbGUgaXMgZXhwZWN0ZWQgYXQgdGhhdCBwb3NpdGlvblxuICAgICAgICogQHBhcmFtIHtib29sZWFufSBbb3B0aW9ucy5yZXR1cm5GaWxlSW5mb10gSWYgdHJ1ZSwgdGhlIHJldHVybiB2YWx1ZSB3aWxsIGhhdmUgYSBmaWxlSW5mbyBwcm9wZXJ0eSB0aGF0IGNvbnRhaW5zIG1ldGFkYXRhIG9idGFpbmVkIGZyb20gdGhlIExFUkMgaGVhZGVycyBhbmQgdGhlIGRlY29kaW5nIHByb2Nlc3NcbiAgICAgICAqIEBwYXJhbSB7Ym9vbGVhbn0gW29wdGlvbnMucmV0dXJuUGl4ZWxJbnRlcmxlYXZlZERpbXNdICBJZiB0cnVlLCByZXR1cm5lZCBkaW1lbnNpb25zIGFyZSBwaXhlbC1pbnRlcmxlYXZlZCwgYS5rLmEgW3AxX2RpbTAsIHAxX2RpbTEsIHAxX2RpbW4sIHAyX2RpbTAuLi5dLCBkZWZhdWx0IGlzIFtwMV9kaW0wLCBwMl9kaW0wLCAuLi4sIHAxX2RpbTEsIHAyX2RpbTEuLi5dXG4gICAgICAgKi9cbiAgICAgIGRlY29kZTogZnVuY3Rpb24oLypieXRlIGFycmF5Ki8gaW5wdXQsIC8qb2JqZWN0Ki8gb3B0aW9ucykge1xuICAgICAgICAvL2N1cnJlbnRseSB0aGVyZSdzIGEgYnVnIGluIHRoZSBzcGFyc2UgYXJyYXksIHNvIHBsZWFzZSBkbyBub3Qgc2V0IHRvIGZhbHNlXG4gICAgICAgIG9wdGlvbnMgPSBvcHRpb25zIHx8IHt9O1xuICAgICAgICB2YXIgbm9EYXRhVmFsdWUgPSBvcHRpb25zLm5vRGF0YVZhbHVlO1xuXG4gICAgICAgIC8vaW5pdGlhbGl6ZVxuICAgICAgICB2YXIgaSA9IDAsIGRhdGEgPSB7fTtcbiAgICAgICAgZGF0YS5wdHIgPSBvcHRpb25zLmlucHV0T2Zmc2V0IHx8IDA7XG4gICAgICAgIGRhdGEucGl4ZWxzID0ge307XG5cbiAgICAgICAgLy8gRmlsZSBoZWFkZXJcbiAgICAgICAgaWYgKCFMZXJjMkhlbHBlcnMucmVhZEhlYWRlckluZm8oaW5wdXQsIGRhdGEpKSB7XG4gICAgICAgICAgcmV0dXJuO1xuICAgICAgICB9XG5cbiAgICAgICAgdmFyIGhlYWRlckluZm8gPSBkYXRhLmhlYWRlckluZm87XG4gICAgICAgIHZhciBmaWxlVmVyc2lvbiA9IGhlYWRlckluZm8uZmlsZVZlcnNpb247XG4gICAgICAgIHZhciBPdXRQaXhlbFR5cGVBcnJheSA9IExlcmMySGVscGVycy5nZXREYXRhVHlwZUFycmF5KGhlYWRlckluZm8uaW1hZ2VUeXBlKTtcblxuICAgICAgICAvLyB2ZXJzaW9uIGNoZWNrXG4gICAgICAgIGlmIChmaWxlVmVyc2lvbiA+IDUpIHtcbiAgICAgICAgICB0aHJvdyBcInVuc3VwcG9ydGVkIGxlcmMgdmVyc2lvbiAyLlwiICsgZmlsZVZlcnNpb247XG4gICAgICAgIH1cblxuICAgICAgICAvLyBNYXNrIEhlYWRlclxuICAgICAgICBMZXJjMkhlbHBlcnMucmVhZE1hc2soaW5wdXQsIGRhdGEpO1xuICAgICAgICBpZiAoaGVhZGVySW5mby5udW1WYWxpZFBpeGVsICE9PSBoZWFkZXJJbmZvLndpZHRoICogaGVhZGVySW5mby5oZWlnaHQgJiYgIWRhdGEucGl4ZWxzLnJlc3VsdE1hc2spIHtcbiAgICAgICAgICBkYXRhLnBpeGVscy5yZXN1bHRNYXNrID0gb3B0aW9ucy5tYXNrRGF0YTtcbiAgICAgICAgfVxuXG4gICAgICAgIHZhciBudW1QaXhlbHMgPSBoZWFkZXJJbmZvLndpZHRoICogaGVhZGVySW5mby5oZWlnaHQ7XG4gICAgICAgIGRhdGEucGl4ZWxzLnJlc3VsdFBpeGVscyA9IG5ldyBPdXRQaXhlbFR5cGVBcnJheShudW1QaXhlbHMgKiBoZWFkZXJJbmZvLm51bURpbXMpO1xuXG4gICAgICAgIGRhdGEuY291bnRlciA9IHtcbiAgICAgICAgICBvbmVzd2VlcDogMCxcbiAgICAgICAgICB1bmNvbXByZXNzZWQ6IDAsXG4gICAgICAgICAgbHV0OiAwLFxuICAgICAgICAgIGJpdHN0dWZmZXI6IDAsXG4gICAgICAgICAgY29uc3RhbnQ6IDAsXG4gICAgICAgICAgY29uc3RhbnRvZmZzZXQ6IDBcbiAgICAgICAgfTtcbiAgICAgICAgdmFyIHVzZUJTUUZvck91dHB1dERpbSA9ICFvcHRpb25zLnJldHVyblBpeGVsSW50ZXJsZWF2ZWREaW1zO1xuICAgICAgICBpZiAoaGVhZGVySW5mby5udW1WYWxpZFBpeGVsICE9PSAwKSB7XG4gICAgICAgICAgLy9ub3QgdGVzdGVkXG4gICAgICAgICAgaWYgKGhlYWRlckluZm8uek1heCA9PT0gaGVhZGVySW5mby56TWluKSAvL2NvbnN0YW50IHN1cmZhY2VcbiAgICAgICAgICB7XG4gICAgICAgICAgICBMZXJjMkhlbHBlcnMuY29uc3RydWN0Q29uc3RhbnRTdXJmYWNlKGRhdGEsIHVzZUJTUUZvck91dHB1dERpbSk7XG4gICAgICAgICAgfVxuICAgICAgICAgIGVsc2UgaWYgKGZpbGVWZXJzaW9uID49IDQgJiYgTGVyYzJIZWxwZXJzLmNoZWNrTWluTWF4UmFuZ2VzKGlucHV0LCBkYXRhKSkge1xuICAgICAgICAgICAgTGVyYzJIZWxwZXJzLmNvbnN0cnVjdENvbnN0YW50U3VyZmFjZShkYXRhLCB1c2VCU1FGb3JPdXRwdXREaW0pO1xuICAgICAgICAgIH1cbiAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgIHZhciB2aWV3ID0gbmV3IERhdGFWaWV3KGlucHV0LCBkYXRhLnB0ciwgMik7XG4gICAgICAgICAgICB2YXIgYlJlYWREYXRhT25lU3dlZXAgPSB2aWV3LmdldFVpbnQ4KDApO1xuICAgICAgICAgICAgZGF0YS5wdHIrKztcbiAgICAgICAgICAgIGlmIChiUmVhZERhdGFPbmVTd2VlcCkge1xuICAgICAgICAgICAgICAvL2NvbnNvbGUuZGVidWcoXCJPbmVTd2VlcFwiKTtcbiAgICAgICAgICAgICAgTGVyYzJIZWxwZXJzLnJlYWREYXRhT25lU3dlZXAoaW5wdXQsIGRhdGEsIE91dFBpeGVsVHlwZUFycmF5LCB1c2VCU1FGb3JPdXRwdXREaW0pO1xuICAgICAgICAgICAgfVxuICAgICAgICAgICAgZWxzZSB7XG4gICAgICAgICAgICAgIC8vbGVyYzIuMTogLy9iaXRzdHVmZmluZyArIGx1dFxuICAgICAgICAgICAgICAvL2xlcmMyLjI6IC8vYml0c3R1ZmZpbmcgKyBsdXQgKyBodWZmbWFuXG4gICAgICAgICAgICAgIC8vbGVyYzIuMzogbmV3IGJpdHN0dWZmZXJcbiAgICAgICAgICAgICAgaWYgKGZpbGVWZXJzaW9uID4gMSAmJiBoZWFkZXJJbmZvLmltYWdlVHlwZSA8PSAxICYmIE1hdGguYWJzKGhlYWRlckluZm8ubWF4WkVycm9yIC0gMC41KSA8IDAuMDAwMDEpIHtcbiAgICAgICAgICAgICAgICAvL3RoaXMgaXMgMi54IHBsdXMgOCBiaXQgKHVuc2lnbmVkIGFuZCBzaWduZWQpIGRhdGEsIHBvc3NpYmxpdHkgb2YgSHVmZm1hblxuICAgICAgICAgICAgICAgIHZhciBmbGFnSHVmZm1hbiA9IHZpZXcuZ2V0VWludDgoMSk7XG4gICAgICAgICAgICAgICAgZGF0YS5wdHIrKztcbiAgICAgICAgICAgICAgICBkYXRhLmVuY29kZU1vZGUgPSBmbGFnSHVmZm1hbjtcbiAgICAgICAgICAgICAgICBpZiAoZmxhZ0h1ZmZtYW4gPiAyIHx8IChmaWxlVmVyc2lvbiA8IDQgJiYgZmxhZ0h1ZmZtYW4gPiAxKSkge1xuICAgICAgICAgICAgICAgICAgdGhyb3cgXCJJbnZhbGlkIEh1ZmZtYW4gZmxhZyBcIiArIGZsYWdIdWZmbWFuO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBpZiAoZmxhZ0h1ZmZtYW4pIHsvLzEgLSBkZWx0YSBIdWZmbWFuLCAyIC0gSHVmZm1hblxuICAgICAgICAgICAgICAgICAgLy9jb25zb2xlLmxvZyhcIkh1ZmZtYW5cIik7XG4gICAgICAgICAgICAgICAgICBMZXJjMkhlbHBlcnMucmVhZEh1ZmZtYW4oaW5wdXQsIGRhdGEsIE91dFBpeGVsVHlwZUFycmF5LCB1c2VCU1FGb3JPdXRwdXREaW0pO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICBlbHNlIHtcbiAgICAgICAgICAgICAgICAgIC8vY29uc29sZS5sb2coXCJUaWxlc1wiKTtcbiAgICAgICAgICAgICAgICAgIExlcmMySGVscGVycy5yZWFkVGlsZXMoaW5wdXQsIGRhdGEsIE91dFBpeGVsVHlwZUFycmF5LCB1c2VCU1FGb3JPdXRwdXREaW0pO1xuICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgICBlbHNlIHsgLy9sZXJjMi54IG5vbi04IGJpdCBkYXRhXG4gICAgICAgICAgICAgICAgLy9jb25zb2xlLmxvZyhcIlRpbGVzXCIpO1xuICAgICAgICAgICAgICAgIExlcmMySGVscGVycy5yZWFkVGlsZXMoaW5wdXQsIGRhdGEsIE91dFBpeGVsVHlwZUFycmF5LCB1c2VCU1FGb3JPdXRwdXREaW0pO1xuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgfVxuICAgICAgICB9XG5cbiAgICAgICAgZGF0YS5lb2ZPZmZzZXQgPSBkYXRhLnB0cjtcbiAgICAgICAgdmFyIGRpZmY7XG4gICAgICAgIGlmIChvcHRpb25zLmlucHV0T2Zmc2V0KSB7XG4gICAgICAgICAgZGlmZiA9IGRhdGEuaGVhZGVySW5mby5ibG9iU2l6ZSArIG9wdGlvbnMuaW5wdXRPZmZzZXQgLSBkYXRhLnB0cjtcbiAgICAgICAgICBpZiAoTWF0aC5hYnMoZGlmZikgPj0gMSkge1xuICAgICAgICAgICAgLy9jb25zb2xlLmRlYnVnKFwiaW5jb3JyZWN0IGVvZjogZGF0YXB0ciBcIiArIGRhdGEucHRyICsgXCIgb2Zmc2V0IFwiICsgb3B0aW9ucy5pbnB1dE9mZnNldCArIFwiIGJsb2JzaXplIFwiICsgZGF0YS5oZWFkZXJJbmZvLmJsb2JTaXplICsgXCIgZGlmZjogXCIgKyBkaWZmKTtcbiAgICAgICAgICAgIGRhdGEuZW9mT2Zmc2V0ID0gb3B0aW9ucy5pbnB1dE9mZnNldCArIGRhdGEuaGVhZGVySW5mby5ibG9iU2l6ZTtcbiAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICAgICAgZWxzZSB7XG4gICAgICAgICAgZGlmZiA9IGRhdGEuaGVhZGVySW5mby5ibG9iU2l6ZSAtIGRhdGEucHRyO1xuICAgICAgICAgIGlmIChNYXRoLmFicyhkaWZmKSA+PSAxKSB7XG4gICAgICAgICAgICAvL2NvbnNvbGUuZGVidWcoXCJpbmNvcnJlY3QgZmlyc3QgYmFuZCBlb2Y6IGRhdGFwdHIgXCIgKyBkYXRhLnB0ciArIFwiIGJsb2JzaXplIFwiICsgZGF0YS5oZWFkZXJJbmZvLmJsb2JTaXplICsgXCIgZGlmZjogXCIgKyBkaWZmKTtcbiAgICAgICAgICAgIGRhdGEuZW9mT2Zmc2V0ID0gZGF0YS5oZWFkZXJJbmZvLmJsb2JTaXplO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuXG4gICAgICAgIHZhciByZXN1bHQgPSB7XG4gICAgICAgICAgd2lkdGg6IGhlYWRlckluZm8ud2lkdGgsXG4gICAgICAgICAgaGVpZ2h0OiBoZWFkZXJJbmZvLmhlaWdodCxcbiAgICAgICAgICBwaXhlbERhdGE6IGRhdGEucGl4ZWxzLnJlc3VsdFBpeGVscyxcbiAgICAgICAgICBtaW5WYWx1ZTogaGVhZGVySW5mby56TWluLFxuICAgICAgICAgIG1heFZhbHVlOiBoZWFkZXJJbmZvLnpNYXgsXG4gICAgICAgICAgdmFsaWRQaXhlbENvdW50OiBoZWFkZXJJbmZvLm51bVZhbGlkUGl4ZWwsXG4gICAgICAgICAgZGltQ291bnQ6IGhlYWRlckluZm8ubnVtRGltcyxcbiAgICAgICAgICBkaW1TdGF0czoge1xuICAgICAgICAgICAgbWluVmFsdWVzOiBoZWFkZXJJbmZvLm1pblZhbHVlcyxcbiAgICAgICAgICAgIG1heFZhbHVlczogaGVhZGVySW5mby5tYXhWYWx1ZXNcbiAgICAgICAgICB9LFxuICAgICAgICAgIG1hc2tEYXRhOiBkYXRhLnBpeGVscy5yZXN1bHRNYXNrXG4gICAgICAgICAgLy9ub0RhdGFWYWx1ZTogbm9EYXRhVmFsdWVcbiAgICAgICAgfTtcblxuICAgICAgICAvL3dlIHNob3VsZCByZW1vdmUgdGhpcyBpZiB0aGVyZSdzIG5vIGV4aXN0aW5nIGNsaWVudFxuICAgICAgICAvL29wdGlvbmFsIG5vRGF0YVZhbHVlIHByb2Nlc3NpbmcsIGl0J3MgdXNlcidzIHJlc3BvbnNpYmxpdHlcbiAgICAgICAgaWYgKGRhdGEucGl4ZWxzLnJlc3VsdE1hc2sgJiYgTGVyYzJIZWxwZXJzLmlzVmFsaWRQaXhlbFZhbHVlKGhlYWRlckluZm8uaW1hZ2VUeXBlLCBub0RhdGFWYWx1ZSkpIHtcbiAgICAgICAgICB2YXIgbWFzayA9IGRhdGEucGl4ZWxzLnJlc3VsdE1hc2s7XG4gICAgICAgICAgZm9yIChpID0gMDsgaSA8IG51bVBpeGVsczsgaSsrKSB7XG4gICAgICAgICAgICBpZiAoIW1hc2tbaV0pIHtcbiAgICAgICAgICAgICAgcmVzdWx0LnBpeGVsRGF0YVtpXSA9IG5vRGF0YVZhbHVlO1xuICAgICAgICAgICAgfVxuICAgICAgICAgIH1cbiAgICAgICAgICByZXN1bHQubm9EYXRhVmFsdWUgPSBub0RhdGFWYWx1ZTtcbiAgICAgICAgfVxuICAgICAgICBkYXRhLm5vRGF0YVZhbHVlID0gbm9EYXRhVmFsdWU7XG4gICAgICAgIGlmIChvcHRpb25zLnJldHVybkZpbGVJbmZvKSB7XG4gICAgICAgICAgcmVzdWx0LmZpbGVJbmZvID0gTGVyYzJIZWxwZXJzLmZvcm1hdEZpbGVJbmZvKGRhdGEpO1xuICAgICAgICB9XG4gICAgICAgIHJldHVybiByZXN1bHQ7XG4gICAgICB9LFxuXG4gICAgICBnZXRCYW5kQ291bnQ6IGZ1bmN0aW9uKC8qYnl0ZSBhcnJheSovIGlucHV0KSB7XG4gICAgICAgIHZhciBjb3VudCA9IDA7XG4gICAgICAgIHZhciBpID0gMDtcbiAgICAgICAgdmFyIHRlbXAgPSB7fTtcbiAgICAgICAgdGVtcC5wdHIgPSAwO1xuICAgICAgICB0ZW1wLnBpeGVscyA9IHt9O1xuICAgICAgICB3aGlsZSAoaSA8IGlucHV0LmJ5dGVMZW5ndGggLSA1OCkge1xuICAgICAgICAgIExlcmMySGVscGVycy5yZWFkSGVhZGVySW5mbyhpbnB1dCwgdGVtcCk7XG4gICAgICAgICAgaSArPSB0ZW1wLmhlYWRlckluZm8uYmxvYlNpemU7XG4gICAgICAgICAgY291bnQrKztcbiAgICAgICAgICB0ZW1wLnB0ciA9IGk7XG4gICAgICAgIH1cbiAgICAgICAgcmV0dXJuIGNvdW50O1xuICAgICAgfVxuICAgIH07XG5cbiAgICByZXR1cm4gTGVyYzJEZWNvZGU7XG4gIH0pKCk7XG5cbiAgdmFyIGlzUGxhdGZvcm1MaXR0bGVFbmRpYW4gPSAoZnVuY3Rpb24oKSB7XG4gICAgdmFyIGEgPSBuZXcgQXJyYXlCdWZmZXIoNCk7XG4gICAgdmFyIGIgPSBuZXcgVWludDhBcnJheShhKTtcbiAgICB2YXIgYyA9IG5ldyBVaW50MzJBcnJheShhKTtcbiAgICBjWzBdID0gMTtcbiAgICByZXR1cm4gYlswXSA9PT0gMTtcbiAgfSkoKTtcblxuICB2YXIgTGVyYyA9IHtcbiAgICAvKioqKioqKioqKioqd3JhcHBlcioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKiovXG4gICAgLyoqXG4gICAgICogQSB3cmFwcGVyIGZvciBkZWNvZGluZyBib3RoIExFUkMxIGFuZCBMRVJDMiBieXRlIHN0cmVhbXMgY2FwYWJsZSBvZiBoYW5kbGluZyBtdWx0aWJhbmQgcGl4ZWwgYmxvY2tzIGZvciB2YXJpb3VzIHBpeGVsIHR5cGVzLlxuICAgICAqXG4gICAgICogQGFsaWFzIG1vZHVsZTpMZXJjXG4gICAgICogQHBhcmFtIHtBcnJheUJ1ZmZlcn0gaW5wdXQgVGhlIExFUkMgaW5wdXQgYnl0ZSBzdHJlYW1cbiAgICAgKiBAcGFyYW0ge29iamVjdH0gW29wdGlvbnNdIFRoZSBkZWNvZGluZyBvcHRpb25zIGJlbG93IGFyZSBvcHRpb25hbC5cbiAgICAgKiBAcGFyYW0ge251bWJlcn0gW29wdGlvbnMuaW5wdXRPZmZzZXRdIFRoZSBudW1iZXIgb2YgYnl0ZXMgdG8gc2tpcCBpbiB0aGUgaW5wdXQgYnl0ZSBzdHJlYW0uIEEgdmFsaWQgTGVyYyBmaWxlIGlzIGV4cGVjdGVkIGF0IHRoYXQgcG9zaXRpb24uXG4gICAgICogQHBhcmFtIHtzdHJpbmd9IFtvcHRpb25zLnBpeGVsVHlwZV0gKExFUkMxIG9ubHkpIERlZmF1bHQgdmFsdWUgaXMgRjMyLiBWYWxpZCBwaXhlbCB0eXBlcyBmb3IgaW5wdXQgYXJlIFU4L1M4L1MxNi9VMTYvUzMyL1UzMi9GMzIuXG4gICAgICogQHBhcmFtIHtudW1iZXJ9IFtvcHRpb25zLm5vRGF0YVZhbHVlXSAoTEVSQzEgb25seSkuIEl0IGlzIHJlY29tbWVuZGVkIHRvIHVzZSB0aGUgcmV0dXJuZWQgbWFzayBpbnN0ZWFkIG9mIHNldHRpbmcgdGhpcyB2YWx1ZS5cbiAgICAgKiBAcGFyYW0ge2Jvb2xlYW59IFtvcHRpb25zLnJldHVyblBpeGVsSW50ZXJsZWF2ZWREaW1zXSAobkRpbSBMRVJDMiBvbmx5KSBJZiB0cnVlLCByZXR1cm5lZCBkaW1lbnNpb25zIGFyZSBwaXhlbC1pbnRlcmxlYXZlZCwgYS5rLmEgW3AxX2RpbTAsIHAxX2RpbTEsIHAxX2RpbW4sIHAyX2RpbTAuLi5dLCBkZWZhdWx0IGlzIFtwMV9kaW0wLCBwMl9kaW0wLCAuLi4sIHAxX2RpbTEsIHAyX2RpbTEuLi5dXG4gICAgICogQHJldHVybnMge3t3aWR0aCwgaGVpZ2h0LCBwaXhlbHMsIHBpeGVsVHlwZSwgbWFzaywgc3RhdGlzdGljc319XG4gICAgICAgKiBAcHJvcGVydHkge251bWJlcn0gd2lkdGggV2lkdGggb2YgZGVjb2RlZCBpbWFnZS5cbiAgICAgICAqIEBwcm9wZXJ0eSB7bnVtYmVyfSBoZWlnaHQgSGVpZ2h0IG9mIGRlY29kZWQgaW1hZ2UuXG4gICAgICAgKiBAcHJvcGVydHkge2FycmF5fSBwaXhlbHMgW2JhbmQxLCBiYW5kMiwg4oCmXSBFYWNoIGJhbmQgaXMgYSB0eXBlZCBhcnJheSBvZiB3aWR0aCpoZWlnaHQuXG4gICAgICAgKiBAcHJvcGVydHkge3N0cmluZ30gcGl4ZWxUeXBlIFRoZSB0eXBlIG9mIHBpeGVscyByZXByZXNlbnRlZCBpbiB0aGUgb3V0cHV0LlxuICAgICAgICogQHByb3BlcnR5IHttYXNrfSBtYXNrIFR5cGVkIGFycmF5IHdpdGggYSBzaXplIG9mIHdpZHRoKmhlaWdodCwgb3IgbnVsbCBpZiBhbGwgcGl4ZWxzIGFyZSB2YWxpZC5cbiAgICAgICAqIEBwcm9wZXJ0eSB7YXJyYXl9IHN0YXRpc3RpY3MgW3N0YXRpc3RpY3NfYmFuZDEsIHN0YXRpc3RpY3NfYmFuZDIsIOKApl0gRWFjaCBlbGVtZW50IGlzIGEgc3RhdGlzdGljcyBvYmplY3QgcmVwcmVzZW50aW5nIG1pbiBhbmQgbWF4IHZhbHVlc1xuICAgICoqL1xuICAgIGRlY29kZTogZnVuY3Rpb24oZW5jb2RlZERhdGEsIG9wdGlvbnMpIHtcbiAgICAgIGlmICghaXNQbGF0Zm9ybUxpdHRsZUVuZGlhbikge1xuICAgICAgICB0aHJvdyBcIkJpZyBlbmRpYW4gc3lzdGVtIGlzIG5vdCBzdXBwb3J0ZWQuXCI7XG4gICAgICB9XG4gICAgICBvcHRpb25zID0gb3B0aW9ucyB8fCB7fTtcbiAgICAgIHZhciBpbnB1dE9mZnNldCA9IG9wdGlvbnMuaW5wdXRPZmZzZXQgfHwgMDtcbiAgICAgIHZhciBmaWxlSWRWaWV3ID0gbmV3IFVpbnQ4QXJyYXkoZW5jb2RlZERhdGEsIGlucHV0T2Zmc2V0LCAxMCk7XG4gICAgICB2YXIgZmlsZUlkZW50aWZpZXJTdHJpbmcgPSBTdHJpbmcuZnJvbUNoYXJDb2RlLmFwcGx5KG51bGwsIGZpbGVJZFZpZXcpO1xuICAgICAgdmFyIGxlcmMsIG1ham9yVmVyc2lvbjtcbiAgICAgIGlmIChmaWxlSWRlbnRpZmllclN0cmluZy50cmltKCkgPT09IFwiQ250WkltYWdlXCIpIHtcbiAgICAgICAgbGVyYyA9IExlcmNEZWNvZGU7XG4gICAgICAgIG1ham9yVmVyc2lvbiA9IDE7XG4gICAgICB9XG4gICAgICBlbHNlIGlmIChmaWxlSWRlbnRpZmllclN0cmluZy5zdWJzdHJpbmcoMCwgNSkgPT09IFwiTGVyYzJcIikge1xuICAgICAgICBsZXJjID0gTGVyYzJEZWNvZGU7XG4gICAgICAgIG1ham9yVmVyc2lvbiA9IDI7XG4gICAgICB9XG4gICAgICBlbHNlIHtcbiAgICAgICAgdGhyb3cgXCJVbmV4cGVjdGVkIGZpbGUgaWRlbnRpZmllciBzdHJpbmc6IFwiICsgZmlsZUlkZW50aWZpZXJTdHJpbmc7XG4gICAgICB9XG5cbiAgICAgIHZhciBpUGxhbmUgPSAwLCBlb2YgPSBlbmNvZGVkRGF0YS5ieXRlTGVuZ3RoIC0gMTAsIGVuY29kZWRNYXNrRGF0YSwgYmFuZE1hc2tzID0gW10sIGJhbmRNYXNrLCBtYXNrRGF0YTtcbiAgICAgIHZhciBkZWNvZGVkUGl4ZWxCbG9jayA9IHtcbiAgICAgICAgd2lkdGg6IDAsXG4gICAgICAgIGhlaWdodDogMCxcbiAgICAgICAgcGl4ZWxzOiBbXSxcbiAgICAgICAgcGl4ZWxUeXBlOiBvcHRpb25zLnBpeGVsVHlwZSxcbiAgICAgICAgbWFzazogbnVsbCxcbiAgICAgICAgc3RhdGlzdGljczogW11cbiAgICAgIH07XG4gICAgICB2YXIgdW5pcXVlQmFuZE1hc2tDb3VudCA9IDA7XG5cbiAgICAgIHdoaWxlIChpbnB1dE9mZnNldCA8IGVvZikge1xuICAgICAgICB2YXIgcmVzdWx0ID0gbGVyYy5kZWNvZGUoZW5jb2RlZERhdGEsIHtcbiAgICAgICAgICBpbnB1dE9mZnNldDogaW5wdXRPZmZzZXQsLy9mb3IgYm90aCBsZXJjMSBhbmQgbGVyYzJcbiAgICAgICAgICBlbmNvZGVkTWFza0RhdGE6IGVuY29kZWRNYXNrRGF0YSwvL2xlcmMxIG9ubHlcbiAgICAgICAgICBtYXNrRGF0YTogbWFza0RhdGEsLy9sZXJjMiBvbmx5XG4gICAgICAgICAgcmV0dXJuTWFzazogaVBsYW5lID09PSAwID8gdHJ1ZSA6IGZhbHNlLC8vbGVyYzEgb25seVxuICAgICAgICAgIHJldHVybkVuY29kZWRNYXNrOiBpUGxhbmUgPT09IDAgPyB0cnVlIDogZmFsc2UsLy9sZXJjMSBvbmx5XG4gICAgICAgICAgcmV0dXJuRmlsZUluZm86IHRydWUsLy9mb3IgYm90aCBsZXJjMSBhbmQgbGVyYzJcbiAgICAgICAgICByZXR1cm5QaXhlbEludGVybGVhdmVkRGltczogb3B0aW9ucy5yZXR1cm5QaXhlbEludGVybGVhdmVkRGltcywvL2ZvciBuZGltIGxlcmMyIG9ubHlcbiAgICAgICAgICBwaXhlbFR5cGU6IG9wdGlvbnMucGl4ZWxUeXBlIHx8IG51bGwsLy9sZXJjMSBvbmx5XG4gICAgICAgICAgbm9EYXRhVmFsdWU6IG9wdGlvbnMubm9EYXRhVmFsdWUgfHwgbnVsbC8vbGVyYzEgb25seVxuICAgICAgICB9KTtcblxuICAgICAgICBpbnB1dE9mZnNldCA9IHJlc3VsdC5maWxlSW5mby5lb2ZPZmZzZXQ7XG4gICAgICAgIG1hc2tEYXRhID0gcmVzdWx0Lm1hc2tEYXRhOy8vbGVyYzJcbiAgICAgICAgaWYgKGlQbGFuZSA9PT0gMCkge1xuICAgICAgICAgIGVuY29kZWRNYXNrRGF0YSA9IHJlc3VsdC5lbmNvZGVkTWFza0RhdGE7Ly9sZXJjMVxuICAgICAgICAgIGRlY29kZWRQaXhlbEJsb2NrLndpZHRoID0gcmVzdWx0LndpZHRoO1xuICAgICAgICAgIGRlY29kZWRQaXhlbEJsb2NrLmhlaWdodCA9IHJlc3VsdC5oZWlnaHQ7XG4gICAgICAgICAgZGVjb2RlZFBpeGVsQmxvY2suZGltQ291bnQgPSByZXN1bHQuZGltQ291bnQgfHwgMTtcbiAgICAgICAgICAvL2RlY29kZWRQaXhlbEJsb2NrLmRpbVN0YXRzID0gZGVjb2RlZFBpeGVsQmxvY2suZGltU3RhdHM7XG4gICAgICAgICAgZGVjb2RlZFBpeGVsQmxvY2sucGl4ZWxUeXBlID0gcmVzdWx0LnBpeGVsVHlwZSB8fCByZXN1bHQuZmlsZUluZm8ucGl4ZWxUeXBlO1xuICAgICAgICAgIGRlY29kZWRQaXhlbEJsb2NrLm1hc2sgPSBtYXNrRGF0YTtcbiAgICAgICAgfVxuICAgICAgICBpZiAobWFqb3JWZXJzaW9uID4gMSkge1xuICAgICAgICAgIGlmIChtYXNrRGF0YSkge1xuICAgICAgICAgICAgYmFuZE1hc2tzLnB1c2gobWFza0RhdGEpO1xuICAgICAgICAgIH1cbiAgICAgICAgICBpZiAocmVzdWx0LmZpbGVJbmZvLm1hc2sgJiYgcmVzdWx0LmZpbGVJbmZvLm1hc2subnVtQnl0ZXMgPiAwKSB7XG4gICAgICAgICAgICB1bmlxdWVCYW5kTWFza0NvdW50Kys7XG4gICAgICAgICAgfVxuICAgICAgICB9XG5cbiAgICAgICAgaVBsYW5lKys7XG4gICAgICAgIGRlY29kZWRQaXhlbEJsb2NrLnBpeGVscy5wdXNoKHJlc3VsdC5waXhlbERhdGEpO1xuICAgICAgICBkZWNvZGVkUGl4ZWxCbG9jay5zdGF0aXN0aWNzLnB1c2goe1xuICAgICAgICAgIG1pblZhbHVlOiByZXN1bHQubWluVmFsdWUsXG4gICAgICAgICAgbWF4VmFsdWU6IHJlc3VsdC5tYXhWYWx1ZSxcbiAgICAgICAgICBub0RhdGFWYWx1ZTogcmVzdWx0Lm5vRGF0YVZhbHVlLFxuICAgICAgICAgIGRpbVN0YXRzOiByZXN1bHQuZGltU3RhdHNcbiAgICAgICAgfSk7XG4gICAgICB9XG4gICAgICB2YXIgaSwgaiwgbnVtUGl4ZWxzO1xuICAgICAgaWYgKG1ham9yVmVyc2lvbiA+IDEgJiYgdW5pcXVlQmFuZE1hc2tDb3VudCA+IDEpIHtcbiAgICAgICAgbnVtUGl4ZWxzID0gZGVjb2RlZFBpeGVsQmxvY2sud2lkdGggKiBkZWNvZGVkUGl4ZWxCbG9jay5oZWlnaHQ7XG4gICAgICAgIGRlY29kZWRQaXhlbEJsb2NrLmJhbmRNYXNrcyA9IGJhbmRNYXNrcztcbiAgICAgICAgbWFza0RhdGEgPSBuZXcgVWludDhBcnJheShudW1QaXhlbHMpO1xuICAgICAgICBtYXNrRGF0YS5zZXQoYmFuZE1hc2tzWzBdKTtcbiAgICAgICAgZm9yIChpID0gMTsgaSA8IGJhbmRNYXNrcy5sZW5ndGg7IGkrKykge1xuICAgICAgICAgIGJhbmRNYXNrID0gYmFuZE1hc2tzW2ldO1xuICAgICAgICAgIGZvciAoaiA9IDA7IGogPCBudW1QaXhlbHM7IGorKykge1xuICAgICAgICAgICAgbWFza0RhdGFbal0gPSBtYXNrRGF0YVtqXSAmIGJhbmRNYXNrW2pdO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgICBkZWNvZGVkUGl4ZWxCbG9jay5tYXNrRGF0YSA9IG1hc2tEYXRhO1xuICAgICAgfVxuXG4gICAgICByZXR1cm4gZGVjb2RlZFBpeGVsQmxvY2s7XG4gICAgfVxuICB9O1xuXG4gIGlmICh0eXBlb2YgZGVmaW5lID09PSBcImZ1bmN0aW9uXCIgJiYgZGVmaW5lLmFtZCkgey8qIGpzaGludCBpZ25vcmU6bGluZSAqL1xuICAgIC8vYW1kIGxvYWRlcnMgc3VjaCBhcyBkb2pvIGFuZCByZXF1aXJlSlNcbiAgICAvL2h0dHA6Ly93aWtpLmNvbW1vbmpzLm9yZy93aWtpL01vZHVsZXMvQXN5bmNocm9ub3VzRGVmaW5pdGlvblxuICAgIGRlZmluZShbXSwgZnVuY3Rpb24oKSB7IHJldHVybiBMZXJjOyB9KTsvKiBqc2hpbnQgaWdub3JlOmxpbmUgKi9cbiAgfVxuICBlbHNlIGlmICh0eXBlb2YgbW9kdWxlICE9PSBcInVuZGVmaW5lZFwiICYmIG1vZHVsZS5leHBvcnRzKSB7LyoganNoaW50IGlnbm9yZTpsaW5lICovXG4gICAgLy9jb21tb25KUyBtb2R1bGUgMS4wLzEuMS8xLjEuMSBzeXN0ZW1zLCBzdWNoIGFzIG5vZGVKU1xuICAgIC8vaHR0cDovL3dpa2kuY29tbW9uanMub3JnL3dpa2kvTW9kdWxlc1xuICAgIG1vZHVsZS5leHBvcnRzID0gTGVyYzsvKiBqc2hpbnQgaWdub3JlOmxpbmUgKi9cbiAgfVxuICBlbHNlIHtcbiAgICAvL2Fzc2lnbiB0byB0aGlzLCBtb3N0IGxpa2VseSB3aW5kb3dcbiAgICB0aGlzLkxlcmMgPSBMZXJjO1xuICB9XG5cbn0pKCk7XG4iXSwic291cmNlUm9vdCI6IiJ9
