@@ -2,7 +2,7 @@
   "modelVersion": "5.0.2",
   "description": "Please describe the basic information.",
   "dependencies": {
-    "@magongshou/harmony-cordova": "^1.2.1"
+    "@magongshou/harmony-cordova": "^1.7.1"
   },
   "devDependencies": {
     "@ohos/hypium": "1.0.21",
