@@ -6,7 +6,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "SangforSDK": 'file:./libs/SangforSDK.har'
+
   }
 }
 

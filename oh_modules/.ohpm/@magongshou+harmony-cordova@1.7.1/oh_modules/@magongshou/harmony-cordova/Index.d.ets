@@ -1,0 +1,12 @@
+export { MainPageCycle } from './src/main/ets/components/MainPage';
+export { MainPageOnBackPress } from './src/main/ets/components/MainPage';
+export { MainPage } from './src/main/ets/components/MainPage';
+export { CordovaPlugin, CordovaInterface, CallbackContext, CordovaWebView, PluginEntry, MessageStatus, PluginResult } from './src/main/ets/components/CordovaPlugin';
+export declare function RegisterCustomSchemes(customSchemes: string): void;
+export declare function setSchemeHandler(): void;
+export declare function pageShowEvent(): void;
+export declare function pageHideEvent(): void;
+export declare function pageBackPress(): void;
+export declare function SetResourceReplace(webTag: string, src: string, obj: string): void;
+export declare function SetCordovaProtocolUrl(url: string): void;
+export declare function pagePushNotify(data: Record<string, Object> | undefined): void;

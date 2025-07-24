@@ -1,0 +1,79 @@
+{
+  "lockVersion": "1.0",
+  "settings": {
+    "resolveConflict": true,
+    "resolveConflictStrict": false,
+    "installAll": true
+  },
+  "overrides": {},
+  "overrideDependencyMap": {},
+  "modules": {
+    ".": {
+      "name": "",
+      "dependencies": {
+        "@magongshou/harmony-cordova": {
+          "specifier": "^1.7.1",
+          "version": "1.7.1"
+        }
+      },
+      "devDependencies": {
+        "@ohos/hypium": {
+          "specifier": "1.0.21",
+          "version": "1.0.21"
+        },
+        "@ohos/hamock": {
+          "specifier": "1.0.0",
+          "version": "1.0.0"
+        }
+      },
+      "dynamicDependencies": {},
+      "maskedByOverrideDependencyMap": false
+    },
+    "entry": {
+      "name": "entry",
+      "dependencies": {},
+      "devDependencies": {},
+      "dynamicDependencies": {},
+      "maskedByOverrideDependencyMap": false
+    }
+  },
+  "packages": {
+    "@magongshou/harmony-cordova@1.7.1": {
+      "integrity": "sha512-LGHvzscuPjfCYfnDuIOZbKwQLOceYlVsNBXhzKKf4vJugejAM/bgkV7/9LV+SIss48s7P4Oqe0dD26ysovuQnQ==",
+      "storePath": "oh_modules/.ohpm/@magongshou+harmony-cordova@1.7.1",
+      "dependencies": {
+        "libcordova.so": "oh_modules/.ohpm/@magongshou+harmony-cordova@1.7.1/oh_modules/@magongshou/harmony-cordova/src/main/cpp/types/libcordova"
+      },
+      "dynamicDependencies": {},
+      "dev": false,
+      "dynamic": false,
+      "maskedByOverrideDependencyMap": false
+    },
+    "libcordova.so@file:oh_modules/.ohpm/@magongshou+harmony-cordova@1.7.1/oh_modules/@magongshou/harmony-cordova/src/main/cpp/types/libcordova": {
+      "storePath": "oh_modules/.ohpm/@magongshou+harmony-cordova@1.7.1/oh_modules/@magongshou/harmony-cordova/src/main/cpp/types/libcordova",
+      "dependencies": {},
+      "dynamicDependencies": {},
+      "dev": false,
+      "dynamic": false,
+      "maskedByOverrideDependencyMap": false
+    },
+    "@ohos/hypium@1.0.21": {
+      "integrity": "sha512-iyKGMXxE+9PpCkqEwu0VykN/7hNpb+QOeIuHwkmZnxOpI+dFZt6yhPB7k89EgV1MiSK/ieV/hMjr5Z2mWwRfMQ==",
+      "storePath": "oh_modules/.ohpm/@ohos+hypium@1.0.21",
+      "dependencies": {},
+      "dynamicDependencies": {},
+      "dev": true,
+      "dynamic": false,
+      "maskedByOverrideDependencyMap": false
+    },
+    "@ohos/hamock@1.0.0": {
+      "integrity": "sha512-K6lDPYc6VkKe6ZBNQa9aoG+ZZMiwqfcR/7yAVFSUGIuOAhPvCJAo9+t1fZnpe0dBRBPxj2bxPPbKh69VuyAtDg==",
+      "storePath": "oh_modules/.ohpm/@ohos+hamock@1.0.0",
+      "dependencies": {},
+      "dynamicDependencies": {},
+      "dev": true,
+      "dynamic": false,
+      "maskedByOverrideDependencyMap": false
+    }
+  }
+}

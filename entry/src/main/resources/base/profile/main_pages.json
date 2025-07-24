@@ -1,7 +1,6 @@
 {
   "src": [
     "pages/Index",
-    "pages/testPage",
-    "pages/BasicScenePage"
+    "pages/testPage"
   ]
 }

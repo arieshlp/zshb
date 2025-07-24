@@ -1,0 +1,31 @@
+{
+	"app": {
+		"bundleName": "com.ionicframework.chuzhitong410158",
+		"debug": true,
+		"versionCode": 6,
+		"versionName": "0.8.5",
+		"minAPIVersion": 50000012,
+		"targetAPIVersion": 50005017,
+		"apiReleaseType": "Release",
+		"compileSdkVersion": "5.0.5.165",
+		"compileSdkType": "HarmonyOS",
+		"appEnvironments": [],
+		"bundleType": "app",
+		"buildMode": "debug"
+	},
+	"module": {
+		"name": "cordova",
+		"type": "har",
+		"routerMap": "$profile:route_map",
+		"deviceTypes": [
+			"default",
+			"tablet",
+			"2in1"
+		],
+		"packageName": "@magongshou/harmony-cordova",
+		"installationFree": false,
+		"virtualMachine": "ark12.0.2.0",
+		"compileMode": "esmodule",
+		"dependencies": []
+	}
+}

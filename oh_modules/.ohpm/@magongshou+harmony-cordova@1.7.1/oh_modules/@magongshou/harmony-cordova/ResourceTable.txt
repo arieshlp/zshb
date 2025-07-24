@@ -1,0 +1,4 @@
+string page_show 0x01000000
+media xmark 0x01000001
+profile main_pages 0x01000002
+profile route_map 0x01000003
